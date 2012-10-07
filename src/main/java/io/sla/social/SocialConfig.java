@@ -1,9 +1,10 @@
-package kr.co.siterush.social;
+package io.sla.social;
+
+import io.sla.model.UserInfo;
 
 import javax.inject.Inject;
 import javax.sql.DataSource;
 
-import kr.co.siterush.model.UserInfo;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -27,7 +28,7 @@ import org.springframework.social.facebook.api.impl.FacebookTemplate;
 import org.springframework.social.facebook.connect.FacebookConnectionFactory;
 
 @Configuration
-@PropertySource("classpath:kr/co/siterush/social/config.properties")
+@PropertySource("classpath:io/sla/social/config.properties")
 public class SocialConfig {
 
 	@Bean

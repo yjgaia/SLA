@@ -1,6 +1,6 @@
-package kr.co.siterush.util;
+package io.sla.util;
 
-import kr.co.siterush.model.UserInfo;
+import io.sla.model.UserInfo;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

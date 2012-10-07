@@ -1,4 +1,4 @@
-package kr.co.siterush.model;
+package io.sla.model;
 
 import java.util.Collection;
 import java.util.Date;

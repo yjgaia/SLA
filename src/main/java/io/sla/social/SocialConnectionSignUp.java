@@ -1,8 +1,9 @@
-package kr.co.siterush.social;
+package io.sla.social;
+
+import io.sla.model.UserInfo;
 
 import java.util.Date;
 
-import kr.co.siterush.model.UserInfo;
 
 import org.springframework.social.connect.Connection;
 import org.springframework.social.connect.ConnectionSignUp;

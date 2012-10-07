@@ -1,4 +1,7 @@
-package kr.co.siterush.social;
+package io.sla.social;
+
+import io.sla.model.UserInfo;
+import io.sla.util.AuthUtil;
 
 import java.util.Date;
 
@@ -7,8 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import kr.co.siterush.model.UserInfo;
-import kr.co.siterush.util.AuthUtil;
 
 import org.springframework.security.web.WebAttributes;
 import org.springframework.security.web.savedrequest.RequestCache;
