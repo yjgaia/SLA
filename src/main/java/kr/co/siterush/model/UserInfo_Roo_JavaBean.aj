@@ -4,52 +4,9 @@
 package kr.co.siterush.model;
 
 import java.util.Date;
-import java.util.List;
-import kr.co.siterush.model.JoinedSubject;
 import kr.co.siterush.model.UserInfo;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 privileged aspect UserInfo_Roo_JavaBean {
-    
-    public String UserInfo.getUsername() {
-        return this.username;
-    }
-    
-    public void UserInfo.setUsername(String username) {
-        this.username = username;
-    }
-    
-    public String UserInfo.getPassword() {
-        return this.password;
-    }
-    
-    public void UserInfo.setPassword(String password) {
-        this.password = password;
-    }
-    
-    public String UserInfo.getPasswordConfirm() {
-        return this.passwordConfirm;
-    }
-    
-    public void UserInfo.setPasswordConfirm(String passwordConfirm) {
-        this.passwordConfirm = passwordConfirm;
-    }
-    
-    public String UserInfo.getNickname() {
-        return this.nickname;
-    }
-    
-    public void UserInfo.setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-    
-    public String UserInfo.getEmail() {
-        return this.email;
-    }
-    
-    public void UserInfo.setEmail(String email) {
-        this.email = email;
-    }
     
     public Date UserInfo.getJoinDate() {
         return this.joinDate;
@@ -67,44 +24,12 @@ privileged aspect UserInfo_Roo_JavaBean {
         this.lastLoginDate = lastLoginDate;
     }
     
-    public Date UserInfo.getLastWriteDate() {
-        return this.lastWriteDate;
-    }
-    
-    public void UserInfo.setLastWriteDate(Date lastWriteDate) {
-        this.lastWriteDate = lastWriteDate;
-    }
-    
     public int UserInfo.getLoginCount() {
         return this.loginCount;
     }
     
     public void UserInfo.setLoginCount(int loginCount) {
         this.loginCount = loginCount;
-    }
-    
-    public int UserInfo.getWriteCount() {
-        return this.writeCount;
-    }
-    
-    public void UserInfo.setWriteCount(int writeCount) {
-        this.writeCount = writeCount;
-    }
-    
-    public int UserInfo.getFriendCount() {
-        return this.friendCount;
-    }
-    
-    public void UserInfo.setFriendCount(int friendCount) {
-        this.friendCount = friendCount;
-    }
-    
-    public CommonsMultipartFile UserInfo.getPhoto() {
-        return this.photo;
-    }
-    
-    public void UserInfo.setPhoto(CommonsMultipartFile photo) {
-        this.photo = photo;
     }
     
     public boolean UserInfo.isSocialUser() {
@@ -153,14 +78,6 @@ privileged aspect UserInfo_Roo_JavaBean {
     
     public void UserInfo.setSocialProviderUserId(String socialProviderUserId) {
         this.socialProviderUserId = socialProviderUserId;
-    }
-    
-    public List<JoinedSubject> UserInfo.getJoinedSubjectList() {
-        return this.joinedSubjectList;
-    }
-    
-    public void UserInfo.setJoinedSubjectList(List<JoinedSubject> joinedSubjectList) {
-        this.joinedSubjectList = joinedSubjectList;
     }
     
 }

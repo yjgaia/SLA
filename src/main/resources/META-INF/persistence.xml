@@ -12,5 +12,7 @@
             <!-- property name="hibernate.validator.apply_to_ddl" value="false" /-->
             <!-- property name="hibernate.validator.autoregister_listeners" value="false" /-->
         </properties>
+        <!-- Database에 넣을때 Validation 할 필요 없다. -->
+        <validation-mode>NONE</validation-mode>
     </persistence-unit>
 </persistence>
