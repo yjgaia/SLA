@@ -16,6 +16,8 @@ import org.springframework.security.web.savedrequest.RequestCache;
 import org.springframework.security.web.savedrequest.SavedRequest;
 import org.springframework.social.connect.Connection;
 import org.springframework.social.connect.web.SignInAdapter;
+import org.springframework.social.facebook.api.Facebook;
+import org.springframework.social.facebook.api.FacebookProfile;
 import org.springframework.web.context.request.NativeWebRequest;
 
 public final class SocialSignInAdapter implements SignInAdapter {
@@ -29,6 +31,15 @@ public final class SocialSignInAdapter implements SignInAdapter {
 	
 	@Override
 	public String signIn(String userId, Connection<?> connection, NativeWebRequest request) {
+
+		if (connection.getApi() instanceof Facebook) {
+			Facebook facebook = (Facebook) connection.getApi();
+			FacebookProfile fp = facebook.userOperations().getUserProfile();
+			System.out.println("Name: " + fp.getName());
+			System.out.println("Birthday: " + fp.getBirthday());
+			System.out.println("Email: " + fp.getEmail());
+			System.out.println("Gender: " + fp.getGender());
+		}
 		
 		// 유저 정보 로드
 		UserInfo userInfo = UserInfo.findUserInfo(Long.valueOf(userId));

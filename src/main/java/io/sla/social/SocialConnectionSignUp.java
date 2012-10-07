@@ -4,9 +4,10 @@ import io.sla.model.UserInfo;
 
 import java.util.Date;
 
-
 import org.springframework.social.connect.Connection;
 import org.springframework.social.connect.ConnectionSignUp;
+import org.springframework.social.facebook.api.Facebook;
+import org.springframework.social.facebook.api.FacebookProfile;
 
 /**
  * @author 심영재
