@@ -1,6 +1,5 @@
-package io.sla.social;
+package sla.social;
 
-import io.sla.model.UserInfo;
 
 import javax.inject.Inject;
 import javax.sql.DataSource;
@@ -27,8 +26,10 @@ import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.impl.FacebookTemplate;
 import org.springframework.social.facebook.connect.FacebookConnectionFactory;
 
+import sla.model.UserInfo;
+
 @Configuration
-@PropertySource("classpath:io/sla/social/config.properties")
+@PropertySource("classpath:sla/social/config.properties")
 public class SocialConfig {
 
 	@Bean

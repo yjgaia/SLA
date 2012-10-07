@@ -1,7 +1,5 @@
-package io.sla.social;
+package sla.social;
 
-import io.sla.model.UserInfo;
-import io.sla.util.AuthUtil;
 
 import java.util.Date;
 
@@ -19,6 +17,9 @@ import org.springframework.social.connect.web.SignInAdapter;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.FacebookProfile;
 import org.springframework.web.context.request.NativeWebRequest;
+
+import sla.model.UserInfo;
+import sla.util.AuthUtil;
 
 public final class SocialSignInAdapter implements SignInAdapter {
 

@@ -1,4 +1,4 @@
-package io.sla.controller;
+package sla.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

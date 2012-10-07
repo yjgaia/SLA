@@ -1,4 +1,4 @@
-package io.sla.service;
+package sla.service;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.security.core.userdetails.UserDetails;

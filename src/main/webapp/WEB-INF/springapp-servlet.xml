@@ -10,7 +10,7 @@
 
 	<security:global-method-security secured-annotations="enabled" />
 
-	<context:component-scan base-package="io.sla" />
+	<context:component-scan base-package="sla" />
 
 	<mvc:annotation-driven />
 	<mvc:resources location="/img/" mapping="/img/**" />

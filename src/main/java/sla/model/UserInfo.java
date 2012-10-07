@@ -1,4 +1,4 @@
-package io.sla.model;
+package sla.model;
 
 import java.util.Collection;
 import java.util.Date;
