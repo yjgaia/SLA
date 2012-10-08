@@ -17,7 +17,7 @@
 		</sec:authorize>
 	
 		<!-- FACEBOOK login -->
-		<form id="facebook-login-form" action="${pageContext.request.contextPath}/signin/facebook" method="POST" class="hidden">
+		<form id="facebook-login-form" action="${pageContext.request.contextPath}/signin/facebook" method="POST">
 			<input type="hidden" name="scope" value="email,publish_stream,offline_access" />
 	    </form>
 				    

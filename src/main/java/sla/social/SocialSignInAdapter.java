@@ -48,7 +48,7 @@ public final class SocialSignInAdapter implements SignInAdapter {
 		userInfo.increaseLoginCount();
 		userInfo.merge();
 		
-		AuthUtil.auth(userInfo);	
+		AuthUtil.auth(userInfo);
 		return extractOriginalUrl(request);
 	}
 
@@ -61,6 +61,7 @@ public final class SocialSignInAdapter implements SignInAdapter {
 		}
 		requestCache.removeRequest(nativeReq, nativeRes);
 		removeAutheticationAttributes(nativeReq.getSession(false));
+		
 		return saved.getRedirectUrl();
 	}
 		 
