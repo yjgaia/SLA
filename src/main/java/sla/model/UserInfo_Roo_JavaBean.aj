@@ -4,7 +4,6 @@
 package sla.model;
 
 import java.util.Date;
-
 import sla.model.UserInfo;
 
 privileged aspect UserInfo_Roo_JavaBean {

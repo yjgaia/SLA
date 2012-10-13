@@ -7,69 +7,69 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.springframework.transaction.annotation.Transactional;
-import sla.model.UserInfo;
+import sla.model.VisitCount;
 
-privileged aspect UserInfo_Roo_Jpa_ActiveRecord {
+privileged aspect VisitCount_Roo_Jpa_ActiveRecord {
     
     @PersistenceContext
-    transient EntityManager UserInfo.entityManager;
+    transient EntityManager VisitCount.entityManager;
     
-    public static final EntityManager UserInfo.entityManager() {
-        EntityManager em = new UserInfo().entityManager;
+    public static final EntityManager VisitCount.entityManager() {
+        EntityManager em = new VisitCount().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
     
-    public static long UserInfo.countUserInfoes() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM UserInfo o", Long.class).getSingleResult();
+    public static long VisitCount.countVisitCounts() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM VisitCount o", Long.class).getSingleResult();
     }
     
-    public static List<UserInfo> UserInfo.findAllUserInfoes() {
-        return entityManager().createQuery("SELECT o FROM UserInfo o", UserInfo.class).getResultList();
+    public static List<VisitCount> VisitCount.findAllVisitCounts() {
+        return entityManager().createQuery("SELECT o FROM VisitCount o", VisitCount.class).getResultList();
     }
     
-    public static UserInfo UserInfo.findUserInfo(Long id) {
+    public static VisitCount VisitCount.findVisitCount(Long id) {
         if (id == null) return null;
-        return entityManager().find(UserInfo.class, id);
+        return entityManager().find(VisitCount.class, id);
     }
     
-    public static List<UserInfo> UserInfo.findUserInfoEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM UserInfo o", UserInfo.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    public static List<VisitCount> VisitCount.findVisitCountEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM VisitCount o", VisitCount.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
     @Transactional
-    public void UserInfo.persist() {
+    public void VisitCount.persist() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.persist(this);
     }
     
     @Transactional
-    public void UserInfo.remove() {
+    public void VisitCount.remove() {
         if (this.entityManager == null) this.entityManager = entityManager();
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            UserInfo attached = UserInfo.findUserInfo(this.id);
+            VisitCount attached = VisitCount.findVisitCount(this.id);
             this.entityManager.remove(attached);
         }
     }
     
     @Transactional
-    public void UserInfo.flush() {
+    public void VisitCount.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
     }
     
     @Transactional
-    public void UserInfo.clear() {
+    public void VisitCount.clear() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.clear();
     }
     
     @Transactional
-    public UserInfo UserInfo.merge() {
+    public VisitCount VisitCount.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
-        UserInfo merged = this.entityManager.merge(this);
+        VisitCount merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
     }

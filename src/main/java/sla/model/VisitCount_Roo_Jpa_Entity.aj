@@ -9,34 +9,34 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Version;
-import sla.model.UserInfo;
+import sla.model.VisitCount;
 
-privileged aspect UserInfo_Roo_Jpa_Entity {
+privileged aspect VisitCount_Roo_Jpa_Entity {
     
-    declare @type: UserInfo: @Entity;
+    declare @type: VisitCount: @Entity;
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private Long UserInfo.id;
+    private Long VisitCount.id;
     
     @Version
     @Column(name = "version")
-    private Integer UserInfo.version;
+    private Integer VisitCount.version;
     
-    public Long UserInfo.getId() {
+    public Long VisitCount.getId() {
         return this.id;
     }
     
-    public void UserInfo.setId(Long id) {
+    public void VisitCount.setId(Long id) {
         this.id = id;
     }
     
-    public Integer UserInfo.getVersion() {
+    public Integer VisitCount.getVersion() {
         return this.version;
     }
     
-    public void UserInfo.setVersion(Integer version) {
+    public void VisitCount.setVersion(Integer version) {
         this.version = version;
     }
     

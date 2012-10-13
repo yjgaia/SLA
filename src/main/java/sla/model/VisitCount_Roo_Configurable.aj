@@ -4,10 +4,10 @@
 package sla.model;
 
 import org.springframework.beans.factory.annotation.Configurable;
-import sla.model.UserInfo;
+import sla.model.VisitCount;
 
-privileged aspect UserInfo_Roo_Configurable {
+privileged aspect VisitCount_Roo_Configurable {
     
-    declare @type: UserInfo: @Configurable;
+    declare @type: VisitCount: @Configurable;
     
 }
