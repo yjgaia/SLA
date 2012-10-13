@@ -2,7 +2,7 @@ package sla.util;
 
 public class ShortUrlUtil {
 
-	private final int LENGTH_OF_URL = 6;
+	private final static int LENGTH_OF_URL = 6;
 
 	public static String convert(long id) {
 		String[] elements = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
