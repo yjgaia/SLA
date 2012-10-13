@@ -33,6 +33,8 @@ public class FuncController {
 
 			shortUrl.setShortUrl(ShortUrlUtil.convert(shortUrl.getId()));
 			shortUrl.merge();
+			
+			
 
 			return true;
 		}
