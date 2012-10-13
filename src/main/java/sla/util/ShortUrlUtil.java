@@ -36,5 +36,8 @@ public class ShortUrlUtil {
 		}
 		return shortUrl;
 	}
+	public static void main(String[] args){
+		System.out.println(convert((long)1000));
+	}
 
 }

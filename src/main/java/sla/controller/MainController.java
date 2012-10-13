@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import sla.model.ShortUrl;
+import sla.model.VisitCount;
 import sla.service.VisitCountService;
 
 @Controller
@@ -22,8 +23,14 @@ public class MainController {
 	public String shortUrl(@PathVariable String shortUrl) {
 
 		if (ShortUrl.existsShortUrl(shortUrl)) {
-			System.out.println(ShortUrl.findShortUrlByShortUrl(shortUrl));
-			return "redirect:";
+			ShortUrl su=ShortUrl.findShortUrlByShortUrl(shortUrl);
+			visitCountService.increaseVisitCount(su.getId());
+			System.out.println(su.toString());
+			String url=su.getUrl();
+			if(!url.contains("http://")){
+				url="http://"+url;
+			}
+			return "redirect:"+url;
 		} else {
 			return "shortUrlNotFound";
 		}
