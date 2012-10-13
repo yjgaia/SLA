@@ -131,15 +131,11 @@
 			<version>${spring.version}</version>
 			<classifier />
 		</dependency>
+		<!-- Jackson JSON Mapper -->
 		<dependency>
-			<groupId>org.springframework.social</groupId>
-			<artifactId>spring-social-core</artifactId>
-			<version>1.0.2.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-servlet</artifactId>
-			<version>1.14</version>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.7.1</version>
 		</dependency>
 		<!-- General dependencies for standard applications -->
 		<dependency>

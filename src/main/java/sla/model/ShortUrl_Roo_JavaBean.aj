@@ -32,4 +32,12 @@ privileged aspect ShortUrl_Roo_JavaBean {
         this.url = url;
     }
     
+    public String ShortUrl.getContent() {
+        return this.content;
+    }
+    
+    public void ShortUrl.setContent(String content) {
+        this.content = content;
+    }
+    
 }

@@ -1,22 +1,20 @@
 package sla.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import sla.model.ShortUrl;
 import sla.service.VisitCountService;
 
-@org.springframework.stereotype.Controller
-public class Controller {
+@Controller
+public class MainController {
 	@Autowired
 	VisitCountService visitCountService;
 
 	@RequestMapping("/")
 	public String home() {
-		// System.out.println(visitCountService
-		// .increaseVisitCount("oksktank/http://naver.com/1"));
 		return "home";
 	}
 
@@ -29,11 +27,6 @@ public class Controller {
 		} else {
 			return "shortUrlNotFound";
 		}
-	}
-
-	@RequestMapping(value = "/func/share", method = RequestMethod.GET)
-	public String share(ShortUrl shortUrl) {
-		return "share";
 	}
 
 }

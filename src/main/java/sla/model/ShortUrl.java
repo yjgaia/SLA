@@ -1,8 +1,11 @@
 package sla.model;
 
+import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
@@ -12,13 +15,20 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJpaActiveRecord
 public class ShortUrl {
 
+	@Column
 	private String shortUrl;
 
 	@ManyToOne
 	@JoinColumn(name = "userId", nullable = false)
 	private UserInfo userInfo;
 
+	@NotEmpty
+	@Column
 	private String url;
+
+	@Size(max = 3000)
+	@Column(length = 3000)
+	private String content;
 
 	public static boolean existsShortUrl(String shortUrl) {
 		return entityManager()
