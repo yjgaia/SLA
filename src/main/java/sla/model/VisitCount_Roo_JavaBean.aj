@@ -7,12 +7,12 @@ import sla.model.VisitCount;
 
 privileged aspect VisitCount_Roo_JavaBean {
     
-    public String VisitCount.getHashedKey() {
-        return this.hashedKey;
+    public long VisitCount.getEncodedKeyId() {
+        return this.encodedKeyId;
     }
     
-    public void VisitCount.setHashedKey(String hashedKey) {
-        this.hashedKey = hashedKey;
+    public void VisitCount.setEncodedKeyId(long encodedKeyId) {
+        this.encodedKeyId = encodedKeyId;
     }
     
     public String VisitCount.getTimePeriod() {

@@ -13,7 +13,7 @@ public class HomeController {
 	VisitCountService visitCountService;
 	@RequestMapping("/")
 	public String home() {
-		System.out.println(visitCountService.increaseVisitCount("oksktank/http://naver.com/1"));
+		System.out.println(visitCountService.increaseVisitCount(1));
 		return "home";
 	}
 }

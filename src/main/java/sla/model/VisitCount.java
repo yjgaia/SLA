@@ -14,7 +14,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJpaActiveRecord
 public class VisitCount {
 	@Column(nullable=false)
-	private String hashedKey;
+	private long encodedKeyId;
 	@Column(nullable=false)
 	private String timePeriod;
 	
@@ -23,11 +23,11 @@ public class VisitCount {
 	public void increaseVisitCount(){
 		visitCount++;
 	}
-	public static boolean existsVisitCount(String hashedKey,String timePeriod) {
-		return entityManager().createQuery("SELECT COUNT(o) FROM VisitCount o WHERE hashedKey = :hashedKey AND timePeriod =:timePeriod", Long.class).setParameter("hashedKey", hashedKey).setParameter("timePeriod", timePeriod).getSingleResult() > 0l;
+	public static boolean existsVisitCount(long encodedKeyId,String timePeriod) {
+		return entityManager().createQuery("SELECT COUNT(o) FROM VisitCount o WHERE encodedKeyId = :encodedKeyId AND timePeriod =:timePeriod", Long.class).setParameter("encodedKeyId", encodedKeyId).setParameter("timePeriod", timePeriod).getSingleResult() > 0l;
 	}
-	public static VisitCount findVisitCountByHashedKeyAndTimePeriod(String hashedKey,String timePeriod) {
+	public static VisitCount findVisitCountByHashedKeyAndTimePeriod(long encodedKeyId,String timePeriod) {
 		
-		return entityManager().createQuery("SELECT o FROM VisitCount o WHERE hashedKey = :hashedKey AND timePeriod =:timePeriod", VisitCount.class).setParameter("hashedKey", hashedKey).setParameter("timePeriod",timePeriod).getSingleResult();
+		return entityManager().createQuery("SELECT o FROM VisitCount o WHERE encodedKeyId = :encodedKeyId AND timePeriod =:timePeriod", VisitCount.class).setParameter("encodedKeyId", encodedKeyId).setParameter("timePeriod",timePeriod).getSingleResult();
 	}
 }

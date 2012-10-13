@@ -8,19 +8,19 @@ import sla.model.VisitCount;
 
 @Service
 public class VisitCountService {
-	public int increaseVisitCount(String hashedKey){
+	public int increaseVisitCount(long encodedKeyId){
 		Calendar nowDate=Calendar.getInstance();
 		System.out.println(nowDate.toString());
 		System.out.println(getTimePeriod(nowDate));
 		String nowTimePeriod=getTimePeriod(nowDate);
-		if(VisitCount.existsVisitCount(hashedKey, nowTimePeriod)){ //존재 시 count++ 수행
-			VisitCount visitCount= VisitCount.findVisitCountByHashedKeyAndTimePeriod(hashedKey,nowTimePeriod);
+		if(VisitCount.existsVisitCount(encodedKeyId, nowTimePeriod)){ //존재 시 count++ 수행
+			VisitCount visitCount= VisitCount.findVisitCountByHashedKeyAndTimePeriod(encodedKeyId,nowTimePeriod);
 			visitCount.increaseVisitCount();
 			visitCount.merge();
 			return visitCount.getVisitCount();
 		}else{ //없을 시 row 추가
 			VisitCount visitCount=new VisitCount();
-			visitCount.setHashedKey(hashedKey);
+			visitCount.setEncodedKeyId(encodedKeyId);
 			visitCount.setTimePeriod(nowTimePeriod);
 			visitCount.setVisitCount(1);
 			visitCount.merge();
