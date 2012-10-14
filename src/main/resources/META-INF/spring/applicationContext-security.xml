@@ -8,13 +8,11 @@
 
 	<!-- HTTP security configurations -->
     <http auto-config="true" use-expressions="true">
-    	<form-login login-processing-url="/signin/authenticate" login-page="/signin" />
-        <logout logout-url="/signout" />
+    	<form-login login-processing-url="/func/signin/authenticate" login-page="/func/signin" />
+        <logout logout-url="/func/signout" />
         
         <!-- Configure these elements to secure URIs in your application -->
-        <intercept-url pattern="/signin" access="permitAll" />
-        <intercept-url pattern="/signup" access="permitAll" />
-        <intercept-url pattern="/userfiles/**" access="permitAll" />
+        <intercept-url pattern="/func/*" access="permitAll" />
         <intercept-url pattern="/img/**" access="permitAll" />
         <intercept-url pattern="/script/**" access="permitAll" />
         <intercept-url pattern="/style/**" access="permitAll" />

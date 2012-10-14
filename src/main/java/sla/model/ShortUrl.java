@@ -15,7 +15,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJpaActiveRecord
 public class ShortUrl {
 
-	@Column
+	@Column(unique = true)
 	private String shortUrl;
 
 	@ManyToOne
@@ -25,6 +25,13 @@ public class ShortUrl {
 	@NotEmpty
 	@Column
 	private String url;
+
+	public void setUrl(String url) {
+		if (!url.contains("http://")) {
+			url = "http://" + url;
+		}
+		this.url = url;
+	}
 
 	@Size(max = 3000)
 	@Column(length = 3000)

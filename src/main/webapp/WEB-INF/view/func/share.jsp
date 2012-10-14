@@ -14,7 +14,6 @@
 			<tr><td>공유할 URL :<input type="text" name="url"/></td></tr>
 			<tr><td><input type="submit" value="게시하기"/></td></tr>
 		</table>
-		<input type="hidden" name="id" value="1"/>
 		</form>
 	</body>
 </html>

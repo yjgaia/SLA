@@ -17,11 +17,12 @@
 		</sec:authorize>
 	
 		<!-- FACEBOOK login -->
-		<form id="facebook-login-form" action="${pageContext.request.contextPath}/signin/facebook" method="POST">
+		<form id="facebook-login-form" action="${pageContext.request.contextPath}/func/signin/facebook" method="POST">
 			<input type="hidden" name="scope" value="email,publish_stream,offline_access" />
 	    </form>
 				    
 		<a href="javascript:$('#facebook-login-form').submit();" rel="tooltip" title="페이스북 로그인"><img alt="페이스북 로그인" src="${pageContext.request.contextPath}/img/facebook/f_logo.jpg"></a>
+		<a href="${pageContext.request.contextPath }/func/signout">로그아웃</a>
 		<a href="${pageContext.request.contextPath }/func/share">공유하기</a>
 	</body>
 </html>

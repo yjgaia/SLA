@@ -1,7 +1,14 @@
 package sla.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.social.connect.Connection;
+import org.springframework.social.facebook.api.Facebook;
+import org.springframework.social.facebook.api.FacebookLink;
+import org.springframework.social.facebook.api.impl.FacebookTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -10,50 +17,69 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import sla.model.ShortUrl;
-import sla.model.UserInfo;
+import sla.social.SocialConfig;
+import sla.util.AuthUtil;
 import sla.util.ShortUrlUtil;
 
 @Controller
 @RequestMapping("func")
 public class FuncController {
 
-	
+	@Autowired
+	private SocialConfig socialConfig;
+
 	@RequestMapping(value = "reShare", method = RequestMethod.GET)
-	public String reShare(String shortUrl,Model model) {
+	public String reShare(String shortUrl, Model model) {
 		// just view
-		if(ShortUrl.existsShortUrl(shortUrl)){
-			ShortUrl su=ShortUrl.findShortUrlByShortUrl(shortUrl);
+		if (ShortUrl.existsShortUrl(shortUrl)) {
+			ShortUrl su = ShortUrl.findShortUrlByShortUrl(shortUrl);
 			System.out.println(su.toString());
-			model.addAttribute("shortUrl",su);
+			model.addAttribute("shortUrl", su);
 			return "func/reShare";
-		}else{
+		} else {
 			return "shortUrlNotFound";
 		}
 	}
-	@RequestMapping(value="share", method=RequestMethod.GET)
-	public String share(){
-		return "func/share";
+
+	@Secured("ROLE_USER")
+	@RequestMapping(value = "share", method = RequestMethod.GET)
+	public void share() {
+		// just view
 	}
 
+	@Secured("ROLE_USER")
 	@ResponseBody
 	@RequestMapping(value = "share", method = RequestMethod.POST)
-	public boolean share(@Valid ShortUrl shortUrl,long id, BindingResult bindingResult,
-			Model model) {
-		
-		//url에 대해서 http://를 포함 했는지 체크 후 추가 시켜 줘야함
+	public boolean share(@Valid ShortUrl shortUrl, BindingResult bindingResult,
+			Model model, HttpServletRequest request) {
 		if (bindingResult.hasErrors()) {
 			return false;
 		} else {
-			shortUrl.setUserInfo(UserInfo.findUserInfo(id));
+			shortUrl.setUserInfo(AuthUtil.getUserInfo());
 			shortUrl.persist();
 
 			shortUrl.setShortUrl(ShortUrlUtil.convert(shortUrl.getId()));
 			shortUrl.merge();
 			
+			Connection<Facebook> connection = socialConfig.connectionRepository().findPrimaryConnection(Facebook.class);
+			Facebook facebook = connection != null ? connection.getApi() : new FacebookTemplate();
 			
-
+			FacebookLink link = new FacebookLink(getUrlWithContextPath(request) + "/" + shortUrl.getShortUrl(), 
+			       null, shortUrl.getUrl(), null);
+			facebook.feedOperations().postLink(shortUrl.getContent(), link);
+			
 			return true;
 		}
+	}
+
+	private static String getUrlWithContextPath(HttpServletRequest request) {
+		return request.getScheme() + "://" + request.getServerName() + ":"
+				+ request.getServerPort() + request.getContextPath();
+	}
+
+	@RequestMapping(value = "signin", method = RequestMethod.GET)
+	public void signin() {
+		// just view
 	}
 
 }
