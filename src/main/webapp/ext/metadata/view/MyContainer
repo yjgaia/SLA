@@ -1,0 +1,149 @@
+{
+    "type": "container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "center",
+        "designer|userClassName": "MyContainer",
+        "designer|initialView": true,
+        "height": null,
+        "width": null,
+        "layout": "vbox"
+    },
+    "id": "ExtBox1-ext-gen1850",
+    "designerId": "de4eb880-327e-40b7-abbd-79f19d5d233a",
+    "cn": [
+        {
+            "type": "image",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyImg",
+                "floating": false,
+                "height": null,
+                "width": null,
+                "src": "../img/logo.png"
+            },
+            "designerId": "fb9e6377-4236-4dd4-ae90-1f28c39b944c"
+        },
+        {
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyPanel",
+                "data": null,
+                "height": null,
+                "padding": null,
+                "width": 400,
+                "title": "Yog.io!"
+            },
+            "designerId": "419a13c1-af95-4111-9fb7-04f4a3337f46",
+            "cn": [
+                {
+                    "type": "container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyContainer1",
+                        "html": [
+                            "Yog.io!는 소셜 네트워크 공유-링크 분석시스템 입니다."
+                        ],
+                        "padding": 10
+                    },
+                    "designerId": "e7d46851-c939-460c-bef0-8f2acb7d58cb"
+                },
+                {
+                    "type": "container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyContainer2",
+                        "padding": 10
+                    },
+                    "designerId": "3b28905d-e3de-4906-85d3-ea60658572fa",
+                    "cn": [
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton",
+                                "padding": 5,
+                                "styleHtmlContent": null,
+                                "scale": null,
+                                "text": "경로 만들기"
+                            },
+                            "designerId": "aef3b47d-0fa7-4f26-af79-f2c493210bd5"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton1",
+                                "margin": "0 0 0 10px",
+                                "padding": 5,
+                                "text": "페이지 만들기"
+                            },
+                            "designerId": "2549f035-dfce-41e8-8bdb-d152404b3047"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton2",
+                                "margin": "0 0 0 10",
+                                "padding": 5,
+                                "text": "분석 결과 보기"
+                            },
+                            "designerId": "7e313203-b5a6-4a7c-b66b-873404a0915d"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "designer|userClassName": "MyContainer3",
+                "html": [
+                    "&copy; SW Maestro 3rd SLA 팀"
+                ],
+                "margin": 10
+            },
+            "designerId": "0b5e44cd-ab09-469d-8c4d-50c29529b39f"
+        }
+    ]
+}

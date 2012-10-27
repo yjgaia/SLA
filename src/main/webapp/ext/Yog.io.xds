@@ -1,0 +1,47 @@
+{
+    "name": "Yog.io",
+    "settings": {
+        "urlPrefix": "http://hanul.co:8080/SLA/ext/",
+        "spacesToIndent": 4,
+        "exportPath": "C:/test",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false
+    },
+    "xdsVersion": "2.1.0",
+    "xdsBuild": 613,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000497,
+    "framework": "ext41",
+    "topInstanceFileMap": {
+        "de4eb880-327e-40b7-abbd-79f19d5d233a": {
+            "paths": [
+                "metadata/view/MyContainer",
+                "app/view/override/MyContainer.js",
+                "app/view/MyContainer.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "MyContainer"
+        },
+        "ea9f900c-a48c-4b93-91d1-44f90a5f98ad": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "de4eb880-327e-40b7-abbd-79f19d5d233a"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "ea9f900c-a48c-4b93-91d1-44f90a5f98ad"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

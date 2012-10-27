@@ -8,9 +8,16 @@
 		<title>TEST</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">		
 		<script src="${pageContext.request.contextPath}/script/jquery-1.7.2.min.js"></script>
+		<style>
+		html, body {
+			background-color: #e4edac;
+		}
+		</style>
 	</head>
 	
 	<body>
+	
+		<img src="${pageContext.request.contextPath}/img/logo.png">
 	
 		<sec:authorize access="isAuthenticated()">
 		${principal.socialDisplayName}
