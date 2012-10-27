@@ -47,6 +47,7 @@ public class FuncController {
 		// just view
 	}
 
+	/*초기 공유(마케팅 담당자)*/
 	@Secured("ROLE_USER")
 	@ResponseBody
 	@RequestMapping(value = "share", method = RequestMethod.POST)
@@ -59,6 +60,7 @@ public class FuncController {
 			shortUrl.persist();
 
 			shortUrl.setShortUrl(ShortUrlUtil.convert(shortUrl.getId()));
+			shortUrl.setHeadId(shortUrl.getId()); //초기 공유의 경우 head_id를 현재 공유 정보의 id로 설정 
 			shortUrl.merge();
 			
 			Connection<Facebook> connection = socialConfig.connectionRepository().findPrimaryConnection(Facebook.class);

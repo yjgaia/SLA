@@ -15,6 +15,9 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJpaActiveRecord
 public class ShortUrl {
 
+	@Column(nullable=false)
+	private long headId;
+	
 	@Column(unique = true)
 	private String shortUrl;
 
