@@ -17,6 +17,8 @@ public class ShortUrl {
 
 	@Column(nullable=false)
 	private long headId;
+	@Column(nullable=false)
+	private long randomKey;
 	
 	@Column(unique = true)
 	private String shortUrl;
@@ -47,8 +49,9 @@ public class ShortUrl {
 						Long.class).setParameter("shortUrl", shortUrl)
 				.getSingleResult() > 0l;
 	}
-
+	
 	public static ShortUrl findShortUrlByShortUrl(String shortUrl) {
+		
 		return entityManager()
 				.createQuery(
 						"SELECT o FROM ShortUrl o WHERE o.shortUrl = :shortUrl",

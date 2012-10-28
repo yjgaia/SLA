@@ -16,6 +16,14 @@ privileged aspect ShortUrl_Roo_JavaBean {
         this.headId = headId;
     }
     
+    public long ShortUrl.getRandomKey() {
+        return this.randomKey;
+    }
+    
+    public void ShortUrl.setRandomKey(long randomKey) {
+        this.randomKey = randomKey;
+    }
+    
     public String ShortUrl.getShortUrl() {
         return this.shortUrl;
     }
