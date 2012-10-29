@@ -8,12 +8,14 @@
 		<script src="${pageContext.request.contextPath}/script/jquery-1.7.2.min.js"></script>
 	</head>
 	<body>
-		<form id="reSharePost">
+		<form id="sharePost" action="${pageContext.request.contextPath}/func/share" method="POST">
 		<table>
-			<tr><td><textarea cols="60" rows="10"></textarea></td></tr>
-			<tr><td>공유할 URL : ${shortUrl.url }</td></tr>
-			<tr><td><button>게시하기</button></td></tr>
+			<tr><td><textarea name="content" cols="60" rows="10"></textarea></td></tr>
+			<tr><td>공유할 URL :<input type="text" name="url" value="${shortUrl.url }"/></td></tr>
+			<tr><td><input type="submit" value="게시하기"/></td></tr>
 		</table>
+		<input type="hidden" name="reShare" value="true"/>
+		<input type="text" name="reShareShortUrl" value="${param.shortUrl }"/>
 		</form>
 	</body>
 </html>

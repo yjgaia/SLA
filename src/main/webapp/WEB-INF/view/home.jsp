@@ -31,5 +31,6 @@
 		<a href="javascript:$('#facebook-login-form').submit();" rel="tooltip" title="페이스북 로그인"><img alt="페이스북 로그인" src="${pageContext.request.contextPath}/img/facebook/f_logo.jpg"></a>
 		<a href="${pageContext.request.contextPath }/func/signout">로그아웃</a>
 		<a href="${pageContext.request.contextPath }/func/share">공유하기</a>
+		<a href="${pageContext.request.contextPath }/func/reShare">재공유하기</a>
 	</body>
 </html>

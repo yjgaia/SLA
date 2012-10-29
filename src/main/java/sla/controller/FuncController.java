@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import sla.data.KeyValueCache;
@@ -29,22 +30,19 @@ public class FuncController {
 	
 	@Autowired
 	private SocialConfig socialConfig;
-	
-	@Autowired
-	private KeyValueCache keyValueCache;
+
 
 	@RequestMapping(value = "reShare", method = RequestMethod.GET)
-	public String reShare(String shortUrl, Model model) {
-		// just view
-		/*if (ShortUrl.existsShortUrl(shortUrl)) {
-			ShortUrl su = ShortUrl.findShortUrlByShortUrl(shortUrl);
+	public String reShare(@RequestParam String shortUrl, Model model) {
+		long id=ShortUrlUtil.complicatedRevert(shortUrl);
+		if (ShortUrl.existsShortUrl(id)) {
+			ShortUrl su = ShortUrl.findShortUrlById(id);
 			System.out.println(su.toString());
 			model.addAttribute("shortUrl", su);
 			return "func/reShare";
 		} else {
 			return "shortUrlNotFound";
-		}*/
-		return "shortUrlNotFound";
+		}
 	}
 
 	@Secured("ROLE_USER")
@@ -53,24 +51,31 @@ public class FuncController {
 		// just view
 	}
 
-	/*초기 공유(마케팅 담당자)*/
+	/*초기 공유(마케팅 담당자)
+	 * reShare=true로 들어올 시 헤당 shortUrl*/
 	@Secured("ROLE_USER")
 	@ResponseBody
 	@RequestMapping(value = "share", method = RequestMethod.POST)
-	public boolean share(@Valid ShortUrl shortUrl, BindingResult bindingResult,
-			Model model, HttpServletRequest request) {
+	public boolean share(@Valid ShortUrl shortUrl,@RequestParam(required=false) boolean reShare
+			,@RequestParam(required=false) String reShareShortUrl, BindingResult bindingResult,Model model, HttpServletRequest request) {
 		if (bindingResult.hasErrors()) {
 			return false;
 		} else {
-			//long randomKey=(long)Math.floor(Math.random()*10000);
 			shortUrl.setUserInfo(AuthUtil.getUserInfo());
 			shortUrl.persist();
 			String convertedShortUrl=ShortUrlUtil.complicatedConvert(shortUrl.getId());
 			shortUrl.setShortUrl(convertedShortUrl);
-			shortUrl.setHeadId(shortUrl.getId()); //초기 공유의 경우 head_id를 현재 공유 정보의 id로 설정 
+			if(reShare){
+				long headId=ShortUrlUtil.complicatedRevert(reShareShortUrl);
+				if(ShortUrl.existsShortUrl(headId)){
+					shortUrl.setHeadId(headId); //초기 공유의 경우 head_id를 현재 공유 정보의 id로 설정
+				}
+				
+			}else{
+				shortUrl.setHeadId(shortUrl.getId()); //초기 공유의 경우 head_id를 현재 공유 정보의 id로 설정
+			}
+			 
 			shortUrl.merge();
-			//Redis에 shortUrl을 key로 id를 value로 저장해둠 ( db hit를 줄이기 위함 + where절 검색을 줄임)
-			//keyValueCache.setStringWithKey(convertedShortUrl, String.valueOf(shortUrl.getId())); 
 			
 			
 			Connection<Facebook> connection = socialConfig.connectionRepository().findPrimaryConnection(Facebook.class);
