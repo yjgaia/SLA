@@ -17,8 +17,6 @@ public class ShortUrl {
 
 	@Column(nullable=false)
 	private long headId;
-	@Column(nullable=false)
-	private long randomKey;
 	
 	@Column(unique = true)
 	private String shortUrl;
@@ -42,6 +40,13 @@ public class ShortUrl {
 	@Column(length = 3000)
 	private String content;
 
+	public static boolean existsShortUrl(long id) {
+		return entityManager()
+				.createQuery(
+						"SELECT COUNT(o) FROM ShortUrl o WHERE o.id = :id",
+						Long.class).setParameter("id", id)
+				.getSingleResult() > 0l;
+	}
 	public static boolean existsShortUrl(String shortUrl) {
 		return entityManager()
 				.createQuery(
@@ -50,6 +55,14 @@ public class ShortUrl {
 				.getSingleResult() > 0l;
 	}
 	
+	public static ShortUrl findShortUrlById(long id) {
+		
+		return entityManager()
+				.createQuery(
+						"SELECT o FROM ShortUrl o WHERE o.id = :id",
+						ShortUrl.class).setParameter("id", id)
+				.getSingleResult();
+	}
 	public static ShortUrl findShortUrlByShortUrl(String shortUrl) {
 		
 		return entityManager()

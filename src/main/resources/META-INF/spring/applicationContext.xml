@@ -68,4 +68,13 @@
         <property name="persistenceUnitName" value="persistenceUnit"/>
         <property name="dataSource" ref="dataSource"/>
     </bean>
+    <!-- Redis Server 세팅 -->
+    
+    <bean name="jedis" class="redis.clients.jedis.Jedis">
+    	<constructor-arg value="1.234.80.226" />
+   	</bean>
+   	<bean class="sla.data.KeyValueCache">
+   		<constructor-arg name="jedis" ref="jedis"/>
+   		<constructor-arg name="password" value="ekfrrhrl0"/>
+   	</bean>
 </beans>
