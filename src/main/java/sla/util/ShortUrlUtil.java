@@ -1,22 +1,23 @@
 package sla.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ShortUrlUtil {
 
 	private final static int LENGTH_OF_URL = 6;
 
-	private final static String[] elements = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
-			"k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v",
-			"w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8",
-			"9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
-			"K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V",
-			"W", "X", "Y", "Z" };
+	private final static String[] elements = { "P","I","k","j","u","E","z","K","g",
+		"2","6","a","m","s","1","B","G","o","Q","X","l","c","y","v","N",
+		"7","S","h","U","f","R","O","L","M","Y","4","e","F","8","V","T","C",
+		"3","x","i","9","A","p","b","n","D","d","5","W","q","w","r","J","H","Z","t" }; //random generated
 
 	public static String convert(long id) {
 		String shortUrl = "";
 		int l = elements.length;
-		if (id < l + 1 && id > 0) {
-			shortUrl = elements[(int) (id - 1)];
-		} else if (id > l) {
+		if (id < l  && id >= 0) {
+			shortUrl = elements[(int) (id)];
+		} else if (id >= l) {
 			long mod = 0;
 			long multiplier = 0;
 			boolean determinedTheLength = false;
@@ -35,9 +36,6 @@ public class ShortUrlUtil {
 			}
 		}
 		int d = LENGTH_OF_URL - shortUrl.length();
-		for (int i = 0 ; i < d ; i++) {
-			//shortUrl = "0" + shortUrl;
-		}
 		return shortUrl;
 	}
 	public static long revert(String shortUrl){
@@ -49,75 +47,97 @@ public class ShortUrlUtil {
 		}
 		return result;
 	}
+	public static String complicatedConvert(long id){ 
+		int moduloN=elements.length;
+		String idToString=String.valueOf(id);
+		String reverseString="";
+		for(int i=idToString.length()-1;i>-1;i--){
+			reverseString+=idToString.charAt(i);
+		}
+		long reverseLong=Long.valueOf(reverseString);
+		long n= id/3+id/3+reverseLong/3;
+		int modulo=((int)n)%moduloN;
 	
+		return convert(id)+elements[modulo];
+	}
+	public static long complicatedRevert(String shortUrl){
+		String withOutModulo="";
+		for(int i=0;i<shortUrl.length()-1;i++){
+			withOutModulo+=String.valueOf(shortUrl.charAt(i));
+		}
+		return revert(withOutModulo);
+	}
 	public static void main(String[] args){
-		System.out.println(convert((long)1251251));
-		System.out.println(revert("f6qt"));
+		for(int i=1;i<10000;i++){
+			System.out.println(complicatedConvert((long)i)+","+complicatedRevert(complicatedConvert((long)i)));
+		}
+		
+		
 	}
 	public static long getIndexOfElement(char c){
 		String element=String.valueOf(c);
 		switch(element){
-		case "a": return 0;
-		case "b": return 1;
-		case "c": return 2;
-		case "d": return 3;
-		case "e": return 4;
-		case "f": return 5;
-		case "g": return 6;
-		case "h": return 7;
-		case "i": return 8;
-		case "j": return 9;
-		case "k": return 10;
-		case "l": return 11;
+		case "P": return 0;
+		case "I": return 1;
+		case "k": return 2;
+		case "j": return 3;
+		case "u": return 4;
+		case "E": return 5;
+		case "z": return 6;
+		case "K": return 7;
+		case "g": return 8;
+		case "2": return 9;
+		case "6": return 10;
+		case "a": return 11;
 		case "m": return 12;
-		case "n": return 13;
-		case "o": return 14;
-		case "p": return 15;
-		case "q": return 16;
-		case "r": return 17;
-		case "s": return 18;
-		case "t": return 19;
-		case "u": return 20;
-		case "v": return 21;
-		case "w": return 22;
-		case "x": return 23;
-		case "y": return 24;
-		case "z": return 25;
-		case "1": return 26;
-		case "2": return 27;
-		case "3": return 28;
-		case "4": return 29;
-		case "5": return 30;
-		case "6": return 31;
-		case "7": return 32;
-		case "8": return 33;
-		case "9": return 34;
-		case "A": return 35;
-		case "B": return 36;
-		case "C": return 37;
-		case "D": return 38;
-		case "E": return 39;
-		case "F": return 40;
-		case "G": return 41;
-		case "H": return 42;
-		case "I": return 43;
-		case "J": return 44;
-		case "K": return 45;
-		case "L": return 46;
-		case "M": return 47;
-		case "N": return 48;
-		case "O": return 49;
-		case "P": return 50;
-		case "Q": return 51;
-		case "R": return 52;
-		case "S": return 53;
-		case "T": return 54;
-		case "U": return 55;
-		case "V": return 56;
-		case "W": return 57;
-		case "X": return 58;
-		case "Y": return 59;
-		case "Z": return 60;
+		case "s": return 13;
+		case "1": return 14;
+		case "B": return 15;
+		case "G": return 16;
+		case "o": return 17;
+		case "Q": return 18;
+		case "X": return 19;
+		case "l": return 20;
+		case "c": return 21;
+		case "y": return 22;
+		case "v": return 23;
+		case "N": return 24;
+		case "7": return 25;
+		case "S": return 26;
+		case "h": return 27;
+		case "U": return 28;
+		case "f": return 29;
+		case "R": return 30;
+		case "O": return 31;
+		case "L": return 32;
+		case "M": return 33;
+		case "Y": return 34;
+		case "4": return 35;
+		case "e": return 36;
+		case "F": return 37;
+		case "8": return 38;
+		case "V": return 39;
+		case "T": return 40;
+		case "C": return 41;
+		case "3": return 42;
+		case "x": return 43;
+		case "i": return 44;
+		case "9": return 45;
+		case "A": return 46;
+		case "p": return 47;
+		case "b": return 48;
+		case "n": return 49;
+		case "D": return 50;
+		case "d": return 51;
+		case "5": return 52;
+		case "W": return 53;
+		case "q": return 54;
+		case "w": return 55;
+		case "r": return 56;
+		case "J": return 57;
+		case "H": return 58;
+		case "Z": return 59;
+		case "t": return 60;
 		default : return -1;
 		}
 	}

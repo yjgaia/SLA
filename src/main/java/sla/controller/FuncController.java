@@ -65,12 +65,12 @@ public class FuncController {
 			//long randomKey=(long)Math.floor(Math.random()*10000);
 			shortUrl.setUserInfo(AuthUtil.getUserInfo());
 			shortUrl.persist();
-			String convertedShortUrl=ShortUrlUtil.convert(shortUrl.getId());
+			String convertedShortUrl=ShortUrlUtil.complicatedConvert(shortUrl.getId());
 			shortUrl.setShortUrl(convertedShortUrl);
 			shortUrl.setHeadId(shortUrl.getId()); //초기 공유의 경우 head_id를 현재 공유 정보의 id로 설정 
 			shortUrl.merge();
 			//Redis에 shortUrl을 key로 id를 value로 저장해둠 ( db hit를 줄이기 위함 + where절 검색을 줄임)
-			keyValueCache.setStringWithKey(convertedShortUrl, String.valueOf(shortUrl.getId())); 
+			//keyValueCache.setStringWithKey(convertedShortUrl, String.valueOf(shortUrl.getId())); 
 			
 			
 			Connection<Facebook> connection = socialConfig.connectionRepository().findPrimaryConnection(Facebook.class);

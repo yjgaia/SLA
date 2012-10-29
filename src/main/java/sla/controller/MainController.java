@@ -9,6 +9,7 @@ import sla.data.KeyValueCache;
 import sla.model.ShortUrl;
 import sla.service.ShortUrlService;
 import sla.service.VisitCountService;
+import sla.util.ShortUrlUtil;
 
 @Controller
 public class MainController {
@@ -25,16 +26,15 @@ public class MainController {
 
 	@RequestMapping("/{shortUrl}")
 	public String shortUrl(@PathVariable String shortUrl) {
-		long id=shortUrlService.getIdByShortUrl(shortUrl);
-		System.out.println("얻은 id값 ?" +id);
-		if(id==-1){
-			return "shortUrlNotFound";
-		}else{
+		long id=ShortUrlUtil.complicatedRevert(shortUrl);
+		System.out.println("얻은 id?"+id);
+		if(ShortUrl.existsShortUrl(id)){
 			ShortUrl su=ShortUrl.findShortUrlById(id);
 			visitCountService.increaseVisitCount(su.getId());
 			String url=su.getUrl();
 			return "redirect:"+url;
-			
+		}else{
+			return "shortUrlNotFound";
 		}
 	}
 

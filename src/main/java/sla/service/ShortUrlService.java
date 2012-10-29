@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import sla.data.KeyValueCache;
 import sla.model.ShortUrl;
+import sla.util.ShortUrlUtil;
 
 @Service
 public class ShortUrlService {
@@ -20,8 +21,9 @@ public class ShortUrlService {
 			valueInKeyValueStore=keyValueCache.getStringByKey(shortUrl);
 		}
 		if(valueInKeyValueStore==null){
-			if(ShortUrl.existsShortUrl(shortUrl)){
-				ShortUrl shortUrlInDB=ShortUrl.findShortUrlByShortUrl(shortUrl);
+			long id=ShortUrlUtil.revert(shortUrl);
+			if(ShortUrl.existsShortUrl(id)){
+				ShortUrl shortUrlInDB=ShortUrl.findShortUrlById(id);
 				keyValueCache.setStringWithKey(shortUrl, String.valueOf(shortUrlInDB.getId()));
 				return shortUrlInDB.getId();
 			}else{
