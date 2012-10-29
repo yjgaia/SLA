@@ -52,6 +52,13 @@
 		</pluginRepository>
 	</pluginRepositories>
 	<dependencies>
+		<!--Jedis -->
+		<dependency>
+      		<groupId>redis.clients</groupId>
+      		<artifactId>jedis</artifactId>
+      		<version>2.1.0</version>
+      		<scope>compile</scope>
+    	</dependency>
 		<!-- Social -->
 		<dependency>
 			<groupId>org.springframework.social</groupId>
