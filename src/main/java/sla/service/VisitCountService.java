@@ -12,7 +12,8 @@ public class VisitCountService {
 		Calendar nowDate=Calendar.getInstance();
 		System.out.println(nowDate.toString());
 		System.out.println(getTimePeriod(nowDate));
-		String nowTimePeriod=getTimePeriod(nowDate);
+		String nowTimePeriodString=getTimePeriod(nowDate);
+		int nowTimePeriod=Integer.parseInt(nowTimePeriodString);
 		if(VisitCount.existsVisitCount(encodedKeyId, nowTimePeriod)){ //존재 시 count++ 수행
 			VisitCount visitCount= VisitCount.findVisitCountByHashedKeyAndTimePeriod(encodedKeyId,nowTimePeriod);
 			visitCount.increaseVisitCount();

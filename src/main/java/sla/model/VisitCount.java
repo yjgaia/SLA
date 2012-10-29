@@ -16,17 +16,17 @@ public class VisitCount {
 	@Column(nullable=false)
 	private long encodedKeyId;
 	@Column(nullable=false)
-	private String timePeriod;
+	private int timePeriod;
 	
 	private int visitCount;
 	
 	public void increaseVisitCount(){
 		visitCount++;
 	}
-	public static boolean existsVisitCount(long encodedKeyId,String timePeriod) {
+	public static boolean existsVisitCount(long encodedKeyId,int timePeriod) {
 		return entityManager().createQuery("SELECT COUNT(o) FROM VisitCount o WHERE encodedKeyId = :encodedKeyId AND timePeriod =:timePeriod", Long.class).setParameter("encodedKeyId", encodedKeyId).setParameter("timePeriod", timePeriod).getSingleResult() > 0l;
 	}
-	public static VisitCount findVisitCountByHashedKeyAndTimePeriod(long encodedKeyId,String timePeriod) {
+	public static VisitCount findVisitCountByHashedKeyAndTimePeriod(long encodedKeyId,int timePeriod) {
 		
 		return entityManager().createQuery("SELECT o FROM VisitCount o WHERE encodedKeyId = :encodedKeyId AND timePeriod =:timePeriod", VisitCount.class).setParameter("encodedKeyId", encodedKeyId).setParameter("timePeriod",timePeriod).getSingleResult();
 	}
