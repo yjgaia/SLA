@@ -8,6 +8,7 @@
 		<link href="${pageContext.request.contextPath}/style/prettify.css" type="text/css" rel="stylesheet" />
 		<script src="${pageContext.request.contextPath}/script/jquery-1.7.2.min.js"></script>
 		<script src="${pageContext.request.contextPath}/script/prettify.js"></script>
+		<script src="${pageContext.request.contextPath}/script/js.js"></script>
 		<style>
 			#wrapper {
 				margin: auto;
@@ -63,30 +64,22 @@
 			<div id="attach-button-intro">
 				<p>
 					사이트나 블로그에 YOG.IO! 공유하기 버튼을 붙혀보세요! 이렇게요!
-					<script src="http://localhost:8080/SLA/script/js.js"></script>
 				</p>
+				<script>YOGIO();</script>
 				<p>
 					우선, HTML문서의 head에 다음과 같은 script를 추가합니다.
 				</p>
 				<pre class="code prettyprint linenums languague-html">&lt;script src="http://yog.io/script/js.js"&gt;&lt;/script&gt;</pre>
 				<p>
-					커스터마이징도 가능합니다.
+					그리고, 원하는 위치에 다음과 같은 코드를 삽입합니다.
 				</p>
-				<pre class="code prettyprint linenums languague-html">
-// Some source code
-class Foo {
-    public int Bar { get; set; }
-}
-				</pre>
+				<pre class="code prettyprint linenums languague-html">&lt;script&gt;YOGIO();&lt;/script&gt;</pre>
 				<p>
 					커스터마이징도 가능합니다.
 				</p>
-				<pre class="code prettyprint linenums languague-html">
-// Some source code
-class Foo {
-    public int Bar { get; set; }
-}
-				</pre>
+				<pre class="code prettyprint linenums languague-html">&lt;script&gt;YOGIO({
+    url: 'http://yog.io'
+});&lt;/script&gt;</pre>
 				<a href="${pageContext.request.contextPath}/func/button/parameters">파라미터 자세히 보기</a>
 			</div>
 			<div id="create-page-intro">
