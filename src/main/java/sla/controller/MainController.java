@@ -22,7 +22,6 @@ public class MainController {
 	KeyValueCache keyValueCache;
 	@RequestMapping("/")
 	public String home() {
-		//System.out.println(VisitCount.getCountRecordByUser(5, 2012103002, 2012103003));
 		return "home";
 	}
 
