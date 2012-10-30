@@ -1,8 +1,5 @@
 package sla.util;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ShortUrlUtil {
 
 	private final static int LENGTH_OF_URL = 6;

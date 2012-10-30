@@ -37,7 +37,7 @@ public class GetPageUtil {
 	public static List<String> getImageUrls(String urlStr) throws Exception {
 		String content = get(urlStr);
 		
-		List<String> imageUrls = new ArrayList<>();
+		List<String> imageUrls = new ArrayList<String>();
 		
 		Pattern p = Pattern.compile("<img src=\"(.*?)\"");
 		Matcher m = p.matcher(content);
