@@ -62,11 +62,16 @@
 			</div>
 			<div id="attach-button-intro">
 				<p>
-					사이트나 블로그에 YOG.IO! 공유하기 버튼을 붙혀보세요!
+					사이트나 블로그에 YOG.IO! 공유하기 버튼을 붙혀보세요! 이렇게요!
+					<script src="http://localhost:8080/SLA/script/js.js"></script>
 				</p>
-				<script src="${pageContext.request.contextPath}/script/attach.js">
-					
-				</script>
+				<p>
+					우선, HTML문서의 head에 다음과 같은 script를 추가합니다.
+				</p>
+				<pre class="code prettyprint linenums languague-html">&lt;script src="http://yog.io/script/js.js"&gt;&lt;/script&gt;</pre>
+				<p>
+					커스터마이징도 가능합니다.
+				</p>
 				<pre class="code prettyprint linenums languague-html">
 // Some source code
 class Foo {
@@ -88,7 +93,7 @@ class Foo {
 				<p>
 					사이트나 블로그가 없다면 페이지를 만들어보세요!
 					<br>
-					이벤트 페이지나, 모임 공지 등에 유용합니다.
+					이벤트 페이지나, 모임 공지등을 만들때에 유용합니다.
 				</p>
 				<a href="${pageContext.request.contextPath}/func/page/create">페이지 만들기</a>
 			</div>
