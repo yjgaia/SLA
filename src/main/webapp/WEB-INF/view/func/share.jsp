@@ -11,7 +11,7 @@
 		<form id="sharePost" action="${pageContext.request.contextPath}/func/share" method="POST">
 		<table>
 			<tr><td><textarea name="content" cols="60" rows="10"></textarea></td></tr>
-			<tr><td>공유할 URL :<input type="text" name="url"/></td></tr>
+			<tr><td>공유할 URL :<input type="text" name="url" value="${param.url}"/></td></tr>
 			<tr><td><input type="submit" value="게시하기"/></td></tr>
 		</table>
 		</form>
