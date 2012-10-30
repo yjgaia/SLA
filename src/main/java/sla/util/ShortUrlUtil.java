@@ -68,7 +68,7 @@ public class ShortUrlUtil {
 		return revert(withOutModulo);
 	}
 	public static void main(String[] args){
-		for(int i=1;i<10000;i++){
+		for(int i=2740000;i<2743000;i++){
 			System.out.println(complicatedConvert((long)i)+","+complicatedRevert(complicatedConvert((long)i)));
 		}
 		

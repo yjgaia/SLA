@@ -15,11 +15,11 @@ privileged aspect VisitCount_Roo_JavaBean {
         this.encodedKeyId = encodedKeyId;
     }
     
-    public String VisitCount.getTimePeriod() {
+    public int VisitCount.getTimePeriod() {
         return this.timePeriod;
     }
     
-    public void VisitCount.setTimePeriod(String timePeriod) {
+    public void VisitCount.setTimePeriod(int timePeriod) {
         this.timePeriod = timePeriod;
     }
     
