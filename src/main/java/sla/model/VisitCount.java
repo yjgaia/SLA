@@ -1,7 +1,5 @@
 package sla.model;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 
 
