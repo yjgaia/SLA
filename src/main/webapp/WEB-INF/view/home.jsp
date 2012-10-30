@@ -68,7 +68,7 @@
 	
 		<div id="wrapper">
 			<div id="header">
-				<a href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/img/logo.png"></a>
+				<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/img/logo.png"></a>
 				<a href="${pageContext.request.contextPath}/func/analyze" id="go-analyze-result">분석 결과 보기</a>
 			</div>
 			<div id="yogio-intro">

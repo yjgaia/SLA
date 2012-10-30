@@ -48,7 +48,7 @@
 	
 		<div id="wrapper">
 			<div id="header">
-				<a href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/img/logo.png"></a>
+				<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/img/logo.png"></a>
 			</div>
 			<div id="create-page-form">
 				<h3>페이지 만들기</h3>

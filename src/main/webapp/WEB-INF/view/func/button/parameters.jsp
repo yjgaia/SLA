@@ -56,7 +56,7 @@
 	
 		<div id="wrapper">
 			<div id="header">
-				<a href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/img/logo.png"></a>
+				<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/img/logo.png"></a>
 			</div>
 			<div id="attach-button-parameters-intro">
 				<h3>공유버튼 파라미터 자세히 보기</h3>
