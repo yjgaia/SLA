@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import sla.data.KeyValueCache;
 import sla.model.ShortUrl;
+import sla.model.VisitCount;
 import sla.service.ShortUrlService;
 import sla.service.VisitCountService;
 import sla.util.ShortUrlUtil;
@@ -21,6 +22,7 @@ public class MainController {
 	KeyValueCache keyValueCache;
 	@RequestMapping("/")
 	public String home() {
+		//System.out.println(VisitCount.getCountRecordByUser(5, 2012103002, 2012103003));
 		return "home";
 	}
 
@@ -29,7 +31,7 @@ public class MainController {
 		long id=ShortUrlUtil.complicatedRevert(shortUrl);
 		System.out.println("얻은 id?"+id);
 		if(ShortUrl.existsShortUrl(id)){
-			ShortUrl su=ShortUrl.findShortUrlById(id);
+			ShortUrl su=ShortUrl.findShortUrl(id);
 			visitCountService.increaseVisitCount(su.getId());
 			String url=su.getUrl();
 			return "redirect:"+url;

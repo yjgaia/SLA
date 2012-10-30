@@ -55,7 +55,7 @@ public class FuncController {
 	public String reShare(@RequestParam String shortUrl, Model model) {
 		long id=ShortUrlUtil.complicatedRevert(shortUrl);
 		if (ShortUrl.existsShortUrl(id)) {
-			ShortUrl su = ShortUrl.findShortUrlById(id);
+			ShortUrl su = ShortUrl.findShortUrl(id);
 			System.out.println(su.toString());
 			model.addAttribute("shortUrl", su);
 			return "func/reShare";

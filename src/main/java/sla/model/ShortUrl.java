@@ -54,15 +54,7 @@ public class ShortUrl {
 						Long.class).setParameter("shortUrl", shortUrl)
 				.getSingleResult() > 0l;
 	}
-	
-	public static ShortUrl findShortUrlById(long id) {
-		
-		return entityManager()
-				.createQuery(
-						"SELECT o FROM ShortUrl o WHERE o.id = :id",
-						ShortUrl.class).setParameter("id", id)
-				.getSingleResult();
-	}
+
 	public static ShortUrl findShortUrlByShortUrl(String shortUrl) {
 		
 		return entityManager()

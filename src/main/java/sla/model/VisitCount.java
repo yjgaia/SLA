@@ -1,7 +1,9 @@
 package sla.model;
 
-import javax.persistence.Column;
+import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.TypedQuery;
 
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
@@ -28,4 +30,5 @@ public class VisitCount {
 		
 		return entityManager().createQuery("SELECT o FROM VisitCount o WHERE encodedKeyId = :encodedKeyId AND timePeriod =:timePeriod", VisitCount.class).setParameter("encodedKeyId", encodedKeyId).setParameter("timePeriod",timePeriod).getSingleResult();
 	}
+	
 }

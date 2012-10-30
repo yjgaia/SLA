@@ -10,8 +10,6 @@ import sla.model.VisitCount;
 public class VisitCountService {
 	public int increaseVisitCount(long encodedKeyId){
 		Calendar nowDate=Calendar.getInstance();
-		System.out.println(nowDate.toString());
-		System.out.println(getTimePeriod(nowDate));
 		String nowTimePeriodString=getTimePeriod(nowDate);
 		int nowTimePeriod=Integer.parseInt(nowTimePeriodString);
 		if(VisitCount.existsVisitCount(encodedKeyId, nowTimePeriod)){ //존재 시 count++ 수행

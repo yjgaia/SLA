@@ -23,7 +23,7 @@ public class ShortUrlService {
 		if(valueInKeyValueStore==null){
 			long id=ShortUrlUtil.revert(shortUrl);
 			if(ShortUrl.existsShortUrl(id)){
-				ShortUrl shortUrlInDB=ShortUrl.findShortUrlById(id);
+				ShortUrl shortUrlInDB=ShortUrl.findShortUrl(id);
 				keyValueCache.setStringWithKey(shortUrl, String.valueOf(shortUrlInDB.getId()));
 				return shortUrlInDB.getId();
 			}else{
