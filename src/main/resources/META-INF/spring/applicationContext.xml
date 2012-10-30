@@ -71,7 +71,7 @@
     <!-- Redis Server 세팅 -->
     
     <bean name="jedis" class="redis.clients.jedis.Jedis">
-    	<constructor-arg value="1.234.80.226" />
+    	<constructor-arg value="yog.io" />
    	</bean>
    	<bean class="sla.data.KeyValueCache">
    		<constructor-arg name="jedis" ref="jedis"/>

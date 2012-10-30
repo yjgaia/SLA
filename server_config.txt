@@ -9,8 +9,8 @@ yum -y install vsftpd
 
 # mysql 설치
 yum -y install mysql mysql-server mysql-connector-odbc mysql-devel
-# ftp를 통해 /home/wemakeprogram/에 my.cnf 파일을 올리고 /etc/ 디렉토리에 복사한다.
-mv /home/wemakeprogram/my.cnf /etc/
+# ftp를 통해 /root/에 my.cnf 파일을 올리고 /etc/ 디렉토리에 복사한다.
+mv /root/my.cnf /etc/
 mysql_install_db && chown -R mysql:mysql /var/lib/mysql/
 /etc/rc.d/init.d/mysqld start
 mysqladmin -u root password ekfrrhrl
@@ -33,6 +33,10 @@ mysql -u root mysql -p
 # 자바 설치
 wget --no-cookies --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F" "http://download.oracle.com/otn-pub/java/jdk/7u4-b20/jdk-7u4-linux-i586.tar.gz"
 tar xvzf jdk-7u4-linux-i586.tar.gz\?AuthParam\=1346313008_1cb00280255acc9152d0d9bb56d61914
+
+vi /etc/profile
+에도 등록시켜주고 실행도 시켜준다.
+
 export JAVA_HOME=/root/jdk1.7.0_04
 export PATH=$JAVA_HOME/bin:$PATH
 
@@ -47,15 +51,15 @@ vi apache-tomcat-7.0.32/conf/server.xml
 # 아래 코드 추가
       <Host name="localhost" appBase="webapps/run/"
             unpackWARs="true" autoDeploy="true">
-        <Context path="/" docBase="sla.war"/>
-        <Context path="/sla-userfiles" docBase="sla-userfiles.war"/>
+        <Context path="/" docBase="SLA.war"/>
+        <Context path="/SLA-userfiles" docBase="SLA-userfiles.war"/>
       </Host>
 
 # 프로젝트 등록 - apache-tomcat-7.0.32/webapps에 war파일 등록
-# ftp를 통해 /home/wemakeprogram/에 sla.war와 sla-userfiles.war를 올리고 아래 스크립트 실행
+# ftp를 통해 /root/에 SLA.war와 SLA-userfiles.war를 올리고 아래 스크립트 실행
 mkdir apache-tomcat-7.0.32/webapps/run
-mv /home/wemakeprogram/sla.war apache-tomcat-7.0.32/webapps/run/ROOT.war
-mv /home/wemakeprogram/sla-userfiles.war apache-tomcat-7.0.32/webapps/run
+mv /root/SLA.war apache-tomcat-7.0.32/webapps/run/ROOT.war
+mv /root/SLA-userfiles.war apache-tomcat-7.0.32/webapps/run
 
 # 톰캣 실행
 apache-tomcat-7.0.32/bin/catalina.sh start
@@ -66,9 +70,9 @@ apache-tomcat-7.0.32/bin/catalina.sh stop
 # 톰캣 실시간 로그 보기
 tail -30f apache-tomcat-7.0.32/logs/catalina.out
 
-# 프로젝트를 재등록할때는 ROOT폴더를 삭제해주고 sla.war만 옮겨주면 됩니다. (sla-userfiles는 사용자가 업로드할 파일들을 가지고 있습니다.)
+# 프로젝트를 재등록할때는 ROOT폴더를 삭제해주고 SLA.war만 옮겨주면 됩니다. (SLA-userfiles는 사용자가 업로드할 파일들을 가지고 있습니다.)
 apache-tomcat-7.0.32/bin/catalina.sh stop
 rm -rf apache-tomcat-7.0.32/webapps/run/ROOT
-mv /home/wemakeprogram/sla.war apache-tomcat-7.0.32/webapps/run/ROOT.war
+mv /root/SLA.war apache-tomcat-7.0.32/webapps/run/ROOT.war
 apache-tomcat-7.0.32/bin/catalina.sh start
 tail -30f apache-tomcat-7.0.32/logs/catalina.out

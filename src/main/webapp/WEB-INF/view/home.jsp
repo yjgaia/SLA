@@ -10,6 +10,9 @@
 		<script src="${pageContext.request.contextPath}/script/prettify.js"></script>
 		<script src="${pageContext.request.contextPath}/script/js.js"></script>
 		<style>
+			html, body {
+				font-family: Malgun Gothic;
+			}
 			#wrapper {
 				margin: auto;
 				width: 600px;
