@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import sla.data.KeyValueCache;
 import sla.model.ShortUrl;
 import sla.social.SocialConfig;
 import sla.util.AuthUtil;
@@ -30,7 +29,27 @@ public class FuncController {
 	
 	@Autowired
 	private SocialConfig socialConfig;
-
+	
+	
+	@RequestMapping("button/parameters")
+	public void buttonParametersIntro() {
+		// just view
+	}
+	
+	@RequestMapping("page/create")
+	public void createPage() {
+		// just view
+	}
+	
+	@RequestMapping("sla/intro")
+	public void slaIntro() {
+		// just view
+	}
+	
+	@RequestMapping("analyze")
+	public void analyze() {
+		// just view
+	}
 
 	@RequestMapping(value = "reShare", method = RequestMethod.GET)
 	public String reShare(@RequestParam String shortUrl, Model model) {

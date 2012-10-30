@@ -48,6 +48,7 @@ Ext.define('MyApp.view.MyContainer', {
                                 {
                                     xtype: 'button',
                                     padding: 5,
+                                    href: '../func/share',
                                     text: '경로 만들기'
                                 },
                                 {
