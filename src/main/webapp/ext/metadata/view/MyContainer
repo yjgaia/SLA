@@ -89,6 +89,7 @@
                                 "designer|userClassName": "MyButton",
                                 "padding": 5,
                                 "styleHtmlContent": null,
+                                "href": "../func/share",
                                 "scale": null,
                                 "text": "경로 만들기"
                             },
