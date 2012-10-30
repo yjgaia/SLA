@@ -16,14 +16,26 @@
 			#wrapper {
 				margin: auto;
 				width: 600px;
+				padding-top: 30px;
 			}
 			#wrapper p {
 				font-size: 15px;
 				margin: 0;
 				padding: 10px;
 			}
+			#header {
+				height: 32px;
+			}
 			#go-analyze-result {
+				margin-top: -3px;
 				font-size: 15px;
+				float: right;
+				background-color: #11929E;
+				color: #FFF;
+				text-decoration: none;
+				padding: 5px 10px;
+				border-radius: 7px;
+				box-shadow: #AAA 1px 1px 1px 0px;
 			}
 			#yogio-intro {
 				height: 100px;
