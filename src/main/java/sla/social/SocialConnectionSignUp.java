@@ -5,6 +5,8 @@ import java.util.Date;
 
 import org.springframework.social.connect.Connection;
 import org.springframework.social.connect.ConnectionSignUp;
+import org.springframework.social.facebook.api.Facebook;
+import org.springframework.social.facebook.api.FacebookProfile;
 
 import sla.model.UserInfo;
 
@@ -27,6 +29,14 @@ public final class SocialConnectionSignUp implements ConnectionSignUp {
 		userInfo.setSocialProfileUrl(connection.getProfileUrl());
 		userInfo.setSocialProviderId(connection.getKey().getProviderId());
 		userInfo.setSocialProviderUserId(connection.getKey().getProviderUserId());
+		if (connection.getApi() instanceof Facebook) {
+			Facebook facebook = (Facebook) connection.getApi();
+			FacebookProfile fp = facebook.userOperations().getUserProfile();
+			userInfo.setSocialName(fp.getName());
+			userInfo.setSocialBirthday(fp.getBirthday());
+			userInfo.setSocialEmail(fp.getEmail());
+			userInfo.setSocialGender(fp.getGender());
+		}
 		userInfo.persist();
 		
 		return userInfo.getId().toString();

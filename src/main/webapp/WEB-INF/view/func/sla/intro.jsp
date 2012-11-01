@@ -12,7 +12,7 @@
 			}
 			#wrapper {
 				margin: auto;
-				width: 600px;
+				width: 700px;
 				padding-top: 30px;
 			}
 			#wrapper p {
@@ -54,6 +54,7 @@
 			</div>
 			<div id="sla-intro">
 				<h3>SLA 팀 소개</h3>
+				<img src="${pageContext.request.contextPath}/img/owt.jpg">
 				<img src="${pageContext.request.contextPath}/img/syj.jpg">
 				<img src="${pageContext.request.contextPath}/img/lhs.jpg">
 				<img src="${pageContext.request.contextPath}/img/lhd.jpg">

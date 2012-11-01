@@ -33,19 +33,24 @@ public final class SocialSignInAdapter implements SignInAdapter {
 	@Override
 	public String signIn(String userId, Connection<?> connection, NativeWebRequest request) {
 
-		if (connection.getApi() instanceof Facebook) {
+
+		
+		// 유저 정보 로드
+		UserInfo userInfo = UserInfo.findUserInfo(Long.valueOf(userId));
+		userInfo.setLastLoginDate(new Date());
+		userInfo.increaseLoginCount();
+		if (connection.getApi() instanceof Facebook) { //변경 되는 페이스북 정보이므로 매번 체크해서 업데이트 해줌
 			Facebook facebook = (Facebook) connection.getApi();
 			FacebookProfile fp = facebook.userOperations().getUserProfile();
 			System.out.println("Name: " + fp.getName());
 			System.out.println("Birthday: " + fp.getBirthday());
 			System.out.println("Email: " + fp.getEmail());
 			System.out.println("Gender: " + fp.getGender());
+			userInfo.setSocialName(fp.getName());
+			userInfo.setSocialBirthday(fp.getBirthday());
+			userInfo.setSocialEmail(fp.getEmail());
+			userInfo.setSocialGender(fp.getGender());
 		}
-		
-		// 유저 정보 로드
-		UserInfo userInfo = UserInfo.findUserInfo(Long.valueOf(userId));
-		userInfo.setLastLoginDate(new Date());
-		userInfo.increaseLoginCount();
 		userInfo.merge();
 		
 		AuthUtil.auth(userInfo);

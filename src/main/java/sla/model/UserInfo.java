@@ -36,6 +36,10 @@ public class UserInfo implements UserDetails {
 	private String socialProfileUrl;
 	private String socialProviderId;
 	private String socialProviderUserId;
+	private String socialName;
+	private String socialEmail;
+	private String socialGender;
+	private String socialBirthday;
 
 	@Override
 	public Collection<GrantedAuthority> getAuthorities() {

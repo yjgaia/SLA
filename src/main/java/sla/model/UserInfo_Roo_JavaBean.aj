@@ -80,4 +80,36 @@ privileged aspect UserInfo_Roo_JavaBean {
         this.socialProviderUserId = socialProviderUserId;
     }
     
+    public String UserInfo.getSocialName() {
+        return this.socialName;
+    }
+    
+    public void UserInfo.setSocialName(String socialName) {
+        this.socialName = socialName;
+    }
+    
+    public String UserInfo.getSocialEmail() {
+        return this.socialEmail;
+    }
+    
+    public void UserInfo.setSocialEmail(String socialEmail) {
+        this.socialEmail = socialEmail;
+    }
+    
+    public String UserInfo.getSocialGender() {
+        return this.socialGender;
+    }
+    
+    public void UserInfo.setSocialGender(String socialGender) {
+        this.socialGender = socialGender;
+    }
+    
+    public String UserInfo.getSocialBirthday() {
+        return this.socialBirthday;
+    }
+    
+    public void UserInfo.setSocialBirthday(String socialBirthday) {
+        this.socialBirthday = socialBirthday;
+    }
+    
 }
