@@ -12,11 +12,13 @@ import org.springframework.social.facebook.api.impl.FacebookTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import sla.model.Page;
 import sla.model.ShortUrl;
 import sla.social.SocialConfig;
 import sla.util.AuthUtil;
@@ -41,7 +43,7 @@ public class FuncController {
 	}
 	
 	@RequestMapping("page/create")
-	public void createPage() {
+	public void createPage(@ModelAttribute("command") Page page) {
 		// just view
 	}
 	
