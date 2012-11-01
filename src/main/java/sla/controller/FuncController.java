@@ -30,6 +30,10 @@ public class FuncController {
 	@Autowired
 	private SocialConfig socialConfig;
 	
+	@RequestMapping("button/intro")
+	public void buttonIntro() {
+		// just view
+	}
 	
 	@RequestMapping("button/parameters")
 	public void buttonParametersIntro() {
