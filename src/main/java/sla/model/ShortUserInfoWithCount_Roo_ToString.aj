@@ -5,11 +5,11 @@ package sla.model;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import sla.model.UserInfoWithCount;
+import sla.model.ShortUserInfoWithCount;
 
-privileged aspect UserInfoWithCount_Roo_ToString {
+privileged aspect ShortUserInfoWithCount_Roo_ToString {
     
-    public String UserInfoWithCount.toString() {
+    public String ShortUserInfoWithCount.toString() {
         return ReflectionToStringBuilder.toString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
     

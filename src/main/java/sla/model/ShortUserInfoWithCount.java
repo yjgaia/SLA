@@ -5,7 +5,8 @@ import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
-public class UserInfoWithCount {
-	private UserInfo userInfo;
+public class ShortUserInfoWithCount   {
+	private int id;
+	private String socialName;
 	private int cnt;
 }

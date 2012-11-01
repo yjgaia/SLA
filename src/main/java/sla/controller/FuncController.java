@@ -1,7 +1,5 @@
 package sla.controller;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
@@ -23,7 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import sla.model.Page;
 import sla.model.ShortUrl;
 import sla.model.UserInfo;
-import sla.model.UserInfoWithCount;
+import sla.model.VisitCount;
 import sla.service.AnalyzeService;
 import sla.social.SocialConfig;
 import sla.util.AuthUtil;
@@ -60,9 +58,13 @@ public class FuncController {
 	}
 	@RequestMapping("analyze")
 	public void analyze(@RequestParam String shortUrl,Model model) {
-		//List<UserInfoWithCount> countRecordByUser=analyzeSerice.getCountRecordByUser(shortUrl,-1,2013010100);
+		long id=ShortUrlUtil.complicatedRevert(shortUrl);
+		ShortUrl shortUrlRecord=ShortUrl.findShortUrl(id);
 		UserInfo sharer = analyzeSerice.getUserInfoWithShortUrl(shortUrl);
 		System.out.println(sharer.toString());
+		System.out.println(ShortUrl.getUserSharePostCount(sharer.getId()));
+		System.out.println(VisitCount.getCountSumByUser(sharer.getId()));
+		System.out.println(VisitCount.getCountRecordByUser(shortUrlRecord.getHeadId(), -1, 2013111000));
 		model.addAttribute("sharer",sharer);
 	}
 

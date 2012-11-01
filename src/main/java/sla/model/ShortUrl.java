@@ -63,5 +63,13 @@ public class ShortUrl {
 						ShortUrl.class).setParameter("shortUrl", shortUrl)
 				.getSingleResult();
 	}
+	
+	public static Long getUserSharePostCount(long userId){
+		return entityManager()
+				.createQuery(
+						"SELECT COUNT(o) FROM ShortUrl o WHERE userInfo.id = :userId",
+						Long.class).setParameter("userId", userId)
+				.getSingleResult();
+	}
 
 }

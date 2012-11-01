@@ -6,6 +6,7 @@ import java.util.HashSet;
 
 import javax.persistence.Column;
 
+import org.springframework.roo.addon.dbre.RooDbManaged;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
@@ -41,6 +42,9 @@ public class UserInfo implements UserDetails {
 	private String socialGender;
 	private String socialBirthday;
 	private int socialFriendCount;
+	
+	private int cnt;
+	
 
 	@Override
 	public Collection<GrantedAuthority> getAuthorities() {

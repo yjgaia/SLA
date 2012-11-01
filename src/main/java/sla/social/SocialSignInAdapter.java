@@ -51,7 +51,7 @@ public final class SocialSignInAdapter implements SignInAdapter {
 			userInfo.setSocialEmail(fp.getEmail());
 			userInfo.setSocialGender(fp.getGender());
 			List<String> friendList=facebook.friendOperations().getFriendIds();
-			System.out.println("friendList("+friendList.size()+"):"+friendList.toString());
+			System.out.println("friendList("+friendList.size()+")");
 			userInfo.setSocialFriendCount(friendList.size());
 		}
 		userInfo.merge();
