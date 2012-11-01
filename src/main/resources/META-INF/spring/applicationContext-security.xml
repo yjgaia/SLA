@@ -12,6 +12,8 @@
         <logout logout-url="/func/signout" />
         
         <!-- Configure these elements to secure URIs in your application -->
+        <intercept-url pattern="/func/signin" access="permitAll" />
+        <intercept-url pattern="/func/signout" access="permitAll" />
         <intercept-url pattern="/func/*" access="permitAll" />
         <intercept-url pattern="/img/**" access="permitAll" />
         <intercept-url pattern="/script/**" access="permitAll" />

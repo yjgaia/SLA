@@ -104,8 +104,9 @@ public class FuncController {
 			Connection<Facebook> connection = socialConfig.connectionRepository().findPrimaryConnection(Facebook.class);
 			Facebook facebook = connection != null ? connection.getApi() : new FacebookTemplate();
 			
-			FacebookLink link = new FacebookLink(getUrlWithContextPath(request) + "/" + shortUrl.getShortUrl(), 
-			       null, shortUrl.getUrl(), null);
+			String shortUrlString = getUrlWithContextPath(request) + "/" + shortUrl.getShortUrl();
+			
+			FacebookLink link = new FacebookLink(shortUrlString, null, shortUrl.getUrl(), null);
 			facebook.feedOperations().postLink(shortUrl.getContent(), link);
 			
 			return true;

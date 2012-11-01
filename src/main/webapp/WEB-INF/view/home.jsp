@@ -69,16 +69,77 @@
 				background: #f47c20;
 				background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
 				background: -moz-linear-gradient(top,  #f88e11,  #f06015);
-				filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
 			}
 			.button.orange:active {
 				color: #fcd3a5;
 				background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
 				background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
-				filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
 			}
 			#header {
 				height: 32px;
+			}
+			#logo {
+				float: left;
+			}
+			#logo img {
+				border: none;
+			}
+			#share-form {
+				clear: both;
+				border-radius: .5em;
+				background-color: #33BCEF;
+				background-image: -webkit-linear-gradient(top, #18AAE0, #33BCEF);
+				background-repeat: repeat-x;
+				margin-top: 4px;
+				margin-bottom: 8px;
+			}
+			#share-form form {
+				padding: 10px;
+				overflow: auto;
+			}
+			#share-form .url {
+				float: left;
+				margin: 0;
+				border: solid 1px #EEE;
+				border-radius: .3em;
+				background-color: #FFF;
+				padding: 5px;
+				width: 470px;
+				font-size: 15px;
+				font-weight: bold;
+			}
+			#share-form .submit {
+				float: right;
+				margin: 0;
+				cursor: pointer;
+				border-radius: .3em;
+				background-color: #FFF;
+				padding: 5px;
+				font-size: 15px;
+				font-weight: bold;
+				width: 80px;
+			}
+			#share-form .submit {
+				color: #fef4e9;
+				border: solid 1px #da7c0c;
+				background: #f78d1d;
+				background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+				background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
+				filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+			}
+			#share-form .submit:hover {
+				background: #f47c20;
+				background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+				background: -moz-linear-gradient(top,  #f88e11,  #f06015);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+			}
+			#share-form .submit:active {
+				color: #fcd3a5;
+				background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
+				background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
 			}
 			#go-analyze-result {
 				margin-top: -2px;
@@ -131,7 +192,7 @@
 			}
 			#yogio-intro {
 				background-image: url(${pageContext.request.contextPath}/img/intro.jpg);
-				border-radius: 10px 10px 0 0;
+				border-radius: .5em .5em 0 0;
 			}
 			#attach-button-intro {
 				background-image: url(${pageContext.request.contextPath}/img/share.jpg);
@@ -142,7 +203,7 @@
 			}
 			#create-page-intro {
 				background-image: url(${pageContext.request.contextPath}/img/page.jpg);
-				border-radius: 0 0 10px 10px;
+				border-radius: 0 0 .5em .5em;
 				text-align: right;
 			}
 			#footer {
@@ -167,8 +228,14 @@
 	
 		<div id="wrapper">
 			<div id="header">
-				<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/img/logo.png"></a>
-				<a href="${pageContext.request.contextPath}/func/analyze" id="go-analyze-result">분석 결과 보기</a>
+				<a id="logo" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/img/logo.png"></a>
+				<a id="go-analyze-result" href="${pageContext.request.contextPath}/func/analyze">분석 결과 보기</a>
+			</div>
+			<div id="share-form">
+				<form>
+					<input class="url" name="url" placeholder="공유할 주소를 입력해주세요.">
+					<input class="submit" type="submit" value="공유">
+				</form>
 			</div>
 			<div id="yogio-intro" class="layer">
 				<div class="layer-inner">

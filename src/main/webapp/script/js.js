@@ -1,5 +1,6 @@
 function YOGIO(o) {
-	var YOGIO_URL = 'http://yog.io';
+	//var YOGIO_URL = 'http://yog.io';
+	var YOGIO_URL = 'http://test.com:8080/SLA';
 	
 	var url = location.href;
 	
