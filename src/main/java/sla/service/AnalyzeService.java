@@ -2,11 +2,15 @@ package sla.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import sla.model.ShortUrl;
+import sla.model.UserInfo;
 import sla.model.UserInfoWithCount;
 import sla.model.VisitCount;
 import sla.util.ShortUrlUtil;
 
+@Service
 public class AnalyzeService {
 	
 	/**
@@ -25,5 +29,13 @@ public class AnalyzeService {
 			resultList=VisitCount.getCountRecordByUser(headId, startPeriod, endPeriod);
 		}
 		return resultList;
+	}
+	public UserInfo getUserInfoWithShortUrl(String shortUrl){
+		long id=ShortUrlUtil.complicatedRevert(shortUrl);
+		if(ShortUrl.existsShortUrl(id)){
+			ShortUrl shortUrlRecord=ShortUrl.findShortUrl(id);
+			return shortUrlRecord.getUserInfo();
+		}
+		return null;
 	}
 }

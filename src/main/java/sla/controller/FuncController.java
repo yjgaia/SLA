@@ -1,5 +1,7 @@
 package sla.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
@@ -20,6 +22,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import sla.model.Page;
 import sla.model.ShortUrl;
+import sla.model.UserInfo;
+import sla.model.UserInfoWithCount;
+import sla.service.AnalyzeService;
 import sla.social.SocialConfig;
 import sla.util.AuthUtil;
 import sla.util.ShortUrlUtil;
@@ -28,6 +33,8 @@ import sla.util.ShortUrlUtil;
 @RequestMapping("func")
 public class FuncController {
 
+	@Autowired
+	private AnalyzeService analyzeSerice;
 	
 	@Autowired
 	private SocialConfig socialConfig;
@@ -51,10 +58,12 @@ public class FuncController {
 	public void slaIntro() {
 		// just view
 	}
-	
 	@RequestMapping("analyze")
-	public void analyze() {
-		// just view
+	public void analyze(@RequestParam String shortUrl,Model model) {
+		//List<UserInfoWithCount> countRecordByUser=analyzeSerice.getCountRecordByUser(shortUrl,-1,2013010100);
+		UserInfo sharer = analyzeSerice.getUserInfoWithShortUrl(shortUrl);
+		System.out.println(sharer.toString());
+		model.addAttribute("sharer",sharer);
 	}
 
 	@RequestMapping(value = "reShare", method = RequestMethod.GET)

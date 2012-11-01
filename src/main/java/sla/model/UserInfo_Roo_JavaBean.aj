@@ -112,4 +112,12 @@ privileged aspect UserInfo_Roo_JavaBean {
         this.socialBirthday = socialBirthday;
     }
     
+    public int UserInfo.getSocialFriendCount() {
+        return this.socialFriendCount;
+    }
+    
+    public void UserInfo.setSocialFriendCount(int socialFriendCount) {
+        this.socialFriendCount = socialFriendCount;
+    }
+    
 }

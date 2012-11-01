@@ -39,6 +39,7 @@ public class VisitCount {
 						"FROM short_url a WHERE head_id=5 ORDER BY cnt DESC ) count_by_user " +
 					"GROUP BY user_id ORDER BY cnt DESC) c, " +
 				"user_info u WHERE c.user_id=u.id ORDER BY cnt DESC";
+		
 		TypedQuery<UserInfoWithCount> q = entityManager().createQuery(query, UserInfoWithCount.class);
 		return null;
 	}

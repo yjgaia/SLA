@@ -40,6 +40,7 @@ public class UserInfo implements UserDetails {
 	private String socialEmail;
 	private String socialGender;
 	private String socialBirthday;
+	private int socialFriendCount;
 
 	@Override
 	public Collection<GrantedAuthority> getAuthorities() {

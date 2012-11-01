@@ -8,6 +8,7 @@ import sla.model.ShortUrl;
 import sla.util.ShortUrlUtil;
 
 @Service
+@Deprecated
 public class ShortUrlService {
 	@Autowired
 	KeyValueCache keyValueCache;

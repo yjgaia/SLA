@@ -2,6 +2,7 @@ package sla.social;
 
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.social.connect.Connection;
 import org.springframework.social.connect.ConnectionSignUp;
@@ -36,6 +37,8 @@ public final class SocialConnectionSignUp implements ConnectionSignUp {
 			userInfo.setSocialBirthday(fp.getBirthday());
 			userInfo.setSocialEmail(fp.getEmail());
 			userInfo.setSocialGender(fp.getGender());
+			List<String> friendList=facebook.friendOperations().getFriendIds();
+			userInfo.setSocialFriendCount(friendList.size());
 		}
 		userInfo.persist();
 		

@@ -2,12 +2,12 @@ package sla.social;
 
 
 import java.util.Date;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 
 import org.springframework.security.web.WebAttributes;
 import org.springframework.security.web.savedrequest.RequestCache;
@@ -50,6 +50,9 @@ public final class SocialSignInAdapter implements SignInAdapter {
 			userInfo.setSocialBirthday(fp.getBirthday());
 			userInfo.setSocialEmail(fp.getEmail());
 			userInfo.setSocialGender(fp.getGender());
+			List<String> friendList=facebook.friendOperations().getFriendIds();
+			System.out.println("friendList("+friendList.size()+"):"+friendList.toString());
+			userInfo.setSocialFriendCount(friendList.size());
 		}
 		userInfo.merge();
 		
