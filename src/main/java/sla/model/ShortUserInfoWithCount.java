@@ -1,5 +1,7 @@
 package sla.model;
 
+import javax.persistence.Entity;
+
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.tostring.RooToString;
 
