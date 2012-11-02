@@ -31,16 +31,15 @@ public class VisitCount {
 		
 		return entityManager().createQuery("SELECT o FROM VisitCount o WHERE encodedKeyId = :encodedKeyId AND timePeriod =:timePeriod", VisitCount.class).setParameter("encodedKeyId", encodedKeyId).setParameter("timePeriod",timePeriod).getSingleResult();
 	}
-	public static List<UserInfo> getCountRecordByUser(long headId, int startPeriod, int endPeriod){
+	public static List<ShortUserInfoWithCount> getCountRecordByUser(long headId, int startPeriod, int endPeriod){
 		String query="SELECT u.id,u.social_name,c.cnt AS cnt FROM (SELECT user_id, SUM(cnt) " +
 				"cnt FROM(SELECT a.*, (SELECT COALESCE(SUM(visit_count),0)" +
 				" FROM visit_count WHERE encoded_key_id=a.id  AND (time_period BETWEEN "+startPeriod+" AND "+endPeriod+")) " +
 				"AS cnt FROM short_url a WHERE head_id="+headId+" ORDER BY cnt DESC ) count_by_user GROUP BY user_id ORDER BY cnt DESC) c" +
 				",user_info u WHERE c.user_id=u.id ORDER BY c.cnt DESC";
-		System.out.println(query);
-		Query q=entityManager().createNativeQuery(query,UserInfo.class);
+		Query q=entityManager().createNativeQuery(query,ShortUserInfoWithCount.class);
 		
-		List<UserInfo> a=q.getResultList();
+		List<ShortUserInfoWithCount> a=q.getResultList();
 		return a;
 	}
 	
