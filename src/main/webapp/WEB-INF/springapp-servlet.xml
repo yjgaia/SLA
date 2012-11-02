@@ -17,8 +17,8 @@
 	<mvc:resources location="/script/" mapping="/script/**" />
 	<mvc:resources location="/style/" mapping="/style/**" />
 	<mvc:resources location="/ext/" mapping="/ext/**" />
-	<mvc:resources location="/ckeditor/" mapping="/ckeditor/**" />
 	<mvc:resources location="/prototype/" mapping="/prototype/**" />
+	<mvc:resources location="/userfiles/" mapping="/userfiles/**" />
 	<mvc:default-servlet-handler />
 	
 	<bean id="properties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
