@@ -18,7 +18,9 @@
 	
 	<body>
 	
-		분석 결과 보기<br/>
-		공유자 : ${sharer}
+		분석 결과 보기<br/><br/>
+		공유자 : ${sharer}<br/><br/>
+		공유자 방문 유입 순위: ${countRecord }<br/><br/>
+		성별 분포: ${genderDistribution }
 	</body>
 </html>

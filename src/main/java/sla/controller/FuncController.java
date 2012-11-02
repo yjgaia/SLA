@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import sla.model.KeyCount;
 import sla.model.Page;
 import sla.model.ShortUrl;
 import sla.model.ShortUserInfoWithCount;
@@ -65,17 +66,25 @@ public class FuncController {
 		// just view
 	}
 	@RequestMapping("analyze")
-	public void analyze(@RequestParam String shortUrl,Model model) {
+	public String analyze(@RequestParam String shortUrl,Model model) {
 		long id=ShortUrlUtil.complicatedRevert(shortUrl);
-		ShortUrl shortUrlRecord=ShortUrl.findShortUrl(id);
-		UserInfo sharer = analyzeSerice.getUserInfoWithShortUrl(shortUrl);
-		System.out.println(sharer.toString());
-		System.out.println(ShortUrl.getUserSharePostCount(sharer.getId()));
-		System.out.println(VisitCount.getCountSumByUser(sharer.getId()));
-		
-		List<ShortUserInfoWithCount> countRecord=VisitCount.getCountRecordByUser(shortUrlRecord.getHeadId(), -1, 2013111000);
-		model.addAttribute("sharer",sharer);
-		model.addAttribute("countRecord",countRecord);
+		if(ShortUrl.existsShortUrl(id)){
+			ShortUrl shortUrlRecord=ShortUrl.findShortUrl(id);
+			UserInfo sharer = analyzeSerice.getUserInfoWithShortUrl(shortUrl);
+			System.out.println(sharer.toString());
+			System.out.println(ShortUrl.getUserSharePostCount(sharer.getId()));
+			System.out.println(VisitCount.getCountSumByUser(sharer.getId()));
+			List<KeyCount> genderDistribution=ShortUrl.getUserGenderDistribution(shortUrlRecord.getHeadId());
+			List<ShortUserInfoWithCount> countRecord=VisitCount.getCountRecordByUser(shortUrlRecord.getHeadId(), -1, 2013111000);
+			System.out.println(countRecord);
+			System.out.println(VisitCount.getCountRecordByUser(shortUrlRecord.getHeadId(), -1, 2011111000));
+			model.addAttribute("sharer",sharer);
+			model.addAttribute("countRecord",countRecord);
+			model.addAttribute("genderDistribution",genderDistribution);
+			return "func/analyze";
+		}else {
+			return "shortUrlNotFound";
+		}
 	}
 
 	@RequestMapping(value = "reShare", method = RequestMethod.GET)
