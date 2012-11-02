@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>SLA 팀 소개</title>
+		<title>YOG.IO?</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="${pageContext.request.contextPath}/script/jquery-1.7.2.min.js"></script>
 		<style>
@@ -57,30 +57,9 @@
 				<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/img/logo.png"></a>
 			</div>
 			<div id="sla-intro">
-				<h3>SLA 팀 소개</h3>
-				<div>
-					<h4>SLA: Shared Link Analyzer</h4>
-					<img src="${pageContext.request.contextPath}/img/swmaestro.jpg">
-					<p>
-						SLA는 SW 마에스트로 3기 연수생인 심영재, 이한솔, 이희덕 군이 팀을 이루어 오우택 멘토님의 도움을 받아 진행하는 소셜 네트워크 공유-링크 분석시스템 개발 프로젝트 팀 입니다.
-					</p>
-				</div>
-				<div>
-					<h4>오우택 멘토</h4>
-					<img class="profile" src="${pageContext.request.contextPath}/img/owt.jpg">
-				</div>
-				<div>
-					<h4>심영재</h4>
-					<img class="profile" src="${pageContext.request.contextPath}/img/syj.jpg">
-				</div>
-				<div>
-					<h4>이한솔</h4>
-					<img class="profile" src="${pageContext.request.contextPath}/img/lhs.jpg">
-				</div>
-				<div>
-					<h4>이희덕</h4>
-					<img class="profile" src="${pageContext.request.contextPath}/img/lhd.jpg">
-				</div>
+				<p>
+					YOG.IO!는 SW 마에스트로 3기 연수생인 심영재, 이한솔, 이희덕 군이 팀을 이루어 오우택 멘토님의 도움을 받아 진행하는 소셜 네트워크 공유-링크 분석시스템 개발 프로젝트 입니다.
+				</p>
 			</div>
 			<div id="footer">
 				&copy; <a href="http://swmaestro.kr" target="_blank">SW Maestro</a> 3rd <a href="${pageContext.request.contextPath}/func/sla/intro">SLA팀</a>.

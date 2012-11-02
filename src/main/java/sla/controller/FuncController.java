@@ -37,6 +37,11 @@ public class FuncController {
 	@Autowired
 	private SocialConfig socialConfig;
 	
+	@RequestMapping("intro")
+	public void intro() {
+		// just view
+	}
+	
 	@RequestMapping("button/intro")
 	public void buttonIntro() {
 		// just view

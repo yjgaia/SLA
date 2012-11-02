@@ -86,6 +86,10 @@
 			#logo img {
 				border: none;
 			}
+			#go-intro {
+				font-size: 12px;
+				color: blue;
+			}
 			#share-form {
 				clear: both;
 				border-radius: .5em;
@@ -243,6 +247,7 @@
 					<p>
 						YOG.IO!는 소셜 네트워크에 쉽게 링크를 공유할 수 있고, 공유된 링크의 영향력에 대한 분석 결과를 제공하는 서비스입니다.
 					</p>
+					<a id="go-intro" href="${pageContext.request.contextPath}/func/intro">자세히...</a>
 				</div>
 			</div>
 			<div id="attach-button-intro" class="layer">

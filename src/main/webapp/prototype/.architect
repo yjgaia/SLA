@@ -4,7 +4,7 @@
         "model": true,
         "component": true,
         "controller": true,
-        "resource": false,
+        "resource": true,
         "6cb13d44-dae3-4d6a-bd96-493e2fbbda83": {
             "id": "6cb13d44-dae3-4d6a-bd96-493e2fbbda83",
             "cn": [
