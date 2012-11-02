@@ -120,11 +120,11 @@ privileged aspect UserInfo_Roo_JavaBean {
         this.socialFriendCount = socialFriendCount;
     }
     
-    public int UserInfo.getCnt() {
+    public Integer UserInfo.getCnt() {
         return this.cnt;
     }
     
-    public void UserInfo.setCnt(int cnt) {
+    public void UserInfo.setCnt(Integer cnt) {
         this.cnt = cnt;
     }
     

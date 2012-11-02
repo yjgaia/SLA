@@ -1,5 +1,7 @@
 package sla.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
@@ -20,6 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import sla.model.Page;
 import sla.model.ShortUrl;
+import sla.model.ShortUserInfoWithCount;
 import sla.model.UserInfo;
 import sla.model.VisitCount;
 import sla.service.AnalyzeService;
@@ -75,16 +78,18 @@ public class FuncController {
 		System.out.println(sharer.toString());
 		System.out.println(ShortUrl.getUserSharePostCount(sharer.getId()));
 		System.out.println(VisitCount.getCountSumByUser(sharer.getId()));
-		System.out.println(VisitCount.getCountRecordByUser(shortUrlRecord.getHeadId(), -1, 2013111000));
+		
+		List<ShortUserInfoWithCount> countRecord=VisitCount.getCountRecordByUser(shortUrlRecord.getHeadId(), -1, 2013111000);
 		model.addAttribute("sharer",sharer);
+		model.addAttribute("countRecord",countRecord);
 	}
 
 	@RequestMapping(value = "reShare", method = RequestMethod.GET)
 	public String reShare(@RequestParam String shortUrl, Model model) {
 		long id=ShortUrlUtil.complicatedRevert(shortUrl);
+		System.out.println("reshareId:"+id);
 		if (ShortUrl.existsShortUrl(id)) {
 			ShortUrl su = ShortUrl.findShortUrl(id);
-			System.out.println(su.toString());
 			model.addAttribute("shortUrl", su);
 			return "func/reShare";
 		} else {

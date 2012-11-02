@@ -5,8 +5,8 @@ import java.util.Date;
 import java.util.HashSet;
 
 import javax.persistence.Column;
+import javax.persistence.Transient;
 
-import org.springframework.roo.addon.dbre.RooDbManaged;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
@@ -43,7 +43,8 @@ public class UserInfo implements UserDetails {
 	private String socialBirthday;
 	private int socialFriendCount;
 	
-	private int cnt;
+	@Transient
+	private Integer cnt;
 	
 
 	@Override
