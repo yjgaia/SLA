@@ -147,12 +147,12 @@
 						],
 						toolbar:'Custom',
 						
-						filebrowserBrowseUrl : '${pageContext.request.contextPath}/ckfinder',
-						filebrowserImageBrowseUrl : '${pageContext.request.contextPath}/ckfinder?type=Images',
-						filebrowserFlashBrowseUrl : '${pageContext.request.contextPath}/ckfinder?type=Flash',
-						filebrowserUploadUrl : '${pageContext.request.contextPath}/r/ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Files',
-						filebrowserImageUploadUrl : '${pageContext.request.contextPath}/r/ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Images',
-						filebrowserFlashUploadUrl : '${pageContext.request.contextPath}/r/ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Flash'
+						filebrowserBrowseUrl : '${pageContext.request.contextPath}/func/ckfinder',
+						filebrowserImageBrowseUrl : '${pageContext.request.contextPath}/func/ckfinder?type=Images',
+						filebrowserFlashBrowseUrl : '${pageContext.request.contextPath}/func/ckfinder?type=Flash',
+						filebrowserUploadUrl : '${pageContext.request.contextPath}/func/ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Files',
+						filebrowserImageUploadUrl : '${pageContext.request.contextPath}/func/ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Images',
+						filebrowserFlashUploadUrl : '${pageContext.request.contextPath}/func/ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Flash'
 					});
 					</script>
 				</div>

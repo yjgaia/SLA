@@ -237,7 +237,7 @@
 			</div>
 			<div id="share-form">
 				<form action="${pageContext.request.contextPath}/func/share" onsubmit="OPEN_YOGIO_WIN();" target="YOGIO_WIN">
-					<input class="url" name="url" placeholder="공유할 주소를 입력해주세요.">
+					<input class="url" name="url" placeholder="http:// 공유할 주소를 입력해주세요.">
 					<input class="submit" type="submit" value="공유">
 				</form>
 			</div>

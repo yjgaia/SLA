@@ -61,6 +61,12 @@ public class FuncController {
 	public void slaIntro() {
 		// just view
 	}
+	
+	@RequestMapping("ckfinder")
+	public void ckfinder() {
+		// just view
+	}
+	
 	@RequestMapping("analyze")
 	public void analyze(@RequestParam String shortUrl,Model model) {
 		long id=ShortUrlUtil.complicatedRevert(shortUrl);
