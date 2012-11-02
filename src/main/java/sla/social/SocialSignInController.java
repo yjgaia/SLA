@@ -36,17 +36,19 @@ public class SocialSignInController extends ProviderSignInController {
 	@RequestMapping(value="/{providerId}", method=RequestMethod.POST)
 	public RedirectView signIn(@PathVariable String providerId, NativeWebRequest request) {
 		HttpServletRequest nativeReq = request.getNativeRequest(HttpServletRequest.class);
-		nativeReq.getSession(false).setAttribute(REDIRECT_URI, request.getParameter(REDIRECT_URI_PRAMETER));
+		nativeReq.getSession().setAttribute(REDIRECT_URI, request.getParameter(REDIRECT_URI_PRAMETER));
 		return super.signIn(providerId, request);
 	}
 	
 	private RedirectView r(RedirectView ret, NativeWebRequest request) {
 		HttpServletRequest nativeReq = request.getNativeRequest(HttpServletRequest.class);
 		HttpSession nativeSession = nativeReq.getSession(false);
-		String redirectUri = (String) nativeSession.getAttribute(REDIRECT_URI);
-		if (redirectUri != null) {
-			ret.setUrl(redirectUri);
-			nativeSession.removeAttribute(REDIRECT_URI);
+		if (nativeSession != null) {
+			String redirectUri = (String) nativeSession.getAttribute(REDIRECT_URI);
+			if (redirectUri != null) {
+				ret.setUrl(redirectUri);
+				nativeSession.removeAttribute(REDIRECT_URI);
+			}
 		}
 		return ret;
 	}

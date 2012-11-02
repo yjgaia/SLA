@@ -1,0 +1,16 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyWindow1",
+        "height": 250,
+        "width": 400,
+        "title": "My Window"
+    },
+    "id": "ExtBox1-ext-gen35394",
+    "designerId": "d21583b5-4013-4b21-9849-f06fb2ff46b2"
+}

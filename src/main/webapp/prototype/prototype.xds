@@ -1,0 +1,56 @@
+{
+    "name": "prototype",
+    "settings": {
+        "urlPrefix": "http://yog.io",
+        "spacesToIndent": 4,
+        "exportPath": "C:/Users/HHDD/Documents/prototype",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false
+    },
+    "xdsVersion": "2.1.0",
+    "xdsBuild": 640,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000498,
+    "framework": "ext41",
+    "topInstanceFileMap": {
+        "6cb13d44-dae3-4d6a-bd96-493e2fbbda83": {
+            "paths": [
+                "metadata/view/MyWindow",
+                "app/view/override/MyWindow.js",
+                "app/view/MyWindow.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "MyWindow"
+        },
+        "6ad6375f-13d9-47b2-8a19-92c00b8be332": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "d21583b5-4013-4b21-9849-f06fb2ff46b2": {
+            "paths": [
+                "metadata/view/MyWindow1",
+                "app/view/override/MyWindow1.js",
+                "app/view/MyWindow1.js"
+            ],
+            "className": "MyWindow1"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "6cb13d44-dae3-4d6a-bd96-493e2fbbda83",
+            "d21583b5-4013-4b21-9849-f06fb2ff46b2"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "6ad6375f-13d9-47b2-8a19-92c00b8be332"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

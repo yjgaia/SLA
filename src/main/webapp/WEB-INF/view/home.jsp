@@ -232,7 +232,7 @@
 				<a id="go-analyze-result" href="${pageContext.request.contextPath}/func/analyze">분석 결과 보기</a>
 			</div>
 			<div id="share-form">
-				<form action="${pageContext.request.contextPath}/func/share">
+				<form action="${pageContext.request.contextPath}/func/share" onsubmit="OPEN_YOGIO_WIN();" target="YOGIO_WIN">
 					<input class="url" name="url" placeholder="공유할 주소를 입력해주세요.">
 					<input class="submit" type="submit" value="공유">
 				</form>
