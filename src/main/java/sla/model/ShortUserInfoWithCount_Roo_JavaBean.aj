@@ -15,12 +15,12 @@ privileged aspect ShortUserInfoWithCount_Roo_JavaBean {
         this.id = id;
     }
     
-    public String ShortUserInfoWithCount.getSocialName() {
-        return this.socialName;
+    public String ShortUserInfoWithCount.getSocial_name() {
+        return this.social_name;
     }
     
-    public void ShortUserInfoWithCount.setSocialName(String socialName) {
-        this.socialName = socialName;
+    public void ShortUserInfoWithCount.setSocial_name(String social_name) {
+        this.social_name = social_name;
     }
     
     public int ShortUserInfoWithCount.getCnt() {

@@ -7,20 +7,20 @@ import sla.model.KeyCount;
 
 privileged aspect KeyCount_Roo_JavaBean {
     
-    public int KeyCount.getKeyId() {
-        return this.keyId;
+    public int KeyCount.getKey_id() {
+        return this.key_id;
     }
     
-    public void KeyCount.setKeyId(int keyId) {
-        this.keyId = keyId;
+    public void KeyCount.setKey_id(int key_id) {
+        this.key_id = key_id;
     }
     
-    public String KeyCount.getKeyName() {
-        return this.keyName;
+    public String KeyCount.getKey_name() {
+        return this.key_name;
     }
     
-    public void KeyCount.setKeyName(String keyName) {
-        this.keyName = keyName;
+    public void KeyCount.setKey_name(String key_name) {
+        this.key_name = key_name;
     }
     
     public int KeyCount.getCnt() {

@@ -81,7 +81,7 @@ public class FuncController {
 			System.out.println(sharer.toString());
 			System.out.println(ShortUrl.getUserSharePostCount(sharer.getId()));
 			System.out.println(VisitCount.getCountSumByUser(sharer.getId()));
-			List<KeyCount> genderDistribution=ShortUrl.getUserGenderDistribution(shortUrlRecord.getHeadId());
+			List<KeyCount> genderDistribution=analyzeService.getUserGenderDistribution(shortUrl);
 			List<ShortUserInfoWithCount> countRecord=analyzeService.getCountRecordByUser(shortUrl, -1, 2013111000);
 			System.out.println(countRecord);
 			//System.out.println(VisitCount.getCountRecordByUser(shortUrlRecord.getHeadId(), -1, 2011111000));

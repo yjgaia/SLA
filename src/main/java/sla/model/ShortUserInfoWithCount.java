@@ -8,6 +8,6 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooToString
 public class ShortUserInfoWithCount   {
 	private int id;
-	private String socialName;
+	private String social_name;
 	private int cnt;
 }

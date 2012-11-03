@@ -7,10 +7,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import sla.model.KeyCount;
 import sla.model.ShortUrl;
 import sla.model.ShortUserInfoWithCount;
 import sla.model.UserInfo;
-import sla.model.VisitCount;
 import sla.util.ShortUrlUtil;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
@@ -35,10 +35,10 @@ public class AnalyzeService {
 		List<ShortUserInfoWithCount> resultList=null;
 		if(ShortUrl.existsShortUrl(id)){
 			ShortUrl shortUrlRecord=ShortUrl.findShortUrl(id);
-			long headId=shortUrlRecord.getHeadId();
+			String url=shortUrlRecord.getUrl();
 			//resultList=VisitCount.getCountRecordByUser(headId, startPeriod, endPeriod);
 			HashMap<String,Object> param=new HashMap<String,Object>();
-			param.put("headId",headId);
+			param.put("url",url);
 			param.put("startPeriod",startPeriod);
 			param.put("endPeriod",endPeriod);
 			resultList=sqlMapclient.queryForList("Analyze.getCountRecordByUser",param);
@@ -52,5 +52,24 @@ public class AnalyzeService {
 			return shortUrlRecord.getUserInfo();
 		}
 		return null;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<KeyCount> getUserGenderDistribution(String shortUrl) throws SQLException{
+		long id=ShortUrlUtil.complicatedRevert(shortUrl);
+		List<KeyCount> resultList=null;
+		if(ShortUrl.existsShortUrl(id)){
+			ShortUrl shortUrlRecord=ShortUrl.findShortUrl(id);
+			String[] keys={"","male","female"};
+			String url=shortUrlRecord.getUrl();
+			HashMap<String,Object> param=new HashMap<String,Object>();
+			param.put("url",url);
+			for(int i=0;i<keys.length;i++){
+				param.put("key"+i, keys[i]);
+			}
+			resultList=sqlMapclient.queryForList("Analyze.getUserGenderDistribution",param);
+		}
+		
+		return resultList;
 	}
 }
