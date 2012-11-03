@@ -79,12 +79,20 @@ public class AnalyzeService {
 	 * 
 	 * @param startPeriod 카운트를 집계할 기간 시작 값 YYYYMMDDHH:24 ex)2012103023
 	 * @param endPeriod 카운트를 집계할 기간 종료 값 YYYYMMDDHH:24 ex)2012103023
+	 * @param getCount endParam부터 단위간격으로 가져올 항목 숫자
+	 * @param gubun 0: 시간별, 1: 날짜별, 2: 월별
 	 * @return
 	 * @throws SQLException 
 	 */
 	@SuppressWarnings("unchecked")
-	public  List<KeyCount> getCountSumByHour(String shortUrl,int endPeriod,int getCount,boolean all) throws SQLException{
+	public  List<KeyCount> getCountSumByPeriod(String shortUrl,int endPeriod,int getCount,int gubun,boolean all) throws SQLException{
+		if(gubun==1){
+			endPeriod*=100;
+		}else if(gubun==2){
+			endPeriod*=10000;
+		}
 		long id=ShortUrlUtil.complicatedRevert(shortUrl);
+		List<KeyCount> sqlResultList=null;
 		List<KeyCount> resultList=null;
 		if(ShortUrl.existsShortUrl(id)){
 			ShortUrl shortUrlRecord=ShortUrl.findShortUrl(id);
@@ -94,19 +102,31 @@ public class AnalyzeService {
 			int day=(endPeriod%10000)/100;
 			int hour=endPeriod%100;
 			
-			List<Integer> hourList=new ArrayList<Integer>();
+			List<Integer> periodList=new ArrayList<Integer>();
 			for(int i=getCount-1;i>-1;i--){
-				Integer date=Integer.parseInt(DateUtil.getBeforeOrNextHour(year, month, day, hour, i*-1));
-				hourList.add(date);
+				Integer date=null;
+				if(gubun==0){
+					date=Integer.parseInt(DateUtil.getBeforeOrNextHour(year, month, day, hour, i*-1));
+				}else if(gubun==1){
+					date=Integer.parseInt(DateUtil.getBeforeOrNextDay(year, month, day, i*-1));
+				}else if(gubun==2){
+					date=Integer.parseInt(DateUtil.getBeforeOrNextMonth(year, month, i*-1));
+				}
+				
+				periodList.add(date);
 			}
-			HashMap<Integer,Integer> countByHour=new HashMap<Integer,Integer>();
+			HashMap<Integer,Integer> countByPeriod=new HashMap<Integer,Integer>();
+			int size=periodList.size();
+			for(int i=0;i<size;i++){
+				countByPeriod.put(periodList.get(i),0); //카운트 전부 0으로 초기화
+			}
 			
-			System.out.println(hourList);
+			System.out.println(periodList);
 			int startPeriod;
-			if(hourList.size()==0){
+			if(periodList.size()==0){
 				startPeriod=endPeriod;
 			}else{
-				startPeriod=hourList.get(0);
+				startPeriod=periodList.get(0);
 			}
 			
 			HashMap<String,Object> param=new HashMap<String,Object>();
@@ -117,10 +137,33 @@ public class AnalyzeService {
 			}
 			param.put("startPeriod", startPeriod);
 			param.put("endPeriod", endPeriod);
-			resultList=sqlMapclient.queryForList("Analyze.getCountSumByHour",param);
-			System.out.println("getCountSumByHour:"+resultList);
+			if(gubun==0){
+				sqlResultList=sqlMapclient.queryForList("Analyze.getCountSumByHour",param);
+			}else if(gubun==1){
+				sqlResultList=sqlMapclient.queryForList("Analyze.getCountSumByDay",param);
+			}else if(gubun==2){
+				sqlResultList=sqlMapclient.queryForList("Analyze.getCountSumByMonth",param);
+			}else{
+				sqlResultList=null;
+			}
+			size=sqlResultList.size();
+			for(int i=0;i<size;i++){
+				KeyCount kc=sqlResultList.get(i);
+				Integer hourInt=Integer.parseInt(kc.getKey_name());
+				countByPeriod.put(hourInt, kc.getCnt());
+			}
+			
+			resultList=new ArrayList<KeyCount>();
+			size=periodList.size();
+			for(int i=0;i<size;i++){
+				KeyCount kc=new KeyCount();
+				Integer hourInt=periodList.get(i);
+				kc.setKey_name(String.valueOf(hourInt));
+				kc.setCnt(countByPeriod.get(hourInt));
+				resultList.add(kc);
+			}
 		}
-		return null;
+		return resultList;
 	}
 	public static void main(String[] args){
 		//getCountSumByHour(2012010410, 48);

@@ -82,7 +82,13 @@ public class FuncController {
 			System.out.println(VisitCount.getCountSumByUser(sharer.getId()));
 			List<KeyCount> genderDistribution=analyzeService.getUserGenderDistribution(shortUrl);
 			List<ShortUserInfoWithCount> countRecord=analyzeService.getCountRecordByUser(shortUrl, -1, 2013111000);
-			analyzeService.getCountSumByHour(shortUrl,2012110408, 10,true);
+			System.out.println(analyzeService.getCountSumByPeriod(shortUrl,2012110408, 10,0,true));
+			System.out.println(analyzeService.getCountSumByPeriod(shortUrl,20121104, 10,1,true));
+			System.out.println(analyzeService.getCountSumByPeriod(shortUrl,201211, 10,2,true));
+			System.out.println(analyzeService.getCountSumByPeriod(shortUrl,2012110408, 10,0,false));
+			System.out.println(analyzeService.getCountSumByPeriod(shortUrl,20121104, 10,1,false));
+			System.out.println(analyzeService.getCountSumByPeriod(shortUrl,201211, 10,2,false));
+			
 			model.addAttribute("sharer",sharer);
 			model.addAttribute("countRecord",countRecord);
 			model.addAttribute("genderDistribution",genderDistribution);
