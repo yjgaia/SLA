@@ -16,4 +16,12 @@
  	LEFT JOIN (SELECT social_gender AS key_name,COUNT(*) AS cnt FROM user_info WHERE id IN 
  	(SELECT user_id FROM short_url WHERE url=#url#) GROUP BY social_gender) b USING(key_name)
 	</select>
+	<select id="getCountSumByHour" parameterClass="Map" resultClass="KeyCount">
+	SELECT time_period AS key_name,COUNT(*) AS cnt FROM visit_count a,short_url b
+	WHERE time_period  BETWEEN #startPeriod# AND #endPeriod#
+	AND a.encoded_key_id=b.id
+	<isNotNull prepend="AND " property="url">b.url=#url# </isNotNull>
+	<isNotNull prepend="AND " property="encodedKeyId">b.id=#encodedKeyId# </isNotNull>
+	GROUP BY time_period
+	</select>
 </sqlMap>

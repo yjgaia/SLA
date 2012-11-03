@@ -78,13 +78,11 @@ public class FuncController {
 		if(ShortUrl.existsShortUrl(id)){
 			ShortUrl shortUrlRecord=ShortUrl.findShortUrl(id);
 			UserInfo sharer = analyzeService.getUserInfoWithShortUrl(shortUrl);
-			System.out.println(sharer.toString());
 			System.out.println(ShortUrl.getUserSharePostCount(sharer.getId()));
 			System.out.println(VisitCount.getCountSumByUser(sharer.getId()));
 			List<KeyCount> genderDistribution=analyzeService.getUserGenderDistribution(shortUrl);
 			List<ShortUserInfoWithCount> countRecord=analyzeService.getCountRecordByUser(shortUrl, -1, 2013111000);
-			System.out.println(countRecord);
-			//System.out.println(VisitCount.getCountRecordByUser(shortUrlRecord.getHeadId(), -1, 2011111000));
+			analyzeService.getCountSumByHour(shortUrl,2012110408, 10,true);
 			model.addAttribute("sharer",sharer);
 			model.addAttribute("countRecord",countRecord);
 			model.addAttribute("genderDistribution",genderDistribution);
