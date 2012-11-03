@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN" "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<settings 
+		cacheModelsEnabled="true" 
+		enhancementEnabled="true"
+		lazyLoadingEnabled="true" 
+		maxRequests="512" 
+		maxSessions="512"
+		maxTransactions="512" 
+		useStatementNamespaces="true" />
+	<sqlMap resource="sla/ibatis/sql/Common_SQL.xml" />
+	<sqlMap resource="sla/ibatis/sql/Analyze_SQL.xml" />
+	
+</sqlMapConfig>

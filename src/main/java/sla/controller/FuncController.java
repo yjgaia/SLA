@@ -1,5 +1,6 @@
 package sla.controller;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -36,7 +37,7 @@ import sla.util.ShortUrlUtil;
 public class FuncController {
 
 	@Autowired
-	private AnalyzeService analyzeSerice;
+	private AnalyzeService analyzeService;
 	
 	@Autowired
 	private SocialConfig socialConfig;
@@ -72,18 +73,18 @@ public class FuncController {
 	}
 	
 	@RequestMapping("analyze")
-	public String analyze(@RequestParam String shortUrl,Model model) {
+	public String analyze(@RequestParam String shortUrl,Model model) throws SQLException {
 		long id=ShortUrlUtil.complicatedRevert(shortUrl);
 		if(ShortUrl.existsShortUrl(id)){
 			ShortUrl shortUrlRecord=ShortUrl.findShortUrl(id);
-			UserInfo sharer = analyzeSerice.getUserInfoWithShortUrl(shortUrl);
+			UserInfo sharer = analyzeService.getUserInfoWithShortUrl(shortUrl);
 			System.out.println(sharer.toString());
 			System.out.println(ShortUrl.getUserSharePostCount(sharer.getId()));
 			System.out.println(VisitCount.getCountSumByUser(sharer.getId()));
 			List<KeyCount> genderDistribution=ShortUrl.getUserGenderDistribution(shortUrlRecord.getHeadId());
-			List<ShortUserInfoWithCount> countRecord=VisitCount.getCountRecordByUser(shortUrlRecord.getHeadId(), -1, 2013111000);
+			List<ShortUserInfoWithCount> countRecord=analyzeService.getCountRecordByUser(shortUrl, -1, 2013111000);
 			System.out.println(countRecord);
-			System.out.println(VisitCount.getCountRecordByUser(shortUrlRecord.getHeadId(), -1, 2011111000));
+			//System.out.println(VisitCount.getCountRecordByUser(shortUrlRecord.getHeadId(), -1, 2011111000));
 			model.addAttribute("sharer",sharer);
 			model.addAttribute("countRecord",countRecord);
 			model.addAttribute("genderDistribution",genderDistribution);

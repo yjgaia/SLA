@@ -68,6 +68,15 @@
         <property name="persistenceUnitName" value="persistenceUnit"/>
         <property name="dataSource" ref="dataSource"/>
     </bean>
+    <!-- iBatis 세팅 -->
+   	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocations">
+			<list>
+				<value>classpath:SqlMapConfig.xml</value>
+			</list>
+		</property>
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
     <!-- Redis Server 세팅 -->
     
     <bean name="jedis" class="redis.clients.jedis.Jedis">
@@ -77,4 +86,5 @@
    		<constructor-arg name="jedis" ref="jedis"/>
    		<constructor-arg name="password" value="ekfrrhrl0"/>
    	</bean>
+   	
 </beans>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+
+<sqlMap namespace="Analyze">
+	<typeAlias alias="KeyCount" type="sla.model.KeyCount"/>
+	<select id="getCountRecordByUser" parameterClass="Map" resultClass="KeyCount">
+	SELECT u.id,u.social_name ,c.cnt AS cnt FROM (SELECT user_id, SUM(cnt) 
+	cnt FROM(SELECT a.*, (SELECT COALESCE(SUM(visit_count),0)
+ 	FROM visit_count WHERE encoded_key_id=a.id  AND (time_period BETWEEN #startPeriod# AND #endPeriod#)) 
+ 	AS cnt FROM short_url a WHERE head_id=#headId# ORDER BY cnt DESC ) count_by_user GROUP BY user_id ORDER BY cnt DESC) c
+ 	,user_info u WHERE c.user_id=u.id ORDER BY c.cnt DESC
+	</select>
+</sqlMap>

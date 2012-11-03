@@ -18,8 +18,6 @@ public class MainController {
 	VisitCountService visitCountService;
 	@Autowired
 	ShortUrlService shortUrlService;
-	@Autowired
-	KeyValueCache keyValueCache;
 	@RequestMapping("/")
 	public String home() {
 		return "home";

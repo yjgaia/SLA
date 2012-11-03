@@ -8,9 +8,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
-@Entity
 public class KeyCount {
-	@Id
 	private int keyId;
 	
 	private String keyName;
