@@ -14,7 +14,24 @@
 	<select id="getUserGenderDistribution" parameterClass="Map" resultClass="KeyCount">
 	SELECT key_id ,key_name,COALESCE(cnt,0) AS cnt FROM (SELECT 1 AS key_id,#key0# AS key_name FROM DUAL UNION SELECT 2 AS key_id,#key1# AS key_name FROM DUAL UNION SELECT 3 AS key_id,#key2# AS key_name FROM DUAL) a
  	LEFT JOIN (SELECT social_gender AS key_name,COUNT(*) AS cnt FROM user_info WHERE id IN 
- 	(SELECT user_id FROM short_url WHERE url=#url#) GROUP BY social_gender) b USING(key_name)
+ 	(SELECT user_id FROM short_url WHERE 1=1 
+ 	<isNotNull prepend="AND " property="url">url=#url# </isNotNull>
+	<isNotNull prepend="AND " property="encodedKeyId">id=#encodedKeyId# </isNotNull>
+ 	 ) GROUP BY social_gender) b USING(key_name)
+	</select>
+	<select id="getOperationSystemDistribution" parameterClass="Map" resultClass="KeyCount">
+	SELECT operation_system as key_name,SUM(use_count) as cnt FROM user_agent_info a, short_url b
+	WHERE a.encoded_key_id=b.id
+	<isNotNull prepend="AND " property="url">b.url=#url# </isNotNull>
+	<isNotNull prepend="AND " property="encodedKeyId">b.id=#encodedKeyId# </isNotNull>
+	GROUP BY operation_system
+	</select>
+	<select id="getBrowserDistribution" parameterClass="Map" resultClass="KeyCount">
+	SELECT browser as key_name,SUM(use_count) as cnt FROM user_agent_info a, short_url b
+	WHERE a.encoded_key_id=b.id
+	<isNotNull prepend="AND " property="url">b.url=#url# </isNotNull>
+	<isNotNull prepend="AND " property="encodedKeyId">b.id=#encodedKeyId# </isNotNull>
+	GROUP BY browser
 	</select>
 	<select id="getCountSumByHour" parameterClass="Map" resultClass="KeyCount">
 	SELECT time_period AS key_name,SUM(visit_count) AS cnt FROM visit_count a,short_url b

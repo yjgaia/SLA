@@ -55,9 +55,9 @@ public class AnalyzeService {
 		}
 		return null;
 	}
-	
+	//all : true-> 전체 url에 대해 , false-> 해당 shortUrl에 대해서만
 	@SuppressWarnings("unchecked")
-	public List<KeyCount> getUserGenderDistribution(String shortUrl) throws SQLException{
+	public List<KeyCount> getUserGenderDistribution(String shortUrl,boolean all) throws SQLException{
 		long id=ShortUrlUtil.complicatedRevert(shortUrl);
 		List<KeyCount> resultList=null;
 		if(ShortUrl.existsShortUrl(id)){
@@ -65,7 +65,11 @@ public class AnalyzeService {
 			String[] keys={"","male","female"};
 			String url=shortUrlRecord.getUrl();
 			HashMap<String,Object> param=new HashMap<String,Object>();
-			param.put("url",url);
+			if(all){
+				param.put("url",url); //전체 url에 대해 조회
+			}else{
+				param.put("encodedKeyId",shortUrlRecord.getId()); //해당 shortUrl에 대해서만 조회
+			}
 			for(int i=0;i<keys.length;i++){
 				param.put("key"+i, keys[i]);
 			}
@@ -74,7 +78,42 @@ public class AnalyzeService {
 		
 		return resultList;
 	}
-	
+	//all : true-> 전체 url에 대해 , false-> 해당 shortUrl에 대해서만
+	@SuppressWarnings("unchecked")
+	public List<KeyCount> getOperationSystemDistribution(String shortUrl,boolean all) throws SQLException{
+		long id=ShortUrlUtil.complicatedRevert(shortUrl);
+		List<KeyCount> resultList=null;
+		if(ShortUrl.existsShortUrl(id)){
+			ShortUrl shortUrlRecord=ShortUrl.findShortUrl(id);
+			String url=shortUrlRecord.getUrl();
+			HashMap<String,Object> param=new HashMap<String,Object>();
+			if(all){
+				param.put("url",url); //전체 url에 대해 조회
+			}else{
+				param.put("encodedKeyId",shortUrlRecord.getId()); //해당 shortUrl에 대해서만 조회
+			}
+			resultList=sqlMapclient.queryForList("Analyze.getOperationSystemDistribution",param);
+		}
+		return resultList;
+	}
+	//all : true-> 전체 url에 대해 , false-> 해당 shortUrl에 대해서만
+	@SuppressWarnings("unchecked")
+	public List<KeyCount> getBrowserDistribution(String shortUrl,boolean all) throws SQLException{
+		long id=ShortUrlUtil.complicatedRevert(shortUrl);
+		List<KeyCount> resultList=null;
+		if(ShortUrl.existsShortUrl(id)){
+			ShortUrl shortUrlRecord=ShortUrl.findShortUrl(id);
+			String url=shortUrlRecord.getUrl();
+			HashMap<String,Object> param=new HashMap<String,Object>();
+			if(all){
+				param.put("url",url); //전체 url에 대해 조회
+			}else{
+				param.put("encodedKeyId",shortUrlRecord.getId()); //해당 shortUrl에 대해서만 조회
+			}
+			resultList=sqlMapclient.queryForList("Analyze.getBrowserDistribution",param);
+		}
+		return resultList;
+	}
 	/**
 	 * 
 	 * @param startPeriod 카운트를 집계할 기간 시작 값 YYYYMMDDHH:24 ex)2012103023
@@ -209,4 +248,7 @@ public class AnalyzeService {
 		}
 		return resultList;
 	}
+	
+	
+	
 }

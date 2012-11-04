@@ -85,7 +85,9 @@ public class FuncController {
 			UserInfo sharer = analyzeService.getUserInfoWithShortUrl(shortUrl);
 			System.out.println(ShortUrl.getUserSharePostCount(sharer.getId()));
 			System.out.println(VisitCount.getCountSumByUser(sharer.getId()));
-			List<KeyCount> genderDistribution=analyzeService.getUserGenderDistribution(shortUrl);
+			List<KeyCount> genderDistribution=analyzeService.getUserGenderDistribution(shortUrl,true);
+			List<KeyCount> operationSystemDistribution=analyzeService.getUserGenderDistribution(shortUrl,true);
+			List<KeyCount> browserDistribution=analyzeService.getUserGenderDistribution(shortUrl,true);
 			List<ShortUserInfoWithCount> countRecord=analyzeService.getCountRecordByUser(shortUrl, -1, 2013111000);
 			List<KeyCount> countSum=analyzeService.getCountSumByPeriod(
 					shortUrl,Integer.parseInt(DateUtil.getToday("YYYYMMDDHH")), 10,0,true);
@@ -93,6 +95,8 @@ public class FuncController {
 			model.addAttribute("sharer",objectMapper.writeValueAsString(sharer));
 			model.addAttribute("countRecord",objectMapper.writeValueAsString(countRecord));
 			model.addAttribute("genderDistribution",objectMapper.writeValueAsString(genderDistribution));
+			model.addAttribute("operationSystemDistribution",objectMapper.writeValueAsString(operationSystemDistribution));
+			model.addAttribute("browserDistribution",objectMapper.writeValueAsString(browserDistribution));
 			model.addAttribute("countSum",objectMapper.writeValueAsString(countSum));
 			model.addAttribute("accumulatedCountSum",objectMapper.writeValueAsString(accumulatedCountSum));
 			
