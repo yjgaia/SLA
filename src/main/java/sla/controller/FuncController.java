@@ -89,10 +89,13 @@ public class FuncController {
 			List<ShortUserInfoWithCount> countRecord=analyzeService.getCountRecordByUser(shortUrl, -1, 2013111000);
 			List<KeyCount> countSum=analyzeService.getCountSumByPeriod(
 					shortUrl,Integer.parseInt(DateUtil.getToday("YYYYMMDDHH")), 10,0,true);
+			List<KeyCount> accumulatedCountSum=analyzeService.getAccumulatedCountSumByPeriod(shortUrl,Integer.parseInt(DateUtil.getToday("YYYYMMDDHH")), 10,0,true);
 			model.addAttribute("sharer",objectMapper.writeValueAsString(sharer));
 			model.addAttribute("countRecord",objectMapper.writeValueAsString(countRecord));
 			model.addAttribute("genderDistribution",objectMapper.writeValueAsString(genderDistribution));
 			model.addAttribute("countSum",objectMapper.writeValueAsString(countSum));
+			model.addAttribute("accumulatedCountSum",objectMapper.writeValueAsString(accumulatedCountSum));
+			
 			return "func/analyze";
 		}else {
 			return "shortUrlNotFound";

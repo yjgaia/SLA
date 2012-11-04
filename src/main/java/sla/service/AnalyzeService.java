@@ -166,4 +166,47 @@ public class AnalyzeService {
 		}
 		return resultList;
 	}
+	
+	public List<KeyCount> getAccumulatedCountSumByPeriod(String shortUrl,int endPeriod,int getCount,int gubun,boolean all) throws SQLException {
+		long id=ShortUrlUtil.complicatedRevert(shortUrl);
+		List<KeyCount> resultList=null;
+		if(ShortUrl.existsShortUrl(id)){
+			ShortUrl shortUrlRecord=ShortUrl.findShortUrl(id);
+			List<KeyCount> countSumByPeriod=getCountSumByPeriod(shortUrl, endPeriod, getCount, gubun, all);
+			int startPeriod;
+			if(countSumByPeriod.size()==0){
+				startPeriod=endPeriod;
+			}else{
+				startPeriod=Integer.parseInt(countSumByPeriod.get(0).getKey_name());
+			}
+		
+			HashMap<String, Object> param=new HashMap<String,Object>();
+			if(gubun==1){
+				startPeriod*=100;
+			}else if(gubun==2){
+				startPeriod*=10000;
+			}
+			param.put("timePeriod", startPeriod);
+			if(all){
+				param.put("url",shortUrlRecord.getUrl()); //전체 url에 대해 조회
+			}else{
+				param.put("encodedKeyId",shortUrlRecord.getId()); //해당 shortUrl에 대해서만 조회
+			}
+		
+			Integer beforeSum=(Integer) sqlMapclient.queryForObject("Analyze.getBeforeCountSum",param);
+			System.out.println("beforeSum:"+beforeSum);
+			int size=countSumByPeriod.size();
+			int tempSum=beforeSum;
+			resultList=new ArrayList<KeyCount>();
+			for(int i=0;i<size;i++){
+				KeyCount kc=new KeyCount();
+				KeyCount temp=countSumByPeriod.get(i);
+				kc.setKey_name(temp.getKey_name());
+				tempSum+=temp.getCnt();
+				kc.setCnt(tempSum);
+				resultList.add(kc);
+			}
+		}
+		return resultList;
+	}
 }

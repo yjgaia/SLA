@@ -22,6 +22,7 @@
 		공유자 : ${sharer}<br/><br/>
 		공유자 방문 유입 순위: ${countRecord }<br/><br/>
 		성별 분포: ${genderDistribution }<br/><br/>
-		시간별 방문자 수 : ${countSum }
+		시간별 방문자 수 : ${countSum }<br/><br/>
+		시간별 누적 방문자 수 : ${accumulatedCountSum }
 	</body>
 </html>
