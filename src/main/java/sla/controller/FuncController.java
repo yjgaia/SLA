@@ -131,15 +131,6 @@ public class FuncController {
 			shortUrl.persist();
 			String convertedShortUrl=ShortUrlUtil.complicatedConvert(shortUrl.getId());
 			shortUrl.setShortUrl(convertedShortUrl);
-			if(reShare){
-				long headId=ShortUrlUtil.complicatedRevert(reShareShortUrl);
-				if(ShortUrl.existsShortUrl(headId)){
-					shortUrl.setHeadId(headId); //초기 공유의 경우 head_id를 현재 공유 정보의 id로 설정
-				}
-				
-			}else{
-				shortUrl.setHeadId(shortUrl.getId()); //초기 공유의 경우 head_id를 현재 공유 정보의 id로 설정
-			}
 			 
 			shortUrl.merge();
 			

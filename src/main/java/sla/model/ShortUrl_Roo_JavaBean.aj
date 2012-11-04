@@ -8,14 +8,6 @@ import sla.model.UserInfo;
 
 privileged aspect ShortUrl_Roo_JavaBean {
     
-    public long ShortUrl.getHeadId() {
-        return this.headId;
-    }
-    
-    public void ShortUrl.setHeadId(long headId) {
-        this.headId = headId;
-    }
-    
     public String ShortUrl.getShortUrl() {
         return this.shortUrl;
     }

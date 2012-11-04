@@ -165,7 +165,4 @@ public class AnalyzeService {
 		}
 		return resultList;
 	}
-	public static void main(String[] args){
-		//getCountSumByHour(2012010410, 48);
-	}
 }
