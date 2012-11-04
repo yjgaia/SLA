@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import sla.model.ShortUrl;
 import sla.service.ShortUrlService;
+import sla.service.UserAgentService;
 import sla.service.VisitCountService;
 import sla.util.ShortUrlUtil;
 
@@ -18,6 +19,8 @@ import sla.util.ShortUrlUtil;
 public class MainController {
 	@Autowired
 	VisitCountService visitCountService;
+	@Autowired
+	UserAgentService userAgentService;
 	@Autowired
 	ShortUrlService shortUrlService;
 	@RequestMapping("/")
@@ -30,10 +33,12 @@ public class MainController {
 		long id=ShortUrlUtil.complicatedRevert(shortUrl);
 		
 		UserAgent userAgent = UserAgent.parseUserAgentString(httpServletRequest.getHeader("User-Agent"));
+		
 		System.out.println("userAgent:"+userAgent);
 		if(ShortUrl.existsShortUrl(id)){
 			ShortUrl su=ShortUrl.findShortUrl(id);
 			visitCountService.increaseVisitCount(su.getId());
+			userAgentService.increaseUseCount(su.getId(), userAgent.getOperatingSystem().name(), userAgent.getBrowser().name(), userAgent.getBrowserVersion().getVersion());
 			String url=su.getUrl();
 			return "redirect:"+url;
 		}else{
