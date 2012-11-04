@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import sla.model.KeyCount;
 import sla.model.Page;
+import sla.model.Result;
 import sla.model.ShortUrl;
 import sla.model.ShortUserInfoWithCount;
 import sla.model.UserInfo;
@@ -86,19 +87,19 @@ public class FuncController {
 			System.out.println(ShortUrl.getUserSharePostCount(sharer.getId()));
 			System.out.println(VisitCount.getCountSumByUser(sharer.getId()));
 			List<KeyCount> genderDistribution=analyzeService.getUserGenderDistribution(shortUrl,true);
-			List<KeyCount> operationSystemDistribution=analyzeService.getUserGenderDistribution(shortUrl,true);
-			List<KeyCount> browserDistribution=analyzeService.getUserGenderDistribution(shortUrl,true);
+			List<KeyCount> operationSystemDistribution=analyzeService.getOperationSystemDistribution(shortUrl,true);
+			List<KeyCount> browserDistribution=analyzeService.getBrowserDistribution(shortUrl,true);
 			List<ShortUserInfoWithCount> countRecord=analyzeService.getCountRecordByUser(shortUrl, -1, 2013111000);
 			List<KeyCount> countSum=analyzeService.getCountSumByPeriod(
 					shortUrl,Integer.parseInt(DateUtil.getToday("YYYYMMDDHH")), 10,0,true);
 			List<KeyCount> accumulatedCountSum=analyzeService.getAccumulatedCountSumByPeriod(shortUrl,Integer.parseInt(DateUtil.getToday("YYYYMMDDHH")), 10,0,true);
 			model.addAttribute("sharer",objectMapper.writeValueAsString(sharer));
-			model.addAttribute("countRecord",objectMapper.writeValueAsString(countRecord));
-			model.addAttribute("genderDistribution",objectMapper.writeValueAsString(genderDistribution));
-			model.addAttribute("operationSystemDistribution",objectMapper.writeValueAsString(operationSystemDistribution));
-			model.addAttribute("browserDistribution",objectMapper.writeValueAsString(browserDistribution));
-			model.addAttribute("countSum",objectMapper.writeValueAsString(countSum));
-			model.addAttribute("accumulatedCountSum",objectMapper.writeValueAsString(accumulatedCountSum));
+			model.addAttribute("countRecord",objectMapper.writeValueAsString(new Result(countRecord)));
+			model.addAttribute("genderDistribution",objectMapper.writeValueAsString(new Result(genderDistribution)));
+			model.addAttribute("operationSystemDistribution",objectMapper.writeValueAsString(new Result(operationSystemDistribution)));
+			model.addAttribute("browserDistribution",objectMapper.writeValueAsString(new Result(browserDistribution)));
+			model.addAttribute("countSum",objectMapper.writeValueAsString(new Result(countSum)));
+			model.addAttribute("accumulatedCountSum",objectMapper.writeValueAsString(new Result(accumulatedCountSum)));
 			
 			return "func/analyze";
 		}else {
