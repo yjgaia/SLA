@@ -1,13 +1,15 @@
 package sla.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
+import nl.bitwalker.useragentutils.UserAgent;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import sla.data.KeyValueCache;
 import sla.model.ShortUrl;
-import sla.model.VisitCount;
 import sla.service.ShortUrlService;
 import sla.service.VisitCountService;
 import sla.util.ShortUrlUtil;
@@ -24,9 +26,11 @@ public class MainController {
 	}
 
 	@RequestMapping("/{shortUrl}")
-	public String shortUrl(@PathVariable String shortUrl) {
+	public String shortUrl(@PathVariable String shortUrl,HttpServletRequest httpServletRequest) {
 		long id=ShortUrlUtil.complicatedRevert(shortUrl);
-		System.out.println("얻은 id?"+id);
+		
+		UserAgent userAgent = UserAgent.parseUserAgentString(httpServletRequest.getHeader("User-Agent"));
+		System.out.println("userAgent:"+userAgent);
 		if(ShortUrl.existsShortUrl(id)){
 			ShortUrl su=ShortUrl.findShortUrl(id);
 			visitCountService.increaseVisitCount(su.getId());
