@@ -1,11 +1,15 @@
 package sla.controller;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.social.connect.Connection;
@@ -30,6 +34,7 @@ import sla.model.VisitCount;
 import sla.service.AnalyzeService;
 import sla.social.SocialConfig;
 import sla.util.AuthUtil;
+import sla.util.DateUtil;
 import sla.util.ShortUrlUtil;
 
 @Controller
@@ -73,25 +78,21 @@ public class FuncController {
 	}
 	
 	@RequestMapping("analyze")
-	public String analyze(@RequestParam String shortUrl,Model model) throws SQLException {
+	public String analyze(@RequestParam String shortUrl,Model model) throws SQLException, JsonGenerationException, JsonMappingException, IOException {
 		long id=ShortUrlUtil.complicatedRevert(shortUrl);
 		if(ShortUrl.existsShortUrl(id)){
-			ShortUrl shortUrlRecord=ShortUrl.findShortUrl(id);
+			ObjectMapper objectMapper=new ObjectMapper();
 			UserInfo sharer = analyzeService.getUserInfoWithShortUrl(shortUrl);
 			System.out.println(ShortUrl.getUserSharePostCount(sharer.getId()));
 			System.out.println(VisitCount.getCountSumByUser(sharer.getId()));
 			List<KeyCount> genderDistribution=analyzeService.getUserGenderDistribution(shortUrl);
 			List<ShortUserInfoWithCount> countRecord=analyzeService.getCountRecordByUser(shortUrl, -1, 2013111000);
-			System.out.println(analyzeService.getCountSumByPeriod(shortUrl,2012110408, 10,0,true));
-			System.out.println(analyzeService.getCountSumByPeriod(shortUrl,20121104, 10,1,true));
-			System.out.println(analyzeService.getCountSumByPeriod(shortUrl,201211, 10,2,true));
-			System.out.println(analyzeService.getCountSumByPeriod(shortUrl,2012110408, 10,0,false));
-			System.out.println(analyzeService.getCountSumByPeriod(shortUrl,20121104, 10,1,false));
-			System.out.println(analyzeService.getCountSumByPeriod(shortUrl,201211, 10,2,false));
-			
-			model.addAttribute("sharer",sharer);
-			model.addAttribute("countRecord",countRecord);
-			model.addAttribute("genderDistribution",genderDistribution);
+			List<KeyCount> countSum=analyzeService.getCountSumByPeriod(
+					shortUrl,Integer.parseInt(DateUtil.getToday("YYYYMMDDHH")), 10,0,true);
+			model.addAttribute("sharer",objectMapper.writeValueAsString(sharer));
+			model.addAttribute("countRecord",objectMapper.writeValueAsString(countRecord));
+			model.addAttribute("genderDistribution",objectMapper.writeValueAsString(genderDistribution));
+			model.addAttribute("countSum",objectMapper.writeValueAsString(countSum));
 			return "func/analyze";
 		}else {
 			return "shortUrlNotFound";

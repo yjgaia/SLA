@@ -21,6 +21,7 @@
 		분석 결과 보기<br/><br/>
 		공유자 : ${sharer}<br/><br/>
 		공유자 방문 유입 순위: ${countRecord }<br/><br/>
-		성별 분포: ${genderDistribution }
+		성별 분포: ${genderDistribution }<br/><br/>
+		시간별 방문자 수 : ${countSum }
 	</body>
 </html>

@@ -9,5 +9,6 @@ import org.springframework.roo.addon.tostring.RooToString;
 public class ShortUserInfoWithCount   {
 	private int id;
 	private String social_name;
+	private String social_image_url;
 	private int cnt;
 }

@@ -5,7 +5,7 @@
 	<typeAlias alias="KeyCount" type="sla.model.KeyCount"/>
 	<typeAlias alias="ShortUserInfoWithCount" type="sla.model.ShortUserInfoWithCount"/>
 	<select id="getCountRecordByUser" parameterClass="Map" resultClass="ShortUserInfoWithCount">
-	SELECT u.id,u.social_name  ,c.cnt AS cnt FROM (SELECT user_id, SUM(cnt) 
+	SELECT u.id,u.social_name,u.social_image_url  ,c.cnt AS cnt FROM (SELECT user_id, SUM(cnt) 
 	cnt FROM(SELECT a.*, (SELECT COALESCE(SUM(visit_count),0)
  	FROM visit_count WHERE encoded_key_id=a.id  AND (time_period BETWEEN #startPeriod# AND #endPeriod#)) 
  	AS cnt FROM short_url a WHERE url=#url# ORDER BY cnt DESC ) count_by_user GROUP BY user_id ORDER BY cnt DESC) c

@@ -79,8 +79,9 @@ public class AnalyzeService {
 	 * 
 	 * @param startPeriod 카운트를 집계할 기간 시작 값 YYYYMMDDHH:24 ex)2012103023
 	 * @param endPeriod 카운트를 집계할 기간 종료 값 YYYYMMDDHH:24 ex)2012103023
-	 * @param getCount endParam부터 단위간격으로 가져올 항목 숫자
+	 * @param getCount endParam부터 단위간격으로 가져올 카운트 수
 	 * @param gubun 0: 시간별, 1: 날짜별, 2: 월별
+	 * @param all true: 전체 url에 대해서, false : 해당 short url에 대해서만 가져옴
 	 * @return
 	 * @throws SQLException 
 	 */

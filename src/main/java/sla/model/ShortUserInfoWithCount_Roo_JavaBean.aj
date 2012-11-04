@@ -23,6 +23,14 @@ privileged aspect ShortUserInfoWithCount_Roo_JavaBean {
         this.social_name = social_name;
     }
     
+    public String ShortUserInfoWithCount.getSocial_image_url() {
+        return this.social_image_url;
+    }
+    
+    public void ShortUserInfoWithCount.setSocial_image_url(String social_image_url) {
+        this.social_image_url = social_image_url;
+    }
+    
     public int ShortUserInfoWithCount.getCnt() {
         return this.cnt;
     }
