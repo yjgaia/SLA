@@ -32,13 +32,22 @@ public class MainController {
 	public String shortUrl(@PathVariable String shortUrl,HttpServletRequest httpServletRequest) {
 		long id=ShortUrlUtil.complicatedRevert(shortUrl);
 		
-		UserAgent userAgent = UserAgent.parseUserAgentString(httpServletRequest.getHeader("User-Agent"));
+		final UserAgent userAgent = UserAgent.parseUserAgentString(httpServletRequest.getHeader("User-Agent"));
 		
 		System.out.println("userAgent:"+userAgent);
 		if(ShortUrl.existsShortUrl(id)){
-			ShortUrl su=ShortUrl.findShortUrl(id);
-			visitCountService.increaseVisitCount(su.getId());
-			userAgentService.increaseUseCount(su.getId(), userAgent.getOperatingSystem().name(), userAgent.getBrowser().name(), userAgent.getBrowserVersion().getVersion());
+			final ShortUrl su=ShortUrl.findShortUrl(id);
+			Thread thread =new Thread(new Runnable() {
+				
+				@Override
+				public void run() {
+					visitCountService.increaseVisitCount(su.getId());
+					userAgentService.increaseUseCount(su.getId(), userAgent.getOperatingSystem().name(), userAgent.getBrowser().name(), userAgent.getBrowserVersion().getVersion());
+				}
+			});
+			System.out.println("스레드 시작");
+			thread.start();
+			System.out.println("url이동");
 			String url=su.getUrl();
 			return "redirect:"+url;
 		}else{
