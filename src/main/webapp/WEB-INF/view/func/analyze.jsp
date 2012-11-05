@@ -19,12 +19,12 @@
 	<body>
 	
 		분석 결과 보기<br/><br/>
-		공유자 : ${sharer}<br/><br/>
-		공유자 방문 유입 순위: ${countRecord }<br/><br/>
-		성별 분포: ${genderDistribution }<br/><br/>
-		OS 분포: ${operationSystemDistribution }<br/><br/>
-		브라우저 분포: ${browserDistribution }<br/><br/>
-		시간별 방문자 수 : ${countSum }<br/><br/>
-		시간별 누적 방문자 수 : ${accumulatedCountSum }
+		공유자 :/SLA/api/sharerInfo?shortUrl=IP<br/> ${sharer}<br/><br/>
+		공유자 방문 유입 순위: /SLA/api/countRecord?shortUrl=IP<br/> ${countRecord }<br/><br/>
+		성별 분포: /SLA/api/genderDistribution?shortUrl=IP<br/>${genderDistribution }<br/><br/>
+		OS 분포: /SLA/api/osDistribution?shortUrl=IP<br/>${operationSystemDistribution }<br/><br/>
+		브라우저 분포: /SLA/api/browserDistribution?shortUrl=IP<br/>${browserDistribution }<br/><br/>
+		시간별 방문자 수 :/SLA/api/countSumByPeriod?shortUrl=IP<br/> ${countSum }<br/><br/>
+		시간별 누적 방문자 수 :/SLA/api/accumulatedCountSum?shortUrl=IP<br/> ${accumulatedCountSum }
 	</body>
 </html>
