@@ -511,6 +511,7 @@
 		</script>
 	</head>
 	<body>
+	<h3 style="text-align:center">${shortUrlRecord.url }에 대한 분석 결과</h3>
 	<div id="wrapper" style="display:table;">
 		<div id="main-row1">
 			<div style="width: 550px;float:left;position:relative;">

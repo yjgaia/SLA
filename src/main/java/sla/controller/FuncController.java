@@ -82,6 +82,7 @@ public class FuncController {
 	public String analyze(@RequestParam String shortUrl,Model model) throws SQLException, JsonGenerationException, JsonMappingException, IOException {
 		long id=ShortUrlUtil.complicatedRevert(shortUrl);
 		if(ShortUrl.existsShortUrl(id)){
+			ShortUrl shortUrlRecord=ShortUrl.findShortUrl(id);
 			ObjectMapper objectMapper=new ObjectMapper();
 			UserInfo sharer = analyzeService.getUserInfoWithShortUrl(shortUrl);
 			long sharePostCount=ShortUrl.getUserSharePostCount(sharer.getId());
@@ -104,6 +105,7 @@ public class FuncController {
 			List<KeyCount> countSum=analyzeService.getCountSumByPeriod(
 					shortUrl,Integer.parseInt(DateUtil.getToday("YYYYMMDDHH")), 10,0,true);
 			List<KeyCount> accumulatedCountSum=analyzeService.getAccumulatedCountSumByPeriod(shortUrl,Integer.parseInt(DateUtil.getToday("YYYYMMDDHH")), 10,0,true);
+			model.addAttribute("shortUrlRecord",shortUrlRecord);
 			model.addAttribute("sharer",sharer);
 			model.addAttribute("sharerPostCount",sharePostCount);
 			model.addAttribute("sharerTotalVisitCount",totalCountSum);
