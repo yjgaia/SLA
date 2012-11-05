@@ -18,6 +18,9 @@ Ext.Loader.setConfig({
 });
 
 Ext.application({
+    stores: [
+        'MyArrayStore'
+    ],
     views: [
         'MyWindow',
         'MyWindow1'

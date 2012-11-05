@@ -6,6 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
+        "stores": [
+            "MyArrayStore"
+        ],
         "views": [
             "MyWindow",
             "MyWindow1"

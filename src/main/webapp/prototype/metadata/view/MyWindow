@@ -197,7 +197,8 @@
                                 "animate": [
                                     "true"
                                 ],
-                                "insetPadding": 0
+                                "insetPadding": 0,
+                                "store": "MyArrayStore"
                             },
                             "designerId": "90089c41-946d-40fb-a8cf-28984f7eaf79",
                             "cn": [
@@ -1180,6 +1181,7 @@
                                             "true"
                                         ],
                                         "insetPadding": 0,
+                                        "store": "MyArrayStore",
                                         "theme": "Category6"
                                     },
                                     "designerId": "c81ee389-2241-446f-88ce-9bf6e33e8248",
