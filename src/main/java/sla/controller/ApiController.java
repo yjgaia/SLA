@@ -27,13 +27,11 @@ public class ApiController {
 	
 	@Autowired
 	AnalyzeService analyzeService;
-	public String ret(Model model,Object object,boolean list) throws JsonGenerationException, JsonMappingException, IOException{
+	public String ret(Model model,Object object ) throws JsonGenerationException, JsonMappingException, IOException{
 		ObjectMapper om=new ObjectMapper();
-		if(list){
+		
 			model.addAttribute("result",om.writeValueAsString(new Result(object)));
-		}else{
-			model.addAttribute("result",om.writeValueAsString(object));
-		}
+		
 		return "result";
 		
 	}
@@ -42,7 +40,7 @@ public class ApiController {
 	@RequestMapping("userInfo")
 	public String getUserInfo(Model model,@RequestParam long id) throws JsonGenerationException, JsonMappingException, IOException{
 		UserInfo userInfo=UserInfo.findUserInfo(id);
-		return ret(model,userInfo,false);
+		return ret(model,userInfo);
 	}
 	
 	@RequestMapping("countRecord")
@@ -56,7 +54,7 @@ public class ApiController {
 			endPeriod=Integer.MAX_VALUE;
 		}
 		List<ShortUserInfoWithCount> countRecord=analyzeService.getCountRecordByUser(shortUrl, startPeriod, endPeriod);
-		return ret(model,countRecord,true);
+		return ret(model,countRecord);
 	}
 	
 	@RequestMapping("countSumByPeriod")
@@ -66,7 +64,7 @@ public class ApiController {
 			endPeriod=Integer.valueOf(DateUtil.getToday("YYYYMMDDHH"));
 		}
 		List<KeyCount> countSumByPeriod=analyzeService.getCountSumByPeriod(shortUrl, endPeriod, getCount, gubun, all);
-		return ret(model,countSumByPeriod,true);
+		return ret(model,countSumByPeriod);
 	}
 	
 	@RequestMapping("accumulatedCountSum")
@@ -76,30 +74,30 @@ public class ApiController {
 			endPeriod=Integer.valueOf(DateUtil.getToday("YYYYMMDDHH"));
 		}
 		List<KeyCount> accumulatedCountSum=analyzeService.getAccumulatedCountSumByPeriod(shortUrl, endPeriod, getCount, gubun, all);
-		return ret(model,accumulatedCountSum,true);
+		return ret(model,accumulatedCountSum);
 	}
 	@RequestMapping("sharerInfo")
 	public String getUserInfoWithShortUrl(Model model, @RequestParam String shortUrl) throws JsonGenerationException, JsonMappingException, IOException{
 		UserInfo sharerInfo=analyzeService.getUserInfoWithShortUrl(shortUrl);
-		return ret(model,sharerInfo,false);
+		return ret(model,sharerInfo);
 	}
 	
 	@RequestMapping("genderDistribution")
 	public String getUserGenderDistribution(Model model,@RequestParam String shortUrl,@RequestParam(required=false,defaultValue="true") boolean all) throws JsonGenerationException, JsonMappingException, IOException, SQLException{
 		List<KeyCount> genderDist=analyzeService.getUserGenderDistribution(shortUrl, all);
-		return ret(model,genderDist,true);
+		return ret(model,genderDist);
 	}
 	
 	@RequestMapping("osDistribution")
 	public String getOsDistribution(Model model,@RequestParam String shortUrl,@RequestParam(required=false,defaultValue="true") boolean all) throws JsonGenerationException, JsonMappingException, IOException, SQLException{
 		List<KeyCount> osDist=analyzeService.getOperationSystemDistribution(shortUrl, all);
-		return ret(model,osDist,true);
+		return ret(model,osDist);
 	}
 	
 	@RequestMapping("browserDistribution")
 	public String getBrowserDistribution(Model model,@RequestParam String shortUrl,@RequestParam(required=false,defaultValue="true") boolean all) throws JsonGenerationException, JsonMappingException, IOException, SQLException{
 		List<KeyCount> browserDist=analyzeService.getBrowserDistribution(shortUrl, all);
-		return ret(model,browserDist,true);
+		return ret(model,browserDist);
 	}
 	
 	
