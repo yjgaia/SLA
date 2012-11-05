@@ -8,6 +8,7 @@ import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,6 +37,14 @@ public class ApiController {
 		return "result";
 		
 	}
+	
+	@Secured("ROLE_USER")
+	@RequestMapping("userInfo")
+	public String getUserInfo(Model model,@RequestParam long id) throws JsonGenerationException, JsonMappingException, IOException{
+		UserInfo userInfo=UserInfo.findUserInfo(id);
+		return ret(model,userInfo,false);
+	}
+	
 	@RequestMapping("countRecord")
 	public String getCountRecordByUser(Model model,@RequestParam String shortUrl,@RequestParam(required=false) Integer startPeriod,@RequestParam(required=false) Integer endPeriod) throws SQLException, JsonGenerationException, JsonMappingException, IOException{
 		
