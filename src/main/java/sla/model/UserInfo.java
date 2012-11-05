@@ -42,10 +42,6 @@ public class UserInfo implements UserDetails {
 	private String socialGender;
 	private String socialBirthday;
 	private int socialFriendCount;
-	
-	@Transient
-	private Integer cnt;
-	
 
 	@Override
 	public Collection<GrantedAuthority> getAuthorities() {
