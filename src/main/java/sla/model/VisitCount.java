@@ -38,8 +38,7 @@ public class VisitCount {
 	 * @return 해당 유저가 공유한 url의 방문자 수 합계 리스트
 	 */
 	public static List<Long> getCountSumByUser(long id){
-		String query="SELECT SUM(visitCount) FROM VisitCount o WHERE encodedKeyId IN(SELECT id FROM ShortUrl WHERE userInfo.id=2) " +
-				"GROUP BY encodedKeyId";
+		String query="SELECT COALESCE(SUM(visitCount),0) FROM VisitCount o WHERE encodedKeyId IN(SELECT id FROM ShortUrl WHERE userInfo.id="+id+") ";
 		
 		
 		TypedQuery<Long> q = entityManager().createQuery(query, Long.class);

@@ -63,23 +63,8 @@ public class FuncController {
 		// just view
 	}
 	
-	@RequestMapping(value = "page/create", method = RequestMethod.GET)
+	@RequestMapping("page/create")
 	public void createPage(@ModelAttribute("command") Page page) {
-		// just view
-	}
-	
-	@RequestMapping(value = "page/create", method = RequestMethod.POST)
-	public void createPage(@ModelAttribute("command") Page page, BindingResult bindingResult, Model model) {
-		// just view
-	}
-	
-	@RequestMapping(value = "page/form", method = RequestMethod.GET)
-	public void pageForm(@ModelAttribute("command") Page page) {
-		// just view
-	}
-	
-	@RequestMapping(value = "page/form", method = RequestMethod.POST)
-	public void pageForm(@ModelAttribute("command") Page page, BindingResult bindingResult, Model model) {
 		// just view
 	}
 	
@@ -99,8 +84,19 @@ public class FuncController {
 		if(ShortUrl.existsShortUrl(id)){
 			ObjectMapper objectMapper=new ObjectMapper();
 			UserInfo sharer = analyzeService.getUserInfoWithShortUrl(shortUrl);
-			System.out.println(ShortUrl.getUserSharePostCount(sharer.getId()));
-			System.out.println(VisitCount.getCountSumByUser(sharer.getId()));
+			long sharePostCount=ShortUrl.getUserSharePostCount(sharer.getId());
+			List<Long> countSumBySharer=VisitCount.getCountSumByUser(sharer.getId());
+			long totalCountSum=0;
+			for(int i=0;i<countSumBySharer.size();i++){
+				totalCountSum+=countSumBySharer.get(i);
+			}
+			double sharerFriendVisitorRatio;
+			if(sharer.getSocialFriendCount()==0){
+				sharerFriendVisitorRatio=0;
+			}else{
+				sharerFriendVisitorRatio=Math.floor((double)totalCountSum/((double)sharer.getSocialFriendCount())*1000)/1000;
+			}
+			long averageCount=totalCountSum/sharePostCount;
 			List<KeyCount> genderDistribution=analyzeService.getUserGenderDistribution(shortUrl,true);
 			List<KeyCount> operationSystemDistribution=analyzeService.getOperationSystemDistribution(shortUrl,true);
 			List<KeyCount> browserDistribution=analyzeService.getBrowserDistribution(shortUrl,true);
@@ -108,7 +104,11 @@ public class FuncController {
 			List<KeyCount> countSum=analyzeService.getCountSumByPeriod(
 					shortUrl,Integer.parseInt(DateUtil.getToday("YYYYMMDDHH")), 10,0,true);
 			List<KeyCount> accumulatedCountSum=analyzeService.getAccumulatedCountSumByPeriod(shortUrl,Integer.parseInt(DateUtil.getToday("YYYYMMDDHH")), 10,0,true);
-			model.addAttribute("sharer",objectMapper.writeValueAsString(sharer));
+			model.addAttribute("sharer",sharer);
+			model.addAttribute("sharerPostCount",sharePostCount);
+			model.addAttribute("sharerTotalVisitCount",totalCountSum);
+			model.addAttribute("sharerAverageVisitCount",averageCount);
+			model.addAttribute("sharerFriendVisitorRatio",sharerFriendVisitorRatio);
 			model.addAttribute("countRecord",objectMapper.writeValueAsString(new Result(countRecord)));
 			model.addAttribute("genderDistribution",objectMapper.writeValueAsString(new Result(genderDistribution)));
 			model.addAttribute("operationSystemDistribution",objectMapper.writeValueAsString(new Result(operationSystemDistribution)));

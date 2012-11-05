@@ -58,7 +58,7 @@
 	GROUP BY FLOOR(time_period/10000)
 	</select>
 	<select id="getBeforeCountSum" parameterClass="Map" resultClass="Integer">
-	SELECT SUM(visit_count) FROM visit_count a, short_url b
+	SELECT COALESCE(SUM(visit_count),0) FROM visit_count a, short_url b
 	WHERE a.encoded_key_id=b.id
 	<isNotNull prepend="AND " property="url">b.url=#url# </isNotNull>
 	<isNotNull prepend="AND " property="encodedKeyId">b.id=#encodedKeyId# </isNotNull>

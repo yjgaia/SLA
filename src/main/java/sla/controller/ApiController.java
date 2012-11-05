@@ -61,7 +61,17 @@ public class ApiController {
 	public String getCountSumByPeriod(Model model,@RequestParam String shortUrl,Integer endPeriod,
 			@RequestParam(required=false,defaultValue="10")Integer getCount,@RequestParam(required=false,defaultValue="0") Integer gubun,@RequestParam(required=false,defaultValue="true") boolean all) throws SQLException, JsonGenerationException, JsonMappingException, IOException {
 		if(endPeriod==null){
-			endPeriod=Integer.valueOf(DateUtil.getToday("YYYYMMDDHH"));
+			switch(gubun){
+			case 0:
+				endPeriod=Integer.valueOf(DateUtil.getToday("YYYYMMDDHH"));
+				break;
+			case 1:
+				endPeriod=Integer.valueOf(DateUtil.getToday("YYYYMMDD"));
+				break;
+			case 2:
+				endPeriod=Integer.valueOf(DateUtil.getToday("YYYYMM"));
+				break;
+			}
 		}
 		List<KeyCount> countSumByPeriod=analyzeService.getCountSumByPeriod(shortUrl, endPeriod, getCount, gubun, all);
 		return ret(model,countSumByPeriod);
@@ -71,7 +81,18 @@ public class ApiController {
 	public String getAccumulatedCountSumByPeriod(Model model,@RequestParam String shortUrl,Integer endPeriod,
 			@RequestParam(required=false,defaultValue="10")Integer getCount,@RequestParam(required=false,defaultValue="0") Integer gubun,@RequestParam(required=false,defaultValue="true") boolean all) throws SQLException, JsonGenerationException, JsonMappingException, IOException {
 		if(endPeriod==null){
-			endPeriod=Integer.valueOf(DateUtil.getToday("YYYYMMDDHH"));
+			switch(gubun){
+			case 0:
+				endPeriod=Integer.valueOf(DateUtil.getToday("YYYYMMDDHH"));
+				break;
+			case 1:
+				endPeriod=Integer.valueOf(DateUtil.getToday("YYYYMMDD"));
+				break;
+			case 2:
+				endPeriod=Integer.valueOf(DateUtil.getToday("YYYYMM"));
+				break;
+			}
+			
 		}
 		List<KeyCount> accumulatedCountSum=analyzeService.getAccumulatedCountSumByPeriod(shortUrl, endPeriod, getCount, gubun, all);
 		return ret(model,accumulatedCountSum);

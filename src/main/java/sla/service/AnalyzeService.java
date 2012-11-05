@@ -62,7 +62,7 @@ public class AnalyzeService {
 		List<KeyCount> resultList=null;
 		if(ShortUrl.existsShortUrl(id)){
 			ShortUrl shortUrlRecord=ShortUrl.findShortUrl(id);
-			String[] keys={"","male","female"};
+			String[] keys={"male","female",""};
 			String url=shortUrlRecord.getUrl();
 			HashMap<String,Object> param=new HashMap<String,Object>();
 			if(all){
