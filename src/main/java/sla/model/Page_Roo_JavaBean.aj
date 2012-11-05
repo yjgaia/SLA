@@ -7,6 +7,14 @@ import sla.model.Page;
 
 privileged aspect Page_Roo_JavaBean {
     
+    public String Page.getTitle() {
+        return this.title;
+    }
+    
+    public void Page.setTitle(String title) {
+        this.title = title;
+    }
+    
     public String Page.getContent() {
         return this.content;
     }

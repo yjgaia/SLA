@@ -63,8 +63,23 @@ public class FuncController {
 		// just view
 	}
 	
-	@RequestMapping("page/create")
+	@RequestMapping(value = "page/create", method = RequestMethod.GET)
 	public void createPage(@ModelAttribute("command") Page page) {
+		// just view
+	}
+	
+	@RequestMapping(value = "page/create", method = RequestMethod.POST)
+	public void createPage(@ModelAttribute("command") Page page, BindingResult bindingResult, Model model) {
+		// just view
+	}
+	
+	@RequestMapping(value = "page/form", method = RequestMethod.GET)
+	public void pageForm(@ModelAttribute("command") Page page) {
+		// just view
+	}
+	
+	@RequestMapping(value = "page/form", method = RequestMethod.POST)
+	public void pageForm(@ModelAttribute("command") Page page, BindingResult bindingResult, Model model) {
 		// just view
 	}
 	
