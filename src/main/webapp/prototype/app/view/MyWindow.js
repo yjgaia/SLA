@@ -93,6 +93,7 @@ Ext.define('MyApp.view.MyWindow', {
                                     width: 844,
                                     animate: true,
                                     insetPadding: 0,
+                                    store: 'MyArrayStore',
                                     axes: [
                                         {
                                             type: 'Category',
@@ -535,6 +536,7 @@ Ext.define('MyApp.view.MyWindow', {
                                             width: 400,
                                             animate: true,
                                             insetPadding: 0,
+                                            store: 'MyArrayStore',
                                             theme: 'Category6',
                                             axes: [
                                                 {

@@ -1,0 +1,70 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyArrayStore",
+        "storeId": "MyArrayStore",
+        "model": null,
+        "data": "[\r\n['3m Co',                               71.72],\r\n['Alcoa Inc',                           29.01]\r\n]"
+    },
+    "id": "ExtBox1-ext-gen2488",
+    "designerId": "63d8bba7-3c27-4fde-9dbf-8a0fe5d8c21e",
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy"
+            },
+            "designerId": "efa9535a-9ecf-4332-9abe-9ff92dbc4599",
+            "cn": [
+                {
+                    "type": "arrayreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyArrayReader"
+                    },
+                    "designerId": "2004296e-6aec-488e-8dd1-e9608d47fc7f"
+                }
+            ]
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field2",
+                "name": "name"
+            },
+            "designerId": "21ccb2ce-9705-4082-8c72-de4c3f05a862"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field3",
+                "name": "count"
+            },
+            "designerId": "89a1e91e-f763-4957-a26b-32bd05519f17"
+        }
+    ]
+}

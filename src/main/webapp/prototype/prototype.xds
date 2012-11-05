@@ -36,6 +36,14 @@
                 "app/view/MyWindow1.js"
             ],
             "className": "MyWindow1"
+        },
+        "63d8bba7-3c27-4fde-9dbf-8a0fe5d8c21e": {
+            "paths": [
+                "metadata/store/MyArrayStore",
+                "app/store/override/MyArrayStore.js",
+                "app/store/MyArrayStore.js"
+            ],
+            "className": "MyArrayStore"
         }
     },
     "viewOrderMap": {
@@ -43,7 +51,9 @@
             "6cb13d44-dae3-4d6a-bd96-493e2fbbda83",
             "d21583b5-4013-4b21-9849-f06fb2ff46b2"
         ],
-        "store": [],
+        "store": [
+            "63d8bba7-3c27-4fde-9dbf-8a0fe5d8c21e"
+        ],
         "controller": [],
         "model": [],
         "resource": [

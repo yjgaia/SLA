@@ -99,6 +99,12 @@
 				margin-top: 4px;
 				margin-bottom: 8px;
 			}
+			#share-form p {
+				margin: 0;
+				padding: 10px 10px 0 10px;
+				font-size: 12px;
+				color: #FFF;
+			}
 			#share-form form {
 				padding: 10px;
 				overflow: auto;
@@ -215,6 +221,7 @@
 				font-size: 11px;
 				text-align: center;
 				color: #999;
+				margin-bottom: 50px;
 			}
 			#footer .left {
 				float: left;
@@ -236,6 +243,9 @@
 				<a id="go-analyze-result" href="${pageContext.request.contextPath}/func/analyze">분석 결과 보기</a>
 			</div>
 			<div id="share-form">
+				<p>
+					내가 공유한 링크를 얼마나 많은 사람이 눌렀는지 알고싶다면?
+				</p>
 				<form action="${pageContext.request.contextPath}/func/share" onsubmit="OPEN_YOGIO_WIN();" target="YOGIO_WIN">
 					<input class="url" name="url" placeholder="http:// 공유할 주소를 입력해주세요.">
 					<input class="submit" type="submit" value="공유">
