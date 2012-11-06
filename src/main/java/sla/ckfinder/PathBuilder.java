@@ -1,40 +1,26 @@
 package sla.ckfinder;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 
-import sla.util.AuthUtil;
-import sla.util.IpUtil;
-
-import com.ckfinder.connector.ServletContextFactory;
 import com.ckfinder.connector.configuration.DefaultPathBuilder;
 
 public class PathBuilder extends DefaultPathBuilder {
+
+	// 개발
+	private final static String BASE_DIR = "/Users/hanul/Documents/workspace-sts-2.8.1.RELEASE/SLA-userfiles/WebContent";
+	private final static String BASE_URL = "http://test.com:8080/SLA-userfiles/";
 	
+	// 운영
+	//private final static String BASE_DIR = "/root/apache-tomcat-7.0.32/webapps/run/SLA-userfiles";
+	//private final static String BASE_URL = "http://yog.io/SLA-userfiles/";
+
 	@Override
 	public String getBaseDir(HttpServletRequest request) {
-		String newBaseUrl = getBaseUrl(request);
-		newBaseUrl = newBaseUrl.substring(request.getContextPath().length());
-		
-		try {
-			return ServletContextFactory.getServletContext().getRealPath(newBaseUrl);
-		} catch (Exception e) {
-			return newBaseUrl;
-		}
+		return BASE_DIR + "/" + request.getSession().getAttribute("NOW_PAGE_ID");
 	}
-	
-	private static Map<String, String> savedUsername = new HashMap<String, String>();
 
 	@Override
 	public String getBaseUrl(HttpServletRequest request) {
-		String username = AuthUtil.getUsername();
-		if (username == null) {
-			username = savedUsername.get(IpUtil.getIp(request));
-		} else {
-			savedUsername.put(IpUtil.getIp(request), username);
-		}
-		return super.getBaseUrl(request) + "/" + username + "/";
+		return BASE_URL + request.getSession().getAttribute("NOW_PAGE_ID") + "/";
 	}
 }

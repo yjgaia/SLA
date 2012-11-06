@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.codehaus.jackson.JsonGenerationException;
@@ -88,9 +89,11 @@ public class FuncController {
 	}
 	
 	@RequestMapping(value = "page/form", method = RequestMethod.GET)
-	public void pageForm(@ModelAttribute("command") Page page, Model model) {
+	public void pageForm(@ModelAttribute("command") Page page, Model model, HttpSession session) {
 		// just view
 		model.addAttribute("command", Page.findPage(page.getId()));
+		
+		session.setAttribute("NOW_PAGE_ID", page.getId());
 	}
 	
 	@RequestMapping(value = "page/form", method = RequestMethod.POST)

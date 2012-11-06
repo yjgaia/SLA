@@ -132,7 +132,7 @@
 						현재 작성중인 페이지의 주소는 <a href="http://yog.io/func/page/view/${command.id}" target="_blank">http://yog.io/func/page/view/${command.id}</a> 입니다!
 					</p>
 					<form:hidden path="id" />
-					<form:errors path="title" />
+					<form:errors path="*" />
 					<label>제목 <form:input path="title" /></label>
 					<form:textarea path="content" />
 					<script type="text/javascript">
@@ -162,7 +162,6 @@
 						filebrowserFlashUploadUrl : '${pageContext.request.contextPath}/func/ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Flash'
 					});
 					</script>
-					<form:errors path="password" />
 					<label>비밀번호 확인 <form:password path="password" /></label>
 					<a href="javascript:alert('준비중입니다.');">비밀번호 변경</a>
 				</div>
