@@ -55,7 +55,9 @@
 				<p>
 					사이트나 블로그에 YOG.IO! 공유하기 버튼을 붙혀보세요! 이렇게요!
 				</p>
-				<script>YOGIO();</script>
+				<p>
+					<script>YOGIO();</script>
+				</p>
 				<p>
 					우선, HTML문서의 head에 다음과 같은 script를 추가합니다.
 				</p>

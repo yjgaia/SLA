@@ -22,12 +22,12 @@ function YOGIO(o) {
 	}
 	
 	document.write(
-		'<form id="facebook-login-form-' + randomString + '" action="' + YOGIO_URL + '/func/signin/facebook" method="POST" target="YOGIO_WIN">'
+		'<a href="javascript:OPEN_YOGIO_WIN();document.getElementById(\'facebook-login-form-' + randomString + '\').submit();">'
+			+ '<img style="border: none;" src="' + YOGIO_URL + '/img/button/fb.png">'
+		+ '</a>'
+		+ '<form id="facebook-login-form-' + randomString + '" action="' + YOGIO_URL + '/func/signin/facebook" method="POST" target="YOGIO_WIN">'
 			+ '<input type="hidden" name="scope" value="email,publish_stream,offline_access,user_birthday,user_location" />'
 			+ '<input type="hidden" name="redirect_uri" value="' + YOGIO_URL + '/func/share?url=' + url + '" />'
 		+ '</form>'
-		+ '<a href="javascript:OPEN_YOGIO_WIN();document.getElementById(\'facebook-login-form-' + randomString + '\').submit();">'
-			+ '<img style="border: none;" src="' + YOGIO_URL + '/img/button/fb.png">'
-		+ '</a>'
 	);
 }

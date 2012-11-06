@@ -47,6 +47,10 @@
 			#footer a {
 				color: #999;
 			}
+			.error {
+				color: red;
+				display: block;
+			}
 		</style>
 		<script>
 		$(function() {
@@ -63,11 +67,22 @@
 					<a id="logo" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/img/logo.png"></a>
 				</div>
 				<div id="create-page-form">
-					<form:errors path="title" />
-					<label>제목 <form:input path="title" /></label>
-					<form:errors path="password" />
-					<label>비밀번호 <form:password path="password" /></label>
-					<input type="submit">
+					<p>
+						페이지를 생성합니다.
+					</p>
+					<p>
+						<h4>페이지의 제목을 입력해주세요.</h4>
+						<form:errors path="title" cssClass="error" />
+						<label>제목 <form:input path="title" /></label>
+					</p>
+					<p>
+						<h4>편집을 위한 비밀번호를 입력해주세요.</h4>
+						<form:errors path="password" cssClass="error" />
+						<label>비밀번호 <form:password path="password" /></label>
+					</p>
+					<p>
+						<input type="submit" value="페이지 생성">
+					</p>
 				</div>
 			</form:form>
 			<div id="footer">

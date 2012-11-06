@@ -109,6 +109,10 @@
 			#footer a {
 				color: #999;
 			}
+			.error {
+				color: red;
+				display: block;
+			}
 		</style>
 		<script>
 		$(function() {
@@ -132,7 +136,7 @@
 						현재 작성중인 페이지의 주소는 <a href="http://yog.io/func/page/view/${command.id}" target="_blank">http://yog.io/func/page/view/${command.id}</a> 입니다!
 					</p>
 					<form:hidden path="id" />
-					<form:errors path="*" />
+					<form:errors path="*" cssClass="error" />
 					<label>제목 <form:input path="title" /></label>
 					<form:textarea path="content" />
 					<script type="text/javascript">
