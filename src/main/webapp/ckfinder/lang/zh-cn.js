@@ -1,5 +1,274 @@
 ﻿/*
-Copyright (c) 2003-2012, CKSource - Frederico Knabben. All rights reserved.
-For licensing, see LICENSE.html or http://ckeditor.com/license
-*/
-CKEDITOR.lang['zh-cn']={"wsc":{"btnIgnore":"忽略","btnIgnoreAll":"全部忽略","btnReplace":"替换","btnReplaceAll":"全部替换","btnUndo":"撤消","changeTo":"更改为","errorLoading":"加载应该服务主机时出错: %s.","ieSpellDownload":"拼写检查插件还没安装, 您是否想现在就下载?","manyChanges":"拼写检查完成: 更改了 %1 个单词","noChanges":"拼写检查完成: 没有更改任何单词","noMispell":"拼写检查完成: 没有发现拼写错误","noSuggestions":"- 没有建议 -","notAvailable":"抱歉, 服务目前暂不可用","notInDic":"没有在字典里","oneChange":"拼写检查完成: 更改了一个单词","progress":"正在进行拼写检查...","title":"拼写检查","toolbar":"拼写检查"},"undo":{"redo":"重做","undo":"撤消"},"toolbar":{"toolbarCollapse":"折叠工具栏","toolbarExpand":"展开工具栏","toolbarGroups":{"document":"文档","clipboard":"剪贴板/撤销","editing":"编辑","forms":"表单","basicstyles":"基本格式","paragraph":"段落","links":"链接","insert":"插入","styles":"样式","colors":"颜色","tools":"工具"},"toolbars":"工具栏"},"templates":{"button":"模板","emptyListMsg":"(没有模板)","insertOption":"替换当前内容","options":"模板选项","selectPromptMsg":"请选择编辑器内容模板:","title":"内容模板"},"table":{"border":"边框","caption":"标题","cell":{"menu":"单元格","insertBefore":"在左侧插入单元格","insertAfter":"在右侧插入单元格","deleteCell":"删除单元格","merge":"合并单元格","mergeRight":"向右合并单元格","mergeDown":"向下合并单元格","splitHorizontal":"水平拆分单元格","splitVertical":"垂直拆分单元格","title":"单元格属性","cellType":"单元格类型","rowSpan":"纵跨行数","colSpan":"横跨列数","wordWrap":"自动换行","hAlign":"水平对齐","vAlign":"垂直对齐","alignBaseline":"基线","bgColor":"背景颜色","borderColor":"边框颜色","data":"数据","header":"表头","yes":"是","no":"否","invalidWidth":"单元格宽度必须为数字格式","invalidHeight":"单元格高度必须为数字格式","invalidRowSpan":"行跨度必须为整数格式","invalidColSpan":"列跨度必须为整数格式","chooseColor":"选择"},"cellPad":"边距","cellSpace":"间距","column":{"menu":"列","insertBefore":"在左侧插入列","insertAfter":"在右侧插入列","deleteColumn":"删除列"},"columns":"列数","deleteTable":"删除表格","headers":"标题单元格","headersBoth":"第一列和第一行","headersColumn":"第一列","headersNone":"无","headersRow":"第一行","invalidBorder":"边框粗细必须为数字格式","invalidCellPadding":"单元格填充必须为数字格式","invalidCellSpacing":"单元格间距必须为数字格式","invalidCols":"指定的行数必须大于零","invalidHeight":"表格高度必须为数字格式","invalidRows":"指定的列数必须大于零","invalidWidth":"表格宽度必须为数字格式","menu":"表格属性","row":{"menu":"行","insertBefore":"在上方插入行","insertAfter":"在下方插入行","deleteRow":"删除行"},"rows":"行数","summary":"摘要","title":"表格属性","toolbar":"表格","widthPc":"百分比","widthPx":"像素","widthUnit":"宽度单位"},"stylescombo":{"label":"样式","panelTitle":"样式","panelTitle1":"块级元素样式","panelTitle2":"内联元素样式","panelTitle3":"对象元素样式"},"specialchar":{"options":"特殊符号选项","title":"选择特殊符号","toolbar":"插入特殊符号"},"sourcearea":{"toolbar":"源码"},"smiley":{"options":"表情图标选项","title":"插入表情图标","toolbar":"表情符"},"showblocks":{"toolbar":"显示区块"},"selectall":{"toolbar":"全选"},"scayt":{"about":"关于即时拼写检查","aboutTab":"关于","addWord":"添加单词","allCaps":"忽略所有大写单词","dic_create":"创建","dic_delete":"删除","dic_field_name":"字典名称","dic_info":"一开始用户词典储存在 Cookie 中, 但是 Cookies 的容量是有限的, 当用户词典增长到超出 Cookie 限制时就无法再储存了, 这时您可以将词典储存到我们的服务器上. 要把您的个人词典到储存到我们的服务器上的话, 需要为您的词典指定一个名称, 如果您在我们的服务器上已经有储存有一个词典, 请输入词典名称并按还原按钮.","dic_rename":"重命名","dic_restore":"还原","dictionariesTab":"字典","disable":"禁用即时拼写检查","emptyDic":"字典名不应为空.","enable":"启用即时拼写检查","ignore":"忽略","ignoreAll":"全部忽略","ignoreDomainNames":"忽略域名","langs":"语言","languagesTab":"语言","mixedCase":"忽略大小写混合的单词","mixedWithDigits":"忽略带数字的单词","moreSuggestions":"更多拼写建议","opera_title":"不支持 Opera 浏览器","options":"选项","optionsTab":"选项","title":"即时拼写检查","toggle":"暂停/启用即时拼写检查"},"save":{"toolbar":"保存"},"removeformat":{"toolbar":"清除格式"},"print":{"toolbar":"打印"},"preview":{"preview":"预览"},"pastetext":{"button":"粘贴为无格式文本","title":"粘贴为无格式文本"},"pastefromword":{"confirmCleanup":"您要粘贴的内容好像是来自 MS Word, 是否要清除 MS Word 格式后再粘贴?","error":"由于内部错误无法清理要粘贴的数据","title":"从 MS Word 粘贴","toolbar":"从 MS Word 粘贴"},"pagebreak":{"alt":"分页符","toolbar":"插入分页符"},"newpage":{"toolbar":"新建"},"maximize":{"maximize":"全屏","minimize":"最小化"},"magicline":{"title":"Insert paragraph here"},"liststyle":{"armenian":"传统的亚美尼亚编号方式","bulletedTitle":"项目列表属性","circle":"空心圆","decimal":"数字 (1, 2, 3, 等)","decimalLeadingZero":"0开头的数字标记(01, 02, 03, 等)","disc":"实心圆","georgian":"传统的乔治亚编号方式(an, ban, gan, 等)","lowerAlpha":"小写英文字母(a, b, c, d, e, 等)","lowerGreek":"小写希腊字母(alpha, beta, gamma, 等)","lowerRoman":"小写罗马数字(i, ii, iii, iv, v, 等)","none":"无标记","notset":"<没有设置>","numberedTitle":"编号列表属性","square":"实心方块","start":"开始序号","type":"标记类型","upperAlpha":"大写英文字母(A, B, C, D, E, 等)","upperRoman":"大写罗马数字(I, II, III, IV, V, 等)","validateStartNumber":"列表开始序号必须为整数格式"},"list":{"bulletedlist":"项目列表","numberedlist":"编号列表"},"link":{"acccessKey":"访问键","advanced":"高级","advisoryContentType":"内容类型","advisoryTitle":"标题","anchor":{"toolbar":"插入/编辑锚点链接","menu":"锚点链接属性","title":"锚点链接属性","name":"锚点名称","errorName":"请输入锚点名称","remove":"删除锚点"},"anchorId":"按锚点 ID","anchorName":"按锚点名称","charset":"字符编码","cssClasses":"样式类名称","emailAddress":"地址","emailBody":"内容","emailSubject":"主题","id":"ID","info":"超链接信息","langCode":"语言代码","langDir":"语言方向","langDirLTR":"从左到右 (LTR)","langDirRTL":"从右到左 (RTL)","menu":"编辑超链接","name":"名称","noAnchors":"(此文档没有可用的锚点)","noEmail":"请输入电子邮件地址","noUrl":"请输入超链接地址","other":"<其他>","popupDependent":"依附 (NS)","popupFeatures":"弹出窗口属性","popupFullScreen":"全屏 (IE)","popupLeft":"左","popupLocationBar":"地址栏","popupMenuBar":"菜单栏","popupResizable":"可缩放","popupScrollBars":"滚动条","popupStatusBar":"状态栏","popupToolbar":"工具栏","popupTop":"右","rel":"关联","selectAnchor":"选择一个锚点","styles":"行内样式","tabIndex":"Tab 键次序","target":"目标","targetFrame":"<框架>","targetFrameName":"目标框架名称","targetPopup":"<弹出窗口>","targetPopupName":"弹出窗口名称","title":"超链接","toAnchor":"页内锚点链接","toEmail":"电子邮件","toUrl":"地址","toolbar":"插入/编辑超链接","type":"超链接类型","unlink":"取消超链接","upload":"上传"},"justify":{"block":"两端对齐","center":"居中","left":"左对齐","right":"右对齐"},"indent":{"indent":"增加缩进量","outdent":"减少缩进量"},"image":{"alertUrl":"请输入图象地址","alt":"替换文本","border":"边框大小","btnUpload":"上传到服务器上","button2Img":"确定要把当前按钮改变为图像吗?","hSpace":"水平间距","img2Button":"确定要把当前图像改变为按钮吗?","infoTab":"图象","linkTab":"链接","lockRatio":"锁定比例","menu":"图象属性","resetSize":"原始尺寸","title":"图象属性","titleButton":"图像域属性","upload":"上传","urlMissing":"缺少图像源文件地址","vSpace":"垂直间距","validateBorder":"边框大小必须为整数格式","validateHSpace":"水平间距必须为整数格式","validateVSpace":"垂直间距必须为整数格式"},"iframe":{"border":"显示框架边框","noUrl":"请输入框架的 URL","scrolling":"允许滚动条","title":"IFrame 属性","toolbar":"IFrame"},"horizontalrule":{"toolbar":"插入水平线"},"forms":{"button":{"title":"按钮属性","text":"标签(值)","type":"类型","typeBtn":"按钮","typeSbm":"提交","typeRst":"重设"},"checkboxAndRadio":{"checkboxTitle":"复选框属性","radioTitle":"单选按钮属性","value":"选定值","selected":"已勾选"},"form":{"title":"表单属性","menu":"表单属性","action":"动作","method":"方法","encoding":"表单编码"},"hidden":{"title":"隐藏域属性","name":"名称","value":"初始值"},"select":{"title":"菜单/列表属性","selectInfo":"选择信息","opAvail":"可选项","value":"值","size":"高度","lines":"行","chkMulti":"允许多选","opText":"选项文本","opValue":"选项值","btnAdd":"添加","btnModify":"修改","btnUp":"上移","btnDown":"下移","btnSetValue":"设为初始选定","btnDelete":"删除"},"textarea":{"title":"多行文本属性","cols":"字符宽度","rows":"行数"},"textfield":{"title":"单行文本属性","name":"名称","value":"初始值","charWidth":"字符宽度","maxChars":"最多字符数","type":"类型","typeText":"文本","typePass":"密码"}},"format":{"label":"格式","panelTitle":"格式","tag_address":"地址","tag_div":"段落(DIV)","tag_h1":"标题 1","tag_h2":"标题 2","tag_h3":"标题 3","tag_h4":"标题 4","tag_h5":"标题 5","tag_h6":"标题 6","tag_p":"普通","tag_pre":"已编排格式"},"font":{"fontSize":{"label":"大小","voiceLabel":"文字大小","panelTitle":"大小"},"label":"字体","panelTitle":"字体","voiceLabel":"字体"},"flash":{"access":"允许脚本访问","accessAlways":"总是","accessNever":"从不","accessSameDomain":"同域","alignAbsBottom":"绝对底部","alignAbsMiddle":"绝对居中","alignBaseline":"基线","alignTextTop":"文本上方","bgcolor":"背景颜色","chkFull":"启用全屏","chkLoop":"循环","chkMenu":"启用 Flash 菜单","chkPlay":"自动播放","flashvars":"Flash 变量","hSpace":"水平间距","properties":"Flash 属性","propertiesTab":"属性","quality":"质量","qualityAutoHigh":"高(自动)","qualityAutoLow":"低(自动)","qualityBest":"最好","qualityHigh":"高","qualityLow":"低","qualityMedium":"中(自动)","scale":"缩放","scaleAll":"全部显示","scaleFit":"严格匹配","scaleNoBorder":"无边框","title":"标题","vSpace":"垂直间距","validateHSpace":"水平间距必须为数字格式","validateSrc":"请输入源文件地址","validateVSpace":"垂直间距必须为数字格式","windowMode":"窗体模式","windowModeOpaque":"不透明","windowModeTransparent":"透明","windowModeWindow":"窗体"},"find":{"find":"查找","findOptions":"查找选项","findWhat":"查找:","matchCase":"区分大小写","matchCyclic":"循环匹配","matchWord":"全字匹配","notFoundMsg":"指定文本没有找到","replace":"替换","replaceAll":"全部替换","replaceSuccessMsg":"共完成 %1 处替换.","replaceWith":"替换:","title":"查找和替换"},"fakeobjects":{"anchor":"锚点","flash":"Flash 动画","hiddenfield":"隐藏域","iframe":"IFrame","unknown":"未知对象"},"elementspath":{"eleLabel":"元素路径","eleTitle":"%1 元素"},"div":{"IdInputLabel":"ID","advisoryTitleInputLabel":"标题","cssClassInputLabel":"样式类名称","edit":"编辑 DIV","inlineStyleInputLabel":"行内样式","langDirLTRLabel":"从左到右 (LTR)","langDirLabel":"语言方向","langDirRTLLabel":"从右到左 (RTL)","languageCodeInputLabel":"语言代码","remove":"移除 DIV","styleSelectLabel":"样式","title":"创建 DIV 容器","toolbar":"创建 DIV 容器"},"contextmenu":{"options":"快捷菜单选项"},"colordialog":{"clear":"清除","highlight":"高亮","options":"颜色选项","selected":"选择颜色","title":"选择颜色"},"colorbutton":{"auto":"自动","bgColorTitle":"背景颜色","colors":{"000":"黑","800000":"褐红","8B4513":"深褐","2F4F4F":"墨绿","008080":"绿松石","000080":"海军蓝","4B0082":"靛蓝","696969":"暗灰","B22222":"砖红","A52A2A":"褐","DAA520":"金黄","006400":"深绿","40E0D0":"蓝绿","0000CD":"中蓝","800080":"紫","808080":"灰","F00":"红","FF8C00":"深橙","FFD700":"金","008000":"绿","0FF":"青","00F":"蓝","EE82EE":"紫罗兰","A9A9A9":"深灰","FFA07A":"亮橙","FFA500":"橙","FFFF00":"黄","00FF00":"水绿","AFEEEE":"粉蓝","ADD8E6":"亮蓝","DDA0DD":"梅红","D3D3D3":"淡灰","FFF0F5":"淡紫红","FAEBD7":"古董白","FFFFE0":"淡黄","F0FFF0":"蜜白","F0FFFF":"天蓝","F0F8FF":"淡蓝","E6E6FA":"淡紫","FFF":"白"},"more":"其它颜色...","panelTitle":"颜色","textColorTitle":"文本颜色"},"clipboard":{"copy":"复制","copyError":"您的浏览器安全设置不允许编辑器自动执行复制操作, 请使用键盘快捷键(Ctrl/Cmd+C)来完成","cut":"剪切","cutError":"您的浏览器安全设置不允许编辑器自动执行剪切操作, 请使用键盘快捷键(Ctrl/Cmd+X)来完成","paste":"粘贴","pasteArea":"粘贴区域","pasteMsg":"请使用键盘快捷键(<STRONG>Ctrl/Cmd+V</STRONG>)把内容粘贴到下面的方框里，再按 <STRONG>确定</STRONG>","securityMsg":"因为您的浏览器的安全设置原因, 本编辑器不能直接访问您的剪贴板内容, 你需要在本窗口重新粘贴一次。","title":"粘贴"},"blockquote":{"toolbar":"块引用"},"bidi":{"ltr":"文字方向为从左至右","rtl":"文字方向为从右至左"},"basicstyles":{"bold":"加粗","italic":"倾斜","strike":"删除线","subscript":"下标","superscript":"上标","underline":"下划线"},"about":{"copy":"Copyright &copy; $1. 版权所有。","dlgTitle":"关于CKEditor","help":"请访问 $1 以获取帮助.","moreInfo":"访问我们的网站以获取更多关于协议的信息","title":"关于CKEditor","userGuide":"CKEditor 用户向导"},"dir":"ltr","editor":"所见即所得编辑器","common":{"editorHelp":"按 ALT+0 获得帮助","browseServer":"浏览服务器","url":"源文件","protocol":"协议","upload":"上传","uploadSubmit":"上传到服务器上","image":"图象","flash":"Flash","form":"表单","checkbox":"复选框","radio":"单选按钮","textField":"单行文本","textarea":"多行文本","hiddenField":"隐藏域","button":"按钮","select":"列表/菜单","imageButton":"图像域","notSet":"<没有设置>","id":"ID","name":"名称","langDir":"语言方向","langDirLtr":"从左到右 (LTR)","langDirRtl":"从右到左 (RTL)","langCode":"语言代码","longDescr":"详细说明地址","cssClass":"样式类名称","advisoryTitle":"标题","cssStyle":"行内样式","ok":"确定","cancel":"取消","close":"关闭","preview":"预览","resize":"拖拽以改变尺寸","generalTab":"常规","advancedTab":"高级","validateNumberFailed":"需要输入数字格式","confirmNewPage":"当前文档内容未保存,是否确认新建文档？","confirmCancel":"部分修改尚未保存，是否确认关闭对话框？","options":"选项","target":"目标窗口","targetNew":"新窗口 (_blank)","targetTop":"整页 (_top)","targetSelf":"本窗口 (_self)","targetParent":"父窗口 (_parent)","langDirLTR":"从左到右 (LTR)","langDirRTL":"从右到左 (RTL)","styles":"样式","cssClasses":"样式类","width":"宽度","height":"高度","align":"对齐方式","alignLeft":"左对齐","alignRight":"右对齐","alignCenter":"居中","alignTop":"顶端","alignMiddle":"居中","alignBottom":"底部","invalidHeight":"高度必须为数字格式","invalidWidth":"宽度必须为数字格式","invalidCssLength":"该字段必须为合式的CSS长度值，包括单位(px, %, in, cm, mm, em, ex, pt 或 pc)","invalidHtmlLength":"该字段必须为合式的HTML长度值，包括单位(px 或 %)","invalidInlineStyle":"内联样式必须为格式是以分号分隔的一个或多个“属性名 : 属性值”","cssLengthTooltip":"该字段必须为合式的CSS长度值，包括单位(px, %, in, cm, mm, em, ex, pt 或 pc)","unavailable":"%1<span class=\"cke_accessibility\">, 不可用</span>"}}
+ * CKFinder
+ * ========
+ * http://ckfinder.com
+ * Copyright (C) 2007-2012, CKSource - Frederico Knabben. All rights reserved.
+ *
+ * The software, this file, and its contents are subject to the CKFinder
+ * License. Please read the license.txt file before using, installing, copying,
+ * modifying, or distributing this file or part of its contents. The contents of
+ * this file is part of the Source Code of CKFinder.
+ *
+ */
+
+/**
+ * @fileOverview Defines the {@link CKFinder.lang} object for the Chinese-Simplified
+ *		language.
+ */
+
+/**
+ * Contains the dictionary of language entries.
+ * @namespace
+ */
+CKFinder.lang['zh-cn'] =
+{
+	appTitle : 'CKFinder',
+
+	// Common messages and labels.
+	common :
+	{
+		// Put the voice-only part of the label in the span.
+		unavailable		: '%1<span class="cke_accessibility">, 不可用</span>',
+		confirmCancel	: '部分内容尚未保存，确定关闭对话框么?',
+		ok				: '确定',
+		cancel			: '取消',
+		confirmationTitle	: '确认',
+		messageTitle	: '提示',
+		inputTitle		: '询问',
+		undo			: '撤销',
+		redo			: '重做',
+		skip			: '跳过',
+		skipAll			: '全部跳过',
+		makeDecision	: '应采取何样措施?',
+		rememberDecision: '下次不再询问'
+	},
+
+
+	// Language direction, 'ltr' or 'rtl'.
+	dir : 'ltr',
+	HelpLang : 'en',
+	LangCode : 'zh-cn',
+
+	// Date Format
+	//		d    : Day
+	//		dd   : Day (padding zero)
+	//		m    : Month
+	//		mm   : Month (padding zero)
+	//		yy   : Year (two digits)
+	//		yyyy : Year (four digits)
+	//		h    : Hour (12 hour clock)
+	//		hh   : Hour (12 hour clock, padding zero)
+	//		H    : Hour (24 hour clock)
+	//		HH   : Hour (24 hour clock, padding zero)
+	//		M    : Minute
+	//		MM   : Minute (padding zero)
+	//		a    : Firt char of AM/PM
+	//		aa   : AM/PM
+	DateTime : 'yyyy年m月d日 h:MM aa',
+	DateAmPm : ['AM', 'PM'],
+
+	// Folders
+	FoldersTitle	: '文件夹',
+	FolderLoading	: '正在加载文件夹...',
+	FolderNew		: '请输入新文件夹名称: ',
+	FolderRename	: '请输入新文件夹名称: ',
+	FolderDelete	: '您确定要删除文件夹 "%1" 吗?',
+	FolderRenaming	: ' (正在重命名...)',
+	FolderDeleting	: ' (正在删除...)',
+
+	// Files
+	FileRename		: '请输入新文件名: ',
+	FileRenameExt	: '如果改变文件扩展名，可能会导致文件不可用。\r\n确定要更改吗？',
+	FileRenaming	: '正在重命名...',
+	FileDelete		: '您确定要删除文件 "%1" 吗?',
+	FilesLoading	: '加载中...',
+	FilesEmpty		: '空文件夹',
+	FilesMoved		: '文件 %1 已移动至 %2:%3.',
+	FilesCopied		: '文件 %1 已拷贝至 %2:%3.',
+
+	// Basket
+	BasketFolder		: '临时文件夹',
+	BasketClear			: '清空临时文件夹',
+	BasketRemove		: '从临时文件夹移除',
+	BasketOpenFolder	: '打开临时文件夹',
+	BasketTruncateConfirm : '确认清空临时文件夹?',
+	BasketRemoveConfirm	: '确认从临时文件夹中移除文件 "%1"？',
+	BasketEmpty			: '临时文件夹为空, 可拖放文件至其中.',
+	BasketCopyFilesHere	: '从临时文件夹复制至此',
+	BasketMoveFilesHere	: '从临时文件夹移动至此',
+
+	BasketPasteErrorOther	: '文件 %s 出错: %e',
+	BasketPasteMoveSuccess	: '已移动以下文件: %s',
+	BasketPasteCopySuccess	: '已拷贝以下文件: %s',
+
+	// Toolbar Buttons (some used elsewhere)
+	Upload		: '上传',
+	UploadTip	: '上传文件',
+	Refresh		: '刷新',
+	Settings	: '设置',
+	Help		: '帮助',
+	HelpTip		: '查看在线帮助',
+
+	// Context Menus
+	Select			: '选择',
+	SelectThumbnail : '选中缩略图',
+	View			: '查看',
+	Download		: '下载',
+
+	NewSubFolder	: '创建子文件夹',
+	Rename			: '重命名',
+	Delete			: '删除',
+
+	CopyDragDrop	: '将文件复制至此',
+	MoveDragDrop	: '将文件移动至此',
+
+	// Dialogs
+	RenameDlgTitle		: '重命名',
+	NewNameDlgTitle		: '文件名',
+	FileExistsDlgTitle	: '文件已存在',
+	SysErrorDlgTitle : '系统错误',
+
+	FileOverwrite	: '自动覆盖重名',
+	FileAutorename	: '自动重命名重名',
+
+	// Generic
+	OkBtn		: '确定',
+	CancelBtn	: '取消',
+	CloseBtn	: '关闭',
+
+	// Upload Panel
+	UploadTitle			: '上传文件',
+	UploadSelectLbl		: '选定要上传的文件',
+	UploadProgressLbl	: '(正在上传文件，请稍候...)',
+	UploadBtn			: '上传选定的文件',
+	UploadBtnCancel		: '取消',
+
+	UploadNoFileMsg		: '请选择一个要上传的文件',
+	UploadNoFolder		: '需先选择一个文件.',
+	UploadNoPerms		: '无文件上传权限.',
+	UploadUnknError		: '上传文件出错.',
+	UploadExtIncorrect	: '此文件后缀在当前文件夹中不可用.',
+
+	// Flash Uploads
+	UploadLabel			: '上传文件',
+	UploadTotalFiles	: '上传总计:',
+	UploadTotalSize		: '上传总大小:',
+	UploadSend			: '上传',
+	UploadAddFiles		: '添加文件',
+	UploadClearFiles	: '清空文件',
+	UploadCancel		: '取消上传',
+	UploadRemove		: '删除',
+	UploadRemoveTip		: '已删除!f',
+	UploadUploaded		: '已上传!n%',
+	UploadProcessing	: '上传中...',
+
+	// Settings Panel
+	SetTitle		: '设置',
+	SetView			: '查看:',
+	SetViewThumb	: '缩略图',
+	SetViewList		: '列表',
+	SetDisplay		: '显示:',
+	SetDisplayName	: '文件名',
+	SetDisplayDate	: '日期',
+	SetDisplaySize	: '大小',
+	SetSort			: '排列顺序:',
+	SetSortName		: '按文件名',
+	SetSortDate		: '按日期',
+	SetSortSize		: '按大小',
+	SetSortExtension		: '按扩展名',
+
+	// Status Bar
+	FilesCountEmpty : '<空文件夹>',
+	FilesCountOne	: '1 个文件',
+	FilesCountMany	: '%1 个文件',
+
+	// Size and Speed
+	Kb				: '%1 kB',
+	KbPerSecond		: '%1 kB/s',
+
+	// Connector Error Messages.
+	ErrorUnknown	: '请求的操作未能完成. (错误 %1)',
+	Errors :
+	{
+	 10 : '无效的指令.',
+	 11 : '文件类型不在许可范围之内.',
+	 12 : '文件类型无效.',
+	102 : '无效的文件名或文件夹名称.',
+	103 : '由于作者限制，该请求不能完成.',
+	104 : '由于文件系统的限制，该请求不能完成.',
+	105 : '无效的扩展名.',
+	109 : '无效请求.',
+	110 : '未知错误.',
+	115 : '存在重名的文件或文件夹.',
+	116 : '文件夹不存在. 请刷新后再试.',
+	117 : '文件不存在. 请刷新列表后再试.',
+	118 : '目标位置与当前位置相同.',
+	201 : '文件与现有的重名. 新上传的文件改名为 "%1".',
+	202 : '无效的文件.',
+	203 : '无效的文件. 文件尺寸太大.',
+	204 : '上传文件已损失.',
+	205 : '服务器中的上传临时文件夹无效.',
+	206 : '因为安全原因，上传中断. 上传文件包含不能 HTML 类型数据.',
+	207 : '新上传的文件改名为 "%1".',
+	300 : '移动文件失败.',
+	301 : '复制文件失败.',
+	500 : '因为安全原因，文件不可浏览. 请联系系统管理员并检查CKFinder配置文件.',
+	501 : '不支持缩略图方式.'
+	},
+
+	// Other Error Messages.
+	ErrorMsg :
+	{
+		FileEmpty		: '文件名不能为空.',
+		FileExists		: '文件 %s 已存在.',
+		FolderEmpty		: '文件夹名称不能为空.',
+
+		FileInvChar		: '文件名不能包含以下字符: \n\\ / : * ? " < > |',
+		FolderInvChar	: '文件夹名称不能包含以下字符: \n\\ / : * ? " < > |',
+
+		PopupBlockView	: '未能在新窗口中打开文件. 请修改浏览器配置解除对本站点的锁定.',
+		XmlError		: '从服务器读取XML数据出错',
+		XmlEmpty		: '无法从服务器读取数据，因XML响应返回结果为空',
+		XmlRawResponse	: '服务器返回原始结果: %s'
+	},
+
+	// Imageresize plugin
+	Imageresize :
+	{
+		dialogTitle		: '改变尺寸 %s',
+		sizeTooBig		: '无法大于原图尺寸 (%size).',
+		resizeSuccess	: '图像尺寸已修改.',
+		thumbnailNew	: '创建缩略图',
+		thumbnailSmall	: '小 (%s)',
+		thumbnailMedium	: '中 (%s)',
+		thumbnailLarge	: '大 (%s)',
+		newSize			: '设置新尺寸',
+		width			: '宽度',
+		height			: '高度',
+		invalidHeight	: '无效高度.',
+		invalidWidth	: '无效宽度.',
+		invalidName		: '文件名无效.',
+		newImage		: '创建图像',
+		noExtensionChange : '无法改变文件后缀.',
+		imageSmall		: '原文件尺寸过小',
+		contextMenuName	: '改变尺寸',
+		lockRatio		: '锁定比例',
+		resetSize		: '原始尺寸'
+	},
+
+	// Fileeditor plugin
+	Fileeditor :
+	{
+		save			: '保存',
+		fileOpenError	: '无法打开文件.',
+		fileSaveSuccess	: '成功保存文件.',
+		contextMenuName	: '编辑',
+		loadingFile		: '加载文件中...'
+	},
+
+	Maximize :
+	{
+		maximize : '全屏',
+		minimize : '最小化'
+	}
+};

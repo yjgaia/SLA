@@ -1,5 +1,274 @@
 ﻿/*
-Copyright (c) 2003-2012, CKSource - Frederico Knabben. All rights reserved.
-For licensing, see LICENSE.html or http://ckeditor.com/license
-*/
-CKEDITOR.lang['ru']={"wsc":{"btnIgnore":"Пропустить","btnIgnoreAll":"Пропустить всё","btnReplace":"Заменить","btnReplaceAll":"Заменить всё","btnUndo":"Отменить","changeTo":"Изменить на","errorLoading":"Произошла ошибка при подключении к серверу проверки орфографии: %s.","ieSpellDownload":"Модуль проверки орфографии не установлен. Хотите скачать его?","manyChanges":"Проверка орфографии завершена. Изменено слов: %1","noChanges":"Проверка орфографии завершена. Не изменено ни одного слова","noMispell":"Проверка орфографии завершена. Ошибок не найдено","noSuggestions":"- Варианты отсутствуют -","notAvailable":"Извините, но в данный момент сервис недоступен.","notInDic":"Отсутствует в словаре","oneChange":"Проверка орфографии завершена. Изменено одно слово","progress":"Орфография проверяется...","title":"Проверка орфографии","toolbar":"Проверить орфографию"},"undo":{"redo":"Повторить","undo":"Отменить"},"toolbar":{"toolbarCollapse":"Свернуть панель инструментов","toolbarExpand":"Развернуть панель инструментов","toolbarGroups":{"document":"Документ","clipboard":"Буфер обмена / Отмена действий","editing":"Корректировка","forms":"Формы","basicstyles":"Простые стили","paragraph":"Абзац","links":"Ссылки","insert":"Вставка","styles":"Стили","colors":"Цвета","tools":"Инструменты"},"toolbars":"Панели инструментов редактора"},"templates":{"button":"Шаблоны","emptyListMsg":"(не определено ни одного шаблона)","insertOption":"Заменить текущее содержимое","options":"Параметры шаблона","selectPromptMsg":"Пожалуйста, выберите, какой шаблон следует открыть в редакторе","title":"Шаблоны содержимого"},"table":{"border":"Размер границ","caption":"Заголовок","cell":{"menu":"Ячейка","insertBefore":"Вставить ячейку слева","insertAfter":"Вставить ячейку справа","deleteCell":"Удалить ячейки","merge":"Объединить ячейки","mergeRight":"Объединить с правой","mergeDown":"Объединить с нижней","splitHorizontal":"Разделить ячейку по горизонтали","splitVertical":"Разделить ячейку по вертикали","title":"Свойства ячейки","cellType":"Тип ячейки","rowSpan":"Объединяет строк","colSpan":"Объединяет колонок","wordWrap":"Перенос по словам","hAlign":"Горизонтальное выравнивание","vAlign":"Вертикальное выравнивание","alignBaseline":"По базовой линии","bgColor":"Цвет фона","borderColor":"Цвет границ","data":"Данные","header":"Заголовок","yes":"Да","no":"Нет","invalidWidth":"Ширина ячейки должна быть числом.","invalidHeight":"Высота ячейки должна быть числом.","invalidRowSpan":"Количество объединяемых строк должно быть задано числом.","invalidColSpan":"Количество объединяемых колонок должно быть задано числом.","chooseColor":"Выберите"},"cellPad":"Внутренний отступ ячеек","cellSpace":"Внешний отступ ячеек","column":{"menu":"Колонка","insertBefore":"Вставить колонку слева","insertAfter":"Вставить колонку справа","deleteColumn":"Удалить колонки"},"columns":"Колонки","deleteTable":"Удалить таблицу","headers":"Заголовки","headersBoth":"Сверху и слева","headersColumn":"Левая колонка","headersNone":"Без заголовков","headersRow":"Верхняя строка","invalidBorder":"Размер границ должен быть числом.","invalidCellPadding":"Внутренний отступ ячеек (cellpadding) должен быть числом.","invalidCellSpacing":"Внешний отступ ячеек (cellspacing) должен быть числом.","invalidCols":"Количество столбцов должно быть больше 0.","invalidHeight":"Высота таблицы должна быть числом.","invalidRows":"Количество строк должно быть больше 0.","invalidWidth":"Ширина таблицы должна быть числом.","menu":"Свойства таблицы","row":{"menu":"Строка","insertBefore":"Вставить строку сверху","insertAfter":"Вставить строку снизу","deleteRow":"Удалить строки"},"rows":"Строки","summary":"Итоги","title":"Свойства таблицы","toolbar":"Таблица","widthPc":"процентов","widthPx":"пикселей","widthUnit":"единица измерения"},"stylescombo":{"label":"Стили","panelTitle":"Стили форматирования","panelTitle1":"Стили блока","panelTitle2":"Стили элемента","panelTitle3":"Стили объекта"},"specialchar":{"options":"Выбор специального символа","title":"Выберите специальный символ","toolbar":"Вставить специальный символ"},"sourcearea":{"toolbar":"Источник"},"smiley":{"options":"Выбор смайла","title":"Вставить смайл","toolbar":"Смайлы"},"showblocks":{"toolbar":"Отображать блоки"},"selectall":{"toolbar":"Выделить все"},"scayt":{"about":"О SCAYT","aboutTab":"О SCAYT","addWord":"Добавить слово","allCaps":"Игнорировать слова из заглавных букв","dic_create":"Создать","dic_delete":"Удалить","dic_field_name":"Название словаря","dic_info":"Изначально, пользовательский словарь хранится в cookie, которые ограничены в размере. Когда словарь пользователя вырастает до размеров, что его невозможно хранить в cookie, он переносится на хранение на наш сервер. Чтобы сохранить ваш словарь на нашем сервере, вам следует указать название вашего словаря. Если у вас уже был словарь, который вы сохраняли на нашем сервере, то укажите здесь его название и нажмите кнопку Восстановить.","dic_rename":"Переименовать","dic_restore":"Восстановить","dictionariesTab":"Словари","disable":"Отключить SCAYT","emptyDic":"Вы должны указать название словаря.","enable":"Включить SCAYT","ignore":"Пропустить","ignoreAll":"Пропустить всё","ignoreDomainNames":"Игнорировать доменные имена","langs":"Языки","languagesTab":"Языки","mixedCase":"Игнорировать слова из букв в разном регистре","mixedWithDigits":"Игнорировать слова, содержащие цифры","moreSuggestions":"Ещё варианты","opera_title":"Не поддерживается Opera","options":"Настройки","optionsTab":"Параметры","title":"Проверка орфографии по мере ввода (SCAYT)","toggle":"Переключить SCAYT"},"save":{"toolbar":"Сохранить"},"removeformat":{"toolbar":"Убрать форматирование"},"print":{"toolbar":"Печать"},"preview":{"preview":"Предварительный просмотр"},"pastetext":{"button":"Вставить только текст","title":"Вставить только текст"},"pastefromword":{"confirmCleanup":"Текст, который вы желаете вставить, по всей видимости, был скопирован из Word. Следует ли очистить его перед вставкой?","error":"Невозможно очистить вставленные данные из-за внутренней ошибки","title":"Вставить из Word","toolbar":"Вставить из Word"},"pagebreak":{"alt":"Разрыв страницы","toolbar":"Вставить разрыв страницы для печати"},"newpage":{"toolbar":"Новая страница"},"maximize":{"maximize":"Развернуть","minimize":"Свернуть"},"magicline":{"title":"Insert paragraph here"},"liststyle":{"armenian":"Армянская нумерация","bulletedTitle":"Свойства маркированного списка","circle":"Круг","decimal":"Десятичные (1, 2, 3, и т.д.)","decimalLeadingZero":"Десятичные с ведущим нулём (01, 02, 03, и т.д.)","disc":"Окружность","georgian":"Грузинская нумерация (ани, бани, гани, и т.д.)","lowerAlpha":"Строчные латинские (a, b, c, d, e, и т.д.)","lowerGreek":"Строчные греческие (альфа, бета, гамма, и т.д.)","lowerRoman":"Строчные римские (i, ii, iii, iv, v, и т.д.)","none":"Нет","notset":"<не указано>","numberedTitle":"Свойства нумерованного списка","square":"Квадрат","start":"Начиная с","type":"Тип","upperAlpha":"Заглавные латинские (A, B, C, D, E, и т.д.)","upperRoman":"Заглавные римские (I, II, III, IV, V, и т.д.)","validateStartNumber":"Первый номер списка должен быть задан обычным целым числом."},"list":{"bulletedlist":"Вставить / удалить маркированный список","numberedlist":"Вставить / удалить нумерованный список"},"link":{"acccessKey":"Клавиша доступа","advanced":"Дополнительно","advisoryContentType":"Тип содержимого","advisoryTitle":"Заголовок","anchor":{"toolbar":"Вставить / редактировать якорь","menu":"Изменить якорь","title":"Свойства якоря","name":"Имя якоря","errorName":"Пожалуйста, введите имя якоря","remove":"Удалить якорь"},"anchorId":"По идентификатору","anchorName":"По имени","charset":"Кодировка ресурса","cssClasses":"Классы CSS","emailAddress":"Email адрес","emailBody":"Текст сообщения","emailSubject":"Тема сообщения","id":"Идентификатор","info":"Информация о ссылке","langCode":"Код языка","langDir":"Направление текста","langDirLTR":"Слева направо (LTR)","langDirRTL":"Справа налево (RTL)","menu":"Редактировать ссылку","name":"Имя","noAnchors":"(В документе нет ни одного якоря)","noEmail":"Пожалуйста, введите email адрес","noUrl":"Пожалуйста, введите ссылку","other":"<другой>","popupDependent":"Зависимое (Netscape)","popupFeatures":"Параметры всплывающего окна","popupFullScreen":"Полноэкранное (IE)","popupLeft":"Отступ слева","popupLocationBar":"Панель адреса","popupMenuBar":"Панель меню","popupResizable":"Изменяемый размер","popupScrollBars":"Полосы прокрутки","popupStatusBar":"Строка состояния","popupToolbar":"Панель инструментов","popupTop":"Отступ сверху","rel":"Отношение","selectAnchor":"Выберите якорь","styles":"Стиль","tabIndex":"Последовательность перехода","target":"Цель","targetFrame":"<фрейм>","targetFrameName":"Имя целевого фрейма","targetPopup":"<всплывающее окно>","targetPopupName":"Имя всплывающего окна","title":"Ссылка","toAnchor":"Ссылка на якорь в тексте","toEmail":"Email","toUrl":"Ссылка","toolbar":"Вставить/Редактировать ссылку","type":"Тип ссылки","unlink":"Убрать ссылку","upload":"Загрузка"},"justify":{"block":"По ширине","center":"По центру","left":"По левому краю","right":"По правому краю"},"indent":{"indent":"Увеличить отступ","outdent":"Уменьшить отступ"},"image":{"alertUrl":"Пожалуйста, введите ссылку на изображение","alt":"Альтернативный текст","border":"Граница","btnUpload":"Загрузить на сервер","button2Img":"Вы желаете преобразовать это изображение-кнопку в обычное изображение?","hSpace":"Гориз. отступ","img2Button":"Вы желаете преобразовать это обычное изображение в изображение-кнопку?","infoTab":"Данные об изображении","linkTab":"Ссылка","lockRatio":"Сохранять пропорции","menu":"Свойства изображения","resetSize":"Вернуть обычные размеры","title":"Свойства изображения","titleButton":"Свойства изображения-кнопки","upload":"Загрузить","urlMissing":"Не указана ссылка на изображение.","vSpace":"Вертик. отступ","validateBorder":"Размер границ должен быть задан числом.","validateHSpace":"Горизонтальный отступ должен быть задан числом.","validateVSpace":"Вертикальный отступ должен быть задан числом."},"iframe":{"border":"Показать границы фрейма","noUrl":"Пожалуйста, введите ссылку фрейма","scrolling":"Отображать полосы прокрутки","title":"Свойства iFrame","toolbar":"iFrame"},"horizontalrule":{"toolbar":"Вставить горизонтальную линию"},"forms":{"button":{"title":"Свойства кнопки","text":"Текст (Значение)","type":"Тип","typeBtn":"Кнопка","typeSbm":"Отправка","typeRst":"Сброс"},"checkboxAndRadio":{"checkboxTitle":"Свойства флаговой кнопки","radioTitle":"Свойства кнопки выбора","value":"Значение","selected":"Выбрано"},"form":{"title":"Свойства формы","menu":"Свойства формы","action":"Действие","method":"Метод","encoding":"Кодировка"},"hidden":{"title":"Свойства скрытого поля","name":"Имя","value":"Значение"},"select":{"title":"Свойства списка выбора","selectInfo":"Информация о списке выбора","opAvail":"Доступные варианты","value":"Значение","size":"Размер","lines":"строк(и)","chkMulti":"Разрешить выбор нескольких вариантов","opText":"Текст","opValue":"Значение","btnAdd":"Добавить","btnModify":"Изменить","btnUp":"Поднять","btnDown":"Опустить","btnSetValue":"Пометить как выбранное","btnDelete":"Удалить"},"textarea":{"title":"Свойства многострочного текстового поля","cols":"Колонок","rows":"Строк"},"textfield":{"title":"Свойства текстового поля","name":"Имя","value":"Значение","charWidth":"Ширина поля (в символах)","maxChars":"Макс. количество символов","type":"Тип содержимого","typeText":"Текст","typePass":"Пароль"}},"format":{"label":"Форматирование","panelTitle":"Форматирование","tag_address":"Адрес","tag_div":"Обычное (div)","tag_h1":"Заголовок 1","tag_h2":"Заголовок 2","tag_h3":"Заголовок 3","tag_h4":"Заголовок 4","tag_h5":"Заголовок 5","tag_h6":"Заголовок 6","tag_p":"Обычное","tag_pre":"Моноширинное"},"font":{"fontSize":{"label":"Размер","voiceLabel":"Размер шрифта","panelTitle":"Размер шрифта"},"label":"Шрифт","panelTitle":"Шрифт","voiceLabel":"Шрифт"},"flash":{"access":"Доступ к скриптам","accessAlways":"Всегда","accessNever":"Никогда","accessSameDomain":"В том же домене","alignAbsBottom":"По низу текста","alignAbsMiddle":"По середине текста","alignBaseline":"По базовой линии","alignTextTop":"По верху текста","bgcolor":"Цвет фона","chkFull":"Разрешить полноэкранный режим","chkLoop":"Повторять","chkMenu":"Включить меню Flash","chkPlay":"Автоматическое воспроизведение","flashvars":"Переменные для Flash","hSpace":"Гориз. отступ","properties":"Свойства Flash","propertiesTab":"Свойства","quality":"Качество","qualityAutoHigh":"Запуск на высоком","qualityAutoLow":"Запуск на низком","qualityBest":"Лучшее","qualityHigh":"Высокое","qualityLow":"Низкое","qualityMedium":"Среднее","scale":"Масштабировать","scaleAll":"Пропорционально","scaleFit":"Заполнять","scaleNoBorder":"Заходить за границы","title":"Свойства Flash","vSpace":"Вертик. отступ","validateHSpace":"Горизонтальный отступ задается числом.","validateSrc":"Вы должны ввести ссылку","validateVSpace":"Вертикальный отступ задается числом.","windowMode":"Взаимодействие с окном","windowModeOpaque":"Непрозрачный","windowModeTransparent":"Прозрачный","windowModeWindow":"Обычный"},"find":{"find":"Найти","findOptions":"Опции поиска","findWhat":"Найти:","matchCase":"Учитывать регистр","matchCyclic":"По всему тексту","matchWord":"Только слово целиком","notFoundMsg":"Искомый текст не найден.","replace":"Заменить","replaceAll":"Заменить всё","replaceSuccessMsg":"Успешно заменено %1 раз(а).","replaceWith":"Заменить на:","title":"Поиск и замена"},"fakeobjects":{"anchor":"Якорь","flash":"Flash анимация","hiddenfield":"Скрытое поле","iframe":"iFrame","unknown":"Неизвестный объект"},"elementspath":{"eleLabel":"Путь элементов","eleTitle":"Элемент %1"},"div":{"IdInputLabel":"Идентификатор","advisoryTitleInputLabel":"Заголовок","cssClassInputLabel":"Классы CSS","edit":"Редактировать контейнер","inlineStyleInputLabel":"Стиль элемента","langDirLTRLabel":"Слева направо (LTR)","langDirLabel":"Направление текста","langDirRTLLabel":"Справа налево (RTL)","languageCodeInputLabel":"Код языка","remove":"Удалить контейнер","styleSelectLabel":"Стиль","title":"Создать Div-контейнер","toolbar":"Создать Div-контейнер"},"contextmenu":{"options":"Параметры контекстного меню"},"colordialog":{"clear":"Очистить","highlight":"Под курсором","options":"Настройки цвета","selected":"Выбранный цвет","title":"Выберите цвет"},"colorbutton":{"auto":"Автоматически","bgColorTitle":"Цвет фона","colors":{"000":"Чёрный","800000":"Бордовый","8B4513":"Кожано-коричневый","2F4F4F":"Темный синевато-серый","008080":"Сине-зелёный","000080":"Тёмно-синий","4B0082":"Индиго","696969":"Тёмно-серый","B22222":"Кирпичный","A52A2A":"Коричневый","DAA520":"Золотисто-берёзовый","006400":"Темно-зелёный","40E0D0":"Бирюзовый","0000CD":"Умеренно синий","800080":"Пурпурный","808080":"Серый","F00":"Красный","FF8C00":"Темно-оранжевый","FFD700":"Золотистый","008000":"Зелёный","0FF":"Васильковый","00F":"Синий","EE82EE":"Фиолетовый","A9A9A9":"Тускло-серый","FFA07A":"Светло-лососевый","FFA500":"Оранжевый","FFFF00":"Жёлтый","00FF00":"Лайма","AFEEEE":"Бледно-синий","ADD8E6":"Свелто-голубой","DDA0DD":"Сливовый","D3D3D3":"Светло-серый","FFF0F5":"Розово-лавандовый","FAEBD7":"Античный белый","FFFFE0":"Светло-жёлтый","F0FFF0":"Медвяной росы","F0FFFF":"Лазурный","F0F8FF":"Бледно-голубой","E6E6FA":"Лавандовый","FFF":"Белый"},"more":"Ещё цвета...","panelTitle":"Цвета","textColorTitle":"Цвет текста"},"clipboard":{"copy":"Копировать","copyError":"Настройки безопасности вашего браузера не разрешают редактору выполнять операции по копированию текста. Пожалуйста, используйте для этого клавиатуру (Ctrl/Cmd+C).","cut":"Вырезать","cutError":"Настройки безопасности вашего браузера не разрешают редактору выполнять операции по вырезке текста. Пожалуйста, используйте для этого клавиатуру (Ctrl/Cmd+X).","paste":"Вставить","pasteArea":"Зона для вставки","pasteMsg":"Пожалуйста, вставьте текст в зону ниже, используя клавиатуру (<strong>Ctrl/Cmd+V</strong>) и нажмите кнопку \"OK\".","securityMsg":"Настройки безопасности вашего браузера не разрешают редактору напрямую обращаться к буферу обмена. Вы должны вставить текст снова в это окно.","title":"Вставить"},"blockquote":{"toolbar":"Цитата"},"bidi":{"ltr":"Направление текста слева направо","rtl":"Направление текста справа налево"},"basicstyles":{"bold":"Полужирный","italic":"Курсив","strike":"Зачеркнутый","subscript":"Подстрочный индекс","superscript":"Надстрочный индекс","underline":"Подчеркнутый"},"about":{"copy":"Copyright &copy; $1. Все права защищены.","dlgTitle":"О CKEditor","help":"$1 содержит подробную справку по использованию.","moreInfo":"Для получения информации о лицензии, пожалуйста, перейдите на наш сайт:","title":"О CKEditor","userGuide":"Руководство пользователя CKEditor"},"dir":"ltr","editor":"Визуальный редактор текста","common":{"editorHelp":"нажмите ALT-0 для открытия справки","browseServer":"Выбор на сервере","url":"Ссылка","protocol":"Протокол","upload":"Загрузка","uploadSubmit":"Загрузить на сервер","image":"Изображение","flash":"Flash","form":"Форма","checkbox":"Флаговая кнопка","radio":"Кнопка выбора","textField":"Текстовое поле","textarea":"Многострочное текстовое поле","hiddenField":"Скрытое поле","button":"Кнопка","select":"Список выбора","imageButton":"Изображение-кнопка","notSet":"<не указано>","id":"Идентификатор","name":"Имя","langDir":"Направление текста","langDirLtr":"Слева направо (LTR)","langDirRtl":"Справа налево (RTL)","langCode":"Код языка","longDescr":"Длинное описание ссылки","cssClass":"Класс CSS","advisoryTitle":"Заголовок","cssStyle":"Стиль","ok":"ОК","cancel":"Отмена","close":"Закрыть","preview":"Предпросмотр","resize":"Перетащите для изменения размера","generalTab":"Основное","advancedTab":"Дополнительно","validateNumberFailed":"Это значение не является числом.","confirmNewPage":"Несохранённые изменения будут потеряны! Вы действительно желаете перейти на другую страницу?","confirmCancel":"Некоторые параметры были изменены. Вы уверены, что желаете закрыть без сохранения?","options":"Параметры","target":"Цель","targetNew":"Новое окно (_blank)","targetTop":"Главное окно (_top)","targetSelf":"Текущее окно (_self)","targetParent":"Родительское окно (_parent)","langDirLTR":"Слева направо (LTR)","langDirRTL":"Справа налево (RTL)","styles":"Стиль","cssClasses":"Классы CSS","width":"Ширина","height":"Высота","align":"Выравнивание","alignLeft":"По левому краю","alignRight":"По правому краю","alignCenter":"По центру","alignTop":"По верху","alignMiddle":"По середине","alignBottom":"По низу","invalidHeight":"Высота задается числом.","invalidWidth":"Ширина задается числом.","invalidCssLength":"Значение, указанное в поле \"%1\", должно быть положительным целым числом. Допускается указание единиц меры CSS (px, %, in, cm, mm, em, ex, pt или pc).","invalidHtmlLength":"Значение, указанное в поле \"%1\", должно быть положительным целым числом. Допускается указание единиц меры HTML (px или %).","invalidInlineStyle":"Значение, указанное для стиля элемента, должно состоять из одной или нескольких пар данных в формате \"параметр : значение\", разделённых точкой с запятой.","cssLengthTooltip":"Введите значение в пикселях, либо число с корректной единицей меры CSS (px, %, in, cm, mm, em, ex, pt или pc).","unavailable":"%1<span class=\"cke_accessibility\">, недоступно</span>"}}
+ * CKFinder
+ * ========
+ * http://ckfinder.com
+ * Copyright (C) 2007-2012, CKSource - Frederico Knabben. All rights reserved.
+ *
+ * The software, this file, and its contents are subject to the CKFinder
+ * License. Please read the license.txt file before using, installing, copying,
+ * modifying, or distributing this file or part of its contents. The contents of
+ * this file is part of the Source Code of CKFinder.
+ *
+ */
+
+/**
+ * @fileOverview Defines the {@link CKFinder.lang} object for the Russian
+ *		language.
+ */
+
+/**
+ * Contains the dictionary of language entries.
+ * @namespace
+ */
+CKFinder.lang['ru'] =
+{
+	appTitle : 'CKFinder',
+
+	// Common messages and labels.
+	common :
+	{
+		// Put the voice-only part of the label in the span.
+		unavailable		: '%1<span class="cke_accessibility">, недоступно</span>',
+		confirmCancel	: 'Внесенные вами изменения будут утеряны. Вы уверены?',
+		ok				: 'OK',
+		cancel			: 'Отмена',
+		confirmationTitle	: 'Подтверждение',
+		messageTitle	: 'Информация',
+		inputTitle		: 'Вопрос',
+		undo			: 'Отменить',
+		redo			: 'Повторить',
+		skip			: 'Пропустить',
+		skipAll			: 'Пропустить все',
+		makeDecision	: 'Что следует сделать?',
+		rememberDecision: 'Запомнить мой выбор'
+	},
+
+
+	// Language direction, 'ltr' or 'rtl'.
+	dir : 'ltr',
+	HelpLang : 'en',
+	LangCode : 'ru',
+
+	// Date Format
+	//		d    : Day
+	//		dd   : Day (padding zero)
+	//		m    : Month
+	//		mm   : Month (padding zero)
+	//		yy   : Year (two digits)
+	//		yyyy : Year (four digits)
+	//		h    : Hour (12 hour clock)
+	//		hh   : Hour (12 hour clock, padding zero)
+	//		H    : Hour (24 hour clock)
+	//		HH   : Hour (24 hour clock, padding zero)
+	//		M    : Minute
+	//		MM   : Minute (padding zero)
+	//		a    : Firt char of AM/PM
+	//		aa   : AM/PM
+	DateTime : 'dd.mm.yyyy H:MM',
+	DateAmPm : ['AM', 'PM'],
+
+	// Folders
+	FoldersTitle	: 'Папки',
+	FolderLoading	: 'Загрузка...',
+	FolderNew		: 'Пожалуйста, введите новое имя папки: ',
+	FolderRename	: 'Пожалуйста, введите новое имя папки: ',
+	FolderDelete	: 'Вы уверены, что хотите удалить папку "%1"?',
+	FolderRenaming	: ' (Переименовываю...)',
+	FolderDeleting	: ' (Удаляю...)',
+
+	// Files
+	FileRename		: 'Пожалуйста, введите новое имя файла: ',
+	FileRenameExt	: 'Вы уверены, что хотите изменить расширение файла? Файл может стать недоступным.',
+	FileRenaming	: 'Переименовываю...',
+	FileDelete		: 'Вы уверены, что хотите удалить файл "%1"?',
+	FilesLoading	: 'Загрузка...',
+	FilesEmpty		: 'Пустая папка',
+	FilesMoved		: 'Файл %1 перемещен в %2:%3.',
+	FilesCopied		: 'Файл %1 скопирован в %2:%3.',
+
+	// Basket
+	BasketFolder		: 'Корзина',
+	BasketClear			: 'Очистить корзину',
+	BasketRemove		: 'Убрать из корзины',
+	BasketOpenFolder	: 'Перейти в папку этого файла',
+	BasketTruncateConfirm : 'Вы точно хотите очистить корзину?',
+	BasketRemoveConfirm	: 'Вы точно хотите убрать файл "%1" из корзины?',
+	BasketEmpty			: 'В корзине пока нет файлов, добавьте новые с помощью драг-н-дропа (перетащите файл в корзину).',
+	BasketCopyFilesHere	: 'Скопировать файл из корзины',
+	BasketMoveFilesHere	: 'Переместить файл из корзины',
+
+	BasketPasteErrorOther	: 'Произошла ошибка при обработке файла %s: %e',
+	BasketPasteMoveSuccess	: 'Файлы перемещены: %s',
+	BasketPasteCopySuccess	: 'Файлы скопированы: %s',
+
+	// Toolbar Buttons (some used elsewhere)
+	Upload		: 'Загрузить файл',
+	UploadTip	: 'Загрузить новый файл',
+	Refresh		: 'Обновить список',
+	Settings	: 'Настройка',
+	Help		: 'Помощь',
+	HelpTip		: 'Помощь',
+
+	// Context Menus
+	Select			: 'Выбрать',
+	SelectThumbnail : 'Выбрать миниатюру',
+	View			: 'Посмотреть',
+	Download		: 'Сохранить',
+
+	NewSubFolder	: 'Новая папка',
+	Rename			: 'Переименовать',
+	Delete			: 'Удалить',
+
+	CopyDragDrop	: 'Копировать',
+	MoveDragDrop	: 'Переместить',
+
+	// Dialogs
+	RenameDlgTitle		: 'Переименовать',
+	NewNameDlgTitle		: 'Новое имя',
+	FileExistsDlgTitle	: 'Файл уже существует',
+	SysErrorDlgTitle : 'Системная ошибка',
+
+	FileOverwrite	: 'Заменить файл',
+	FileAutorename	: 'Автоматически переименовывать',
+
+	// Generic
+	OkBtn		: 'ОК',
+	CancelBtn	: 'Отмена',
+	CloseBtn	: 'Закрыть',
+
+	// Upload Panel
+	UploadTitle			: 'Загрузить новый файл',
+	UploadSelectLbl		: 'Выбрать файл для загрузки',
+	UploadProgressLbl	: '(Загрузка в процессе, пожалуйста подождите...)',
+	UploadBtn			: 'Загрузить выбранный файл',
+	UploadBtnCancel		: 'Отмена',
+
+	UploadNoFileMsg		: 'Пожалуйста, выберите файл на вашем компьютере.',
+	UploadNoFolder		: 'Пожалуйста, выберите папку, в которую вы хотите загрузить файл.',
+	UploadNoPerms		: 'Загрузка файлов запрещена.',
+	UploadUnknError		: 'Ошибка при передаче файла.',
+	UploadExtIncorrect	: 'В эту папку нельзя загружать файлы с таким расширением.',
+
+	// Flash Uploads
+	UploadLabel			: 'Файлы для загрузки',
+	UploadTotalFiles	: 'Всего файлов:',
+	UploadTotalSize		: 'Общий размер:',
+	UploadSend			: 'Загрузить файл',
+	UploadAddFiles		: 'Добавить файлы',
+	UploadClearFiles	: 'Очистить',
+	UploadCancel		: 'Отменить загрузку',
+	UploadRemove		: 'Убрать',
+	UploadRemoveTip		: 'Убрать !f',
+	UploadUploaded		: 'Загружено !n%',
+	UploadProcessing	: 'Загружаю...',
+
+	// Settings Panel
+	SetTitle		: 'Настройка',
+	SetView			: 'Внешний вид:',
+	SetViewThumb	: 'Миниатюры',
+	SetViewList		: 'Список',
+	SetDisplay		: 'Показывать:',
+	SetDisplayName	: 'Имя файла',
+	SetDisplayDate	: 'Дата',
+	SetDisplaySize	: 'Размер файла',
+	SetSort			: 'Сортировка:',
+	SetSortName		: 'по имени файла',
+	SetSortDate		: 'по дате',
+	SetSortSize		: 'по размеру',
+	SetSortExtension		: 'по расширению',
+
+	// Status Bar
+	FilesCountEmpty : '<Пустая папка>',
+	FilesCountOne	: '1 файл',
+	FilesCountMany	: '%1 файлов',
+
+	// Size and Speed
+	Kb				: '%1 кБ',
+	KbPerSecond		: '%1 кБ/с',
+
+	// Connector Error Messages.
+	ErrorUnknown	: 'Невозможно завершить запрос. (Ошибка %1)',
+	Errors :
+	{
+	 10 : 'Неверная команда.',
+	 11 : 'Тип ресурса не указан в запросе.',
+	 12 : 'Неверный запрошенный тип ресурса.',
+	102 : 'Неверное имя файла или папки.',
+	103 : 'Невозможно завершить запрос из-за ограничений авторизации.',
+	104 : 'Невозможно завершить запрос из-за ограничения разрешений файловой системы.',
+	105 : 'Неверное расширение файла.',
+	109 : 'Неверный запрос.',
+	110 : 'Неизвестная ошибка.',
+	115 : 'Файл или папка с таким именем уже существует.',
+	116 : 'Папка не найдена. Пожалуйста, обновите вид папок и попробуйте еще раз.',
+	117 : 'Файл не найден. Пожалуйста, обновите список файлов и попробуйте еще раз.',
+	118 : 'Исходное расположение файла совпадает с указанным.',
+	201 : 'Файл с таким именем уже существует. Загруженный файл был переименован в "%1".',
+	202 : 'Неверный файл.',
+	203 : 'Неверный файл. Размер файла слишком большой.',
+	204 : 'Загруженный файл поврежден.',
+	205 : 'Недоступна временная папка для загрузки файлов на сервер.',
+	206 : 'Загрузка отменена из-за соображений безопасности. Файл содержит похожие на HTML данные.',
+	207 : 'Загруженный файл был переименован в "%1".',
+	300 : 'Произошла ошибка при перемещении файла(ов).',
+	301 : 'Произошла ошибка при копировании файла(ов).',
+	500 : 'Браузер файлов отключен из-за соображений безопасности. Пожалуйста, сообщите вашему системному администратру и проверьте конфигурационный файл CKFinder.',
+	501 : 'Поддержка миниатюр отключена.'
+	},
+
+	// Other Error Messages.
+	ErrorMsg :
+	{
+		FileEmpty		: 'Имя файла не может быть пустым.',
+		FileExists		: 'Файл %s уже существует.',
+		FolderEmpty		: 'Имя папки не может быть пустым.',
+
+		FileInvChar		: 'Имя файла не может содержать любой из перечисленных символов: \n\\ / : * ? " < > |',
+		FolderInvChar	: 'Имя папки не может содержать любой из перечисленных символов: \n\\ / : * ? " < > |',
+
+		PopupBlockView	: 'Невозможно открыть файл в новом окне. Пожалуйста, проверьте настройки браузера и отключите блокировку всплывающих окон для этого сайта.',
+		XmlError		: 'Ошибка при разборе XML-ответа сервера.',
+		XmlEmpty		: 'Невозможно прочитать XML-ответ сервера, получена пустая строка.',
+		XmlRawResponse	: 'Необработанный ответ сервера: %s'
+	},
+
+	// Imageresize plugin
+	Imageresize :
+	{
+		dialogTitle		: 'Изменить размеры %s',
+		sizeTooBig		: 'Нельзя указывать размеры больше, чем у оригинального файла (%size).',
+		resizeSuccess	: 'Размеры успешно изменены.',
+		thumbnailNew	: 'Создать миниатюру(ы)',
+		thumbnailSmall	: 'Маленькая (%s)',
+		thumbnailMedium	: 'Средняя (%s)',
+		thumbnailLarge	: 'Большая (%s)',
+		newSize			: 'Установить новые размеры',
+		width			: 'Ширина',
+		height			: 'Высота',
+		invalidHeight	: 'Высота должна быть числом больше нуля.',
+		invalidWidth	: 'Ширина должна быть числом больше нуля.',
+		invalidName		: 'Неверное имя файла.',
+		newImage		: 'Сохранить как новый файл',
+		noExtensionChange : 'Не удалось поменять расширение файла.',
+		imageSmall		: 'Исходная картинка слишком маленькая.',
+		contextMenuName	: 'Изменить размер',
+		lockRatio		: 'Сохранять пропорции',
+		resetSize		: 'Вернуть обычные размеры'
+	},
+
+	// Fileeditor plugin
+	Fileeditor :
+	{
+		save			: 'Сохранить',
+		fileOpenError	: 'Не удалось открыть файл.',
+		fileSaveSuccess	: 'Файл успешно сохранен.',
+		contextMenuName	: 'Редактировать',
+		loadingFile		: 'Файл загружается, пожалуйста подождите...'
+	},
+
+	Maximize :
+	{
+		maximize : 'Развернуть',
+		minimize : 'Свернуть'
+	}
+};

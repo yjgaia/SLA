@@ -1,5 +1,274 @@
 ﻿/*
-Copyright (c) 2003-2012, CKSource - Frederico Knabben. All rights reserved.
-For licensing, see LICENSE.html or http://ckeditor.com/license
+ * CKFinder
+ * ========
+ * http://ckfinder.com
+ * Copyright (C) 2007-2012, CKSource - Frederico Knabben. All rights reserved.
+ *
+ * The software, this file, and its contents are subject to the CKFinder
+ * License. Please read the license.txt file before using, installing, copying,
+ * modifying, or distributing this file or part of its contents. The contents of
+ * this file is part of the Source Code of CKFinder.
+ *
+ */
+
+/**
+ * @fileOverview Defines the {@link CKFinder.lang} object for the Italian
+ *		language.
 */
-CKEDITOR.lang['it']={"wsc":{"btnIgnore":"Ignora","btnIgnoreAll":"Ignora tutto","btnReplace":"Cambia","btnReplaceAll":"Cambia tutto","btnUndo":"Annulla","changeTo":"Cambia in","errorLoading":"Errore nel caricamento dell'host col servizio applicativo: %s.","ieSpellDownload":"Contollo ortografico non installato. Lo vuoi scaricare ora?","manyChanges":"Controllo ortografico completato: %1 parole cambiate","noChanges":"Controllo ortografico completato: nessuna parola cambiata","noMispell":"Controllo ortografico completato: nessun errore trovato","noSuggestions":"- Nessun suggerimento -","notAvailable":"Il servizio non è momentaneamente disponibile.","notInDic":"Non nel dizionario","oneChange":"Controllo ortografico completato: 1 parola cambiata","progress":"Controllo ortografico in corso","title":"Controllo ortografico","toolbar":"Correttore ortografico"},"undo":{"redo":"Ripristina","undo":"Annulla"},"toolbar":{"toolbarCollapse":"Minimizza Toolbar","toolbarExpand":"Espandi Toolbar","toolbarGroups":{"document":"Documento","clipboard":"Copia negli appunti/Indietro","editing":"Modifica","forms":"Form","basicstyles":"Stili di base","paragraph":"Paragrafo","links":"Link","insert":"Inserisci","styles":"Stili","colors":"Colori","tools":"Strumenti"},"toolbars":"Editor toolbar"},"templates":{"button":"Modelli","emptyListMsg":"(Nessun modello definito)","insertOption":"Cancella il contenuto corrente","options":"Opzioni del Modello","selectPromptMsg":"Seleziona il modello da aprire nell'editor<br />(il contenuto attuale verrà eliminato):","title":"Contenuto dei modelli"},"table":{"border":"Dimensione bordo","caption":"Intestazione","cell":{"menu":"Cella","insertBefore":"Inserisci Cella Prima","insertAfter":"Inserisci Cella Dopo","deleteCell":"Elimina celle","merge":"Unisce celle","mergeRight":"Unisci a Destra","mergeDown":"Unisci in Basso","splitHorizontal":"Dividi Cella Orizzontalmente","splitVertical":"Dividi Cella Verticalmente","title":"Proprietà della cella","cellType":"Tipo di cella","rowSpan":"Su più righe","colSpan":"Su più colonne","wordWrap":"Ritorno a capo","hAlign":"Allineamento orizzontale","vAlign":"Allineamento verticale","alignBaseline":"Linea Base","bgColor":"Colore di Sfondo","borderColor":"Colore del Bordo","data":"Dati","header":"Intestazione","yes":"Si","no":"No","invalidWidth":"La larghezza della cella dev'essere un numero.","invalidHeight":"L'altezza della cella dev'essere un numero.","invalidRowSpan":"Il numero di righe dev'essere un numero intero.","invalidColSpan":"Il numero di colonne dev'essere un numero intero.","chooseColor":"Scegli"},"cellPad":"Padding celle","cellSpace":"Spaziatura celle","column":{"menu":"Colonna","insertBefore":"Inserisci Colonna Prima","insertAfter":"Inserisci Colonna Dopo","deleteColumn":"Elimina colonne"},"columns":"Colonne","deleteTable":"Cancella Tabella","headers":"Intestazione","headersBoth":"Entrambe","headersColumn":"Prima Colonna","headersNone":"Nessuna","headersRow":"Prima Riga","invalidBorder":"La dimensione del bordo dev'essere un numero.","invalidCellPadding":"Il paging delle celle dev'essere un numero","invalidCellSpacing":"La spaziatura tra le celle dev'essere un numero.","invalidCols":"Il numero di colonne dev'essere un numero maggiore di 0.","invalidHeight":"L'altezza della tabella dev'essere un numero.","invalidRows":"Il numero di righe dev'essere un numero maggiore di 0.","invalidWidth":"La larghezza della tabella dev'essere un numero.","menu":"Proprietà tabella","row":{"menu":"Riga","insertBefore":"Inserisci Riga Prima","insertAfter":"Inserisci Riga Dopo","deleteRow":"Elimina righe"},"rows":"Righe","summary":"Indice","title":"Proprietà tabella","toolbar":"Tabella","widthPc":"percento","widthPx":"pixel","widthUnit":"unità larghezza"},"stylescombo":{"label":"Stile","panelTitle":"Stili di formattazione","panelTitle1":"Stili per blocchi","panelTitle2":"Stili in linea","panelTitle3":"Stili per oggetti"},"specialchar":{"options":"Opzioni carattere speciale","title":"Seleziona carattere speciale","toolbar":"Inserisci carattere speciale"},"sourcearea":{"toolbar":"Codice Sorgente"},"smiley":{"options":"Opzioni Smiley","title":"Inserisci emoticon","toolbar":"Emoticon"},"showblocks":{"toolbar":"Visualizza Blocchi"},"selectall":{"toolbar":"Seleziona tutto"},"scayt":{"about":"About COMS","aboutTab":"Info","addWord":"Aggiungi Parola","allCaps":"Ignora Parole in maiuscolo","dic_create":"Crea","dic_delete":"Cancella","dic_field_name":"Nome del dizionario","dic_info":"Inizialmente il dizionario utente è memorizzato in un Cookie. I Cookie però hanno una dimensioni massima limitata. Quando il dizionario utente creasce a tal punto da non poter più essere memorizzato in un Cookie, allora il dizionario può essere memorizzato sul nostro server. Per memorizzare il proprio dizionario personale sul nostro server, è necessario specificare un nome per il proprio dizionario. Se avete già memorizzato un dizionario, inserite il nome che gli avete dato e premete il pulsante Ripristina.","dic_rename":"Rinomina","dic_restore":"Ripristina","dictionariesTab":"Dizionari","disable":"Disabilita COMS","emptyDic":"Il nome del dizionario non può essere vuoto.","enable":"Abilita COMS","ignore":"Ignora","ignoreAll":"Ignora tutti","ignoreDomainNames":"Ignora nomi di dominio","langs":"Lingue","languagesTab":"Lingue","mixedCase":"Ignora parole con maiuscole e minuscole","mixedWithDigits":"Ignora parole con numeri","moreSuggestions":"Altri suggerimenti","opera_title":"Non supportato da Opera","options":"Opzioni","optionsTab":"Opzioni","title":"Controllo Ortografico Mentre Scrivi","toggle":"Inverti abilitazione SCOMS"},"save":{"toolbar":"Salva"},"removeformat":{"toolbar":"Elimina formattazione"},"print":{"toolbar":"Stampa"},"preview":{"preview":"Anteprima"},"pastetext":{"button":"Incolla come testo semplice","title":"Incolla come testo semplice"},"pastefromword":{"confirmCleanup":"Il testo da incollare sembra provenire da Word. Desideri pulirlo prima di incollare?","error":"Non è stato possibile eliminarre il testo incollato a causa di un errore interno.","title":"Incolla da Word","toolbar":"Incolla da Word"},"pagebreak":{"alt":"Interruzione di pagina","toolbar":"Inserisci interruzione di pagina"},"newpage":{"toolbar":"Nuova pagina vuota"},"maximize":{"maximize":"Massimizza","minimize":"Minimizza"},"magicline":{"title":"Insert paragraph here"},"liststyle":{"armenian":"Numerazione Armena","bulletedTitle":"Proprietà liste puntate","circle":"Cerchio","decimal":"Decimale (1, 2, 3, ecc.)","decimalLeadingZero":"Decimale preceduto da 0 (01, 02, 03, ecc.)","disc":"Disco","georgian":"Numerazione Georgiana (an, ban, gan, ecc.)","lowerAlpha":"Alfabetico minuscolo (a, b, c, d, e, ecc.)","lowerGreek":"Greco minuscolo (alpha, beta, gamma, ecc.)","lowerRoman":"Numerazione Romana minuscola (i, ii, iii, iv, v, ecc.)","none":"Nessuno","notset":"<non impostato>","numberedTitle":"Proprietà liste numerate","square":"Quadrato","start":"Inizio","type":"Tipo","upperAlpha":"Alfabetico maiuscolo (A, B, C, D, E, ecc.)","upperRoman":"Numerazione Romana maiuscola (I, II, III, IV, V, ecc.)","validateStartNumber":"Il numero di inizio di una lista numerata deve essere un numero intero."},"list":{"bulletedlist":"Elenco puntato","numberedlist":"Elenco numerato"},"link":{"acccessKey":"Scorciatoia<br />da tastiera","advanced":"Avanzate","advisoryContentType":"Tipo della risorsa collegata","advisoryTitle":"Titolo","anchor":{"toolbar":"Inserisci/Modifica Ancora","menu":"Proprietà ancora","title":"Proprietà ancora","name":"Nome ancora","errorName":"Inserici il nome dell'ancora","remove":"Rimuovi l'ancora"},"anchorId":"Per id elemento","anchorName":"Per Nome","charset":"Set di caretteri della risorsa collegata","cssClasses":"Nome classe CSS","emailAddress":"Indirizzo E-Mail","emailBody":"Corpo del messaggio","emailSubject":"Oggetto del messaggio","id":"Id","info":"Informazioni collegamento","langCode":"Direzione scrittura","langDir":"Direzione scrittura","langDirLTR":"Da Sinistra a Destra (LTR)","langDirRTL":"Da Destra a Sinistra (RTL)","menu":"Modifica collegamento","name":"Nome","noAnchors":"(Nessuna ancora disponibile nel documento)","noEmail":"Devi inserire un'indirizzo e-mail","noUrl":"Devi inserire l'URL del collegamento","other":"<altro>","popupDependent":"Dipendente (Netscape)","popupFeatures":"Caratteristiche finestra popup","popupFullScreen":"A tutto schermo (IE)","popupLeft":"Posizione da sinistra","popupLocationBar":"Barra degli indirizzi","popupMenuBar":"Barra del menu","popupResizable":"Ridimensionabile","popupScrollBars":"Barre di scorrimento","popupStatusBar":"Barra di stato","popupToolbar":"Barra degli strumenti","popupTop":"Posizione dall'alto","rel":"Relazioni","selectAnchor":"Scegli Ancora","styles":"Stile","tabIndex":"Ordine di tabulazione","target":"Destinazione","targetFrame":"<riquadro>","targetFrameName":"Nome del riquadro di destinazione","targetPopup":"<finestra popup>","targetPopupName":"Nome finestra popup","title":"Collegamento","toAnchor":"Ancora nella pagina","toEmail":"E-Mail","toUrl":"URL","toolbar":"Inserisci/Modifica collegamento","type":"Tipo di Collegamento","unlink":"Elimina collegamento","upload":"Carica"},"justify":{"block":"Giustifica","center":"Centra","left":"Allinea a sinistra","right":"Allinea a destra"},"indent":{"indent":"Aumenta rientro","outdent":"Riduci rientro"},"image":{"alertUrl":"Devi inserire l'URL per l'immagine","alt":"Testo alternativo","border":"Bordo","btnUpload":"Invia al server","button2Img":"Vuoi trasformare il bottone immagine selezionato in un'immagine semplice?","hSpace":"HSpace","img2Button":"Vuoi trasferomare l'immagine selezionata in un bottone immagine?","infoTab":"Informazioni immagine","linkTab":"Collegamento","lockRatio":"Blocca rapporto","menu":"Proprietà immagine","resetSize":"Reimposta dimensione","title":"Proprietà immagine","titleButton":"Proprietà bottone immagine","upload":"Carica","urlMissing":"Manca l'URL dell'immagine.","vSpace":"VSpace","validateBorder":"Il campo Bordo deve essere un numero intero.","validateHSpace":"Il campo HSpace deve essere un numero intero.","validateVSpace":"Il campo VSpace deve essere un numero intero."},"iframe":{"border":"Mostra il bordo","noUrl":"Inserire l'URL del campo IFrame","scrolling":"Abilita scrollbar","title":"Proprietà IFrame","toolbar":"IFrame"},"horizontalrule":{"toolbar":"Inserisci riga orizzontale"},"forms":{"button":{"title":"Proprietà bottone","text":"Testo (Valore)","type":"Tipo","typeBtn":"Bottone","typeSbm":"Invio","typeRst":"Annulla"},"checkboxAndRadio":{"checkboxTitle":"Proprietà checkbox","radioTitle":"Proprietà radio button","value":"Valore","selected":"Selezionato"},"form":{"title":"Proprietà modulo","menu":"Proprietà modulo","action":"Azione","method":"Metodo","encoding":"Codifica"},"hidden":{"title":"Proprietà campo nascosto","name":"Nome","value":"Valore"},"select":{"title":"Proprietà menu di selezione","selectInfo":"Info","opAvail":"Opzioni disponibili","value":"Valore","size":"Dimensione","lines":"righe","chkMulti":"Permetti selezione multipla","opText":"Testo","opValue":"Valore","btnAdd":"Aggiungi","btnModify":"Modifica","btnUp":"Su","btnDown":"Gi","btnSetValue":"Imposta come predefinito","btnDelete":"Rimuovi"},"textarea":{"title":"Proprietà area di testo","cols":"Colonne","rows":"Righe"},"textfield":{"title":"Proprietà campo di testo","name":"Nome","value":"Valore","charWidth":"Larghezza","maxChars":"Numero massimo di caratteri","type":"Tipo","typeText":"Testo","typePass":"Password"}},"format":{"label":"Formato","panelTitle":"Formato","tag_address":"Indirizzo","tag_div":"Paragrafo (DIV)","tag_h1":"Titolo 1","tag_h2":"Titolo 2","tag_h3":"Titolo 3","tag_h4":"Titolo 4","tag_h5":"Titolo 5","tag_h6":"Titolo 6","tag_p":"Normale","tag_pre":"Formattato"},"font":{"fontSize":{"label":"Dimensione","voiceLabel":"Dimensione Carattere","panelTitle":"Dimensione"},"label":"Carattere","panelTitle":"Carattere","voiceLabel":"Carattere"},"flash":{"access":"Accesso Script","accessAlways":"Sempre","accessNever":"Mai","accessSameDomain":"Solo stesso dominio","alignAbsBottom":"In basso assoluto","alignAbsMiddle":"Centrato assoluto","alignBaseline":"Linea base","alignTextTop":"In alto al testo","bgcolor":"Colore sfondo","chkFull":"Permetti la modalità tutto schermo","chkLoop":"Riavvio automatico","chkMenu":"Abilita Menu di Flash","chkPlay":"Avvio Automatico","flashvars":"Variabili per Flash","hSpace":"HSpace","properties":"Proprietà Oggetto Flash","propertiesTab":"Proprietà","quality":"Qualità","qualityAutoHigh":"Alta Automatica","qualityAutoLow":"Bassa Automatica","qualityBest":"Massima","qualityHigh":"Alta","qualityLow":"Bassa","qualityMedium":"Intermedia","scale":"Ridimensiona","scaleAll":"Mostra Tutto","scaleFit":"Dimensione Esatta","scaleNoBorder":"Senza Bordo","title":"Proprietà Oggetto Flash","vSpace":"VSpace","validateHSpace":"L'HSpace dev'essere un numero.","validateSrc":"Devi inserire l'URL del collegamento","validateVSpace":"Il VSpace dev'essere un numero.","windowMode":"Modalità finestra","windowModeOpaque":"Opaca","windowModeTransparent":"Trasparente","windowModeWindow":"Finestra"},"find":{"find":"Trova","findOptions":"Opzioni di ricerca","findWhat":"Trova:","matchCase":"Maiuscole/minuscole","matchCyclic":"Ricerca ciclica","matchWord":"Solo parole intere","notFoundMsg":"L'elemento cercato non è stato trovato.","replace":"Sostituisci","replaceAll":"Sostituisci tutto","replaceSuccessMsg":"%1 occorrenza(e) sostituite.","replaceWith":"Sostituisci con:","title":"Cerca e Sostituisci"},"fakeobjects":{"anchor":"Ancora","flash":"Animazione Flash","hiddenfield":"Campo Nascosto","iframe":"IFrame","unknown":"Oggetto sconosciuto"},"elementspath":{"eleLabel":"Percorso degli elementi","eleTitle":"%1 elemento"},"div":{"IdInputLabel":"Id","advisoryTitleInputLabel":"Titolo Avviso","cssClassInputLabel":"Classi di stile","edit":"Modifica DIV","inlineStyleInputLabel":"Stile Inline","langDirLTRLabel":"Da sinistra a destra (LTR)","langDirLabel":"Direzione di scrittura","langDirRTLLabel":"Da destra a sinistra (RTL)","languageCodeInputLabel":"Codice lingua","remove":"Rimuovi DIV","styleSelectLabel":"Stile","title":"Crea DIV contenitore","toolbar":"Crea DIV contenitore"},"contextmenu":{"options":"Opzioni del menù contestuale"},"colordialog":{"clear":"cancella","highlight":"Evidenzia","options":"Opzioni colore","selected":"Seleziona il colore","title":"Selezionare il colore"},"colorbutton":{"auto":"Automatico","bgColorTitle":"Colore sfondo","colors":{"000":"Nero","800000":"Marrone Castagna","8B4513":"Marrone Cuoio","2F4F4F":"Grigio Fumo di Londra","008080":"Acquamarina","000080":"Blu Oceano","4B0082":"Indigo","696969":"Grigio Scuro","B22222":"Giallo Fiamma","A52A2A":"Marrone","DAA520":"Giallo Mimosa","006400":"Verde Scuro","40E0D0":"Turchese","0000CD":"Blue Scuro","800080":"Viola","808080":"Grigio","F00":"Rosso","FF8C00":"Arancio Scuro","FFD700":"Oro","008000":"Verde","0FF":"Ciano","00F":"Blu","EE82EE":"Violetto","A9A9A9":"Grigio Scuro","FFA07A":"Salmone","FFA500":"Arancio","FFFF00":"Giallo","00FF00":"Lime","AFEEEE":"Turchese Chiaro","ADD8E6":"Blu Chiaro","DDA0DD":"Rosso Ciliegia","D3D3D3":"Grigio Chiaro","FFF0F5":"Lavanda Chiara","FAEBD7":"Bianco Antico","FFFFE0":"Giallo Chiaro","F0FFF0":"Verde Mela","F0FFFF":"Azzurro","F0F8FF":"Celeste","E6E6FA":"Lavanda","FFF":"Bianco"},"more":"Altri colori...","panelTitle":"Colori","textColorTitle":"Colore testo"},"clipboard":{"copy":"Copia","copyError":"Le impostazioni di sicurezza del browser non permettono di copiare automaticamente il testo. Usa la tastiera (Ctrl/Cmd+C).","cut":"Taglia","cutError":"Le impostazioni di sicurezza del browser non permettono di tagliare automaticamente il testo. Usa la tastiera (Ctrl/Cmd+X).","paste":"Incolla","pasteArea":"Incolla","pasteMsg":"Incolla il testo all'interno dell'area sottostante usando la scorciatoia di tastiere (<STRONG>Ctrl/Cmd+V</STRONG>) e premi <STRONG>OK</STRONG>.","securityMsg":"A causa delle impostazioni di sicurezza del browser,l'editor non è in grado di accedere direttamente agli appunti. E' pertanto necessario incollarli di nuovo in questa finestra.","title":"Incolla"},"blockquote":{"toolbar":"Citazione"},"bidi":{"ltr":"Direzione del testo da sinistra verso destra","rtl":"Direzione del testo da destra verso sinistra"},"basicstyles":{"bold":"Grassetto","italic":"Corsivo","strike":"Barrato","subscript":"Pedice","superscript":"Apice","underline":"Sottolineato"},"about":{"copy":"Copyright &copy; $1. Tutti i diritti riservati.","dlgTitle":"Riguardo CKEditor","help":"Vedi $1 per l'aiuto.","moreInfo":"Per le informazioni sulla licenza si prega di visitare il nostro sito:","title":"Riguardo CKEditor","userGuide":"Guida Utente CKEditor"},"dir":"ltr","editor":"Rich Text Editor","common":{"editorHelp":"Premi ALT 0 per aiuto","browseServer":"Cerca sul server","url":"URL","protocol":"Protocollo","upload":"Carica","uploadSubmit":"Invia al server","image":"Immagine","flash":"Oggetto Flash","form":"Modulo","checkbox":"Checkbox","radio":"Radio Button","textField":"Campo di testo","textarea":"Area di testo","hiddenField":"Campo nascosto","button":"Bottone","select":"Menu di selezione","imageButton":"Bottone immagine","notSet":"<non impostato>","id":"Id","name":"Nome","langDir":"Direzione scrittura","langDirLtr":"Da Sinistra a Destra (LTR)","langDirRtl":"Da Destra a Sinistra (RTL)","langCode":"Codice Lingua","longDescr":"URL descrizione estesa","cssClass":"Nome classe CSS","advisoryTitle":"Titolo","cssStyle":"Stile","ok":"OK","cancel":"Annulla","close":"Chiudi","preview":"Anteprima","resize":"Trascina per ridimensionare","generalTab":"Generale","advancedTab":"Avanzate","validateNumberFailed":"Il valore inserito non è un numero.","confirmNewPage":"Ogni modifica non salvata sarà persa. Sei sicuro di voler caricare una nuova pagina?","confirmCancel":"Alcune delle opzioni sono state cambiate. Sei sicuro di voler chiudere la finestra di dialogo?","options":"Opzioni","target":"Destinazione","targetNew":"Nuova finestra (_blank)","targetTop":"Finestra in primo piano (_top)","targetSelf":"Stessa finestra (_self)","targetParent":"Finestra Padre (_parent)","langDirLTR":"Da sinistra a destra (LTR)","langDirRTL":"Da destra a sinistra (RTL)","styles":"Stile","cssClasses":"Classi di stile","width":"Larghezza","height":"Altezza","align":"Allineamento","alignLeft":"Sinistra","alignRight":"Destra","alignCenter":"Centrato","alignTop":"In Alto","alignMiddle":"Centrato","alignBottom":"In Basso","invalidHeight":"L'altezza dev'essere un numero","invalidWidth":"La Larghezza dev'essere un numero","invalidCssLength":"Il valore indicato per il campo \"%1\" deve essere un numero positivo con o senza indicazione di una valida unità di misura per le classi CSS (px, %, in, cm, mm, em, ex, pt, o pc).","invalidHtmlLength":"Il valore indicato per il campo \"%1\" deve essere un numero positivo con o senza indicazione di una valida unità di misura per le pagine HTML (px o %).","invalidInlineStyle":"Il valore specificato per lo stile inline deve consistere in una o più tuple con il formato di \"name : value\", separati da semicolonne.","cssLengthTooltip":"Inserisci un numero per il valore in pixel oppure un numero con una valida unità CSS (px, %, in, cm, mm, ex, pt, o pc).","unavailable":"%1<span class=\"cke_accessibility\">, non disponibile</span>"}}
+
+/**
+ * Contains the dictionary of language entries.
+ * @namespace
+ */
+CKFinder.lang['it'] =
+{
+	appTitle : 'CKFinder',
+
+	// Common messages and labels.
+	common :
+	{
+		// Put the voice-only part of the label in the span.
+		unavailable		: '%1<span class="cke_accessibility">, non disponibile</span>',
+		confirmCancel	: 'Alcune delle opzioni sono state cambiate. Sei sicuro di voler chiudere la finestra di dialogo?',
+		ok				: 'OK',
+		cancel			: 'Annulla',
+		confirmationTitle	: 'Confermare',
+		messageTitle	: 'Informazione',
+		inputTitle		: 'Domanda',
+		undo			: 'Annulla',
+		redo			: 'Ripristina',
+		skip			: 'Ignora',
+		skipAll			: 'Ignora tutti',
+		makeDecision	: 'Che azione prendere?',
+		rememberDecision: 'Ricorda mia decisione'
+	},
+
+
+	// Language direction, 'ltr' or 'rtl'.
+	dir : 'ltr',
+	HelpLang : 'en',
+	LangCode : 'it',
+
+	// Date Format
+	//		d    : Day
+	//		dd   : Day (padding zero)
+	//		m    : Month
+	//		mm   : Month (padding zero)
+	//		yy   : Year (two digits)
+	//		yyyy : Year (four digits)
+	//		h    : Hour (12 hour clock)
+	//		hh   : Hour (12 hour clock, padding zero)
+	//		H    : Hour (24 hour clock)
+	//		HH   : Hour (24 hour clock, padding zero)
+	//		M    : Minute
+	//		MM   : Minute (padding zero)
+	//		a    : Firt char of AM/PM
+	//		aa   : AM/PM
+	DateTime : 'dd/mm/yyyy HH:MM',
+	DateAmPm : ['AM', 'PM'],
+
+	// Folders
+	FoldersTitle	: 'Cartelle',
+	FolderLoading	: 'Caricando...',
+	FolderNew		: 'Nome della cartella: ',
+	FolderRename	: 'Nuovo nome della cartella: ',
+	FolderDelete	: 'Se sicuro di voler eliminare la cartella "%1"?',
+	FolderRenaming	: ' (Rinominando...)',
+	FolderDeleting	: ' (Eliminando...)',
+
+	// Files
+	FileRename		: 'Nuovo nome del file: ',
+	FileRenameExt	: 'Sei sicure di voler cambiare la estensione del file? Il file può risultare inusabile.',
+	FileRenaming	: 'Rinominando...',
+	FileDelete		: 'Sei sicuro di voler eliminare il file "%1"?',
+	FilesLoading	: 'Caricamento in corso...',
+	FilesEmpty		: 'Cartella vuota',
+	FilesMoved		: 'File %1 mosso a %2:%3.',
+	FilesCopied		: 'File %1 copiato in %2:%3.',
+
+	// Basket
+	BasketFolder		: 'Cestino',
+	BasketClear			: 'Svuota Cestino',
+	BasketRemove		: 'Rimuove dal Cestino',
+	BasketOpenFolder	: 'Apre Cartella Superiore',
+	BasketTruncateConfirm : 'Sei sicuro di voler svuotare il cestino?',
+	BasketRemoveConfirm	: 'Sei sicuro di voler rimuovere il file "%1" dal cestino?',
+	BasketEmpty			: 'Nessun file nel cestino, si deve prima trascinare qualcuno.',
+	BasketCopyFilesHere	: 'Copia i File dal Cestino',
+	BasketMoveFilesHere	: 'Muove i File dal Cestino',
+
+	BasketPasteErrorOther	: 'File %s errore: %e',
+	BasketPasteMoveSuccess	: 'File mossi: %s',
+	BasketPasteCopySuccess	: 'File copiati: %s',
+
+	// Toolbar Buttons (some used elsewhere)
+	Upload		: 'Upload',
+	UploadTip	: 'Carica Nuovo File',
+	Refresh		: 'Aggiorna',
+	Settings	: 'Configurazioni',
+	Help		: 'Aiuto',
+	HelpTip		: 'Aiuto (Inglese)',
+
+	// Context Menus
+	Select			: 'Seleziona',
+	SelectThumbnail : 'Seleziona la miniatura',
+	View			: 'Vedi',
+	Download		: 'Scarica',
+
+	NewSubFolder	: 'Nuova Sottocartella',
+	Rename			: 'Rinomina',
+	Delete			: 'Elimina',
+
+	CopyDragDrop	: 'Copia file qui',
+	MoveDragDrop	: 'Muove file qui',
+
+	// Dialogs
+	RenameDlgTitle		: 'Rinomina',
+	NewNameDlgTitle		: 'Nuovo nome',
+	FileExistsDlgTitle	: 'Il file già esiste',
+	SysErrorDlgTitle : 'Errore di Sistema',
+
+	FileOverwrite	: 'Sovrascrivere',
+	FileAutorename	: 'Rinomina automaticamente',
+
+	// Generic
+	OkBtn		: 'OK',
+	CancelBtn	: 'Anulla',
+	CloseBtn	: 'Chiudi',
+
+	// Upload Panel
+	UploadTitle			: 'Carica Nuovo File',
+	UploadSelectLbl		: 'Seleziona il file',
+	UploadProgressLbl	: '(Caricamento in corso, attendere prego...)',
+	UploadBtn			: 'Carica File',
+	UploadBtnCancel		: 'Annulla',
+
+	UploadNoFileMsg		: 'Seleziona il file da caricare',
+	UploadNoFolder		: 'Seleziona il file prima di caricare.',
+	UploadNoPerms		: 'Non è permesso il caricamento di file.',
+	UploadUnknError		: 'Errore nel caricamento del file.',
+	UploadExtIncorrect	: 'In questa cartella non sono permessi file con questa estensione.',
+
+	// Flash Uploads
+	UploadLabel			: 'File da Caricare',
+	UploadTotalFiles	: 'File:',
+	UploadTotalSize		: 'Dimensione:',
+	UploadSend			: 'Upload',
+	UploadAddFiles		: 'Aggiungi File',
+	UploadClearFiles	: 'Elimina File',
+	UploadCancel		: 'Annulla il Caricamento',
+	UploadRemove		: 'Rimuovi',
+	UploadRemoveTip		: 'Rimuove !f',
+	UploadUploaded		: '!n% caricato',
+	UploadProcessing	: 'Attendere...',
+
+	// Settings Panel
+	SetTitle		: 'Configurazioni',
+	SetView			: 'Vedi:',
+	SetViewThumb	: 'Anteprima',
+	SetViewList		: 'Lista',
+	SetDisplay		: 'Informazioni:',
+	SetDisplayName	: 'Nome del File',
+	SetDisplayDate	: 'Data',
+	SetDisplaySize	: 'Dimensione',
+	SetSort			: 'Ordina:',
+	SetSortName		: 'per Nome',
+	SetSortDate		: 'per Data',
+	SetSortSize		: 'per Dimensione',
+	SetSortExtension		: 'per Estensione',
+
+	// Status Bar
+	FilesCountEmpty : '<Nessun file>',
+	FilesCountOne	: '1 file',
+	FilesCountMany	: '%1 file',
+
+	// Size and Speed
+	Kb				: '%1 kB',
+	KbPerSecond		: '%1 kB/s',
+
+	// Connector Error Messages.
+	ErrorUnknown	: 'Impossibile completare la richiesta. (Errore %1)',
+	Errors :
+	{
+	 10 : 'Commando non valido.',
+	 11 : 'Il tipo di risorsa non è stato specificato nella richiesta.',
+	 12 : 'Il tipo di risorsa richiesto non è valido.',
+	102 : 'Nome di file o cartella non valido.',
+	103 : 'Non è stato possibile completare la richiesta a causa di restrizioni di autorizazione.',
+	104 : 'Non è stato possibile completare la richiesta a causa di restrizioni nei permessi del file system.',
+	105 : 'L\'estensione del file non è valida.',
+	109 : 'Richiesta invalida.',
+	110 : 'Errore sconosciuto.',
+	115 : 'Un file o cartella con lo stesso nome è già esistente.',
+	116 : 'Cartella non trovata. Prego aggiornare e riprovare.',
+	117 : 'File non trovato. Prego aggirnare la lista dei file e riprovare.',
+	118 : 'Il percorso di origine e di destino sono uguali.',
+	201 : 'Un file con lo stesso nome è già disponibile. Il file caricato è stato rinominato in "%1".',
+	202 : 'File invalido.',
+	203 : 'File invalido. La dimensione del file eccede i limiti del sistema.',
+	204 : 'Il file caricato è corrotto.',
+	205 : 'Il folder temporario non è disponibile new server.',
+	206 : 'Upload annullato per motivi di sicurezza. Il file contiene dati in formatto HTML.',
+	207 : 'Il file caricato è stato rinominato a "%1".',
+	300 : 'Non è stato possibile muovere i file.',
+	301 : 'Non è stato possibile copiare i file.',
+	500 : 'Questo programma è disabilitato per motivi di sicurezza. Prego contattare l\'amministratore del sistema e verificare le configurazioni di CKFinder.',
+	501 : 'Il supporto alle anteprime non è attivo.'
+	},
+
+	// Other Error Messages.
+	ErrorMsg :
+	{
+		FileEmpty		: 'Il nome del file non può essere vuoto.',
+		FileExists		: 'File %s già esiste.',
+		FolderEmpty		: 'Il nome della cartella non può essere vuoto.',
+
+		FileInvChar		: 'I seguenti caratteri non possono essere usati per comporre il nome del file: \n\\ / : * ? " < > |',
+		FolderInvChar	: 'I seguenti caratteri non possono essere usati per comporre il nome della cartella: \n\\ / : * ? " < > |',
+
+		PopupBlockView	: 'Non è stato possile aprire il file in una nuova finestra. Prego configurare il browser e disabilitare i blocchi delle popup.',
+		XmlError		: 'Non è stato possibile caricare la risposta XML dal server.',
+		XmlEmpty		: 'Non è stato possibile caricare la risposta XML dal server. La risposta è vuota.',
+		XmlRawResponse	: 'Risposta originale inviata dal server: %s'
+	},
+
+	// Imageresize plugin
+	Imageresize :
+	{
+		dialogTitle		: 'Ridimensiona %s',
+		sizeTooBig		: 'Non si può usare valori di altezza e larghezza che siano maggiore che le dimensioni originali (%size).',
+		resizeSuccess	: 'Immagine ridimensionata.',
+		thumbnailNew	: 'Crea una nuova thumbnail',
+		thumbnailSmall	: 'Piccolo (%s)',
+		thumbnailMedium	: 'Medio (%s)',
+		thumbnailLarge	: 'Grande (%s)',
+		newSize			: 'Nuove dimensioni',
+		width			: 'Larghezza',
+		height			: 'Altezza',
+		invalidHeight	: 'Altezza non valida.',
+		invalidWidth	: 'Larghezza non valida.',
+		invalidName		: 'Nome del file non valido.',
+		newImage		: 'Crea nuova immagine',
+		noExtensionChange : 'L\'estensione del file non può essere cambiata.',
+		imageSmall		: 'L\'immagine originale è molto piccola.',
+		contextMenuName	: 'Ridimensiona',
+		lockRatio		: 'Blocca rapporto',
+		resetSize		: 'Reimposta dimensione'
+	},
+
+	// Fileeditor plugin
+	Fileeditor :
+	{
+		save			: 'Salva',
+		fileOpenError	: 'Non è stato possibile aprire il file.',
+		fileSaveSuccess	: 'File salvato.',
+		contextMenuName	: 'Modifica',
+		loadingFile		: 'Attendere prego. Caricamento del file in corso...'
+	},
+
+	Maximize :
+	{
+		maximize : 'Massimizza',
+		minimize : 'Minimizza'
+	}
+};
