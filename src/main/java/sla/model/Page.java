@@ -12,14 +12,20 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooToString
 @RooJpaActiveRecord
 public class Page {
-	
-	@Size(max = 500)
+
 	@NotEmpty
+	@Size(max = 500)
 	@Column(length = 500, nullable = false)
 	private String title;
 
 	@Size(max = 3000)
 	@Column(length = 3000)
 	private String content;
+	
+	@NotEmpty
+	@Size(min = 4, max = 20)
+	@Column(length = 40, nullable = false)
+	// 암호화 하면 암호의 길이 증가
+	private String password;
 	
 }

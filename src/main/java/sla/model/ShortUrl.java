@@ -40,6 +40,8 @@ public class ShortUrl {
 	@Size(max = 3000)
 	@Column(length = 3000)
 	private String content;
+	
+	private boolean hide = false;
 
 	public static boolean existsShortUrl(long id) {
 		return entityManager()
@@ -60,9 +62,18 @@ public class ShortUrl {
 		
 		return entityManager()
 				.createQuery(
-						"SELECT o FROM ShortUrl o WHERE o.shortUrl = :shortUrl",
+						"SELECT o FROM ShortUrl o WHERE o.shortUrl = :shortUrl AND o.hide != false",
 						ShortUrl.class).setParameter("shortUrl", shortUrl)
 				.getSingleResult();
+	}
+	
+	public static List<ShortUrl> findShortUrlsByUserId(Long userId) {
+		
+		return entityManager()
+				.createQuery(
+						"SELECT o FROM ShortUrl o WHERE o.userInfo.id = :userId",
+						ShortUrl.class).setParameter("userId", userId)
+				.getResultList();
 	}
 	
 	public static Long getUserSharePostCount(long userId){

@@ -36,4 +36,12 @@ privileged aspect ShortUrl_Roo_JavaBean {
         this.content = content;
     }
     
+    public boolean ShortUrl.isHide() {
+        return this.hide;
+    }
+    
+    public void ShortUrl.setHide(boolean hide) {
+        this.hide = hide;
+    }
+    
 }

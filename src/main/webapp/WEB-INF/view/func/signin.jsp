@@ -18,7 +18,7 @@
 		</style>
 	</head>
 	<body>
-		<h1>어떤 SNS에 공유하시겠습니까?</h1>
+		<h1>어떤 SNS를 이용하십니까?</h1>
 		<div class="sns-button">
 			<!-- FACEBOOK login -->
 			<h3>페이스북</h3>

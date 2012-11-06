@@ -240,7 +240,7 @@
 		<div id="wrapper">
 			<div id="header">
 				<a id="logo" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/img/logo.png"></a>
-				<a id="go-analyze-result" href="${pageContext.request.contextPath}/func/analyze">분석 결과 보기</a>
+				<a id="go-analyze-result" href="${pageContext.request.contextPath}/func/myanalyze">분석 결과 보기</a>
 			</div>
 			<div id="share-form">
 				<p>

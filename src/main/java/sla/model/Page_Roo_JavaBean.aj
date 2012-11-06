@@ -23,4 +23,12 @@ privileged aspect Page_Roo_JavaBean {
         this.content = content;
     }
     
+    public String Page.getPassword() {
+        return this.password;
+    }
+    
+    public void Page.setPassword(String password) {
+        this.password = password;
+    }
+    
 }

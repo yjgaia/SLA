@@ -64,6 +64,8 @@
 				</div>
 				<div id="create-page-form">
 					<label>제목 <form:input path="title" /></label>
+					<label>비밀번호 <form:password path="password" /></label>
+					<input type="submit">
 				</div>
 			</form:form>
 			<div id="footer">
