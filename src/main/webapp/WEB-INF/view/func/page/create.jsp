@@ -63,7 +63,9 @@
 					<a id="logo" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/img/logo.png"></a>
 				</div>
 				<div id="create-page-form">
+					<form:errors path="title" />
 					<label>제목 <form:input path="title" /></label>
+					<form:errors path="password" />
 					<label>비밀번호 <form:password path="password" /></label>
 					<input type="submit">
 				</div>

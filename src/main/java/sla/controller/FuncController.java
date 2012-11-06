@@ -2,6 +2,7 @@ package sla.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,6 +13,7 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.authentication.encoding.PasswordEncoder;
 import org.springframework.social.connect.Connection;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.FacebookLink;
@@ -20,6 +22,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -48,6 +51,9 @@ public class FuncController {
 	@Autowired
 	private SocialConfig socialConfig;
 	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+	
 	@RequestMapping("intro")
 	public void intro() {
 		// just view
@@ -69,18 +75,50 @@ public class FuncController {
 	}
 	
 	@RequestMapping(value = "page/create", method = RequestMethod.POST)
-	public void createPage(@ModelAttribute("command") Page page, BindingResult bindingResult, Model model) {
-		// just view
+	public String createPage(@Valid @ModelAttribute("command") Page page, BindingResult bindingResult, Model model) {
+		if (bindingResult.hasErrors()) {
+			return "func/page/create";
+		} else {
+			String password = passwordEncoder.encodePassword(page.getPassword(), null);
+			page.setPassword(password);
+			page.setCreateDate(new Date());
+			page.persist();
+			return "redirect:/func/page/form?id=" + page.getId();
+		}
 	}
 	
 	@RequestMapping(value = "page/form", method = RequestMethod.GET)
-	public void pageForm(@ModelAttribute("command") Page page) {
+	public void pageForm(@ModelAttribute("command") Page page, Model model) {
 		// just view
+		model.addAttribute("command", Page.findPage(page.getId()));
 	}
 	
 	@RequestMapping(value = "page/form", method = RequestMethod.POST)
-	public void pageForm(@ModelAttribute("command") Page page, BindingResult bindingResult, Model model) {
+	public String pageForm(@Valid @ModelAttribute("command") Page page, BindingResult bindingResult, Model model) {
 		// just view
+		if (bindingResult.hasErrors()) {
+			return "func/page/form";
+		} else {
+			Page originPage = Page.findPage(page.getId());
+			
+			if (!originPage.getPassword().equals(passwordEncoder.encodePassword(page.getPassword(), null))) {
+				bindingResult.rejectValue("password", null, "비밀번호가 다릅니다.");
+				return "func/page/form";
+			}
+			
+			originPage.setTitle(page.getTitle());
+			originPage.setContent(page.getContent());
+			originPage.merge();
+			
+			return "redirect:/func/page/view/" + page.getId();
+		}
+	}
+	
+	@RequestMapping("page/view/{id}")
+	public String createPage(@PathVariable Long id, Model model) {
+		// just view
+		model.addAttribute("command", Page.findPage(id));
+		return "func/page/view";
 	}
 	
 	@RequestMapping("sla/intro")

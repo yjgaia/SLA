@@ -56,7 +56,7 @@
 				<h3>내 분석 결과 리스트</h3>
 				<ul>
 					<c:forEach items="${list}" var="item">
-					<li><a href="${pageContext.request.contextPath}/func/analyze?shortUrl=${item.shortUrl}" target="_blank">${item.url}</a></li>
+					<li><a href="${pageContext.request.contextPath}/func/analyze?shortUrl=${item.shortUrl}" target="_blank">${item.url}</a> <a href="javascript:alert('준비중입니다.');">삭제</a></li>
 					</c:forEach>
 				</ul>
 			</div>

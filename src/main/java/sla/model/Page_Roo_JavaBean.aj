@@ -3,6 +3,7 @@
 
 package sla.model;
 
+import java.util.Date;
 import sla.model.Page;
 
 privileged aspect Page_Roo_JavaBean {
@@ -29,6 +30,14 @@ privileged aspect Page_Roo_JavaBean {
     
     public void Page.setPassword(String password) {
         this.password = password;
+    }
+    
+    public Date Page.getCreateDate() {
+        return this.createDate;
+    }
+    
+    public void Page.setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
     
 }

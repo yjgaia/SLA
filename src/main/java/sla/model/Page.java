@@ -1,5 +1,7 @@
 package sla.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.validation.constraints.Size;
 
@@ -27,5 +29,8 @@ public class Page {
 	@Column(length = 40, nullable = false)
 	// 암호화 하면 암호의 길이 증가
 	private String password;
+	
+	@Column(nullable = false)
+	private Date createDate;
 	
 }
