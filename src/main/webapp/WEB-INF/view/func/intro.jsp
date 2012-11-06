@@ -34,8 +34,8 @@
 				font-size: 14px;
 			}
 			img.profile {
-				width: 100px;
-				height: 100px;
+				width: 150px;
+				height: 150px;
 			}
 			#footer {
 				padding: 10px;
