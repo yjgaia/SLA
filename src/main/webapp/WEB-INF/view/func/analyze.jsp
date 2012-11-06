@@ -326,12 +326,7 @@
 				for (var i=0; i<datas.data.length;i++)
 				{
 					category.push({"name":datas.data[i].social_name,"social_url":datas.data[i].social_image_url});
-					series.data.push([
-						datas.data[i].social_name,
-						datas.data[i].cnt,
-						datas.data[i].id,
-						datas.data[i].social_image_url
-					]);
+					series.data.push({"name":datas.data[i].social_name,"y":datas.data[i].cnt,"color": '#0074A6'});
 				}
 				chart5.xAxis[0].setCategories(category);
 				chart5.addSeries(series);
@@ -529,6 +524,7 @@
 		</script>
 	</head>
 	<body>
+	<h3 style="text-align:center">${shortUrlRecord.url }에 대한 분석 결과</h3>
 	<div id="wrapper" style="display:table;">
 		<div id="main-row1">
 			<div style="width: 550px;float:left;position:relative;">
@@ -579,10 +575,10 @@
 		</div>
 		<div id="main-row4">
 			<div style="width: 350px;float:left;position:relative;">
-				<div class="content_in_title">방문자 OS 분포</div>
+				<div class="content_in_title">OS 분포</div>
 			</div>
 			<div style="width: 350px;float:left;position:relative;">
-				<div class="content_in_title">방문자 Browser 분포</div>
+				<div class="content_in_title">Browser 분포</div>
 			</div>
 			<div id="chart6" style="width: 350px; height: 200px;float:left;position:relative;"></div>
 			<div id="chart7" style="width: 350px; height: 200px;float:left;position:relative;"></div>
