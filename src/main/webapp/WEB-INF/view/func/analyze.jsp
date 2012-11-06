@@ -60,9 +60,6 @@
 						text: ''
 					},exporting: {
 						enabled: false
-					},
-					xAxis: {
-						categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 					},yAxis: {
 						title: {
 							text: ''
@@ -70,8 +67,7 @@
 					},
 					series: [{
 						name: 'Tokyo',
-						showInLegend: false,
-						data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+						showInLegend: false
 					}]
 				});
 
@@ -256,6 +252,28 @@
 					
 				chart.xAxis[0].setCategories(category);
 				chart.addSeries(series);
+
+				var series = {
+						id: 'series',
+						name: '방문자수',
+						showInLegend: false,
+						data: []
+					};
+
+				var category = [];
+				var datas=${countSum };	
+				for (var i=0; i<datas.data.length;i++)
+				{
+					category[i] = datas.data[i].key_name.substr(8,2)+'시';
+					
+					series.data.push([
+						datas.data[i].key_name,
+						datas.data[i].cnt
+					]);
+				}
+					
+				chart3.xAxis[0].setCategories(category);
+				chart3.addSeries(series);
 
 				/*$.getJSON('./data/refer.json', function(datas) {
 					var series = {
@@ -511,7 +529,6 @@
 		</script>
 	</head>
 	<body>
-	<h3 style="text-align:center">${shortUrlRecord.url }에 대한 분석 결과</h3>
 	<div id="wrapper" style="display:table;">
 		<div id="main-row1">
 			<div style="width: 550px;float:left;position:relative;">
@@ -562,10 +579,10 @@
 		</div>
 		<div id="main-row4">
 			<div style="width: 350px;float:left;position:relative;">
-				<div class="content_in_title">OS 분포</div>
+				<div class="content_in_title">방문자 OS 분포</div>
 			</div>
 			<div style="width: 350px;float:left;position:relative;">
-				<div class="content_in_title">Browser 분포</div>
+				<div class="content_in_title">방문자 Browser 분포</div>
 			</div>
 			<div id="chart6" style="width: 350px; height: 200px;float:left;position:relative;"></div>
 			<div id="chart7" style="width: 350px; height: 200px;float:left;position:relative;"></div>

@@ -25,6 +25,7 @@
 	<isNotNull prepend="AND " property="url">b.url=#url# </isNotNull>
 	<isNotNull prepend="AND " property="encodedKeyId">b.id=#encodedKeyId# </isNotNull>
 	GROUP BY operation_system
+	ORDER BY cnt DESC
 	</select>
 	<select id="getBrowserDistribution" parameterClass="Map" resultClass="KeyCount">
 	SELECT browser as key_name,SUM(use_count) as cnt FROM user_agent_info a, short_url b
@@ -32,6 +33,7 @@
 	<isNotNull prepend="AND " property="url">b.url=#url# </isNotNull>
 	<isNotNull prepend="AND " property="encodedKeyId">b.id=#encodedKeyId# </isNotNull>
 	GROUP BY browser
+	ORDER BY cnt DESC
 	</select>
 	<select id="getCountSumByHour" parameterClass="Map" resultClass="KeyCount">
 	SELECT time_period AS key_name,SUM(visit_count) AS cnt FROM visit_count a,short_url b
