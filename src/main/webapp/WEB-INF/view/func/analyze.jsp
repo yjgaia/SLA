@@ -22,7 +22,7 @@
 				margin-bottom:3px;
 			}
 			th{
-				text-align: left;s
+				text-align: left;
 			}
 		</style>
 		<script src="${pageContext.request.contextPath}/script/jquery-1.7.2.min.js"></script>
