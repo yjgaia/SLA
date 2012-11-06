@@ -3,21 +3,6 @@ Copyright (c) 2003-2012, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.html or http://ckeditor.com/license
 */
 
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: none;
-
-}
-
-::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    background: #e5e5e5;
-    background: rgba(0,0,0,.1);
-}
-
 body
 {
 	/* Font */
@@ -29,8 +14,6 @@ body
 
 	/* Remove the background color to make it transparent */
 	background-color: #fff;
-    padding: 10px 20px;
-    margin: 0;
 }
 
 ol,ul,dl
