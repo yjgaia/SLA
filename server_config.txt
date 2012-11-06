@@ -70,6 +70,16 @@ apache-tomcat-7.0.32/bin/catalina.sh stop
 # 톰캣 실시간 로그 보기
 tail -30f apache-tomcat-7.0.32/logs/catalina.out
 
+
+
+# 운영시
+config.properties
+PathBuilder.java
+js.js
+내용 수정
+
+
+
 # 프로젝트를 재등록할때는 ROOT폴더를 삭제해주고 SLA.war만 옮겨주면 됩니다. (SLA-userfiles는 사용자가 업로드할 파일들을 가지고 있습니다.)
 apache-tomcat-7.0.32/bin/catalina.sh stop
 rm -rf apache-tomcat-7.0.32/webapps/run/ROOT

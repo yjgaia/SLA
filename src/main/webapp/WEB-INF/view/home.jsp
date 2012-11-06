@@ -225,6 +225,7 @@
 			}
 			#footer .left {
 				float: left;
+				margin-right: 10px;
 			}
 			#footer .right {
 				float: right;
@@ -281,6 +282,9 @@
 			<div id="footer">
 				<div class="left">
 					<script>YOGIO();</script>
+				</div>
+				<div class="left">
+					피드백은 mr@hanul.co 로 부탁드립니다~^^!
 				</div>
 				<div class="right">
 					&copy; <a href="http://swmaestro.kr" target="_blank">SW Maestro</a> 3rd <a href="${pageContext.request.contextPath}/func/sla/intro">SLA팀</a>

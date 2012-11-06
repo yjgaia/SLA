@@ -1,5 +1,5 @@
 function OPEN_YOGIO_WIN(url) {
-	window.open(url, 'YOGIO_WIN', 'location=no, directories=no, resizable=no, status=no, toolbar=no, menubar=no, width=600, height=300'); 
+	window.open(url, 'YOGIO_WIN', 'location=no, directories=no, resizable=no, status=no, toolbar=no, menubar=no, width=950, height=600, scrollbars=yes'); 
 }
 
 function YOGIO(o) {
