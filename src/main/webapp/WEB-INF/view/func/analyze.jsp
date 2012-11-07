@@ -5,6 +5,7 @@
 		<meta charset="utf-8">
 		<title>YOG.IO!</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=8" />
 		<style>
 		body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0;font-family:'맑은고딕',malgun gothic,'돋움',dotum, Arial, sans-serif;}
 			#wrapper {
@@ -21,6 +22,27 @@
 				padding-left:15px;
 				margin-bottom:3px;
 			}
+			.openBtn, .layer .closeBtn {
+				padding:8px 15px;border:none;border-radius:0.3em;
+				background:linear-gradient(#a9a9a9,#636363);
+				background:-webkit-linear-gradient(#a9a9a9,#636363);
+				background:-moz-linear-gradient(#a9a9a9,#636363);
+				font-family:"맑은고딕";color:white;font-weight:bold;
+			}
+			.layer {
+				position:absolute;top:50%;left:50%;
+				margin:-180px 0 0 -301px;padding:20px 10px 10px;
+				width:582px;height:340px;background:white;
+				text-align:center;
+				z-index:20;
+			}
+			.layer .closeBtn {margin-top:10px;}
+			.dim {
+				position:absolute;top:0;left:0;
+				width:100%;height:100%;
+				background:black;
+				opacity:0.3;z-index:10;
+			}		
 			th{
 				text-align: left;
 			}
@@ -31,7 +53,17 @@
 		<script type="text/javascript">
 		$(function () {
 			var chart, chart2, chart3, chart4, chart5,chart6, chart7;
+			var $layer = $(".layer");
+			var wrapHeight = $(document).height();
+			$layer.hide();
+			$(".closeBtn").click(function(){
+				$(".dim").remove();
+				$layer.hide();
+			});
+
 			$(document).ready(function() {
+				
+				
 				chart = new Highcharts.Chart({
 					chart: {
 						renderTo: 'chart1',
@@ -42,6 +74,7 @@
 					},exporting: {
 						enabled: false
 					},yAxis: {
+						tickInterval:1,
 						title: {
 							text: ''
 						}
@@ -61,6 +94,7 @@
 					},exporting: {
 						enabled: false
 					},yAxis: {
+						tickInterval:1,
 						title: {
 							text: ''
 						}
@@ -314,9 +348,17 @@
 						data: [],						
 						events: {
 						  click: function(event) {
-						  
-							alert(event.point.config[2]);
-
+							  $("body").append("<div class='dim'></div>");
+							  $(".dim").css("height", wrapHeight);
+							  $layer.show();
+							  
+							  $.getJSON('./data/generation.json', function(datas) {
+								  var dat = datas.data[0];
+								 $("popup_prop1") = dat.socialName;
+								 $("popup_prop2") = dat.socialFriendCount;
+								 
+								 
+							  });
 						  }
 						}
 				};
@@ -326,7 +368,7 @@
 				for (var i=0; i<datas.data.length;i++)
 				{
 					category.push({"name":datas.data[i].social_name,"social_url":datas.data[i].social_image_url});
-					series.data.push({"name":datas.data[i].social_name,"y":datas.data[i].cnt,"color": '#0074A6'});
+					series.data.push({"id":datas.data[i].id,"name":datas.data[i].social_name,"y":datas.data[i].cnt,"color": '#0074A6'});
 				}
 				chart5.xAxis[0].setCategories(category);
 				chart5.addSeries(series);
@@ -524,6 +566,18 @@
 		</script>
 	</head>
 	<body>
+	<div class="layer">
+			<table>
+				<tr><th>이름</th><td><div class="popup_prop1"></div></td></tr>
+				<tr><th>친구 수</th><td><div class="popup_prop2"></td></tr>
+				<tr><th>공유 글 수</th><td><div class="popup_prop3"></td></tr>
+				<tr><th>누적 방문자 수</th><td><div class="popup_prop4"></td></tr>
+				<tr><th>평균 방문자 수</th><td><div class="popup_prop5"></td></tr>
+				<tr><th>평균 방문자/친구 비율</th><td><div class="popup_prop6"></td></tr>
+			</table>
+		<br>
+		<button type="button" class="closeBtn">창 닫기</button>
+	</div>
 	<h3 style="text-align:center">${shortUrlRecord.url }에 대한 분석 결과</h3>
 	<div id="wrapper" style="display:table;">
 		<div id="main-row1">
