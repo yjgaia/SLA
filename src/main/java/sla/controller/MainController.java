@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import sla.data.KeyValueCache;
 import sla.model.ShortUrl;
 import sla.service.ShortUrlService;
 import sla.service.UserAgentService;
@@ -22,27 +23,32 @@ public class MainController {
 	@Autowired
 	UserAgentService userAgentService;
 	@Autowired
-	ShortUrlService shortUrlService;
+	KeyValueCache keyValueCache;
+	
 	@RequestMapping("/")
 	public String home() {
 		return "home";
 	}
 
 	@RequestMapping("/{shortUrl}")
-	public String shortUrl(@PathVariable String shortUrl,HttpServletRequest httpServletRequest) {
+	public String shortUrl(@PathVariable final String shortUrl,HttpServletRequest httpServletRequest) {
 		long id=ShortUrlUtil.complicatedRevert(shortUrl);
 		
 		final UserAgent userAgent = UserAgent.parseUserAgentString(httpServletRequest.getHeader("User-Agent"));
 		
-		System.out.println("userAgent:"+userAgent);
+		final String ip=httpServletRequest.getRemoteAddr();
+		System.out.println("ip:"+ip);
 		if(ShortUrl.existsShortUrl(id)){
 			final ShortUrl su=ShortUrl.findShortUrl(id);
 			Thread thread =new Thread(new Runnable() {
 				
 				@Override
 				public void run() {
-					visitCountService.increaseVisitCount(su.getId());
-					userAgentService.increaseUseCount(su.getId(), userAgent.getOperatingSystem().name(), userAgent.getBrowser().name(), userAgent.getBrowserVersion().getVersion());
+					if(!keyValueCache.exists(keyValueCache.generateIpKey(ip, shortUrl))){
+						keyValueCache.setStringWithKey(keyValueCache.generateIpKey(ip, shortUrl), "1");
+						visitCountService.increaseVisitCount(su.getId());
+						userAgentService.increaseUseCount(su.getId(), userAgent.getOperatingSystem().name(), userAgent.getBrowser().name(), userAgent.getBrowserVersion().getVersion());
+					}
 				}
 			});
 			System.out.println("스레드 시작");
