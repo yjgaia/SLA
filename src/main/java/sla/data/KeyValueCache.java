@@ -4,7 +4,7 @@ import redis.clients.jedis.Jedis;
 
 public class KeyValueCache {
 
-	private final static int COMMON_EXPIRE_SECOND =  24 * 60 * 60; // 1주일 정도 캐시에 저장해둔다.
+	private final static int COMMON_EXPIRE_SECOND =  24 * 60 * 60; // 1일 정도 캐시에 저장해둔다.
 	private Jedis jedis;
 	public KeyValueCache(Jedis jedis,String password){
 		this.jedis=jedis;
