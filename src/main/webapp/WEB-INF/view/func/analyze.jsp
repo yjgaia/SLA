@@ -35,6 +35,11 @@
 				text-align:center;
 				z-index:20;
 			}
+			.userLink{
+				color:#3B5998;
+				text-decoration: none;
+				font-weight: bold;
+			}
 			.layer .closeBtn {margin-top:10px;}
 			.dim {
 				position:absolute;top:0;left:0;
@@ -499,7 +504,7 @@
 		<div id="header">
 			<a href="${pageContext.request.contextPath}/"><img border="0" src="${pageContext.request.contextPath}/img/logo.png"></a>
 		</div>
-		<h3 style="text-align:center;font-weight: normal;"><b><a href="${shortUrlRecord.url }" target="_blank">${shortUrlRecord.url }</a></b><br/>의 공유 효과</h3>
+		<h3 style="text-align:center;font-weight: normal;"><b><a class="userLink" href="${shortUrlRecord.url }" target="_blank">${shortUrlRecord.url }</a></b><br/>의 공유 효과</h3>
 		<div id="main-row1">
 			<div style="width: 550px;float:left;position:relative;">
 				<div class="content_in_title">누적 방문자</div>
@@ -523,9 +528,10 @@
 			</div>
 			
 			<div style="width: 350px; height: 200px;float:left;position:relative;">
-			<table>
+			<table style="text-align: right">
 				<tr><td colspan=2>이 주소의 <b>${shareRank }번째</b> 공유자 입니다!</td></tr>
-				<tr><th>이름</th><td>${sharer.socialName }</td></tr>
+				<tr><th><img src="${sharer.socialImageUrl }"></th>
+				<td><a class="userLink" href="http://facebook.com/${sharer.socialProviderUserId }" target="_blank">${sharer.socialName }</a></td></tr>
 				<tr><th>친구 수</th><td>${sharer.socialFriendCount }명</td></tr>
 				<tr><th>공유 글 수</th><td>${sharerPostCount }건</td></tr>
 				<tr><th>누적 방문자 수</th><td>${sharerTotalVisitCount }명</td></tr>
