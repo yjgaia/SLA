@@ -152,8 +152,6 @@
 						formatter: function() {
 							//console.log(this.value);
 							var obj=this.value;
-							
-							console.log(obj==null);
 							if(obj==null){ 
 								return '<table><tr><td valign="center"><IMG src="" width="25" height="25"></td><td valign="center">null</td>';
 							}else{
