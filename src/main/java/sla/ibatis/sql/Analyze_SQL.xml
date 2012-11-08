@@ -71,4 +71,9 @@
 	,url,u.id FROM (SELECT * FROM short_url WHERE url=#url# ORDER BY id) s,( SELECT @RNUM := 0 ) R,user_info u
 	WHERE s.user_id=u.id ) a WHERE id=#userId#) a,( SELECT @RNUM := 0 ) R) b WHERE order_num=1
 	</select>
+	<select id="getFirstShortUrlByFullUrl" parameterClass="Map" resultClass="String">
+	SELECT short_url FROM (
+	SELECT @RNUM := @RNUM + 1 AS rownum,o.* FROM short_url o,( SELECT @RNUM := 0 ) R WHERE o.url=#fullUrl#) a
+	WHERE ROWNUM=1
+	</select>
 </sqlMap>

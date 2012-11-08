@@ -83,5 +83,6 @@ public class ShortUrl {
 						Long.class).setParameter("userId", userId)
 				.getSingleResult();
 	}
+	
 
 }

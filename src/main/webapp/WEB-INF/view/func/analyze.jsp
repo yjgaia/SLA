@@ -499,7 +499,7 @@
 		<div id="header">
 			<a href="${pageContext.request.contextPath}/"><img border="0" src="${pageContext.request.contextPath}/img/logo.png"></a>
 		</div>
-		<h3 style="text-align:center;font-weight: normal;"><b><a href="${shortUrlRecord.url }" target="_blank">${shortUrlRecord.url }</a></b><br/>에 대한 공유 효과</h3>
+		<h3 style="text-align:center;font-weight: normal;"><b><a href="${shortUrlRecord.url }" target="_blank">${shortUrlRecord.url }</a></b><br/>의 공유 효과</h3>
 		<div id="main-row1">
 			<div style="width: 550px;float:left;position:relative;">
 				<div class="content_in_title">누적 방문자</div>

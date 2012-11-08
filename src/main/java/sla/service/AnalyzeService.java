@@ -253,6 +253,12 @@ public class AnalyzeService {
 		Integer beforeSum=(Integer) sqlMapclient.queryForObject("Analyze.getShareRank",param);
 		return beforeSum;
 	}
+	public String getFirstShortUrlByFullUrl(String fullUrl) throws SQLException {
+		HashMap<String, Object> param=new HashMap<String,Object>();
+		param.put("fullUrl",fullUrl);
+		String shortUrl=(String) sqlMapclient.queryForObject("Analyze.getFirstShortUrlByFullUrl",param);
+		return shortUrl;
+	}
 	
 	
 	

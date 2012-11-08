@@ -141,11 +141,22 @@ public class FuncController {
 	}
 	
 	@RequestMapping("analyze")
-	public String analyze(@RequestParam String shortUrl,Model model) throws SQLException, JsonGenerationException, JsonMappingException, IOException {
+	public String analyze( String shortUrl,String fullUrl,Model model) throws SQLException, JsonGenerationException, JsonMappingException, IOException {
+		if(shortUrl==null&&fullUrl!=null){
+			shortUrl=analyzeService.getFirstShortUrlByFullUrl(fullUrl);
+			if(shortUrl==null){
+				return "shortUrlNotFound";
+			}
+		}else if(shortUrl==null&&fullUrl==null){
+			return "shortUrlNotFound";
+		}
+		
 		long id=ShortUrlUtil.complicatedRevert(shortUrl);
 		if(ShortUrl.existsShortUrl(id)){
 			ShortUrl shortUrlRecord=ShortUrl.findShortUrl(id);
 			ObjectMapper objectMapper=new ObjectMapper();
+			
+			//공유자에 대한 정보
 			UserInfo sharer = analyzeService.getUserInfoWithShortUrl(shortUrl);
 			long sharePostCount=ShortUrl.getUserSharePostCount(sharer.getId());
 			List<Long> countSumBySharer=VisitCount.getCountSumByUser(sharer.getId());
@@ -160,14 +171,6 @@ public class FuncController {
 			}else{
 				sharerFriendVisitorRatio=Math.floor((double)averageCount/((double)sharer.getSocialFriendCount())*1000)/1000;
 			}
-			
-			List<KeyCount> genderDistribution=analyzeService.getUserGenderDistribution(shortUrl,true);
-			List<KeyCount> operationSystemDistribution=analyzeService.getOperationSystemDistribution(shortUrl,true);
-			List<KeyCount> browserDistribution=analyzeService.getBrowserDistribution(shortUrl,true);
-			List<ShortUserInfoWithCount> countRecord=analyzeService.getCountRecordByUser(shortUrl, -1, 2013111000);
-			List<KeyCount> countSum=analyzeService.getCountSumByPeriod(
-					shortUrl,Integer.parseInt(DateUtil.getToday("YYYYMMDDHH")), 10,0,true);
-			List<KeyCount> accumulatedCountSum=analyzeService.getAccumulatedCountSumByPeriod(shortUrl,Integer.parseInt(DateUtil.getToday("YYYYMMDDHH")), 10,0,true);
 			Integer shareRank=analyzeService.getShareRank(shortUrlRecord.getUrl(),sharer.getId());
 			model.addAttribute("shortUrlRecord",shortUrlRecord);
 			model.addAttribute("sharer",sharer);
@@ -176,6 +179,16 @@ public class FuncController {
 			model.addAttribute("sharerAverageVisitCount",averageCount);
 			model.addAttribute("sharerFriendVisitorRatio",sharerFriendVisitorRatio);
 			model.addAttribute("shareRank",shareRank);
+			
+			//전체 url 통계에 대한 정보
+			List<KeyCount> genderDistribution=analyzeService.getUserGenderDistribution(shortUrl,true);
+			List<KeyCount> operationSystemDistribution=analyzeService.getOperationSystemDistribution(shortUrl,true);
+			List<KeyCount> browserDistribution=analyzeService.getBrowserDistribution(shortUrl,true);
+			List<ShortUserInfoWithCount> countRecord=analyzeService.getCountRecordByUser(shortUrl, -1, 2013111000);
+			List<KeyCount> countSum=analyzeService.getCountSumByPeriod(
+					shortUrl,Integer.parseInt(DateUtil.getToday("YYYYMMDDHH")), 10,0,true);
+			List<KeyCount> accumulatedCountSum=analyzeService.getAccumulatedCountSumByPeriod(shortUrl,Integer.parseInt(DateUtil.getToday("YYYYMMDDHH")), 10,0,true);
+			
 			model.addAttribute("countRecord",objectMapper.writeValueAsString(new Result(countRecord)));
 			model.addAttribute("genderDistribution",objectMapper.writeValueAsString(new Result(genderDistribution)));
 			model.addAttribute("operationSystemDistribution",objectMapper.writeValueAsString(new Result(operationSystemDistribution)));
@@ -188,6 +201,8 @@ public class FuncController {
 			return "shortUrlNotFound";
 		}
 	}
+	
+	
 
 	@RequestMapping(value = "reShare", method = RequestMethod.GET)
 	public String reShare(@RequestParam String shortUrl, Model model) {
