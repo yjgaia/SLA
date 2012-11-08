@@ -66,4 +66,9 @@
 	<isNotNull prepend="AND " property="encodedKeyId">b.id=#encodedKeyId# </isNotNull>
 	AND time_period &lt; #timePeriod#
 	</select>
+	<select id="getShareRank" parameterClass="Map" resultClass="Integer">
+	SELECT rownum AS rank FROM (SELECT @RNUM := @RNUM + 1 AS order_num,a.* FROM (SELECT * FROM (SELECT @RNUM := @RNUM + 1 AS ROWNUM
+	,url,u.id FROM (SELECT * FROM short_url WHERE url=#url# ORDER BY id) s,( SELECT @RNUM := 0 ) R,user_info u
+	WHERE s.user_id=u.id ) a WHERE id=#userId#) a,( SELECT @RNUM := 0 ) R) b WHERE order_num=1
+	</select>
 </sqlMap>

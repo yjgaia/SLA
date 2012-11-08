@@ -154,12 +154,13 @@ public class FuncController {
 				totalCountSum+=countSumBySharer.get(i);
 			}
 			double sharerFriendVisitorRatio;
+			long averageCount=totalCountSum/sharePostCount;
 			if(sharer.getSocialFriendCount()==0){
 				sharerFriendVisitorRatio=0;
 			}else{
-				sharerFriendVisitorRatio=Math.floor((double)totalCountSum/((double)sharer.getSocialFriendCount())*1000)/1000;
+				sharerFriendVisitorRatio=Math.floor((double)averageCount/((double)sharer.getSocialFriendCount())*1000)/1000;
 			}
-			long averageCount=totalCountSum/sharePostCount;
+			
 			List<KeyCount> genderDistribution=analyzeService.getUserGenderDistribution(shortUrl,true);
 			List<KeyCount> operationSystemDistribution=analyzeService.getOperationSystemDistribution(shortUrl,true);
 			List<KeyCount> browserDistribution=analyzeService.getBrowserDistribution(shortUrl,true);
@@ -167,12 +168,14 @@ public class FuncController {
 			List<KeyCount> countSum=analyzeService.getCountSumByPeriod(
 					shortUrl,Integer.parseInt(DateUtil.getToday("YYYYMMDDHH")), 10,0,true);
 			List<KeyCount> accumulatedCountSum=analyzeService.getAccumulatedCountSumByPeriod(shortUrl,Integer.parseInt(DateUtil.getToday("YYYYMMDDHH")), 10,0,true);
+			Integer shareRank=analyzeService.getShareRank(shortUrlRecord.getUrl(),sharer.getId());
 			model.addAttribute("shortUrlRecord",shortUrlRecord);
 			model.addAttribute("sharer",sharer);
 			model.addAttribute("sharerPostCount",sharePostCount);
 			model.addAttribute("sharerTotalVisitCount",totalCountSum);
 			model.addAttribute("sharerAverageVisitCount",averageCount);
 			model.addAttribute("sharerFriendVisitorRatio",sharerFriendVisitorRatio);
+			model.addAttribute("shareRank",shareRank);
 			model.addAttribute("countRecord",objectMapper.writeValueAsString(new Result(countRecord)));
 			model.addAttribute("genderDistribution",objectMapper.writeValueAsString(new Result(genderDistribution)));
 			model.addAttribute("operationSystemDistribution",objectMapper.writeValueAsString(new Result(operationSystemDistribution)));

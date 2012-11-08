@@ -37,7 +37,6 @@ public class MainController {
 		final UserAgent userAgent = UserAgent.parseUserAgentString(httpServletRequest.getHeader("User-Agent"));
 		
 		final String ip=httpServletRequest.getRemoteAddr();
-		System.out.println("ip:"+ip);
 		if(ShortUrl.existsShortUrl(id)){
 			final ShortUrl su=ShortUrl.findShortUrl(id);
 			Thread thread =new Thread(new Runnable() {
@@ -51,9 +50,7 @@ public class MainController {
 					}
 				}
 			});
-			System.out.println("스레드 시작");
 			thread.start();
-			System.out.println("url이동");
 			String url=su.getUrl();
 			return "redirect:"+url;
 		}else{

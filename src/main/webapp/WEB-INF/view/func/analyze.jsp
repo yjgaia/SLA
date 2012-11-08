@@ -73,7 +73,7 @@
 					},exporting: {
 						enabled: false
 					},yAxis: {
-						tickInterval:1,
+						tickInterval:5,
 						title: {
 							text: ''
 						}
@@ -93,7 +93,7 @@
 					},exporting: {
 						enabled: false
 					},yAxis: {
-						tickInterval:1,
+						tickInterval:5,
 						title: {
 							text: ''
 						}
@@ -240,31 +240,9 @@
 					}]
 				});
 				
-				/*$.getJSON('./data/time.json', function(datas) {
-					var series = {
-						id: 'series',
-						name: '방문자수',
-						showInLegend: false,
-						data: []
-					}
-
-					var category = [];
-					
-					for (var i=0; i<datas.data.length;i++)
-					{
-						category[i] = datas.data[i].key_name.substr(8,2);
-						series.data.push([
-							datas.data[i].key_name,
-							datas.data[i].cnt
-						]);
-					}
-					
-					chart.xAxis[0].setCategories(category);
-					chart.addSeries(series);
-				});  아래와 같이 변경*/
 				var series = {
 						id: 'series',
-						name: '방문자수',
+						name: '방문자 수',
 						showInLegend: false,
 						data: []
 					};
@@ -286,7 +264,7 @@
 
 				var series = {
 						id: 'series',
-						name: '방문자수',
+						name: '방문자 수',
 						showInLegend: false,
 						data: []
 					};
@@ -306,41 +284,10 @@
 				chart3.xAxis[0].setCategories(category);
 				chart3.addSeries(series);
 
-				/*$.getJSON('./data/refer.json', function(datas) {
-					var series = {
-						id: 'series',
-						name: '방문자명',
-						showInLegend: false,
-						data: [],						
-						events: {
-						  click: function(event) {
-						  
-							alert(event.point.config[2]);
-
-						  }
-						}
-					}
-
-					var category = [];
-					
-					for (var i=0; i<datas.data.length;i++)
-					{
-						category.push([datas.data[i].social_name,datas.data[i].social_image_url]);
-						series.data.push([
-							datas.data[i].social_name,
-							datas.data[i].cnt,
-							datas.data[i].id,
-							datas.data[i].social_image_url
-						]);
-					}
-					
-					chart5.xAxis[0].setCategories(category);
-					chart5.addSeries(series);
-				});*/
 				datas=${countRecord };
 				var series = {
 						id: 'series',
-						name: '방문자명',
+						name: '방문자 수',
 						showInLegend: false,
 						data: [],						
 						events: {
@@ -349,8 +296,9 @@
 							  $(".dim").css("height", wrapHeight);
 							  $layer.show();
 							  
-							  $.getJSON('./data/generation.json', function(datas) {
-								  var dat = datas.data[0];
+							  //id 다음부분에 user.id 가 들어가도록 해줄 것
+							  $.getJSON('${pageContext.request.contextPath}/api/userInfo?id=3', function(datas) {
+								  var dat = datas.data;
 								 $("popup_prop1") = dat.socialName;
 								 $("popup_prop2") = dat.socialFriendCount;
 								 
@@ -370,35 +318,7 @@
 				chart5.xAxis[0].setCategories(category);
 				chart5.addSeries(series);
 				
-				
-				/*$.getJSON('./data/generation.json', function(datas) {
-					var series = {
-						id: 'series',
-						name: '방문자',
-						type: 'pie',
-						showInLegend: true,
-						data: []
-					}
 
-					for (var i=0; i<datas.data.length;i++)
-					{
-						if(datas.data[i].key_name == "female")
-						{
-							series.data.push([
-								"여",
-								datas.data[i].cnt
-							]);
-						}else if(datas.data[i].key_name == "male"){
-							series.data.push([
-								"남",
-								datas.data[i].cnt
-							]);
-						}
-					}
-	
-					
-					chart4.addSeries(series);
-				});*/
 				var series = {
 						id: 'series',
 						name: '방문자',
@@ -575,11 +495,14 @@
 		<br>
 		<button type="button" class="closeBtn">창 닫기</button>
 	</div>
-	<h3 style="text-align:center">${shortUrlRecord.url }에 대한 분석 결과</h3>
 	<div id="wrapper" style="display:table;">
+		<div id="header">
+			<a href="${pageContext.request.contextPath}/"><img border="0" src="${pageContext.request.contextPath}/img/logo.png"></a>
+		</div>
+		<h3 style="text-align:center;font-weight: normal;"><b><a href="${shortUrlRecord.url }" target="_blank">${shortUrlRecord.url }</a></b><br/>에 대한 공유 효과</h3>
 		<div id="main-row1">
 			<div style="width: 550px;float:left;position:relative;">
-				<div class="content_in_title">방문자 추이</div>
+				<div class="content_in_title">누적 방문자</div>
 			</div>
 			<div style="width: 150px;float:left;position:relative;">
 				<font size="2">
@@ -593,7 +516,7 @@
 		<div id="main-row1-spacing" style="height:20px;"></div>
 		<div id="main-row2">
 			<div style="width: 350px;float:left;position:relative;">
-				<div class="content_in_title">공유자 정보</div>
+				<div class="content_in_title">이 주소의 공유자는?</div>
 			</div>
 			<div style="width: 350px;float:left;position:relative;">
 				<div class="content_in_title">시간 별 방문자</div>
@@ -601,11 +524,12 @@
 			
 			<div style="width: 350px; height: 200px;float:left;position:relative;">
 			<table>
+				<tr><td colspan=2>이 주소의 <b>${shareRank }번째</b> 공유자 입니다!</td></tr>
 				<tr><th>이름</th><td>${sharer.socialName }</td></tr>
-				<tr><th>친구 수</th><td>${sharer.socialFriendCount }</td></tr>
-				<tr><th>공유 글 수</th><td>${sharerPostCount }</td></tr>
-				<tr><th>누적 방문자 수</th><td>${sharerTotalVisitCount }</td></tr>
-				<tr><th>평균 방문자 수</th><td>${sharerAverageVisitCount }</td></tr>
+				<tr><th>친구 수</th><td>${sharer.socialFriendCount }명</td></tr>
+				<tr><th>공유 글 수</th><td>${sharerPostCount }건</td></tr>
+				<tr><th>누적 방문자 수</th><td>${sharerTotalVisitCount }명</td></tr>
+				<tr><th>평균 방문자 수</th><td>${sharerAverageVisitCount }명</td></tr>
 				<tr><th>평균 방문자/친구 비율</th><td>${sharerFriendVisitorRatio }</td></tr>
 			</table>
 			</div>
@@ -614,10 +538,10 @@
 		<div id="main-row3">
 			
 			<div style="width: 350px;float:left;position:relative;">
-				<div class="content_in_title">공유자 남녀 성비</div>
+				<div class="content_in_title">공유자들의 성별</div>
 			</div>
 			<div style="width: 350px;float:left;position:relative;">
-				<div class="content_in_title">방문순위</div>
+				<div class="content_in_title">공유 영향력</div>
 			</div>
 
 			<div id="chart4" style="width: 350px; height: 200px;float:left;position:relative;"></div>
@@ -626,10 +550,10 @@
 		</div>
 		<div id="main-row4">
 			<div style="width: 350px;float:left;position:relative;">
-				<div class="content_in_title">OS 분포</div>
+				<div class="content_in_title">공유자들이 사용중인 OS</div>
 			</div>
 			<div style="width: 350px;float:left;position:relative;">
-				<div class="content_in_title">Browser 분포</div>
+				<div class="content_in_title">공유자들이 사용중인 Browser</div>
 			</div>
 			<div id="chart6" style="width: 350px; height: 200px;float:left;position:relative;"></div>
 			<div id="chart7" style="width: 350px; height: 200px;float:left;position:relative;"></div>

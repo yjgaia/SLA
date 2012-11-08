@@ -161,7 +161,6 @@ public class AnalyzeService {
 				countByPeriod.put(periodList.get(i),0); //카운트 전부 0으로 초기화
 			}
 			
-			System.out.println(periodList);
 			int startPeriod;
 			if(periodList.size()==0){
 				startPeriod=endPeriod;
@@ -233,7 +232,6 @@ public class AnalyzeService {
 			}
 		
 			Integer beforeSum=(Integer) sqlMapclient.queryForObject("Analyze.getBeforeCountSum",param);
-			System.out.println("beforeSum:"+beforeSum);
 			int size=countSumByPeriod.size();
 			int tempSum=beforeSum;
 			resultList=new ArrayList<KeyCount>();
@@ -247,6 +245,13 @@ public class AnalyzeService {
 			}
 		}
 		return resultList;
+	}
+	public Integer getShareRank(String url, Long userId) throws SQLException {
+		HashMap<String, Object> param=new HashMap<String,Object>();
+		param.put("url",url);
+		param.put("userId", userId);
+		Integer beforeSum=(Integer) sqlMapclient.queryForObject("Analyze.getShareRank",param);
+		return beforeSum;
 	}
 	
 	
