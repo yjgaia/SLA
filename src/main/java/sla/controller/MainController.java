@@ -32,29 +32,53 @@ public class MainController {
 
 	@RequestMapping("/{shortUrl}")
 	public String shortUrl(@PathVariable final String shortUrl,HttpServletRequest httpServletRequest) {
-		long id=ShortUrlUtil.complicatedRevert(shortUrl);
+		final long id=ShortUrlUtil.complicatedRevert(shortUrl);
 		
 		final UserAgent userAgent = UserAgent.parseUserAgentString(httpServletRequest.getHeader("User-Agent"));
 		
 		final String ip=httpServletRequest.getRemoteAddr();
-		if(ShortUrl.existsShortUrl(id)){
-			final ShortUrl su=ShortUrl.findShortUrl(id);
+		String storedUrl;
+		if((storedUrl=keyValueCache.getStringAndResetExpireByKey(shortUrl))!=null){
+			//캐싱되어있음
 			Thread thread =new Thread(new Runnable() {
 				
 				@Override
 				public void run() {
-					if(!keyValueCache.exists(keyValueCache.generateIpKey(ip, shortUrl))){
-						keyValueCache.setStringWithKey(keyValueCache.generateIpKey(ip, shortUrl), "1");
-						visitCountService.increaseVisitCount(su.getId());
-						userAgentService.increaseUseCount(su.getId(), userAgent.getOperatingSystem().name(), userAgent.getBrowser().name(), userAgent.getBrowserVersion().getVersion());
+					if(ShortUrl.existsShortUrl(id)){
+						final ShortUrl su=ShortUrl.findShortUrl(id);
+						saveStatistics(su, ip, shortUrl, userAgent);
+						
 					}
 				}
 			});
 			thread.start();
-			String url=su.getUrl();
-			return "redirect:"+url;
+			return "redirect:"+storedUrl;
 		}else{
-			return "shortUrlNotFound";
+			//캐싱안돼있음
+			if(ShortUrl.existsShortUrl(id)){
+				final ShortUrl su=ShortUrl.findShortUrl(id);
+				Thread thread =new Thread(new Runnable() {
+					
+					@Override
+					public void run() {
+						saveStatistics(su, ip, shortUrl, userAgent);
+						keyValueCache.setStringWithKey(shortUrl, su.getUrl());
+					}
+				});
+				thread.start();
+				String url=su.getUrl();
+				return "redirect:"+url;
+			}else{
+				return "shortUrlNotFound";
+			}
+		}
+		
+	}
+	public void saveStatistics(ShortUrl su,String ip,String shortUrl,UserAgent userAgent){
+		if(!keyValueCache.exists(keyValueCache.generateIpKey(ip, shortUrl))){
+			keyValueCache.setStringWithKey(keyValueCache.generateIpKey(ip, shortUrl), "1");
+			visitCountService.increaseVisitCount(su.getId());
+			userAgentService.increaseUseCount(su.getId(), userAgent.getOperatingSystem().name(), userAgent.getBrowser().name(), userAgent.getBrowserVersion().getVersion());
 		}
 	}
 
