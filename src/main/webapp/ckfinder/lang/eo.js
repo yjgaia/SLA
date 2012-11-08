@@ -75,16 +75,18 @@ CKFinder.lang['eo'] =
 	FolderDelete	: 'Ĉu vi certas, ke vi volas forigi la "%1"dosierujon?',
 	FolderRenaming	: ' (Estas renomata...)',
 	FolderDeleting	: ' (Estas forigata...)',
+	DestinationFolder	: 'Destination Folder', // MISSING
 
 	// Files
 	FileRename		: 'Entajpu la novan nomon de la dosiero: ',
 	FileRenameExt	: 'Ĉu vi certas, ke vi volas ŝanĝi la dosiernoman finaĵon? La dosiero povus fariĝi neuzebla.',
 	FileRenaming	: 'Estas renomata...',
 	FileDelete		: 'Ĉu vi certas, ke vi volas forigi la dosieron "%1"?',
+	FilesDelete	: 'Are you sure you want to delete %1 files?', // MISSING
 	FilesLoading	: 'Estas ŝargata...',
 	FilesEmpty		: 'La dosierujo estas malplena',
-	FilesMoved		: 'Dosiero %1 movita al %2:%3.',
-	FilesCopied		: 'Dosiero %1 kopiita al %2:%3.',
+	DestinationFile	: 'Destination File', // MISSING
+	SkippedFiles	: 'List of skipped files:', // MISSING
 
 	// Basket
 	BasketFolder		: 'Rubujo',
@@ -93,13 +95,21 @@ CKFinder.lang['eo'] =
 	BasketOpenFolder	: 'Malfermi la patran dosierujon',
 	BasketTruncateConfirm : 'Ĉu vi certas, ke vi volas forigi ĉiujn dosierojn el la rubujo?',
 	BasketRemoveConfirm	: 'Ĉu vi certas, ke vi volas forigi la dosieron  "%1" el la rubujo?',
+	BasketRemoveConfirmMultiple	: 'Do you really want to remove %1 files from the basket?', // MISSING
 	BasketEmpty			: 'Neniu dosiero en la rubujo, demetu kelkajn.',
 	BasketCopyFilesHere	: 'Kopii dosierojn el la rubujo',
 	BasketMoveFilesHere	: 'Movi dosierojn el la rubujo',
 
-	BasketPasteErrorOther	: 'Dosiero %s eraro: %e.',
-	BasketPasteMoveSuccess	: 'La sekvaj dosieroj estas movitaj: %s',
-	BasketPasteCopySuccess	: 'La sekvaj dosieroj estas kopiitaj: %s',
+	// Global messages
+	OperationCompletedSuccess	: 'Operation completed successfully.', // MISSING
+	OperationCompletedErrors		: 'Operation completed with errors.', // MISSING
+	FileError				: '%s: %e', // MISSING
+
+	// Move and Copy files
+	MovedFilesNumber		: 'Number of files moved: %s.', // MISSING
+	CopiedFilesNumber	: 'Number of files copied: %s.', // MISSING
+	MoveFailedList		: 'The following files could not be moved:<br />%s', // MISSING
+	CopyFailedList		: 'The following files could not be copied:<br />%s', // MISSING
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: 'Alŝuti',
@@ -118,9 +128,10 @@ CKFinder.lang['eo'] =
 	NewSubFolder	: 'Nova subdosierujo',
 	Rename			: 'Renomi',
 	Delete			: 'Forigi',
+	DeleteFiles		: 'Delete Files', // MISSING
 
-	CopyDragDrop	: 'Kopii la dosierojn tien',
-	MoveDragDrop	: 'Movi la dosierojn tien',
+	CopyDragDrop	: 'Kopii tien ĉi',
+	MoveDragDrop	: 'Movi tien ĉi',
 
 	// Dialogs
 	RenameDlgTitle		: 'Renomi',
@@ -130,6 +141,7 @@ CKFinder.lang['eo'] =
 
 	FileOverwrite	: 'Anstataŭigi',
 	FileAutorename	: 'Aŭtomata renomo',
+	ManuallyRename	: 'Manually rename', // MISSING
 
 	// Generic
 	OkBtn		: 'Bone',
@@ -183,8 +195,10 @@ CKFinder.lang['eo'] =
 	FilesCountMany	: '%1 dosieroj',
 
 	// Size and Speed
-	Kb				: '%1 kB',
-	KbPerSecond		: '%1 kB/s',
+	Kb				: '%1 KB',
+	Mb				: '%1 MB',
+	Gb				: '%1 GB',
+	SizePerSecond	: '%1/s',
 
 	// Connector Error Messages.
 	ErrorUnknown	: 'Ne eblis plenumi la peton. (Eraro %1)',
@@ -199,6 +213,7 @@ CKFinder.lang['eo'] =
 	105 : 'Nevalida dosiernoma finaĵo.',
 	109 : 'Nevalida peto.',
 	110 : 'Nekonata eraro.',
+	111 : 'It was not possible to complete the request due to resulting file size.', // MISSING
 	115 : 'Dosiero aŭ dosierujo kun tiu nomo jam ekzistas.',
 	116 : 'Tiu dosierujo ne ekzistas. Bonvolu aktualigi kaj reprovi.',
 	117 : 'Tiu dosiero ne ekzistas. Bonvolu aktualigi kaj reprovi.',
@@ -222,6 +237,8 @@ CKFinder.lang['eo'] =
 		FileEmpty		: 'La dosiernomo ne povas esti malplena.',
 		FileExists		: 'La dosiero %s jam ekzistas.',
 		FolderEmpty		: 'La dosierujnomo ne povas esti malplena.',
+		FolderExists	: 'Folder %s already exists.', // MISSING
+		FolderNameExists	: 'Folder already exists.', // MISSING
 
 		FileInvChar		: 'La dosiernomo ne povas enhavi la sekvajn signojn : \n\\ / : * ? " < > |',
 		FolderInvChar	: 'La dosierujnomo ne povas enhavi la sekvajn signojn : \n\\ / : * ? " < > |',
@@ -270,5 +287,21 @@ CKFinder.lang['eo'] =
 	{
 		maximize : 'Pligrandigi',
 		minimize : 'Malpligrandigi'
+	},
+
+	Gallery :
+	{
+		current : 'Bildo {current} el {total}'
+	},
+
+	Zip :
+	{
+		extractHereLabel	: 'Extract here', // MISSING
+		extractToLabel		: 'Extract to...', // MISSING
+		downloadZipLabel	: 'Download as zip', // MISSING
+		compressZipLabel	: 'Compress to zip', // MISSING
+		removeAndExtract	: 'Remove existing and extract', // MISSING
+		extractAndOverwrite	: 'Extract overwriting existing files', // MISSING
+		extractSuccess		: 'File extracted successfully.' // MISSING
 	}
 };

@@ -73,9 +73,9 @@ tail -30f apache-tomcat-7.0.32/logs/catalina.out
 
 
 # 운영시
-config.properties
-PathBuilder.java
-js.js
+src/main/java/sla/social/config.properties
+src/main/java/sla/ckfinder/PathBuilder.java
+src/main/webapp/scriptjs.js
 내용 수정
 
 

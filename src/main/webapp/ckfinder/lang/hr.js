@@ -75,16 +75,18 @@ CKFinder.lang['hr'] =
 	FolderDelete	: 'Sigurno želite obrisati direktorij "%1"?',
 	FolderRenaming	: ' (Mijenjam ime...)',
 	FolderDeleting	: ' (Brišem...)',
+	DestinationFolder	: 'Destination Folder', // MISSING
 
 	// Files
 	FileRename		: 'Unesite novo ime datoteke: ',
 	FileRenameExt	: 'Sigurno želite promijeniti vrstu datoteke? Datoteka može postati neiskoristiva.',
 	FileRenaming	: 'Mijenjam ime...',
 	FileDelete		: 'Sigurno želite obrisati datoteku "%1"?',
+	FilesDelete	: 'Are you sure you want to delete %1 files?', // MISSING
 	FilesLoading	: 'Učitavam...',
 	FilesEmpty		: 'Direktorij je prazan.',
-	FilesMoved		: 'Datoteka %1 premještena u %2:%3.',
-	FilesCopied		: 'Datoteka %1 kopirana u %2:%3.',
+	DestinationFile	: 'Destination File', // MISSING
+	SkippedFiles	: 'List of skipped files:', // MISSING
 
 	// Basket
 	BasketFolder		: 'Košara',
@@ -93,13 +95,21 @@ CKFinder.lang['hr'] =
 	BasketOpenFolder	: 'Otvori nadređeni direktorij',
 	BasketTruncateConfirm : 'Sigurno želite obrisati sve datoteke iz košare?',
 	BasketRemoveConfirm	: 'Sigurno želite obrisati datoteku "%1" iz košare?',
+	BasketRemoveConfirmMultiple	: 'Do you really want to remove %1 files from the basket?', // MISSING
 	BasketEmpty			: 'Nema niti jedne datoteke, ubacite koju.',
 	BasketCopyFilesHere	: 'Kopiraj datoteke iz košare',
 	BasketMoveFilesHere	: 'Premjesti datoteke iz košare',
 
-	BasketPasteErrorOther	: 'Datoteke %s greška: %e',
-	BasketPasteMoveSuccess	: 'Sljedeće datoteke su premještene: %s',
-	BasketPasteCopySuccess	: 'Sljedeće datoteke su kopirane: %s',
+	// Global messages
+	OperationCompletedSuccess	: 'Operation completed successfully.', // MISSING
+	OperationCompletedErrors		: 'Operation completed with errors.', // MISSING
+	FileError				: '%s: %e', // MISSING
+
+	// Move and Copy files
+	MovedFilesNumber		: 'Number of files moved: %s.', // MISSING
+	CopiedFilesNumber	: 'Number of files copied: %s.', // MISSING
+	MoveFailedList		: 'The following files could not be moved:<br />%s', // MISSING
+	CopyFailedList		: 'The following files could not be copied:<br />%s', // MISSING
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: 'Pošalji',
@@ -118,9 +128,10 @@ CKFinder.lang['hr'] =
 	NewSubFolder	: 'Novi poddirektorij',
 	Rename			: 'Promijeni naziv',
 	Delete			: 'Obriši',
+	DeleteFiles		: 'Delete Files', // MISSING
 
-	CopyDragDrop	: 'Kopiraj datoteku ovdje',
-	MoveDragDrop	: 'Premjesti datoteku ovdje',
+	CopyDragDrop	: 'Kopiraj ovdje',
+	MoveDragDrop	: 'Premjesti ovdje',
 
 	// Dialogs
 	RenameDlgTitle		: 'Promijeni naziv',
@@ -130,6 +141,7 @@ CKFinder.lang['hr'] =
 
 	FileOverwrite	: 'Prepiši',
 	FileAutorename	: 'Automatska promjena naziva',
+	ManuallyRename	: 'Manually rename', // MISSING
 
 	// Generic
 	OkBtn		: 'U redu',
@@ -183,8 +195,10 @@ CKFinder.lang['hr'] =
 	FilesCountMany	: '%1 datoteka',
 
 	// Size and Speed
-	Kb				: '%1 kB',
-	KbPerSecond		: '%1 kB/s',
+	Kb				: '%1 KB',
+	Mb				: '%1 MB',
+	Gb				: '%1 GB',
+	SizePerSecond	: '%1/s',
 
 	// Connector Error Messages.
 	ErrorUnknown	: 'Nije moguće završiti zahtjev. (Greška %1)',
@@ -199,6 +213,7 @@ CKFinder.lang['hr'] =
 	105 : 'Nedozvoljena vrsta datoteke.',
 	109 : 'Nedozvoljen zahtjev.',
 	110 : 'Nepoznata greška.',
+	111 : 'It was not possible to complete the request due to resulting file size.', // MISSING
 	115 : 'Datoteka ili direktorij s istim nazivom već postoji.',
 	116 : 'Direktorij nije pronađen. Osvježite stranicu i pokušajte ponovo.',
 	117 : 'Datoteka nije pronađena. Osvježite listu datoteka i pokušajte ponovo.',
@@ -222,6 +237,8 @@ CKFinder.lang['hr'] =
 		FileEmpty		: 'Naziv datoteke ne može biti prazan.',
 		FileExists		: 'Datoteka %s već postoji.',
 		FolderEmpty		: 'Naziv direktorija ne može biti prazan.',
+		FolderExists	: 'Folder %s already exists.', // MISSING
+		FolderNameExists	: 'Folder already exists.', // MISSING
 
 		FileInvChar		: 'Naziv datoteke ne smije sadržavati niti jedan od sljedećih znakova: \n\\ / : * ? " < > |',
 		FolderInvChar	: 'Naziv direktorija ne smije sadržavati niti jedan od sljedećih znakova: \n\\ / : * ? " < > |',
@@ -270,5 +287,21 @@ CKFinder.lang['hr'] =
 	{
 		maximize : 'Povećaj',
 		minimize : 'Smanji'
+	},
+
+	Gallery :
+	{
+		current : 'Slika {current} od {total}'
+	},
+
+	Zip :
+	{
+		extractHereLabel	: 'Extract here', // MISSING
+		extractToLabel		: 'Extract to...', // MISSING
+		downloadZipLabel	: 'Download as zip', // MISSING
+		compressZipLabel	: 'Compress to zip', // MISSING
+		removeAndExtract	: 'Remove existing and extract', // MISSING
+		extractAndOverwrite	: 'Extract overwriting existing files', // MISSING
+		extractSuccess		: 'File extracted successfully.' // MISSING
 	}
 };

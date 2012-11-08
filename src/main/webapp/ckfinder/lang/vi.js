@@ -75,16 +75,18 @@ CKFinder.lang['vi'] =
 	FolderDelete	: 'Bạn có chắc muốn xóa thư mục "%1"?',
 	FolderRenaming	: ' (Đang đổi tên...)',
 	FolderDeleting	: ' (Đang xóa...)',
+	DestinationFolder	: 'Destination Folder', // MISSING
 
 	// Files
 	FileRename		: 'Xin nhập tên tập tin mới: ',
 	FileRenameExt	: 'Bạn có chắc muốn đổi phần mở rộng? Tập tin có thể sẽ không dùng được.',
 	FileRenaming	: 'Đang đổi tên...',
 	FileDelete		: 'Bạn có chắc muốn xóa tập tin "%1"?',
+	FilesDelete	: 'Are you sure you want to delete %1 files?', // MISSING
 	FilesLoading	: 'Đang tải...',
 	FilesEmpty		: 'Thư mục trống.',
-	FilesMoved		: 'Tập tin %1 được chuyển đến %2:%3.',
-	FilesCopied		: 'Tập tin %1 được chép đến %2:%3.',
+	DestinationFile	: 'Destination File', // MISSING
+	SkippedFiles	: 'List of skipped files:', // MISSING
 
 	// Basket
 	BasketFolder		: 'Rổ',
@@ -93,13 +95,21 @@ CKFinder.lang['vi'] =
 	BasketOpenFolder	: 'Mở thư mục cha',
 	BasketTruncateConfirm : 'Bạn có chắc muốn bỏ tất cả tập tin trong rổ?',
 	BasketRemoveConfirm	: 'Bạn có chắc muốn bỏ tập tin "%1" khỏi rổ?',
+	BasketRemoveConfirmMultiple	: 'Do you really want to remove %1 files from the basket?', // MISSING
 	BasketEmpty			: 'Không có tập tin trong rổ, hãy kéo và thả tập tin vào rổ.',
 	BasketCopyFilesHere	: 'Chép tập tin từ rổ',
 	BasketMoveFilesHere	: 'Chuyển tập tin từ rổ',
 
-	BasketPasteErrorOther	: 'Tập tin %s bị lỗi: %e',
-	BasketPasteMoveSuccess	: 'Tập tin sau đã được chuyển: %s',
-	BasketPasteCopySuccess	: 'Tập tin sau đã được chép: %s',
+	// Global messages
+	OperationCompletedSuccess	: 'Operation completed successfully.', // MISSING
+	OperationCompletedErrors		: 'Operation completed with errors.', // MISSING
+	FileError				: '%s: %e', // MISSING
+
+	// Move and Copy files
+	MovedFilesNumber		: 'Number of files moved: %s.', // MISSING
+	CopiedFilesNumber	: 'Number of files copied: %s.', // MISSING
+	MoveFailedList		: 'The following files could not be moved:<br />%s', // MISSING
+	CopyFailedList		: 'The following files could not be copied:<br />%s', // MISSING
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: 'Tải lên',
@@ -118,9 +128,10 @@ CKFinder.lang['vi'] =
 	NewSubFolder	: 'Tạo thư mục con',
 	Rename			: 'Đổi tên',
 	Delete			: 'Xóa',
+	DeleteFiles		: 'Delete Files', // MISSING
 
-	CopyDragDrop	: 'Chép tập tin vào đây',
-	MoveDragDrop	: 'Chuyển tập tin vào đây',
+	CopyDragDrop	: 'Sao chép ở đây',
+	MoveDragDrop	: 'Di chuyển ở đây',
 
 	// Dialogs
 	RenameDlgTitle		: 'Đổi tên',
@@ -130,6 +141,7 @@ CKFinder.lang['vi'] =
 
 	FileOverwrite	: 'Ghi đè',
 	FileAutorename	: 'Tự đổi tên',
+	ManuallyRename	: 'Manually rename', // MISSING
 
 	// Generic
 	OkBtn		: 'OK',
@@ -183,8 +195,10 @@ CKFinder.lang['vi'] =
 	FilesCountMany	: '%1 tập tin',
 
 	// Size and Speed
-	Kb				: '%1 kB',
-	KbPerSecond		: '%1 kB/s',
+	Kb				: '%1 KB',
+	Mb				: '%1 MB',
+	Gb				: '%1 GB',
+	SizePerSecond	: '%1/s',
 
 	// Connector Error Messages.
 	ErrorUnknown	: 'Không thể hoàn tất yêu cầu. (Lỗi %1)',
@@ -199,6 +213,7 @@ CKFinder.lang['vi'] =
 	105 : 'Phần mở rộng tập tin không hợp lệ.',
 	109 : 'Yêu cầu không hợp lệ.',
 	110 : 'Lỗi không xác định.',
+	111 : 'It was not possible to complete the request due to resulting file size.', // MISSING
 	115 : 'Tập tin hoặc thư mục cùng tên đã tồn tại.',
 	116 : 'Không thấy thư mục. Hãy làm tươi và thử lại.',
 	117 : 'Không thấy tập tin. Hãy làm tươi và thử lại.',
@@ -222,6 +237,8 @@ CKFinder.lang['vi'] =
 		FileEmpty		: 'Không thể để trống tên tập tin.',
 		FileExists		: 'Tập tin %s đã tồn tại.',
 		FolderEmpty		: 'Không thể để trống tên thư mục.',
+		FolderExists	: 'Folder %s already exists.', // MISSING
+		FolderNameExists	: 'Folder already exists.', // MISSING
 
 		FileInvChar		: 'Tên tập tin không thể chưa các kí tự: \n\\ / : * ? " < > |',
 		FolderInvChar	: 'Tên thư mục không thể chứa các kí tự: \n\\ / : * ? " < > |',
@@ -270,5 +287,21 @@ CKFinder.lang['vi'] =
 	{
 		maximize : 'Cực đại hóa',
 		minimize : 'Cực tiểu hóa'
+	},
+
+	Gallery :
+	{
+		current : 'Hình thứ {current} trên {total}'
+	},
+
+	Zip :
+	{
+		extractHereLabel	: 'Extract here', // MISSING
+		extractToLabel		: 'Extract to...', // MISSING
+		downloadZipLabel	: 'Download as zip', // MISSING
+		compressZipLabel	: 'Compress to zip', // MISSING
+		removeAndExtract	: 'Remove existing and extract', // MISSING
+		extractAndOverwrite	: 'Extract overwriting existing files', // MISSING
+		extractSuccess		: 'File extracted successfully.' // MISSING
 	}
 };
