@@ -556,10 +556,10 @@
 		</div>
 		<div id="main-row4">
 			<div style="width: 350px;float:left;position:relative;">
-				<div class="content_in_title">공유자들이 사용중인 OS</div>
+				<div class="content_in_title">방문자들이 사용중인 OS</div>
 			</div>
 			<div style="width: 350px;float:left;position:relative;">
-				<div class="content_in_title">공유자들이 사용중인 Browser</div>
+				<div class="content_in_title">방문자들이 사용중인 Browser</div>
 			</div>
 			<div id="chart6" style="width: 350px; height: 200px;float:left;position:relative;"></div>
 			<div id="chart7" style="width: 350px; height: 200px;float:left;position:relative;"></div>
