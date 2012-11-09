@@ -13,6 +13,10 @@
 			html, body {
 				font-family: Malgun Gothic;
 			}
+			ul{
+				word-wrap:break-word;
+				word-break:break-all;
+			}
 			#wrapper {
 				margin: auto;
 				width: 600px;
