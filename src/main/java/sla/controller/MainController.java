@@ -6,12 +6,13 @@ import nl.bitwalker.useragentutils.UserAgent;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import sla.data.KeyValueCache;
 import sla.model.ShortUrl;
-import sla.service.ShortUrlService;
+import sla.model.UserInfo;
 import sla.service.UserAgentService;
 import sla.service.VisitCountService;
 import sla.util.ShortUrlUtil;
@@ -26,7 +27,9 @@ public class MainController {
 	KeyValueCache keyValueCache;
 	
 	@RequestMapping("/")
-	public String home() {
+	public String home(Model model) {
+		model.addAttribute("userCount", UserInfo.getUserCount());
+		model.addAttribute("shareCount", ShortUrl.getShortUrlCount());
 		return "home";
 	}
 
@@ -37,6 +40,7 @@ public class MainController {
 		final UserAgent userAgent = UserAgent.parseUserAgentString(httpServletRequest.getHeader("User-Agent"));
 		
 		final String ip=httpServletRequest.getRemoteAddr();
+		System.out.println(ip);
 		String storedUrl;
 		if((storedUrl=keyValueCache.getStringAndResetExpireByKey(shortUrl))!=null){
 			//캐싱되어있음

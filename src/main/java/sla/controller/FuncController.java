@@ -201,21 +201,6 @@ public class FuncController {
 			return "shortUrlNotFound";
 		}
 	}
-	
-	
-
-	@RequestMapping(value = "reShare", method = RequestMethod.GET)
-	public String reShare(@RequestParam String shortUrl, Model model) {
-		long id=ShortUrlUtil.complicatedRevert(shortUrl);
-		System.out.println("reshareId:"+id);
-		if (ShortUrl.existsShortUrl(id)) {
-			ShortUrl su = ShortUrl.findShortUrl(id);
-			model.addAttribute("shortUrl", su);
-			return "func/reShare";
-		} else {
-			return "shortUrlNotFound";
-		}
-	}
 
 	@Secured("ROLE_USER")
 	@RequestMapping(value = "share", method = RequestMethod.GET)
@@ -228,17 +213,21 @@ public class FuncController {
 	@Secured("ROLE_USER")
 	@ResponseBody
 	@RequestMapping(value = "share", method = RequestMethod.POST)
-	public boolean share(@Valid ShortUrl shortUrl,@RequestParam(required=false) boolean reShare
-			,@RequestParam(required=false) String reShareShortUrl, BindingResult bindingResult,Model model, HttpServletRequest request) {
+	public boolean share(@Valid ShortUrl shortUrl, BindingResult bindingResult,Model model, HttpServletRequest request) {
 		if (bindingResult.hasErrors()) {
 			return false;
 		} else {
+			System.out.println(shortUrl.getUrl().charAt(shortUrl.getUrl().length()-1));
+			String url=shortUrl.getUrl();
+			String lastCharacter=String.valueOf(url.charAt(url.length()-1));
+			if("/".equals(lastCharacter)){
+				shortUrl.setUrl(url.substring(0, url.length()-1));//마지막 / 제거해줌
+			}
 			shortUrl.setUserInfo(AuthUtil.getUserInfo());
 			shortUrl.persist();
 			String convertedShortUrl=ShortUrlUtil.complicatedConvert(shortUrl.getId());
 			shortUrl.setShortUrl(convertedShortUrl);
 			 
-			shortUrl.merge();
 			
 			
 			Connection<Facebook> connection = socialConfig.connectionRepository().findPrimaryConnection(Facebook.class);
@@ -247,8 +236,9 @@ public class FuncController {
 			String shortUrlString = getUrlWithContextPath(request) + "/" + shortUrl.getShortUrl();
 			
 			FacebookLink link = new FacebookLink(shortUrlString, null, shortUrl.getUrl(), null);
-			facebook.feedOperations().postLink(shortUrl.getContent(), link);
-			
+			String entityId=facebook.feedOperations().postLink(shortUrl.getContent(), link);
+			shortUrl.setEntityId(entityId);
+			shortUrl.merge();
 			return true;
 		}
 	}

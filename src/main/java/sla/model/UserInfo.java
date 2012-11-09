@@ -88,5 +88,12 @@ public class UserInfo implements UserDetails {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public static Long getUserCount(){
+		return entityManager()
+				.createQuery(
+						"SELECT COUNT(o) FROM UserInfo o",
+						Long.class).getSingleResult();
+	}
 
 }

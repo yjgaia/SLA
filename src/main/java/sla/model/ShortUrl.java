@@ -21,7 +21,10 @@ public class ShortUrl {
 	
 	@Column(unique = true)
 	private String shortUrl;
-
+	
+	private String entityId;
+	private String comments;
+	private Integer likeCount;
 	@ManyToOne
 	@JoinColumn(name = "userId", nullable = false)
 	private UserInfo userInfo;
@@ -43,6 +46,12 @@ public class ShortUrl {
 	
 	private boolean hide = false;
 
+	public static Long getShortUrlCount(){
+		return entityManager()
+				.createQuery(
+						"SELECT COUNT(o) FROM ShortUrl o",
+						Long.class).getSingleResult();
+	}
 	public static boolean existsShortUrl(long id) {
 		return entityManager()
 				.createQuery(
@@ -57,6 +66,7 @@ public class ShortUrl {
 						Long.class).setParameter("shortUrl", shortUrl)
 				.getSingleResult() > 0l;
 	}
+	
 
 	public static ShortUrl findShortUrlByShortUrl(String shortUrl) {
 		
@@ -75,6 +85,7 @@ public class ShortUrl {
 						ShortUrl.class).setParameter("userId", userId)
 				.getResultList();
 	}
+	
 	
 	public static Long getUserSharePostCount(long userId){
 		return entityManager()
