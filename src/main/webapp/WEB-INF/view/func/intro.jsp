@@ -12,7 +12,7 @@
 			}
 			#wrapper {
 				margin: auto;
-				width: 600px;
+				width: 800px;
 				padding-top: 30px;
 			}
 			#wrapper p {
@@ -54,11 +54,25 @@
 	
 		<div id="wrapper">
 			<div id="header">
-				<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/img/logo.png"></a>
+				<a href="${pageContext.request.contextPath}/"><img border="0" src="${pageContext.request.contextPath}/img/logo.png"></a>
 			</div>
 			<div id="sla-intro">
 				<p>
 					YOG.IO!는 SW 마에스트로 3기 연수생인 심영재, 이한솔, 이희덕 군이 팀을 이루어 오우택 멘토님의 도움을 받아 진행하는 소셜 네트워크 공유-링크 분석시스템 개발 프로젝트 입니다.
+				</p>
+				<p>
+					<b><br/>무엇을 얻을 수 있나요?</b>
+				</p>
+				<p>
+					<table>
+						<tr>
+							<td><a href="${pageContext.request.contextPath }/img/sample.jpg"><img border="0" src="${pageContext.request.contextPath }/img/sample.jpg" width="350" height="500"/></a></td>
+							<td valign="top">YOG.IO!를 이용해 링크를 SNS에 공유할 시 해당 SNS를 통해 링크를 방문하는 사용자의 각종 통계를 알 수 있습니다. 시간별 방문자, 누적 방문자, 공유 영향력 순위, 운영체제, 브라우저 분포 등등
+							각종 통계를 확인 할 수 있습니다. 해당 고유한 링크에 대해 정보가 수집되므로 특정 이벤트 페이지나 사용자에게 얼마나 보여지고 있는지를 알아야 하는 페이지에
+							쉽게 적용 가능합니다.<br/>내가 공유를 했는데 과연 얼마나 많은 사람들이 보고 있는지, 나랑 같은 링크를 공유한 사람들은 어떤지 궁금하지 않으셨나요?<br/>
+							<br/><b>지금 당장 공유를 시작해 보세요!</b></td>
+						</tr>
+					</table>
 				</p>
 			</div>
 			<div id="footer">

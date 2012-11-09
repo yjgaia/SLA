@@ -58,8 +58,8 @@ public class GetPageUtil {
 
 
 	    BufferedReader in = new BufferedReader(
-				new InputStreamReader(url.openStream()));
-
+				new InputStreamReader(url.openStream(),"UTF-8"));
+	    
 	    Pattern pHead = Pattern.compile("(?i)</HEAD>");
 	    Matcher mHead;
 	    Pattern pTitle = Pattern.compile("(?i)</TITLE>");
@@ -81,7 +81,6 @@ public class GetPageUtil {
 		    		mTitle=pTitle.matcher(inputLine);
 		    		if(mTitle.find()){
 		    			found=true;
-		    			//System.out.println(inputLine);
 		    		}
 		    	}	    					    		
 		    }
@@ -120,7 +119,7 @@ public class GetPageUtil {
 	        }
 		}
 		System.out.println("max:"+maxUrl);
-		System.out.println(getPageTitle(new URL("http://www.naver.com")));
+		System.out.println(getPageTitle(new URL("http://osen.mt.co.kr/article/G1109496920")));
 		
 		
 	}
