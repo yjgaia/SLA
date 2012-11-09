@@ -75,18 +75,16 @@ CKFinder.lang['pl'] =
 	FolderDelete	: 'Czy na pewno chcesz usunąć folder "%1"?',
 	FolderRenaming	: ' (Zmieniam nazwę...)',
 	FolderDeleting	: ' (Kasowanie...)',
-	DestinationFolder	: 'Folder docelowy',
 
 	// Files
 	FileRename		: 'Podaj nową nazwę pliku: ',
 	FileRenameExt	: 'Czy na pewno chcesz zmienić rozszerzenie pliku? Może to spowodować problemy z otwieraniem pliku przez innych użytkowników.',
 	FileRenaming	: 'Zmieniam nazwę...',
 	FileDelete		: 'Czy na pewno chcesz usunąć plik "%1"?',
-	FilesDelete	: 'Czy na pewno chcesz usunąć pliki (razem: %1)?',
 	FilesLoading	: 'Ładowanie...',
 	FilesEmpty		: 'Folder jest pusty',
-	DestinationFile	: 'Plik docelowy',
-	SkippedFiles	: 'Lista pominiętych plików:',
+	FilesMoved		: 'Plik %1 został przeniesiony do %2:%3.',
+	FilesCopied		: 'Plik %1 został skopiowany do %2:%3.',
 
 	// Basket
 	BasketFolder		: 'Koszyk',
@@ -95,21 +93,13 @@ CKFinder.lang['pl'] =
 	BasketOpenFolder	: 'Otwórz folder z plikiem',
 	BasketTruncateConfirm : 'Czy naprawdę chcesz usunąć wszystkie pliki z koszyka?',
 	BasketRemoveConfirm	: 'Czy naprawdę chcesz usunąć plik "%1" z koszyka?',
-	BasketRemoveConfirmMultiple	: 'Czy naprawdę chcesz usunąć pliki (razem: %1) z koszyka?',
 	BasketEmpty			: 'Brak plików w koszyku. Aby dodać plik, przeciągnij i upuść (drag\'n\'drop) dowolny plik do koszyka.',
 	BasketCopyFilesHere	: 'Skopiuj pliki z koszyka',
 	BasketMoveFilesHere	: 'Przenieś pliki z koszyka',
 
-	// Global messages
-	OperationCompletedSuccess	: 'Operation completed successfully.', // MISSING
-	OperationCompletedErrors		: 'Operation completed with errors.', // MISSING
-	FileError				: '%s: %e', // MISSING
-
-	// Move and Copy files
-	MovedFilesNumber		: 'Number of files moved: %s.', // MISSING
-	CopiedFilesNumber	: 'Number of files copied: %s.', // MISSING
-	MoveFailedList		: 'The following files could not be moved:<br />%s', // MISSING
-	CopyFailedList		: 'The following files could not be copied:<br />%s', // MISSING
+	BasketPasteErrorOther	: 'Plik: %s błąd: %e',
+	BasketPasteMoveSuccess	: 'Następujące pliki zostały przeniesione: %s',
+	BasketPasteCopySuccess	: 'Następujące pliki zostały skopiowane: %s',
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: 'Wyślij',
@@ -128,10 +118,9 @@ CKFinder.lang['pl'] =
 	NewSubFolder	: 'Nowy podfolder',
 	Rename			: 'Zmień nazwę',
 	Delete			: 'Usuń',
-	DeleteFiles		: 'Usuń pliki',
 
-	CopyDragDrop	: 'Skopiuj tutaj',
-	MoveDragDrop	: 'Przenieś tutaj',
+	CopyDragDrop	: 'Skopiuj plik tutaj',
+	MoveDragDrop	: 'Przenieś plik tutaj',
 
 	// Dialogs
 	RenameDlgTitle		: 'Zmiana nazwy',
@@ -141,7 +130,6 @@ CKFinder.lang['pl'] =
 
 	FileOverwrite	: 'Nadpisz',
 	FileAutorename	: 'Zmień automatycznie nazwę',
-	ManuallyRename	: 'Zmień nazwę ręcznie',
 
 	// Generic
 	OkBtn		: 'OK',
@@ -171,7 +159,7 @@ CKFinder.lang['pl'] =
 	UploadCancel		: 'Anuluj wysyłanie',
 	UploadRemove		: 'Usuń',
 	UploadRemoveTip		: 'Usuń !f',
-	UploadUploaded		: 'Wysłano: !n%',
+	UploadUploaded		: 'Wysłano: !n',
 	UploadProcessing	: 'Przetwarzanie...',
 
 	// Settings Panel
@@ -195,10 +183,8 @@ CKFinder.lang['pl'] =
 	FilesCountMany	: 'Ilość plików: %1',
 
 	// Size and Speed
-	Kb				: '%1 KB',
-	Mb				: '%1 MB',
-	Gb				: '%1 GB',
-	SizePerSecond	: '%1/s',
+	Kb				: '%1 kB',
+	KbPerSecond		: '%1 kB/s',
 
 	// Connector Error Messages.
 	ErrorUnknown	: 'Wykonanie operacji zakończyło się niepowodzeniem. (Błąd %1)',
@@ -213,7 +199,6 @@ CKFinder.lang['pl'] =
 	105 : 'Nieprawidłowe rozszerzenie.',
 	109 : 'Nieprawiłowe żądanie.',
 	110 : 'Niezidentyfikowany błąd.',
-	111 : 'Wykonanie operacji nie powiodło się z powodu zbyt dużego rozmiaru pliku wynikowego.',
 	115 : 'Plik lub folder o podanej nazwie już istnieje.',
 	116 : 'Nie znaleziono folderu. Odśwież panel i spróbuj ponownie.',
 	117 : 'Nie znaleziono pliku. Odśwież listę plików i spróbuj ponownie.',
@@ -237,8 +222,6 @@ CKFinder.lang['pl'] =
 		FileEmpty		: 'Nazwa pliku nie może być pusta.',
 		FileExists		: 'Plik %s już istnieje.',
 		FolderEmpty		: 'Nazwa folderu nie może być pusta.',
-		FolderExists	: 'Folder %s już istnieje.',
-		FolderNameExists	: 'Folder już istnieje.',
 
 		FileInvChar		: 'Nazwa pliku nie może zawierać żadnego z podanych znaków: \n\\ / : * ? " < > |',
 		FolderInvChar	: 'Nazwa folderu nie może zawierać żadnego z podanych znaków: \n\\ / : * ? " < > |',
@@ -287,21 +270,5 @@ CKFinder.lang['pl'] =
 	{
 		maximize : 'Maksymalizuj',
 		minimize : 'Minimalizuj'
-	},
-
-	Gallery :
-	{
-		current : 'Obrazek {current} z {total}'
-	},
-
-	Zip :
-	{
-		extractHereLabel	: 'Wypakuj tutaj',
-		extractToLabel		: 'Wypakuj do...',
-		downloadZipLabel	: 'Pobierz jako zip',
-		compressZipLabel	: 'Kompresuj do zip',
-		removeAndExtract	: 'Usuń poprzedni i wypakuj',
-		extractAndOverwrite	: 'Wypakuj do bieżącego nadpisując istniejące pliki',
-		extractSuccess		: 'Plik został pomyślnie wypakowany.'
 	}
 };

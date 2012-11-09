@@ -76,18 +76,16 @@ CKFinder.lang['fi'] =
 	FolderDelete	: 'Haluatko varmasti poistaa kansion "%1"?',
 	FolderRenaming	: ' (Uudelleennimeää...)',
 	FolderDeleting	: ' (Poistaa...)',
-	DestinationFolder	: 'Destination Folder', // MISSING
 
 	// Files
 	FileRename		: 'Kirjoita uusi tiedostonimi: ',
 	FileRenameExt	: 'Haluatko varmasti muuttaa tiedostotarkennetta? Tiedosto voi muuttua käyttökelvottomaksi.',
 	FileRenaming	: 'Uudelleennimeää...',
 	FileDelete		: 'Haluatko varmasti poistaa tiedoston "%1"?',
-	FilesDelete	: 'Are you sure you want to delete %1 files?', // MISSING
 	FilesLoading	: 'Lataa...',
 	FilesEmpty		: 'Tyhjä kansio.',
-	DestinationFile	: 'Destination File', // MISSING
-	SkippedFiles	: 'List of skipped files:', // MISSING
+	FilesMoved		: 'Tiedosto %1 siirretty nimelle %2:%3.',
+	FilesCopied		: 'Tiedosto %1 kopioitu nimelle %2:%3.',
 
 	// Basket
 	BasketFolder		: 'Kori',
@@ -96,21 +94,13 @@ CKFinder.lang['fi'] =
 	BasketOpenFolder	: 'Avaa ylemmän tason kansio',
 	BasketTruncateConfirm : 'Haluatko todella poistaa kaikki tiedostot korista?',
 	BasketRemoveConfirm	: 'Haluatko todella poistaa tiedoston "%1" korista?',
-	BasketRemoveConfirmMultiple	: 'Do you really want to remove %1 files from the basket?', // MISSING
 	BasketEmpty			: 'Korissa ei ole tiedostoja. Lisää raahaamalla.',
 	BasketCopyFilesHere	: 'Kopioi tiedostot korista.',
 	BasketMoveFilesHere	: 'Siirrä tiedostot korista.',
 
-	// Global messages
-	OperationCompletedSuccess	: 'Operation completed successfully.', // MISSING
-	OperationCompletedErrors		: 'Operation completed with errors.', // MISSING
-	FileError				: '%s: %e', // MISSING
-
-	// Move and Copy files
-	MovedFilesNumber		: 'Number of files moved: %s.', // MISSING
-	CopiedFilesNumber	: 'Number of files copied: %s.', // MISSING
-	MoveFailedList		: 'The following files could not be moved:<br />%s', // MISSING
-	CopyFailedList		: 'The following files could not be copied:<br />%s', // MISSING
+	BasketPasteErrorOther	: 'Tiedoston %s virhe: %e.',
+	BasketPasteMoveSuccess	: 'Seuraavat tiedostot siirrettiin: %s',
+	BasketPasteCopySuccess	: 'Seuraavat tiedostot kopioitiin: %s',
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: 'Lataa palvelimelle',
@@ -129,10 +119,9 @@ CKFinder.lang['fi'] =
 	NewSubFolder	: 'Uusi alikansio',
 	Rename			: 'Uudelleennimeä ',
 	Delete			: 'Poista',
-	DeleteFiles		: 'Delete Files', // MISSING
 
-	CopyDragDrop	: 'Kopioi tähän',
-	MoveDragDrop	: 'Siirrä tähän',
+	CopyDragDrop	: 'Kopioi tiedosto tähän',
+	MoveDragDrop	: 'Siirrä tiedosto tähän',
 
 	// Dialogs
 	RenameDlgTitle		: 'Nimeä uudelleen',
@@ -142,7 +131,6 @@ CKFinder.lang['fi'] =
 
 	FileOverwrite	: 'Ylikirjoita',
 	FileAutorename	: 'Nimeä uudelleen automaattisesti',
-	ManuallyRename	: 'Manually rename', // MISSING
 
 	// Generic
 	OkBtn		: 'OK',
@@ -197,9 +185,7 @@ CKFinder.lang['fi'] =
 
 	// Size and Speed
 	Kb				: '%1 kt',
-	Mb				: '%1 Mt',
-	Gb				: '%1 Gt',
-	SizePerSecond	: '%1/s',
+	KbPerSecond		: '%1 kt/s',
 
 	// Connector Error Messages.
 	ErrorUnknown	: 'Pyyntöä ei voitu suorittaa. (Virhe %1)',
@@ -214,7 +200,6 @@ CKFinder.lang['fi'] =
 	105 : 'Virheellinen tiedostotarkenne.',
 	109 : 'Virheellinen pyyntö.',
 	110 : 'Tuntematon virhe.',
-	111 : 'It was not possible to complete the request due to resulting file size.', // MISSING
 	115 : 'Samanniminen tiedosto tai kansio on jo olemassa.',
 	116 : 'Kansiota ei löydy. Yritä uudelleen kansiopäivityksen jälkeen.',
 	117 : 'Tiedostoa ei löydy. Yritä uudelleen kansiopäivityksen jälkeen.',
@@ -238,8 +223,6 @@ CKFinder.lang['fi'] =
 		FileEmpty		: 'Tiedosto on nimettävä!',
 		FileExists		: 'Tiedosto %s on jo olemassa.',
 		FolderEmpty		: 'Kansio on nimettävä!',
-		FolderExists	: 'Folder %s already exists.', // MISSING
-		FolderNameExists	: 'Folder already exists.', // MISSING
 
 		FileInvChar		: 'Tiedostonimi ei voi sisältää seuraavia merkkejä: \n\\ / : * ? " < > |',
 		FolderInvChar	: 'Kansionimi ei voi sisältää seuraavia merkkejä: \n\\ / : * ? " < > |',
@@ -288,21 +271,5 @@ CKFinder.lang['fi'] =
 	{
 		maximize : 'Suurenna',
 		minimize : 'Pienennä'
-	},
-
-	Gallery :
-	{
-		current : 'Kuva {current} / {total}'
-	},
-
-	Zip :
-	{
-		extractHereLabel	: 'Extract here', // MISSING
-		extractToLabel		: 'Extract to...', // MISSING
-		downloadZipLabel	: 'Download as zip', // MISSING
-		compressZipLabel	: 'Compress to zip', // MISSING
-		removeAndExtract	: 'Remove existing and extract', // MISSING
-		extractAndOverwrite	: 'Extract overwriting existing files', // MISSING
-		extractSuccess		: 'File extracted successfully.' // MISSING
 	}
 };

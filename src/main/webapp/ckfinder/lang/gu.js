@@ -75,18 +75,16 @@ CKFinder.lang['gu'] =
 	FolderDelete	: 'શું તમારે "%1" ફોલ્ડર ડિલીટ કરવું છે?',
 	FolderRenaming	: ' (નવું નામ...)',
 	FolderDeleting	: ' (ડિલીટ...)',
-	DestinationFolder	: 'Destination Folder', // MISSING
 
 	// Files
 	FileRename		: 'નવી ફાઈલ નું નામ આપો: ',
 	FileRenameExt	: 'છું તમારે ફાઈલ એક્ષ્તેન્શન્ બદલવું છે? તે ફાઈલ પછી નહી વપરાય.',
 	FileRenaming	: 'નવું નામ...',
 	FileDelete		: 'શું તમારે "%1" ફાઈલ ડિલીટ કરવી છે?',
-	FilesDelete	: 'Are you sure you want to delete %1 files?', // MISSING
 	FilesLoading	: 'લોડીંગ...',
 	FilesEmpty		: 'આ ફોલ્ડર ખાલી છે.',
-	DestinationFile	: 'Destination File', // MISSING
-	SkippedFiles	: 'List of skipped files:', // MISSING
+	FilesMoved		: 'ફાઈલ %1 મુવ કરી %2:%3.',
+	FilesCopied		: 'ફાઈલ %1 કોપી કરી %2:%3.',
 
 	// Basket
 	BasketFolder		: 'બાસ્કેટ',
@@ -95,21 +93,13 @@ CKFinder.lang['gu'] =
 	BasketOpenFolder	: 'પેરન્ટ ફોલ્ડર ખોલવું',
 	BasketTruncateConfirm : 'શું તમારે બાસ્કેટ માંથી બધી ફાઈલ કાઢી નાખવી છે?',
 	BasketRemoveConfirm	: 'તમારે "%1" ફાઈલ બાસ્કેટ માંથી કાઢી નાખવી છે?',
-	BasketRemoveConfirmMultiple	: 'Do you really want to remove %1 files from the basket?', // MISSING
 	BasketEmpty			: 'બાસ્કેટ માં એક પણ ફાઈલ નથી, ડ્રેગ અને ડ્રોપ કરો.',
 	BasketCopyFilesHere	: 'બાસ્કેટમાંથી ફાઈલ કોપી કરો',
 	BasketMoveFilesHere	: 'બાસ્કેટમાંથી ફાઈલ મુવ કરો',
 
-	// Global messages
-	OperationCompletedSuccess	: 'Operation completed successfully.', // MISSING
-	OperationCompletedErrors		: 'Operation completed with errors.', // MISSING
-	FileError				: '%s: %e', // MISSING
-
-	// Move and Copy files
-	MovedFilesNumber		: 'Number of files moved: %s.', // MISSING
-	CopiedFilesNumber	: 'Number of files copied: %s.', // MISSING
-	MoveFailedList		: 'The following files could not be moved:<br />%s', // MISSING
-	CopyFailedList		: 'The following files could not be copied:<br />%s', // MISSING
+	BasketPasteErrorOther	: 'ફાઈલ %s એરર: %e',
+	BasketPasteMoveSuccess	: 'આ ફાઈલ મુવ કરી છે: %s',
+	BasketPasteCopySuccess	: 'આ ફાઈલ કોપી કરી છે: %s',
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: 'અપલોડ',
@@ -128,7 +118,6 @@ CKFinder.lang['gu'] =
 	NewSubFolder	: 'નવું સ્બફોલડર',
 	Rename			: 'નવું નામ',
 	Delete			: 'કાઢી નાખવું',
-	DeleteFiles		: 'Delete Files', // MISSING
 
 	CopyDragDrop	: 'અહિયાં ફાઈલ કોપી કરો',
 	MoveDragDrop	: 'અહિયાં ફાઈલ મુવ કરો',
@@ -141,7 +130,6 @@ CKFinder.lang['gu'] =
 
 	FileOverwrite	: 'ફાઈલ બદલવી છે',
 	FileAutorename	: 'આટો-નવું નામ',
-	ManuallyRename	: 'Manually rename', // MISSING
 
 	// Generic
 	OkBtn		: 'ઓકે',
@@ -195,10 +183,8 @@ CKFinder.lang['gu'] =
 	FilesCountMany	: '%1 ફાઈલો',
 
 	// Size and Speed
-	Kb				: '%1 KB',
-	Mb				: '%1 MB',
-	Gb				: '%1 GB',
-	SizePerSecond	: '%1/s',
+	Kb				: '%1 kB',
+	KbPerSecond		: '%1 kB/s',
 
 	// Connector Error Messages.
 	ErrorUnknown	: 'તમારી રીક્વેસ્ટ માન્ય નથી. (એરર %1)',
@@ -213,7 +199,6 @@ CKFinder.lang['gu'] =
 	105 : 'ફાઈલ એક્ષટેનસન માન્ય નથી.',
 	109 : 'ઇનવેલીડ રીક્વેસ્ટ.',
 	110 : 'અન્નોન એરર.',
-	111 : 'It was not possible to complete the request due to resulting file size.', // MISSING
 	115 : 'એજ નામ વાળું ફાઈલ અથવા ફોલ્ડર છે.',
 	116 : 'ફોલ્ડર નથી. રીફ્રેશ દબાવી ફરી પ્રયત્ન કરો.',
 	117 : 'ફાઈલ નથી. રીફ્રેશ દબાવી ફરી પ્રયત્ન કરો..',
@@ -237,8 +222,6 @@ CKFinder.lang['gu'] =
 		FileEmpty		: 'ફાઈલનું નામ ખાલીના હોવું જોઈએ',
 		FileExists		: 'ફાઈલ %s હાજર છે.',
 		FolderEmpty		: 'ફોલ્ડરનું નામ ખાલીના હોવું જોઈએ.',
-		FolderExists	: 'Folder %s already exists.', // MISSING
-		FolderNameExists	: 'Folder already exists.', // MISSING
 
 		FileInvChar		: 'ફાઈલના નામમાં એમના કોઈ પણ કેરેક્ટર ન ચાલે: \n\\ / : * ? " < > |',
 		FolderInvChar	: 'ફોલ્ડરના નામમાં એમના કોઈ પણ કેરેક્ટર ન ચાલે: \n\\ / : * ? " < > |',
@@ -287,21 +270,5 @@ CKFinder.lang['gu'] =
 	{
 		maximize : 'મેક્ષિમાઈઝ',
 		minimize : 'મિનીમાઈઝ'
-	},
-
-	Gallery :
-	{
-		current : 'ઈમેજ {current} બધામાંથી {total}'
-	},
-
-	Zip :
-	{
-		extractHereLabel	: 'Extract here', // MISSING
-		extractToLabel		: 'Extract to...', // MISSING
-		downloadZipLabel	: 'Download as zip', // MISSING
-		compressZipLabel	: 'Compress to zip', // MISSING
-		removeAndExtract	: 'Remove existing and extract', // MISSING
-		extractAndOverwrite	: 'Extract overwriting existing files', // MISSING
-		extractSuccess		: 'File extracted successfully.' // MISSING
 	}
 };

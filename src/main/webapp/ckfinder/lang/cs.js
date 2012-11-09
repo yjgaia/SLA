@@ -75,18 +75,16 @@ CKFinder.lang['cs'] =
 	FolderDelete	: 'Opravdu chcete složku "%1" smazat?',
 	FolderRenaming	: ' (Přejmenovávání...)',
 	FolderDeleting	: ' (Mazání...)',
-	DestinationFolder	: 'Destination Folder', // MISSING
 
 	// Files
 	FileRename		: 'Zadejte nový název souboru: ',
 	FileRenameExt	: 'Opravdu chcete změnit příponu souboru? Soubor se může stát nepoužitelným.',
 	FileRenaming	: 'Přejmenovávání...',
 	FileDelete		: 'Opravdu chcete smazat soubor "%1"?',
-	FilesDelete	: 'Are you sure you want to delete %1 files?', // MISSING
 	FilesLoading	: 'Načítání...',
 	FilesEmpty		: 'Prázdná složka.',
-	DestinationFile	: 'Destination File', // MISSING
-	SkippedFiles	: 'List of skipped files:', // MISSING
+	FilesMoved		: 'Soubor %1 přesunut do %2:%3.',
+	FilesCopied		: 'Soubor %1 zkopírován do %2:%3.',
 
 	// Basket
 	BasketFolder		: 'Košík',
@@ -95,21 +93,13 @@ CKFinder.lang['cs'] =
 	BasketOpenFolder	: 'Otevřít nadřazenou složku',
 	BasketTruncateConfirm : 'Opravdu chcete z Košíku odstranit všechny soubory?',
 	BasketRemoveConfirm	: 'Opravdu chcete odstranit soubor "%1" z Košíku?',
-	BasketRemoveConfirmMultiple	: 'Do you really want to remove %1 files from the basket?', // MISSING
 	BasketEmpty			: 'V Košíku nejsou žádné soubory, tak sem některé přetáhněte.',
 	BasketCopyFilesHere	: 'Kopírovat soubory z Košíku',
 	BasketMoveFilesHere	: 'Přesunout soubory z Košíku',
 
-	// Global messages
-	OperationCompletedSuccess	: 'Operation completed successfully.', // MISSING
-	OperationCompletedErrors		: 'Operation completed with errors.', // MISSING
-	FileError				: '%s: %e', // MISSING
-
-	// Move and Copy files
-	MovedFilesNumber		: 'Number of files moved: %s.', // MISSING
-	CopiedFilesNumber	: 'Number of files copied: %s.', // MISSING
-	MoveFailedList		: 'The following files could not be moved:<br />%s', // MISSING
-	CopyFailedList		: 'The following files could not be copied:<br />%s', // MISSING
+	BasketPasteErrorOther	: 'Soubor %s chyba: %e',
+	BasketPasteMoveSuccess	: 'Následující soubory byly přesunuty: %s',
+	BasketPasteCopySuccess	: 'Následující soubory byly zkopírovány: %s',
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: 'Nahrát',
@@ -128,10 +118,9 @@ CKFinder.lang['cs'] =
 	NewSubFolder	: 'Nová podsložka',
 	Rename			: 'Přejmenovat',
 	Delete			: 'Smazat',
-	DeleteFiles		: 'Delete Files', // MISSING
 
-	CopyDragDrop	: 'Zkopírovat sem',
-	MoveDragDrop	: 'Přesunout sem',
+	CopyDragDrop	: 'Soubor zkopírovat sem',
+	MoveDragDrop	: 'Soubor přesunout sem',
 
 	// Dialogs
 	RenameDlgTitle		: 'Přejmenovat',
@@ -141,7 +130,6 @@ CKFinder.lang['cs'] =
 
 	FileOverwrite	: 'Přepsat',
 	FileAutorename	: 'Automaticky přejmenovat',
-	ManuallyRename	: 'Manually rename', // MISSING
 
 	// Generic
 	OkBtn		: 'OK',
@@ -195,10 +183,8 @@ CKFinder.lang['cs'] =
 	FilesCountMany	: '%1 souborů',
 
 	// Size and Speed
-	Kb				: '%1 KB',
-	Mb				: '%1 MB',
-	Gb				: '%1 GB',
-	SizePerSecond	: '%1/s',
+	Kb				: '%1 kB',
+	KbPerSecond		: '%1 kB/s',
 
 	// Connector Error Messages.
 	ErrorUnknown	: 'Příkaz nebylo možné dokončit. (Chyba %1)',
@@ -213,7 +199,6 @@ CKFinder.lang['cs'] =
 	105 : 'Neplatná přípona souboru.',
 	109 : 'Neplatný požadavek.',
 	110 : 'Neznámá chyba.',
-	111 : 'It was not possible to complete the request due to resulting file size.', // MISSING
 	115 : 'Soubor nebo složka se stejným názvem již existuje.',
 	116 : 'Složka nenalezena, prosím obnovte a zkuste znovu.',
 	117 : 'Soubor nenalezen, prosím obnovte seznam souborů a zkuste znovu.',
@@ -237,8 +222,6 @@ CKFinder.lang['cs'] =
 		FileEmpty		: 'Název souboru nemůže být prázdný.',
 		FileExists		: 'Soubor %s již existuje.',
 		FolderEmpty		: 'Název složky nemůže být prázdný.',
-		FolderExists	: 'Folder %s already exists.', // MISSING
-		FolderNameExists	: 'Folder already exists.', // MISSING
 
 		FileInvChar		: 'Název souboru nesmí obsahovat následující znaky: \n\\ / : * ? " < > |',
 		FolderInvChar	: 'Název složky nesmí obsahovat následující znaky: \n\\ / : * ? " < > |',
@@ -287,21 +270,5 @@ CKFinder.lang['cs'] =
 	{
 		maximize : 'Maximalizovat',
 		minimize : 'Minimalizovat'
-	},
-
-	Gallery :
-	{
-		current : 'Obrázek {current} z {total}'
-	},
-
-	Zip :
-	{
-		extractHereLabel	: 'Extract here', // MISSING
-		extractToLabel		: 'Extract to...', // MISSING
-		downloadZipLabel	: 'Download as zip', // MISSING
-		compressZipLabel	: 'Compress to zip', // MISSING
-		removeAndExtract	: 'Remove existing and extract', // MISSING
-		extractAndOverwrite	: 'Extract overwriting existing files', // MISSING
-		extractSuccess		: 'File extracted successfully.' // MISSING
 	}
 };

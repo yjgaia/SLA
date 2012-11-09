@@ -75,18 +75,16 @@ CKFinder.lang['lt'] =
 	FolderDelete	: 'Ar tikrai norite ištrinti "%1" segtuvą?',
 	FolderRenaming	: ' (Pervadinama...)',
 	FolderDeleting	: ' (Trinama...)',
-	DestinationFolder	: 'Destination Folder', // MISSING
 
 	// Files
 	FileRename		: 'Prašau įrašykite naujo failo pavadinimą: ',
 	FileRenameExt	: 'Ar tikrai norite pakeisti šio failo plėtinį? Failas gali būti nebepanaudojamas',
 	FileRenaming	: 'Pervadinama...',
 	FileDelete		: 'Ar tikrai norite ištrinti failą "%1"?',
-	FilesDelete	: 'Are you sure you want to delete %1 files?', // MISSING
 	FilesLoading	: 'Prašau palaukite...',
 	FilesEmpty		: 'Tuščias segtuvas',
-	DestinationFile	: 'Destination File', // MISSING
-	SkippedFiles	: 'List of skipped files:', // MISSING
+	FilesMoved		: 'Failas %1 perkeltas į %2:%3',
+	FilesCopied		: 'Failas %1 nukopijuotas į %2:%3',
 
 	// Basket
 	BasketFolder		: 'Krepšelis',
@@ -95,21 +93,13 @@ CKFinder.lang['lt'] =
 	BasketOpenFolder	: 'Atidaryti failo segtuvą',
 	BasketTruncateConfirm : 'Ar tikrai norite ištrinti visus failus iš krepšelio?',
 	BasketRemoveConfirm	: 'Ar tikrai norite ištrinti failą "%1" iš krepšelio?',
-	BasketRemoveConfirmMultiple	: 'Do you really want to remove %1 files from the basket?', // MISSING
 	BasketEmpty			: 'Krepšelyje failų nėra, nuvilkite ir įmeskite juos į krepšelį.',
 	BasketCopyFilesHere	: 'Kopijuoti failus iš krepšelio',
 	BasketMoveFilesHere	: 'Perkelti failus iš krepšelio',
 
-	// Global messages
-	OperationCompletedSuccess	: 'Operation completed successfully.', // MISSING
-	OperationCompletedErrors		: 'Operation completed with errors.', // MISSING
-	FileError				: '%s: %e', // MISSING
-
-	// Move and Copy files
-	MovedFilesNumber		: 'Number of files moved: %s.', // MISSING
-	CopiedFilesNumber	: 'Number of files copied: %s.', // MISSING
-	MoveFailedList		: 'The following files could not be moved:<br />%s', // MISSING
-	CopyFailedList		: 'The following files could not be copied:<br />%s', // MISSING
+	BasketPasteErrorOther	: 'Failo %s klaida: %e',
+	BasketPasteMoveSuccess	: 'Atitinkami failai buvo perkelti: %s',
+	BasketPasteCopySuccess	: 'Atitinkami failai buvo nukopijuoti: %s',
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: 'Įkelti',
@@ -128,10 +118,9 @@ CKFinder.lang['lt'] =
 	NewSubFolder	: 'Naujas segtuvas',
 	Rename			: 'Pervadinti',
 	Delete			: 'Ištrinti',
-	DeleteFiles		: 'Delete Files', // MISSING
 
-	CopyDragDrop	: 'Nukopijuoti čia',
-	MoveDragDrop	: 'Perkelti čia',
+	CopyDragDrop	: 'Nukopijuoti failą čia',
+	MoveDragDrop	: 'Perkelti failą čia',
 
 	// Dialogs
 	RenameDlgTitle		: 'Pervadinti',
@@ -141,7 +130,6 @@ CKFinder.lang['lt'] =
 
 	FileOverwrite	: 'Užrašyti ant viršaus',
 	FileAutorename	: 'Automatiškai pervadinti',
-	ManuallyRename	: 'Manually rename', // MISSING
 
 	// Generic
 	OkBtn		: 'Gerai',
@@ -195,10 +183,8 @@ CKFinder.lang['lt'] =
 	FilesCountMany	: '%1 failai',
 
 	// Size and Speed
-	Kb				: '%1 KB',
-	Mb				: '%1 MB',
-	Gb				: '%1 GB',
-	SizePerSecond	: '%1/s',
+	Kb				: '%1 kB',
+	KbPerSecond		: '%1 kB/s',
 
 	// Connector Error Messages.
 	ErrorUnknown	: 'Užklausos įvykdyti nepavyko. (Klaida %1)',
@@ -213,7 +199,6 @@ CKFinder.lang['lt'] =
 	105 : 'Netinkamas failo plėtinys.',
 	109 : 'Netinkama užklausa.',
 	110 : 'Nežinoma klaida.',
-	111 : 'It was not possible to complete the request due to resulting file size.', // MISSING
 	115 : 'Failas arba segtuvas su tuo pačiu pavadinimu jau yra.',
 	116 : 'Segtuvas nerastas. Pabandykite atnaujinti.',
 	117 : 'Failas nerastas. Pabandykite atnaujinti failų sąrašą.',
@@ -237,8 +222,6 @@ CKFinder.lang['lt'] =
 		FileEmpty		: 'Failo pavadinimas negali būti tuščias',
 		FileExists		: 'Failas %s jau egzistuoja',
 		FolderEmpty		: 'Segtuvo pavadinimas negali būti tuščias',
-		FolderExists	: 'Folder %s already exists.', // MISSING
-		FolderNameExists	: 'Folder already exists.', // MISSING
 
 		FileInvChar		: 'Failo pavadinimas negali turėti bent vieno iš šių simbolių: \n\\ / : * ? " < > |',
 		FolderInvChar	: 'Segtuvo pavadinimas negali turėti bent vieno iš šių simbolių: \n\\ / : * ? " < > |',
@@ -287,21 +270,5 @@ CKFinder.lang['lt'] =
 	{
 		maximize : 'Padidinti',
 		minimize : 'Sumažinti'
-	},
-
-	Gallery :
-	{
-		current : 'Nuotrauka {current} iš {total}'
-	},
-
-	Zip :
-	{
-		extractHereLabel	: 'Extract here', // MISSING
-		extractToLabel		: 'Extract to...', // MISSING
-		downloadZipLabel	: 'Download as zip', // MISSING
-		compressZipLabel	: 'Compress to zip', // MISSING
-		removeAndExtract	: 'Remove existing and extract', // MISSING
-		extractAndOverwrite	: 'Extract overwriting existing files', // MISSING
-		extractSuccess		: 'File extracted successfully.' // MISSING
 	}
 };

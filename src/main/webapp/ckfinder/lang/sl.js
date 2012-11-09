@@ -75,18 +75,16 @@ CKFinder.lang['sl'] =
 	FolderDelete	: 'Ali ste prepričani, da želite zbrisati mapo "%1"?',
 	FolderRenaming	: ' (Preimenujem...)',
 	FolderDeleting	: ' (Brišem...)',
-	DestinationFolder	: 'Destination Folder', // MISSING
 
 	// Files
 	FileRename		: 'Vnesite novo ime datoteke: ',
 	FileRenameExt	: 'Ali ste prepričani, da želite spremeniti končnico datoteke? Možno je, da potem datoteka ne bo uporabna.',
 	FileRenaming	: 'Preimenujem...',
 	FileDelete		: 'Ali ste prepričani, da želite izbrisati datoteko "%1"?',
-	FilesDelete	: 'Are you sure you want to delete %1 files?', // MISSING
 	FilesLoading	: 'Nalagam...',
 	FilesEmpty		: 'Prazna mapa',
-	DestinationFile	: 'Destination File', // MISSING
-	SkippedFiles	: 'List of skipped files:', // MISSING
+	FilesMoved		: 'Datoteka %1 je bila premaknjena v %2:%3.',
+	FilesCopied		: 'Datoteka %1 je bila kopirana v %2:%3.',
 
 	// Basket
 	BasketFolder		: 'Koš',
@@ -95,21 +93,13 @@ CKFinder.lang['sl'] =
 	BasketOpenFolder	: 'Odpri izvorno mapo',
 	BasketTruncateConfirm : 'Ali res želite odstraniti vse datoteke iz koša?',
 	BasketRemoveConfirm	: 'Ali res želite odstraniti datoteko "%1" iz koša?',
-	BasketRemoveConfirmMultiple	: 'Do you really want to remove %1 files from the basket?', // MISSING
 	BasketEmpty			: 'V košu ni datotek. Lahko jih povlečete in spustite.',
 	BasketCopyFilesHere	: 'Kopiraj datoteke iz koša',
 	BasketMoveFilesHere	: 'Premakni datoteke iz koša',
 
-	// Global messages
-	OperationCompletedSuccess	: 'Operation completed successfully.', // MISSING
-	OperationCompletedErrors		: 'Operation completed with errors.', // MISSING
-	FileError				: '%s: %e', // MISSING
-
-	// Move and Copy files
-	MovedFilesNumber		: 'Number of files moved: %s.', // MISSING
-	CopiedFilesNumber	: 'Number of files copied: %s.', // MISSING
-	MoveFailedList		: 'The following files could not be moved:<br />%s', // MISSING
-	CopyFailedList		: 'The following files could not be copied:<br />%s', // MISSING
+	BasketPasteErrorOther	: 'Napaka z datoteko %s: %e',
+	BasketPasteMoveSuccess	: 'Seznam premaknjenih datotek: %s',
+	BasketPasteCopySuccess	: 'Seznam kopiranih datotek: %s',
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: 'Naloži na strežnik',
@@ -128,10 +118,9 @@ CKFinder.lang['sl'] =
 	NewSubFolder	: 'Nova podmapa',
 	Rename			: 'Preimenuj',
 	Delete			: 'Zbriši',
-	DeleteFiles		: 'Delete Files', // MISSING
 
-	CopyDragDrop	: 'Kopiraj',
-	MoveDragDrop	: 'Premakni',
+	CopyDragDrop	: 'Kopiraj datoteko',
+	MoveDragDrop	: 'Premakni datoteko',
 
 	// Dialogs
 	RenameDlgTitle		: 'Preimenuj',
@@ -141,7 +130,6 @@ CKFinder.lang['sl'] =
 
 	FileOverwrite	: 'Prepiši',
 	FileAutorename	: 'Avtomatsko preimenuj',
-	ManuallyRename	: 'Manually rename', // MISSING
 
 	// Generic
 	OkBtn		: 'Potrdi',
@@ -195,10 +183,8 @@ CKFinder.lang['sl'] =
 	FilesCountMany	: '%1 datotek(e)',
 
 	// Size and Speed
-	Kb				: '%1 KB',
-	Mb				: '%1 MB',
-	Gb				: '%1 GB',
-	SizePerSecond	: '%1/s',
+	Kb				: '%1 kB',
+	KbPerSecond		: '%1 kB/sek',
 
 	// Connector Error Messages.
 	ErrorUnknown	: 'Prišlo je do napake. (Napaka %1)',
@@ -213,7 +199,6 @@ CKFinder.lang['sl'] =
 	105 : 'Napačna končnica datoteke.',
 	109 : 'Napačna zahteva.',
 	110 : 'Neznana napaka.',
-	111 : 'It was not possible to complete the request due to resulting file size.', // MISSING
 	115 : 'Datoteka ali mapa s tem imenom že obstaja.',
 	116 : 'Mapa ni najdena. Prosimo osvežite okno in poskusite znova.',
 	117 : 'Datoteka ni najdena. Prosimo osvežite seznam datotek in poskusite znova.',
@@ -237,8 +222,6 @@ CKFinder.lang['sl'] =
 		FileEmpty		: 'Ime datoteke ne more biti prazno.',
 		FileExists		: 'Datoteka %s že obstaja.',
 		FolderEmpty		: 'Mapa ne more biti prazna.',
-		FolderExists	: 'Folder %s already exists.', // MISSING
-		FolderNameExists	: 'Folder already exists.', // MISSING
 
 		FileInvChar		: 'Ime datoteke ne sme vsebovati naslednjih znakov: \n\\ / : * ? " < > |',
 		FolderInvChar	: 'Ime mape ne sme vsebovati naslednjih znakov: \n\\ / : * ? " < > |',
@@ -287,21 +270,5 @@ CKFinder.lang['sl'] =
 	{
 		maximize : 'Maksimiraj',
 		minimize : 'Minimiraj'
-	},
-
-	Gallery :
-	{
-		current : 'Slika {current} od {total}'
-	},
-
-	Zip :
-	{
-		extractHereLabel	: 'Extract here', // MISSING
-		extractToLabel		: 'Extract to...', // MISSING
-		downloadZipLabel	: 'Download as zip', // MISSING
-		compressZipLabel	: 'Compress to zip', // MISSING
-		removeAndExtract	: 'Remove existing and extract', // MISSING
-		extractAndOverwrite	: 'Extract overwriting existing files', // MISSING
-		extractSuccess		: 'File extracted successfully.' // MISSING
 	}
 };

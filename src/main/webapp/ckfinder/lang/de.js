@@ -75,18 +75,16 @@ CKFinder.lang['de'] =
 	FolderDelete	: 'Wollen Sie wirklich den Ordner "%1" löschen?',
 	FolderRenaming	: ' (Umbenennen...)',
 	FolderDeleting	: ' (Löschen...)',
-	DestinationFolder	: 'Destination Folder', // MISSING
 
 	// Files
 	FileRename		: 'Bitte geben Sie den neuen Dateinamen an: ',
 	FileRenameExt	: 'Wollen Sie wirklich die Dateierweiterung ändern? Die Datei könnte unbrauchbar werden!',
 	FileRenaming	: 'Umbennenen...',
 	FileDelete		: 'Wollen Sie wirklich die Datei "%1" löschen?',
-	FilesDelete	: 'Are you sure you want to delete %1 files?', // MISSING
 	FilesLoading	: 'Laden...',
 	FilesEmpty		: 'Verzeichnis ist leer.',
-	DestinationFile	: 'Destination File', // MISSING
-	SkippedFiles	: 'List of skipped files:', // MISSING
+	FilesMoved		: 'Datei %1 verschoben nach %2:%3.',
+	FilesCopied		: 'Datei %1 kopiert nach %2:%3.',
 
 	// Basket
 	BasketFolder		: 'Korb',
@@ -95,21 +93,13 @@ CKFinder.lang['de'] =
 	BasketOpenFolder	: 'Übergeordneten Ordner öffnen',
 	BasketTruncateConfirm : 'Wollen Sie wirklich alle Dateien aus dem Korb entfernen?',
 	BasketRemoveConfirm	: 'Wollen Sie wirklich die Datei "%1" aus dem Korb entfernen?',
-	BasketRemoveConfirmMultiple	: 'Do you really want to remove %1 files from the basket?', // MISSING
 	BasketEmpty			: 'Keine Dateien im Korb, einfach welche reinziehen.',
 	BasketCopyFilesHere	: 'Dateien aus dem Korb kopieren',
 	BasketMoveFilesHere	: 'Dateien aus dem Korb verschieben',
 
-	// Global messages
-	OperationCompletedSuccess	: 'Operation completed successfully.', // MISSING
-	OperationCompletedErrors		: 'Operation completed with errors.', // MISSING
-	FileError				: '%s: %e', // MISSING
-
-	// Move and Copy files
-	MovedFilesNumber		: 'Number of files moved: %s.', // MISSING
-	CopiedFilesNumber	: 'Number of files copied: %s.', // MISSING
-	MoveFailedList		: 'The following files could not be moved:<br />%s', // MISSING
-	CopyFailedList		: 'The following files could not be copied:<br />%s', // MISSING
+	BasketPasteErrorOther	: 'Datei %s Fehler: %e',
+	BasketPasteMoveSuccess	: 'Folgende Datei wurde verschoben: %s',
+	BasketPasteCopySuccess	: 'Folgende Datei wurde kopiert: %s',
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: 'Hochladen',
@@ -128,10 +118,9 @@ CKFinder.lang['de'] =
 	NewSubFolder	: 'Neues Unterverzeichnis',
 	Rename			: 'Umbenennen',
 	Delete			: 'Löschen',
-	DeleteFiles		: 'Delete Files', // MISSING
 
-	CopyDragDrop	: 'Hierher kopieren',
-	MoveDragDrop	: 'Hierher verschieben',
+	CopyDragDrop	: 'Datei hierher kopieren',
+	MoveDragDrop	: 'Datei hierher verschieben',
 
 	// Dialogs
 	RenameDlgTitle		: 'Umbenennen',
@@ -141,7 +130,6 @@ CKFinder.lang['de'] =
 
 	FileOverwrite	: 'Überschreiben',
 	FileAutorename	: 'Automatisch umbenennen',
-	ManuallyRename	: 'Manually rename', // MISSING
 
 	// Generic
 	OkBtn		: 'OK',
@@ -195,10 +183,8 @@ CKFinder.lang['de'] =
 	FilesCountMany	: '%1 Datei',
 
 	// Size and Speed
-	Kb				: '%1 KB',
-	Mb				: '%1 MB',
-	Gb				: '%1 GB',
-	SizePerSecond	: '%1/s',
+	Kb				: '%1 kB',
+	KbPerSecond		: '%1 kB/s',
 
 	// Connector Error Messages.
 	ErrorUnknown	: 'Ihre Anfrage konnte nicht bearbeitet werden. (Fehler %1)',
@@ -213,7 +199,6 @@ CKFinder.lang['de'] =
 	105 : 'Invalid file extension.',
 	109 : 'Unbekannte Anfrage.',
 	110 : 'Unbekannter Fehler.',
-	111 : 'It was not possible to complete the request due to resulting file size.', // MISSING
 	115 : 'Es existiert bereits eine Datei oder ein Ordner mit dem gleichen Namen.',
 	116 : 'Verzeichnis nicht gefunden. Bitte aktualisieren Sie die Anzeige und versuchen es noch einmal.',
 	117 : 'Datei nicht gefunden. Bitte aktualisieren Sie die Dateiliste und versuchen es noch einmal.',
@@ -237,8 +222,6 @@ CKFinder.lang['de'] =
 		FileEmpty		: 'Der Dateinamen darf nicht leer sein.',
 		FileExists		: 'Datei %s existiert bereits.',
 		FolderEmpty		: 'Der Verzeichnisname darf nicht leer sein.',
-		FolderExists	: 'Folder %s already exists.', // MISSING
-		FolderNameExists	: 'Folder already exists.', // MISSING
 
 		FileInvChar		: 'Der Dateinamen darf nicht eines der folgenden Zeichen enthalten: \n\\ / : * ? " < > |',
 		FolderInvChar	: 'Der Verzeichnisname darf nicht eines der folgenden Zeichen enthalten: \n\\ / : * ? " < > |',
@@ -287,21 +270,5 @@ CKFinder.lang['de'] =
 	{
 		maximize : 'Maximieren',
 		minimize : 'Minimieren'
-	},
-
-	Gallery :
-	{
-		current : 'Bild {current} von {total}'
-	},
-
-	Zip :
-	{
-		extractHereLabel	: 'Extract here', // MISSING
-		extractToLabel		: 'Extract to...', // MISSING
-		downloadZipLabel	: 'Download as zip', // MISSING
-		compressZipLabel	: 'Compress to zip', // MISSING
-		removeAndExtract	: 'Remove existing and extract', // MISSING
-		extractAndOverwrite	: 'Extract overwriting existing files', // MISSING
-		extractSuccess		: 'File extracted successfully.' // MISSING
 	}
 };

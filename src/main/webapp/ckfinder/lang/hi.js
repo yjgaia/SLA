@@ -75,18 +75,16 @@ CKFinder.lang['hi'] =
 	FolderDelete	: 'क्या आपको "%1" फोल्डर डीलिट करना है?',
 	FolderRenaming	: ' (नया नाम...)',
 	FolderDeleting	: ' (डिलिट...)',
-	DestinationFolder	: 'Destination Folder', // MISSING
 
 	// Files
 	FileRename		: 'फाएलका नया नाम टाईप करो: ',
 	FileRenameExt	: 'क्या आपको फाएल एक्सटेंसन बदलना है? फाएल का उपयोग नही कर सकोगे.',
 	FileRenaming	: 'नया नाम...',
 	FileDelete		: 'क्या आपको फाएल डिलिट करना है "%1"?',
-	FilesDelete	: 'Are you sure you want to delete %1 files?', // MISSING
 	FilesLoading	: 'लोडिग...',
 	FilesEmpty		: 'ये फोल्डर खाली है.',
-	DestinationFile	: 'Destination File', // MISSING
-	SkippedFiles	: 'List of skipped files:', // MISSING
+	FilesMoved		: 'फाएल %1 मूव करी है %2:%3.',
+	FilesCopied		: 'फाएल %1 कोपी करी है %2:%3.',
 
 	// Basket
 	BasketFolder		: 'बास्केट',
@@ -95,21 +93,13 @@ CKFinder.lang['hi'] =
 	BasketOpenFolder	: 'पेरंट फोल्डर को खोलो',
 	BasketTruncateConfirm : 'क्या आपको बास्केट में से सब फाएल खाली करना हे?',
 	BasketRemoveConfirm	: 'क्या आपको फाएल "%1" बास्केट में से डिलिट करना है?',
-	BasketRemoveConfirmMultiple	: 'Do you really want to remove %1 files from the basket?', // MISSING
 	BasketEmpty			: 'बास्केट में कोइ फाएल नहीं है, नई ड्रेग और ड्रॉप करो.',
 	BasketCopyFilesHere	: 'बास्केट में से फाएल कोपी करो',
 	BasketMoveFilesHere	: 'बास्केट में से फाएल मूव करो',
 
-	// Global messages
-	OperationCompletedSuccess	: 'Operation completed successfully.', // MISSING
-	OperationCompletedErrors		: 'Operation completed with errors.', // MISSING
-	FileError				: '%s: %e', // MISSING
-
-	// Move and Copy files
-	MovedFilesNumber		: 'Number of files moved: %s.', // MISSING
-	CopiedFilesNumber	: 'Number of files copied: %s.', // MISSING
-	MoveFailedList		: 'The following files could not be moved:<br />%s', // MISSING
-	CopyFailedList		: 'The following files could not be copied:<br />%s', // MISSING
+	BasketPasteErrorOther	: 'फाएल %s एरर: %e',
+	BasketPasteMoveSuccess	: 'फाएलको मूव किया था: %s',
+	BasketPasteCopySuccess	: 'फीललको कोपी किया था: %s',
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: 'अपलोड',
@@ -128,7 +118,6 @@ CKFinder.lang['hi'] =
 	NewSubFolder	: 'नया सबफोल्डर',
 	Rename			: 'रिनेम',
 	Delete			: 'डिलिट',
-	DeleteFiles		: 'Delete Files', // MISSING
 
 	CopyDragDrop	: 'यहाँ कोपी करें',
 	MoveDragDrop	: 'यंहा मूव करें',
@@ -141,7 +130,6 @@ CKFinder.lang['hi'] =
 
 	FileOverwrite	: 'ओवरराईट',
 	FileAutorename	: 'ऑटो-रीनेम',
-	ManuallyRename	: 'Manually rename', // MISSING
 
 	// Generic
 	OkBtn		: 'ओके',
@@ -195,10 +183,8 @@ CKFinder.lang['hi'] =
 	FilesCountMany	: '%1 फाएल',
 
 	// Size and Speed
-	Kb				: '%1 KB',
-	Mb				: '%1 MB',
-	Gb				: '%1 GB',
-	SizePerSecond	: '%1/s',
+	Kb				: '%1 kB',
+	KbPerSecond		: '%1 kB/s',
 
 	// Connector Error Messages.
 	ErrorUnknown	: 'आपकी रिक्वेस्ट क्मप्लित नही कर सकते. (एरर %1)',
@@ -213,7 +199,6 @@ CKFinder.lang['hi'] =
 	105 : 'फाएल एक्स्त्न्सं गलत है.',
 	109 : 'इन्वेलीड रिक्वेस्ट.',
 	110 : 'अननोन एरर.',
-	111 : 'It was not possible to complete the request due to resulting file size.', // MISSING
 	115 : 'सेम नाम का फाएल या फोल्डर मोजूद है.',
 	116 : 'फोल्डर नही मिला. रिफ्रेस करके वापिस प्रयत्न करे.',
 	117 : 'फाएल नही मिला. फाएल लिस्टको रिफ्रेस करके वापिस प्रयत्न करे.',
@@ -237,8 +222,6 @@ CKFinder.lang['hi'] =
 		FileEmpty		: 'फाएलका नाम खाली नही हो सकता.',
 		FileExists		: 'फाएल %s मोजूद है.',
 		FolderEmpty		: 'फोल्डरका नाम खाली नही हो सकता.',
-		FolderExists	: 'Folder %s already exists.', // MISSING
-		FolderNameExists	: 'Folder already exists.', // MISSING
 
 		FileInvChar		: 'फाएलके नाममें यह केरेक्टर नही हो सकते: \n\\ / : * ? " < > |',
 		FolderInvChar	: 'फोल्डरके नाममें यह केरेक्टर नही हो सकते: \n\\ / : * ? " < > |',
@@ -287,21 +270,5 @@ CKFinder.lang['hi'] =
 	{
 		maximize : 'मैक्सीमईज',
 		minimize : 'मिनीमाईज'
-	},
-
-	Gallery :
-	{
-		current : 'इमेज {current} कुल्मिलाके {total}'
-	},
-
-	Zip :
-	{
-		extractHereLabel	: 'Extract here', // MISSING
-		extractToLabel		: 'Extract to...', // MISSING
-		downloadZipLabel	: 'Download as zip', // MISSING
-		compressZipLabel	: 'Compress to zip', // MISSING
-		removeAndExtract	: 'Remove existing and extract', // MISSING
-		extractAndOverwrite	: 'Extract overwriting existing files', // MISSING
-		extractSuccess		: 'File extracted successfully.' // MISSING
 	}
 };

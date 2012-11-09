@@ -75,18 +75,16 @@ CKFinder.lang['pt-br'] =
 	FolderDelete	: 'Você tem certeza que deseja apagar a pasta "%1"?',
 	FolderRenaming	: ' (Renomeando...)',
 	FolderDeleting	: ' (Apagando...)',
-	DestinationFolder	: 'Destination Folder', // MISSING
 
 	// Files
 	FileRename		: 'Favor informar o nome do novo arquivo: ',
 	FileRenameExt	: 'Você tem certeza que deseja alterar a extensão do arquivo? O arquivo pode ser danificado.',
 	FileRenaming	: 'Renomeando...',
 	FileDelete		: 'Você tem certeza que deseja apagar o arquivo "%1"?',
-	FilesDelete	: 'Are you sure you want to delete %1 files?', // MISSING
 	FilesLoading	: 'Carregando...',
 	FilesEmpty		: 'Pasta vazia',
-	DestinationFile	: 'Destination File', // MISSING
-	SkippedFiles	: 'List of skipped files:', // MISSING
+	FilesMoved		: 'Arquivo %1 movido para %2:%3.',
+	FilesCopied		: 'Arquivo %1 copiado em %2:%3.',
 
 	// Basket
 	BasketFolder		: 'Cesta',
@@ -95,21 +93,13 @@ CKFinder.lang['pt-br'] =
 	BasketOpenFolder	: 'Abre a pasta original',
 	BasketTruncateConfirm : 'Remover todos os arquivas da cesta?',
 	BasketRemoveConfirm	: 'Remover o arquivo "%1" da cesta?',
-	BasketRemoveConfirmMultiple	: 'Do you really want to remove %1 files from the basket?', // MISSING
 	BasketEmpty			: 'Nenhum arquivo na cesta, arraste alguns antes.',
 	BasketCopyFilesHere	: 'Copia Arquivos da Cesta',
 	BasketMoveFilesHere	: 'Move os Arquivos da Cesta',
 
-	// Global messages
-	OperationCompletedSuccess	: 'Operation completed successfully.', // MISSING
-	OperationCompletedErrors		: 'Operation completed with errors.', // MISSING
-	FileError				: '%s: %e', // MISSING
-
-	// Move and Copy files
-	MovedFilesNumber		: 'Number of files moved: %s.', // MISSING
-	CopiedFilesNumber	: 'Number of files copied: %s.', // MISSING
-	MoveFailedList		: 'The following files could not be moved:<br />%s', // MISSING
-	CopyFailedList		: 'The following files could not be copied:<br />%s', // MISSING
+	BasketPasteErrorOther	: 'Arquivo %s erro: %e',
+	BasketPasteMoveSuccess	: 'Os seguintes arquivos foram movidos: %s',
+	BasketPasteCopySuccess	: 'Os sequintes arquivos foram copiados: %s',
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: 'Enviar arquivo',
@@ -128,10 +118,9 @@ CKFinder.lang['pt-br'] =
 	NewSubFolder	: 'Nova sub-pasta',
 	Rename			: 'Renomear',
 	Delete			: 'Apagar',
-	DeleteFiles		: 'Delete Files', // MISSING
 
-	CopyDragDrop	: 'Copia aqui',
-	MoveDragDrop	: 'Move aqui',
+	CopyDragDrop	: 'Copia arquivo aqui',
+	MoveDragDrop	: 'Move arquivo aqui',
 
 	// Dialogs
 	RenameDlgTitle		: 'Renomeia',
@@ -141,7 +130,6 @@ CKFinder.lang['pt-br'] =
 
 	FileOverwrite	: 'Sobrescrever',
 	FileAutorename	: 'Renomeia automaticamente',
-	ManuallyRename	: 'Manually rename', // MISSING
 
 	// Generic
 	OkBtn		: 'OK',
@@ -195,10 +183,8 @@ CKFinder.lang['pt-br'] =
 	FilesCountMany	: '%1 arquivos',
 
 	// Size and Speed
-	Kb				: '%1 KB',
-	Mb				: '%1 MB',
-	Gb				: '%1 GB',
-	SizePerSecond	: '%1/s',
+	Kb				: '%1 kB',
+	KbPerSecond		: '%1 kB/s',
 
 	// Connector Error Messages.
 	ErrorUnknown	: 'Não foi possível completer o seu pedido. (Erro %1)',
@@ -213,7 +199,6 @@ CKFinder.lang['pt-br'] =
 	105 : 'Extensão de arquivo inválida.',
 	109 : 'Solicitação inválida.',
 	110 : 'Erro desconhecido.',
-	111 : 'It was not possible to complete the request due to resulting file size.', // MISSING
 	115 : 'Uma arquivo ou pasta já existe com esse nome.',
 	116 : 'Pasta não encontrada. Atualize e tente novamente.',
 	117 : 'Arquivo não encontrado. Atualize a lista de arquivos e tente novamente.',
@@ -237,8 +222,6 @@ CKFinder.lang['pt-br'] =
 		FileEmpty		: 'O nome do arquivo não pode ser vazio.',
 		FileExists		: 'O nome %s já é em uso.',
 		FolderEmpty		: 'O nome da pasta não pode ser vazio.',
-		FolderExists	: 'Folder %s already exists.', // MISSING
-		FolderNameExists	: 'Folder already exists.', // MISSING
 
 		FileInvChar		: 'O nome do arquivo não pode conter nenhum desses caracteres: \n\\ / : * ? " < > |',
 		FolderInvChar	: 'O nome da pasta não pode conter nenhum desses caracteres: \n\\ / : * ? " < > |',
@@ -287,21 +270,5 @@ CKFinder.lang['pt-br'] =
 	{
 		maximize : 'Maximizar',
 		minimize : 'Minimizar'
-	},
-
-	Gallery :
-	{
-		current : 'Imagem {current} de {total}'
-	},
-
-	Zip :
-	{
-		extractHereLabel	: 'Extract here', // MISSING
-		extractToLabel		: 'Extract to...', // MISSING
-		downloadZipLabel	: 'Download as zip', // MISSING
-		compressZipLabel	: 'Compress to zip', // MISSING
-		removeAndExtract	: 'Remove existing and extract', // MISSING
-		extractAndOverwrite	: 'Extract overwriting existing files', // MISSING
-		extractSuccess		: 'File extracted successfully.' // MISSING
 	}
 };

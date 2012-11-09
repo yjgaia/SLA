@@ -75,18 +75,16 @@ CKFinder.lang['zh-tw'] =
 	FolderDelete	: '確定刪除 "%1" 這個目錄嗎?',
 	FolderRenaming	: ' (修改目錄...)',
 	FolderDeleting	: ' (刪除目錄...)',
-	DestinationFolder	: 'Destination Folder', // MISSING
 
 	// Files
 	FileRename		: '請輸入新檔案名稱: ',
 	FileRenameExt	: '確定變更這個檔案的副檔名嗎? 變更後 , 此檔案可能會無法使用 !',
 	FileRenaming	: '修改檔案名稱...',
 	FileDelete		: '確定要刪除這個檔案 "%1"?',
-	FilesDelete	: 'Are you sure you want to delete %1 files?', // MISSING
 	FilesLoading	: '載入中...',
 	FilesEmpty		: 'The folder is empty.', // MISSING
-	DestinationFile	: 'Destination File', // MISSING
-	SkippedFiles	: 'List of skipped files:', // MISSING
+	FilesMoved		: 'File %1 moved to %2:%3.', // MISSING
+	FilesCopied		: 'File %1 copied to %2:%3.', // MISSING
 
 	// Basket
 	BasketFolder		: 'Basket', // MISSING
@@ -95,21 +93,13 @@ CKFinder.lang['zh-tw'] =
 	BasketOpenFolder	: 'Open Parent Folder', // MISSING
 	BasketTruncateConfirm : 'Do you really want to remove all files from the basket?', // MISSING
 	BasketRemoveConfirm	: 'Do you really want to remove the file "%1" from the basket?', // MISSING
-	BasketRemoveConfirmMultiple	: 'Do you really want to remove %1 files from the basket?', // MISSING
 	BasketEmpty			: 'No files in the basket, drag and drop some.', // MISSING
 	BasketCopyFilesHere	: 'Copy Files from Basket', // MISSING
 	BasketMoveFilesHere	: 'Move Files from Basket', // MISSING
 
-	// Global messages
-	OperationCompletedSuccess	: 'Operation completed successfully.', // MISSING
-	OperationCompletedErrors		: 'Operation completed with errors.', // MISSING
-	FileError				: '%s: %e', // MISSING
-
-	// Move and Copy files
-	MovedFilesNumber		: 'Number of files moved: %s.', // MISSING
-	CopiedFilesNumber	: 'Number of files copied: %s.', // MISSING
-	MoveFailedList		: 'The following files could not be moved:<br />%s', // MISSING
-	CopyFailedList		: 'The following files could not be copied:<br />%s', // MISSING
+	BasketPasteErrorOther	: 'File %s error: %e', // MISSING
+	BasketPasteMoveSuccess	: 'The following files were moved: %s', // MISSING
+	BasketPasteCopySuccess	: 'The following files were copied: %s', // MISSING
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: '上傳檔案',
@@ -128,10 +118,9 @@ CKFinder.lang['zh-tw'] =
 	NewSubFolder	: '建立新子目錄',
 	Rename			: '重新命名',
 	Delete			: '刪除',
-	DeleteFiles		: 'Delete Files', // MISSING
 
-	CopyDragDrop	: 'Copy Here', // MISSING
-	MoveDragDrop	: 'Move Here', // MISSING
+	CopyDragDrop	: 'Copy File Here', // MISSING
+	MoveDragDrop	: 'Move File Here', // MISSING
 
 	// Dialogs
 	RenameDlgTitle		: 'Rename', // MISSING
@@ -141,7 +130,6 @@ CKFinder.lang['zh-tw'] =
 
 	FileOverwrite	: 'Overwrite', // MISSING
 	FileAutorename	: 'Auto-rename', // MISSING
-	ManuallyRename	: 'Manually rename', // MISSING
 
 	// Generic
 	OkBtn		: '確定',
@@ -195,10 +183,8 @@ CKFinder.lang['zh-tw'] =
 	FilesCountMany	: '%1 個檔案',
 
 	// Size and Speed
-	Kb				: '%1 KB',
-	Mb				: '%1 MB', // MISSING
-	Gb				: '%1 GB', // MISSING
-	SizePerSecond	: '%1/s', // MISSING
+	Kb				: '%1 kB',
+	KbPerSecond		: '%1 kB/s',
 
 	// Connector Error Messages.
 	ErrorUnknown	: '無法連接到伺服器 ! (錯誤代碼 %1)',
@@ -213,7 +199,6 @@ CKFinder.lang['zh-tw'] =
 	105 : '無法上傳：不合法的副檔名 !',
 	109 : '不合法的請求 !',
 	110 : '不明錯誤 !',
-	111 : 'It was not possible to complete the request due to resulting file size.', // MISSING
 	115 : '檔案或目錄名稱重複 !',
 	116 : '找不到目錄 ! 請先重新整理 , 然後再試一次 !',
 	117 : '找不到檔案 ! 請先重新整理 , 然後再試一次 !',
@@ -237,8 +222,6 @@ CKFinder.lang['zh-tw'] =
 		FileEmpty		: '檔案名稱不能空白 !',
 		FileExists		: 'File %s already exists.', // MISSING
 		FolderEmpty		: '目錄名稱不能空白 !',
-		FolderExists	: 'Folder %s already exists.', // MISSING
-		FolderNameExists	: 'Folder already exists.', // MISSING
 
 		FileInvChar		: '檔案名稱不能包含以下字元： \n\\ / : * ? " < > |',
 		FolderInvChar	: '目錄名稱不能包含以下字元： \n\\ / : * ? " < > |',
@@ -287,21 +270,5 @@ CKFinder.lang['zh-tw'] =
 	{
 		maximize : 'Maximize', // MISSING
 		minimize : 'Minimize' // MISSING
-	},
-
-	Gallery :
-	{
-		current : 'Image {current} of {total}' // MISSING
-	},
-
-	Zip :
-	{
-		extractHereLabel	: 'Extract here', // MISSING
-		extractToLabel		: 'Extract to...', // MISSING
-		downloadZipLabel	: 'Download as zip', // MISSING
-		compressZipLabel	: 'Compress to zip', // MISSING
-		removeAndExtract	: 'Remove existing and extract', // MISSING
-		extractAndOverwrite	: 'Extract overwriting existing files', // MISSING
-		extractSuccess		: 'File extracted successfully.' // MISSING
 	}
 };

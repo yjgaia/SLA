@@ -77,18 +77,16 @@ CKFinder.lang['tr'] =
 	FolderDelete	: '"%1" klasörünü silmek istediğinizden emin misiniz?',
 	FolderRenaming	: ' (Yeniden adlandırılıyor...)',
 	FolderDeleting	: ' (Siliniyor...)',
-	DestinationFolder	: 'Destination Folder', // MISSING
 
 	// Files
 	FileRename		: 'Lütfen yeni dosyanın adını yazın: ',
 	FileRenameExt	: 'Dosya uzantısını değiştirmek istiyor musunuz? Bu, dosyayı kullanılamaz hale getirebilir.',
 	FileRenaming	: 'Yeniden adlandırılıyor...',
 	FileDelete		: '"%1" dosyasını silmek istediğinizden emin misiniz?',
-	FilesDelete	: 'Are you sure you want to delete %1 files?', // MISSING
 	FilesLoading	: 'Yükleniyor...',
 	FilesEmpty		: 'Klasör boş',
-	DestinationFile	: 'Destination File', // MISSING
-	SkippedFiles	: 'List of skipped files:', // MISSING
+	FilesMoved		: '%1 dosyası, %2:%3 içerisine taşındı',
+	FilesCopied		: '%1 dosyası, %2:%3 içerisine kopyalandı',
 
 	// Basket
 	BasketFolder		: 'Sepet',
@@ -97,21 +95,13 @@ CKFinder.lang['tr'] =
 	BasketOpenFolder	: 'Üst klasörü aç',
 	BasketTruncateConfirm : 'Sepetteki tüm dosyaları silmek istediğinizden emin misiniz?',
 	BasketRemoveConfirm	: 'Sepetteki %1% dosyasını silmek istediğinizden emin misiniz?',
-	BasketRemoveConfirmMultiple	: 'Do you really want to remove %1 files from the basket?', // MISSING
 	BasketEmpty			: 'Sepette hiç dosya yok, birkaç tane sürükleyip bırakabilirsiniz',
 	BasketCopyFilesHere	: 'Sepetten Dosya Kopyala',
 	BasketMoveFilesHere	: 'Sepetten Dosya Taşı',
 
-	// Global messages
-	OperationCompletedSuccess	: 'Operation completed successfully.', // MISSING
-	OperationCompletedErrors		: 'Operation completed with errors.', // MISSING
-	FileError				: '%s: %e', // MISSING
-
-	// Move and Copy files
-	MovedFilesNumber		: 'Number of files moved: %s.', // MISSING
-	CopiedFilesNumber	: 'Number of files copied: %s.', // MISSING
-	MoveFailedList		: 'The following files could not be moved:<br />%s', // MISSING
-	CopyFailedList		: 'The following files could not be copied:<br />%s', // MISSING
+	BasketPasteErrorOther	: '%s Dosya Hatası: %e',
+	BasketPasteMoveSuccess	: 'Taşınan dosya: %s',
+	BasketPasteCopySuccess	: 'Kopyalanan dosya: %s',
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: 'Yükle',
@@ -130,10 +120,9 @@ CKFinder.lang['tr'] =
 	NewSubFolder	: 'Yeni Altklasör',
 	Rename			: 'Yeniden Adlandır',
 	Delete			: 'Sil',
-	DeleteFiles		: 'Delete Files', // MISSING
 
-	CopyDragDrop	: 'Buraya kopyala',
-	MoveDragDrop	: 'Buraya taşı',
+	CopyDragDrop	: 'Dosyayı buraya kopyala',
+	MoveDragDrop	: 'Dosyayı buraya taşı',
 
 	// Dialogs
 	RenameDlgTitle		: 'Yeniden Adlandır',
@@ -143,7 +132,6 @@ CKFinder.lang['tr'] =
 
 	FileOverwrite	: 'Üzerine yaz',
 	FileAutorename	: 'Oto-Yeniden Adlandır',
-	ManuallyRename	: 'Manually rename', // MISSING
 
 	// Generic
 	OkBtn		: 'Tamam',
@@ -197,10 +185,8 @@ CKFinder.lang['tr'] =
 	FilesCountMany	: '%1 dosya',
 
 	// Size and Speed
-	Kb				: '%1 KB',
-	Mb				: '%1 MB',
-	Gb				: '%1 GB',
-	SizePerSecond	: '%1/sn',
+	Kb				: '%1 kB',
+	KbPerSecond		: '%1 kB/s',
 
 	// Connector Error Messages.
 	ErrorUnknown	: 'İsteğinizi yerine getirmek mümkün değil. (Hata %1)',
@@ -215,7 +201,6 @@ CKFinder.lang['tr'] =
 	105 : 'Geçersiz dosya uzantısı.',
 	109 : 'Geçersiz istek.',
 	110 : 'Bilinmeyen hata.',
-	111 : 'It was not possible to complete the request due to resulting file size.', // MISSING
 	115 : 'Aynı isimde bir dosya ya da klasör zaten var.',
 	116 : 'Klasör bulunamadı. Lütfen yenileyin ve tekrar deneyin.',
 	117 : 'Dosya bulunamadı. Lütfen dosya listesini yenileyin ve tekrar deneyin.',
@@ -239,8 +224,6 @@ CKFinder.lang['tr'] =
 		FileEmpty		: 'Dosya adı boş olamaz',
 		FileExists		: '%s dosyası zaten var',
 		FolderEmpty		: 'Klasör adı boş olamaz',
-		FolderExists	: 'Folder %s already exists.', // MISSING
-		FolderNameExists	: 'Folder already exists.', // MISSING
 
 		FileInvChar		: 'Dosya adının içermesi mümkün olmayan karakterler: \n\\ / : * ? " < > |',
 		FolderInvChar	: 'Klasör adının içermesi mümkün olmayan karakterler: \n\\ / : * ? " < > |',
@@ -289,21 +272,5 @@ CKFinder.lang['tr'] =
 	{
 		maximize : 'Büyült',
 		minimize : 'Küçült'
-	},
-
-	Gallery :
-	{
-		current : '{current} / {total} resim'
-	},
-
-	Zip :
-	{
-		extractHereLabel	: 'Extract here', // MISSING
-		extractToLabel		: 'Extract to...', // MISSING
-		downloadZipLabel	: 'Download as zip', // MISSING
-		compressZipLabel	: 'Compress to zip', // MISSING
-		removeAndExtract	: 'Remove existing and extract', // MISSING
-		extractAndOverwrite	: 'Extract overwriting existing files', // MISSING
-		extractSuccess		: 'File extracted successfully.' // MISSING
 	}
 };

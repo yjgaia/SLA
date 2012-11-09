@@ -75,18 +75,16 @@ CKFinder.lang['el'] =
 	FolderDelete	: 'Είστε σίγουροι ότι θέλετε να διαγράψετε το φάκελο "%1";',
 	FolderRenaming	: ' (Μετονομασία...)',
 	FolderDeleting	: ' (Διαγραφή...)',
-	DestinationFolder	: 'Destination Folder', // MISSING
 
 	// Files
 	FileRename		: 'Παρακαλούμε πληκτρολογήστε την νέα ονομασία του αρχείου: ',
 	FileRenameExt	: 'Είστε σίγουροι ότι θέλετε να αλλάξετε την επέκταση του αρχείου; Μετά από αυτή την ενέργεια το αρχείο είναι δυνατόν να μην μπορεί να χρησιμοποιηθεί',
 	FileRenaming	: 'Μετονομασία...',
 	FileDelete		: 'Είστε σίγουροι ότι θέλετε να διαγράψετε το αρχείο "%1"?',
-	FilesDelete	: 'Are you sure you want to delete %1 files?', // MISSING
 	FilesLoading	: 'Φόρτωση...',
 	FilesEmpty		: 'Ο φάκελος είναι κενός.',
-	DestinationFile	: 'Destination File', // MISSING
-	SkippedFiles	: 'List of skipped files:', // MISSING
+	FilesMoved		: 'Το αρχείο %1 μετακινήθηκε στο φάκελο %2:%3.',
+	FilesCopied		: 'Το αρχείο %1 αντιγράφηκε στο φάκελο %2:%3.',
 
 	// Basket
 	BasketFolder		: 'Καλάθι',
@@ -95,21 +93,13 @@ CKFinder.lang['el'] =
 	BasketOpenFolder	: 'Άνοιγμα γονικού φακέλου',
 	BasketTruncateConfirm : 'Θέλετε σίγουρα να αφαιρέσετε όλα τα αρχεία από το καλάθι;',
 	BasketRemoveConfirm	: 'Θέλετε σίγουρα να αφαιρέσετε το αρχείο "%1" από το καλάθι;',
-	BasketRemoveConfirmMultiple	: 'Do you really want to remove %1 files from the basket?', // MISSING
 	BasketEmpty			: 'Δεν υπάρχουν αρχεία στο καλάθι, μεταφέρετε κάποια με drag and drop.',
 	BasketCopyFilesHere	: 'Αντιγραφή αρχείων από το καλάθι',
 	BasketMoveFilesHere	: 'Μετακίνηση αρχείων από το καλάθι',
 
-	// Global messages
-	OperationCompletedSuccess	: 'Operation completed successfully.', // MISSING
-	OperationCompletedErrors		: 'Operation completed with errors.', // MISSING
-	FileError				: '%s: %e', // MISSING
-
-	// Move and Copy files
-	MovedFilesNumber		: 'Number of files moved: %s.', // MISSING
-	CopiedFilesNumber	: 'Number of files copied: %s.', // MISSING
-	MoveFailedList		: 'The following files could not be moved:<br />%s', // MISSING
-	CopyFailedList		: 'The following files could not be copied:<br />%s', // MISSING
+	BasketPasteErrorOther	: 'Αρχείο %s σφάλμα: %e',
+	BasketPasteMoveSuccess	: 'Τα ακόλουθα αρχεία μετακινήθηκαν: %s',
+	BasketPasteCopySuccess	: 'Τα ακόλουθα αρχεία αντιγράφηκαν: %s',
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: 'Μεταφόρτωση',
@@ -128,10 +118,9 @@ CKFinder.lang['el'] =
 	NewSubFolder	: 'Νέος υποφάκελος',
 	Rename			: 'Μετονομασία',
 	Delete			: 'Διαγραφή',
-	DeleteFiles		: 'Delete Files', // MISSING
 
-	CopyDragDrop	: 'Αντέγραψε εδώ',
-	MoveDragDrop	: 'Μετακίνησε εδώ',
+	CopyDragDrop	: 'Αντέγραψε τα αρχεία εδώ',
+	MoveDragDrop	: 'Μετακίνησε τα αρχεία εδώ',
 
 	// Dialogs
 	RenameDlgTitle		: 'Μετονομασία',
@@ -141,7 +130,6 @@ CKFinder.lang['el'] =
 
 	FileOverwrite	: 'Αντικατάσταση αρχείου',
 	FileAutorename	: 'Αυτόματη-μετονομασία',
-	ManuallyRename	: 'Manually rename', // MISSING
 
 	// Generic
 	OkBtn		: 'OK',
@@ -195,10 +183,8 @@ CKFinder.lang['el'] =
 	FilesCountMany	: '%1 αρχεία',
 
 	// Size and Speed
-	Kb				: '%1 KB',
-	Mb				: '%1 MB',
-	Gb				: '%1 GB',
-	SizePerSecond	: '%1/s',
+	Kb				: '%1 kB',
+	KbPerSecond		: '%1 kB/s',
 
 	// Connector Error Messages.
 	ErrorUnknown	: 'Η ενέργεια δεν ήταν δυνατόν να εκτελεστεί. (Σφάλμα %1)',
@@ -213,7 +199,6 @@ CKFinder.lang['el'] =
 	105 : 'Λανθασμένη επέκταση αρχείου.',
 	109 : 'Λανθασμένη ενέργεια.',
 	110 : 'Άγνωστο λάθος.',
-	111 : 'It was not possible to complete the request due to resulting file size.', // MISSING
 	115 : 'Το αρχείο ή φάκελος υπάρχει ήδη.',
 	116 : 'Ο φάκελος δεν βρέθηκε. Παρακαλούμε ανανεώστε τη σελίδα και προσπαθήστε ξανά.',
 	117 : 'Το αρχείο δεν βρέθηκε. Παρακαλούμε ανανεώστε τη σελίδα και προσπαθήστε ξανά.',
@@ -237,8 +222,6 @@ CKFinder.lang['el'] =
 		FileEmpty		: 'Η ονομασία του αρχείου δεν μπορεί να είναι κενή.',
 		FileExists		: 'Το αρχείο %s υπάρχει ήδη.',
 		FolderEmpty		: 'Η ονομασία του φακέλου δεν μπορεί να είναι κενή.',
-		FolderExists	: 'Folder %s already exists.', // MISSING
-		FolderNameExists	: 'Folder already exists.', // MISSING
 
 		FileInvChar		: 'Η ονομασία του αρχείου δεν μπορεί να περιέχει τους ακόλουθους χαρακτήρες: \n\\ / : * ? " < > |',
 		FolderInvChar	: 'Η ονομασία του φακέλου δεν μπορεί να περιέχει τους ακόλουθους χαρακτήρες: \n\\ / : * ? " < > |',
@@ -287,21 +270,5 @@ CKFinder.lang['el'] =
 	{
 		maximize : 'Μεγιστοποίηση',
 		minimize : 'Ελαχιστοποίηση'
-	},
-
-	Gallery :
-	{
-		current : 'Εικόνα {current} από {total}'
-	},
-
-	Zip :
-	{
-		extractHereLabel	: 'Extract here', // MISSING
-		extractToLabel		: 'Extract to...', // MISSING
-		downloadZipLabel	: 'Download as zip', // MISSING
-		compressZipLabel	: 'Compress to zip', // MISSING
-		removeAndExtract	: 'Remove existing and extract', // MISSING
-		extractAndOverwrite	: 'Extract overwriting existing files', // MISSING
-		extractSuccess		: 'File extracted successfully.' // MISSING
 	}
 };

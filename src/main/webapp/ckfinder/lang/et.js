@@ -75,18 +75,16 @@ CKFinder.lang['et'] =
 	FolderDelete	: 'Kas tahad kindlasti kausta "%1" kustutada?',
 	FolderRenaming	: ' (ümbernimetamine...)',
 	FolderDeleting	: ' (kustutamine...)',
-	DestinationFolder	: 'Destination Folder', // MISSING
 
 	// Files
 	FileRename		: 'Palun sisesta faili uus nimi: ',
 	FileRenameExt	: 'Kas oled kindel, et tahad faili laiendit muuta? Fail võib muutuda kasutamatuks.',
 	FileRenaming	: 'Ümbernimetamine...',
 	FileDelete		: 'Kas oled kindel, et tahad kustutada faili "%1"?',
-	FilesDelete	: 'Are you sure you want to delete %1 files?', // MISSING
 	FilesLoading	: 'Laadimine...',
 	FilesEmpty		: 'See kaust on tühi.',
-	DestinationFile	: 'Destination File', // MISSING
-	SkippedFiles	: 'List of skipped files:', // MISSING
+	FilesMoved		: 'Fail %1 liigutati kohta %2:%3.',
+	FilesCopied		: 'Fail %1 kopeeriti kohta %2:%3.',
 
 	// Basket
 	BasketFolder		: 'Korv',
@@ -95,21 +93,13 @@ CKFinder.lang['et'] =
 	BasketOpenFolder	: 'Ava ülemine kaust',
 	BasketTruncateConfirm : 'Kas tahad tõesti eemaldada korvist kõik failid?',
 	BasketRemoveConfirm	: 'Kas tahad tõesti eemaldada korvist faili "%1"?',
-	BasketRemoveConfirmMultiple	: 'Do you really want to remove %1 files from the basket?', // MISSING
 	BasketEmpty			: 'Korvis ei ole ühtegi faili, lohista mõni siia.',
 	BasketCopyFilesHere	: 'Failide kopeerimine korvist',
 	BasketMoveFilesHere	: 'Failide liigutamine korvist',
 
-	// Global messages
-	OperationCompletedSuccess	: 'Operation completed successfully.', // MISSING
-	OperationCompletedErrors		: 'Operation completed with errors.', // MISSING
-	FileError				: '%s: %e', // MISSING
-
-	// Move and Copy files
-	MovedFilesNumber		: 'Number of files moved: %s.', // MISSING
-	CopiedFilesNumber	: 'Number of files copied: %s.', // MISSING
-	MoveFailedList		: 'The following files could not be moved:<br />%s', // MISSING
-	CopyFailedList		: 'The following files could not be copied:<br />%s', // MISSING
+	BasketPasteErrorOther	: 'Faili %s viga: %e',
+	BasketPasteMoveSuccess	: 'Järgnevad failid liigutati: %s',
+	BasketPasteCopySuccess	: 'Järgnevad failid kopeeriti: %s',
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: 'Laadi üles',
@@ -128,10 +118,9 @@ CKFinder.lang['et'] =
 	NewSubFolder	: 'Uus alamkaust',
 	Rename			: 'Nimeta ümber',
 	Delete			: 'Kustuta',
-	DeleteFiles		: 'Delete Files', // MISSING
 
-	CopyDragDrop	: 'Kopeeri siia',
-	MoveDragDrop	: 'Liiguta siia',
+	CopyDragDrop	: 'Kopeeri fail siia',
+	MoveDragDrop	: 'Liiguta fail siia',
 
 	// Dialogs
 	RenameDlgTitle		: 'Ümbernimetamine',
@@ -141,7 +130,6 @@ CKFinder.lang['et'] =
 
 	FileOverwrite	: 'Kirjuta üle',
 	FileAutorename	: 'Nimeta automaatselt ümber',
-	ManuallyRename	: 'Manually rename', // MISSING
 
 	// Generic
 	OkBtn		: 'Olgu',
@@ -195,10 +183,8 @@ CKFinder.lang['et'] =
 	FilesCountMany	: '%1 faili',
 
 	// Size and Speed
-	Kb				: '%1 KB',
-	Mb				: '%1 MB',
-	Gb				: '%1 GB',
-	SizePerSecond	: '%1/s',
+	Kb				: '%1 kB',
+	KbPerSecond		: '%1 kB/s',
 
 	// Connector Error Messages.
 	ErrorUnknown	: 'Päringu täitmine ei olnud võimalik. (Viga %1)',
@@ -213,7 +199,6 @@ CKFinder.lang['et'] =
 	105 : 'Sobimatu faililaiend.',
 	109 : 'Vigane päring.',
 	110 : 'Tundmatu viga.',
-	111 : 'It was not possible to complete the request due to resulting file size.', // MISSING
 	115 : 'Sellenimeline fail või kaust on juba olemas.',
 	116 : 'Kausta ei leitud. Palun värskenda lehte ja proovi uuesti.',
 	117 : 'Faili ei leitud. Palun värskenda lehte ja proovi uuesti.',
@@ -237,8 +222,6 @@ CKFinder.lang['et'] =
 		FileEmpty		: 'Faili nimi ei tohi olla tühi.',
 		FileExists		: 'Fail nimega %s on juba olemas.',
 		FolderEmpty		: 'Kausta nimi ei tohi olla tühi.',
-		FolderExists	: 'Folder %s already exists.', // MISSING
-		FolderNameExists	: 'Folder already exists.', // MISSING
 
 		FileInvChar		: 'Faili nimi ei tohi sisaldada ühtegi järgnevatest märkidest: \n\\ / : * ? " < > |',
 		FolderInvChar	: 'Faili nimi ei tohi sisaldada ühtegi järgnevatest märkidest: \n\\ / : * ? " < > |',
@@ -287,21 +270,5 @@ CKFinder.lang['et'] =
 	{
 		maximize : 'Maksimeeri',
 		minimize : 'Minimeeri'
-	},
-
-	Gallery :
-	{
-		current : 'Pilt {current}, kokku {total}'
-	},
-
-	Zip :
-	{
-		extractHereLabel	: 'Extract here', // MISSING
-		extractToLabel		: 'Extract to...', // MISSING
-		downloadZipLabel	: 'Download as zip', // MISSING
-		compressZipLabel	: 'Compress to zip', // MISSING
-		removeAndExtract	: 'Remove existing and extract', // MISSING
-		extractAndOverwrite	: 'Extract overwriting existing files', // MISSING
-		extractSuccess		: 'File extracted successfully.' // MISSING
 	}
 };

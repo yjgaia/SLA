@@ -75,18 +75,16 @@ CKFinder.lang['es-mx'] =
 	FolderDelete	: '¿Está seguro de que quiere borrar la carpeta "%1"?',
 	FolderRenaming	: ' (Renombrando...)',
 	FolderDeleting	: ' (Borrando...)',
-	DestinationFolder	: 'Destination Folder', // MISSING
 
 	// Files
 	FileRename		: 'Por favor, escriba el nuevo nombre del archivo: ',
 	FileRenameExt	: '¿Está seguro de querer cambiar la extensión del archivo? El archivo puede dejar de ser usable.',
 	FileRenaming	: 'Renombrando...',
 	FileDelete		: '¿Está seguro de que quiere borrar el archivo "%1".?',
-	FilesDelete	: 'Are you sure you want to delete %1 files?', // MISSING
 	FilesLoading	: 'Cargando...',
 	FilesEmpty		: 'Carpeta vacía',
-	DestinationFile	: 'Destination File', // MISSING
-	SkippedFiles	: 'List of skipped files:', // MISSING
+	FilesMoved		: 'Archivo %1 movido a %2:%3.',
+	FilesCopied		: 'Archivo %1 copiado a %2:%3.',
 
 	// Basket
 	BasketFolder		: 'Cesta',
@@ -95,21 +93,13 @@ CKFinder.lang['es-mx'] =
 	BasketOpenFolder	: 'Abrir carpeta padre',
 	BasketTruncateConfirm : '¿Está seguro de querer quitar todos los archivos de la cesta?',
 	BasketRemoveConfirm	: '¿Está seguro de querer quitar el archivo "%1" de la cesta?',
-	BasketRemoveConfirmMultiple	: 'Do you really want to remove %1 files from the basket?', // MISSING
 	BasketEmpty			: 'No hay archivos en la cesta, arrastra y suelta algunos.',
 	BasketCopyFilesHere	: 'Copiar archivos de la cesta',
 	BasketMoveFilesHere	: 'Mover archivos de la cesta',
 
-	// Global messages
-	OperationCompletedSuccess	: 'Operation completed successfully.', // MISSING
-	OperationCompletedErrors		: 'Operation completed with errors.', // MISSING
-	FileError				: '%s: %e', // MISSING
-
-	// Move and Copy files
-	MovedFilesNumber		: 'Number of files moved: %s.', // MISSING
-	CopiedFilesNumber	: 'Number of files copied: %s.', // MISSING
-	MoveFailedList		: 'The following files could not be moved:<br />%s', // MISSING
-	CopyFailedList		: 'The following files could not be copied:<br />%s', // MISSING
+	BasketPasteErrorOther	: 'Fichero %s error: %e.',
+	BasketPasteMoveSuccess	: 'Los siguientes ficheros han sido movidos: %s',
+	BasketPasteCopySuccess	: 'Los siguientes ficheros han sido copiados: %s',
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: 'Añadir',
@@ -128,10 +118,9 @@ CKFinder.lang['es-mx'] =
 	NewSubFolder	: 'Nueva Subcarpeta',
 	Rename			: 'Renombrar',
 	Delete			: 'Borrar',
-	DeleteFiles		: 'Delete Files', // MISSING
 
-	CopyDragDrop	: 'Copiar aquí',
-	MoveDragDrop	: 'Mover aquí',
+	CopyDragDrop	: 'Copiar archivo aquí',
+	MoveDragDrop	: 'Mover archivo aquí',
 
 	// Dialogs
 	RenameDlgTitle		: 'Renombrar',
@@ -141,7 +130,6 @@ CKFinder.lang['es-mx'] =
 
 	FileOverwrite	: 'Sobreescribir',
 	FileAutorename	: 'Auto-renombrar',
-	ManuallyRename	: 'Manually rename', // MISSING
 
 	// Generic
 	OkBtn		: 'Aceptar',
@@ -195,10 +183,8 @@ CKFinder.lang['es-mx'] =
 	FilesCountMany	: '%1 archivos',
 
 	// Size and Speed
-	Kb				: '%1 KB',
-	Mb				: '%1 MB',
-	Gb				: '%1 GB',
-	SizePerSecond	: '%1/s',
+	Kb				: '%1 kB',
+	KbPerSecond		: '%1 kB/s',
 
 	// Connector Error Messages.
 	ErrorUnknown	: 'No ha sido posible completar la solicitud. (Error %1)',
@@ -213,7 +199,6 @@ CKFinder.lang['es-mx'] =
 	105 : 'La extensión del archivo no es válida.',
 	109 : 'Petición inválida.',
 	110 : 'Error desconocido.',
-	111 : 'It was not possible to complete the request due to resulting file size.', // MISSING
 	115 : 'Ya existe un archivo o carpeta con ese nombre.',
 	116 : 'No se ha encontrado la carpeta. Por favor, actualice y pruebe de nuevo.',
 	117 : 'No se ha encontrado el archivo. Por favor, actualice la lista de archivos y pruebe de nuevo.',
@@ -237,8 +222,6 @@ CKFinder.lang['es-mx'] =
 		FileEmpty		: 'El nombre del archivo no puede estar vacío.',
 		FileExists		: 'El archivo %s ya existe.',
 		FolderEmpty		: 'El nombre de la carpeta no puede estar vacío.',
-		FolderExists	: 'Folder %s already exists.', // MISSING
-		FolderNameExists	: 'Folder already exists.', // MISSING
 
 		FileInvChar		: 'El nombre del archivo no puede contener ninguno de los caracteres siguientes: \n\\ / : * ? " < > |',
 		FolderInvChar	: 'El nombre de la carpeta no puede contener ninguno de los caracteres siguientes: \n\\ / : * ? " < > |',
@@ -287,21 +270,5 @@ CKFinder.lang['es-mx'] =
 	{
 		maximize : 'Maximizar',
 		minimize : 'Minimizar'
-	},
-
-	Gallery :
-	{
-		current : 'Imagen {current} de {total}'
-	},
-
-	Zip :
-	{
-		extractHereLabel	: 'Extract here', // MISSING
-		extractToLabel		: 'Extract to...', // MISSING
-		downloadZipLabel	: 'Download as zip', // MISSING
-		compressZipLabel	: 'Compress to zip', // MISSING
-		removeAndExtract	: 'Remove existing and extract', // MISSING
-		extractAndOverwrite	: 'Extract overwriting existing files', // MISSING
-		extractSuccess		: 'File extracted successfully.' // MISSING
 	}
 };

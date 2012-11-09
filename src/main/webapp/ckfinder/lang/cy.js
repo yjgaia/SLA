@@ -75,18 +75,16 @@ CKFinder.lang['cy'] =
 	FolderDelete	: 'Ydych chi wir am ddileu\'r ffolder "%1"?',
 	FolderRenaming	: ' (Yn ailenwi...)',
 	FolderDeleting	: ' (Yn dileu...)',
-	DestinationFolder	: 'Destination Folder', // MISSING
 
 	// Files
 	FileRename		: 'Rhowch enw newydd y ffeil: ',
 	FileRenameExt	: 'Ydych chi wir am newid estyniad y ffeil? Gall hwn atal y ffeil rhag gweithio.',
 	FileRenaming	: 'Yn ailenwi...',
 	FileDelete		: 'Ydych chi wir am ddileu\'r ffeil "%1"?',
-	FilesDelete	: 'Are you sure you want to delete %1 files?', // MISSING
 	FilesLoading	: 'Yn llwytho...',
 	FilesEmpty		: 'Mae\'r ffolder yn wag.',
-	DestinationFile	: 'Destination File', // MISSING
-	SkippedFiles	: 'List of skipped files:', // MISSING
+	FilesMoved		: 'Symudwyd y ffeil %1 i %2:%3.',
+	FilesCopied		: 'Copïwyd y ffeil %1 i %2:%3.',
 
 	// Basket
 	BasketFolder		: 'Basged',
@@ -95,21 +93,13 @@ CKFinder.lang['cy'] =
 	BasketOpenFolder	: 'Agor yr Uwch Ffolder',
 	BasketTruncateConfirm : 'Ydych chi wir am dynnu\'r holl ffeiliau o\'r fasged?',
 	BasketRemoveConfirm	: 'Ydych chi wir am dynnu\'r ffeil "%1" o\'r fasged?',
-	BasketRemoveConfirmMultiple	: 'Do you really want to remove %1 files from the basket?', // MISSING
 	BasketEmpty			: 'Dim ffeiliau yn y fasged, llusgwch a\'m gollwng.',
 	BasketCopyFilesHere	: 'Copïo Ffeiliau o\'r Fasged',
 	BasketMoveFilesHere	: 'Symud Ffeiliau o\'r Fasged',
 
-	// Global messages
-	OperationCompletedSuccess	: 'Operation completed successfully.', // MISSING
-	OperationCompletedErrors		: 'Operation completed with errors.', // MISSING
-	FileError				: '%s: %e', // MISSING
-
-	// Move and Copy files
-	MovedFilesNumber		: 'Number of files moved: %s.', // MISSING
-	CopiedFilesNumber	: 'Number of files copied: %s.', // MISSING
-	MoveFailedList		: 'The following files could not be moved:<br />%s', // MISSING
-	CopyFailedList		: 'The following files could not be copied:<br />%s', // MISSING
+	BasketPasteErrorOther	: 'Gwall ffeil %s: %e',
+	BasketPasteMoveSuccess	: 'Cafodd y ffeiliau canlynol eu symud: %s',
+	BasketPasteCopySuccess	: 'Cafodd y ffeiliau canlynol eu copïo: %s',
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: 'Lanlwytho',
@@ -128,10 +118,9 @@ CKFinder.lang['cy'] =
 	NewSubFolder	: 'Is-ffolder Newydd',
 	Rename			: 'Ailenwi',
 	Delete			: 'Dileu',
-	DeleteFiles		: 'Delete Files', // MISSING
 
-	CopyDragDrop	: 'Copïo Yma',
-	MoveDragDrop	: 'Symud Yma',
+	CopyDragDrop	: 'Copïo Ffeil Yma',
+	MoveDragDrop	: 'Symud Ffeil Yma',
 
 	// Dialogs
 	RenameDlgTitle		: 'Ailenwi',
@@ -141,7 +130,6 @@ CKFinder.lang['cy'] =
 
 	FileOverwrite	: 'Trosysgrifo',
 	FileAutorename	: 'Awto-ailenwi',
-	ManuallyRename	: 'Manually rename', // MISSING
 
 	// Generic
 	OkBtn		: 'Iawn',
@@ -195,10 +183,8 @@ CKFinder.lang['cy'] =
 	FilesCountMany	: '%1 ffeil',
 
 	// Size and Speed
-	Kb				: '%1 KB',
-	Mb				: '%1 MB', // MISSING
-	Gb				: '%1 GB', // MISSING
-	SizePerSecond	: '%1/s', // MISSING
+	Kb				: '%1 kB',
+	KbPerSecond		: '%1 kB/s',
 
 	// Connector Error Messages.
 	ErrorUnknown	: 'Does dim modd cwblhau\'r cais. (Gwall %1)',
@@ -213,7 +199,6 @@ CKFinder.lang['cy'] =
 	105 : 'Estyniad ffeil annilys.',
 	109 : 'Cais annilys.',
 	110 : 'Gwall anhysbys.',
-	111 : 'It was not possible to complete the request due to resulting file size.', // MISSING
 	115 : 'Mae ffeil neu ffolder gyda\'r un enw yn bodoli yn barod.',
 	116 : 'Methu â darganfod y ffolder. Adfywiwch a cheisio eto.',
 	117 : 'Methu â darganfod y ffeil. Adfywiwch y rhestr ffeiliau a cheisio eto.',
@@ -237,8 +222,6 @@ CKFinder.lang['cy'] =
 		FileEmpty		: 'Does dim modd i enw\'r ffeil fod yn wag.',
 		FileExists		: 'Mae\'r ffeil %s yn bodoli yn barod.',
 		FolderEmpty		: 'Does dim modd i\'r ffolder fod yn wag.',
-		FolderExists	: 'Folder %s already exists.', // MISSING
-		FolderNameExists	: 'Folder already exists.', // MISSING
 
 		FileInvChar		: 'Does dim hawl defnyddio\'r nodau canlynol i enwi ffeil: \n\\ / : * ? " < > |',
 		FolderInvChar	: 'Does dim hawl defnyddio\'r nodau canlynol i enwi ffolder: \n\\ / : * ? " < > |',
@@ -287,21 +270,5 @@ CKFinder.lang['cy'] =
 	{
 		maximize : 'Uchafu',
 		minimize : 'Isafu'
-	},
-
-	Gallery :
-	{
-		current : 'Image {current} of {total}' // MISSING
-	},
-
-	Zip :
-	{
-		extractHereLabel	: 'Extract here', // MISSING
-		extractToLabel		: 'Extract to...', // MISSING
-		downloadZipLabel	: 'Download as zip', // MISSING
-		compressZipLabel	: 'Compress to zip', // MISSING
-		removeAndExtract	: 'Remove existing and extract', // MISSING
-		extractAndOverwrite	: 'Extract overwriting existing files', // MISSING
-		extractSuccess		: 'File extracted successfully.' // MISSING
 	}
 };

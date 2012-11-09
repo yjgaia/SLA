@@ -151,6 +151,13 @@
 				background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
 				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
 			}
+			#notice {
+				font-size: 12px;
+				background-image: url(${pageContext.request.contextPath}/img/notice.png);
+				background-repeat: no-repeat;
+				background-position: center left;
+				padding-left: 22px;
+			}
 			#go-analyze-result {
 				margin-top: -2px;
 				float: right;
@@ -251,8 +258,10 @@
 					<input class="url" name="url" placeholder="http:// 공유할 주소를 입력해주세요.">
 					<input class="submit" type="submit" value="공유">
 				</form>
-				<p style="font-size:11pt">
-					현재<b>${userCount }</b>명의 사용자가 <b>${shareCount }</b>건의 링크를 공유하고 있습니다! 지금 참여해보세요!
+			</div>
+			<div id="notice">
+				<p>
+					현재 <b>${userCount }</b>명의 사용자가 <b>${shareCount }</b>건의 링크를 공유하고 있습니다! 지금 참여해보세요!
 				</p>
 			</div>
 			<div id="yogio-intro" class="layer">

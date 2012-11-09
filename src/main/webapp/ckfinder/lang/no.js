@@ -75,18 +75,16 @@ CKFinder.lang['no'] =
 	FolderDelete	: 'Er du sikker på at du vil slette mappen "%1"?',
 	FolderRenaming	: ' (Endrer mappenavn...)',
 	FolderDeleting	: ' (Sletter...)',
-	DestinationFolder	: 'Destination Folder', // MISSING
 
 	// Files
 	FileRename		: 'Skriv inn det nye filnavnet: ',
 	FileRenameExt	: 'Er du sikker på at du vil endre filtypen? Filen kan bli ubrukelig.',
 	FileRenaming	: 'Endrer filnavn...',
 	FileDelete		: 'Er du sikker på at du vil slette denne filen "%1"?',
-	FilesDelete	: 'Are you sure you want to delete %1 files?', // MISSING
 	FilesLoading	: 'Laster...',
 	FilesEmpty		: 'Denne katalogen er tom.',
-	DestinationFile	: 'Destination File', // MISSING
-	SkippedFiles	: 'List of skipped files:', // MISSING
+	FilesMoved		: 'Filen %1 flyttet til %2:%3.',
+	FilesCopied		: 'Filen %1 kopiert til %2:%3.',
 
 	// Basket
 	BasketFolder		: 'Kurv',
@@ -95,21 +93,13 @@ CKFinder.lang['no'] =
 	BasketOpenFolder	: 'Åpne foreldremappen',
 	BasketTruncateConfirm : 'Vil du virkelig fjerne alle filer fra kurven?',
 	BasketRemoveConfirm	: 'Vil du virkelig fjerne filen "%1" fra kurven?',
-	BasketRemoveConfirmMultiple	: 'Do you really want to remove %1 files from the basket?', // MISSING
 	BasketEmpty			: 'Ingen filer i kurven, dra og slipp noen.',
 	BasketCopyFilesHere	: 'Kopier filer fra kurven',
 	BasketMoveFilesHere	: 'Flytt filer fra kurven',
 
-	// Global messages
-	OperationCompletedSuccess	: 'Operation completed successfully.', // MISSING
-	OperationCompletedErrors		: 'Operation completed with errors.', // MISSING
-	FileError				: '%s: %e', // MISSING
-
-	// Move and Copy files
-	MovedFilesNumber		: 'Number of files moved: %s.', // MISSING
-	CopiedFilesNumber	: 'Number of files copied: %s.', // MISSING
-	MoveFailedList		: 'The following files could not be moved:<br />%s', // MISSING
-	CopyFailedList		: 'The following files could not be copied:<br />%s', // MISSING
+	BasketPasteErrorOther	: 'Fil %s feil: %e',
+	BasketPasteMoveSuccess	: 'Følgende filer ble flyttet: %s',
+	BasketPasteCopySuccess	: 'Følgende filer ble kopiert: %s',
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: 'Last opp',
@@ -128,10 +118,9 @@ CKFinder.lang['no'] =
 	NewSubFolder	: 'Ny undermappe',
 	Rename			: 'Endre navn',
 	Delete			: 'Slett',
-	DeleteFiles		: 'Delete Files', // MISSING
 
-	CopyDragDrop	: 'Kopier hit',
-	MoveDragDrop	: 'Flytt hit',
+	CopyDragDrop	: 'Kopier filen hit',
+	MoveDragDrop	: 'Flytt filen hit',
 
 	// Dialogs
 	RenameDlgTitle		: 'Gi nytt navn',
@@ -141,7 +130,6 @@ CKFinder.lang['no'] =
 
 	FileOverwrite	: 'Overskriv',
 	FileAutorename	: 'Gi nytt navn automatisk',
-	ManuallyRename	: 'Manually rename', // MISSING
 
 	// Generic
 	OkBtn		: 'OK',
@@ -187,7 +175,7 @@ CKFinder.lang['no'] =
 	SetSortName		: 'Filnavn',
 	SetSortDate		: 'Dato',
 	SetSortSize		: 'Størrelse',
-	SetSortExtension		: 'Filetternavn',
+	SetSortExtension		: 'by Extension', // MISSING
 
 	// Status Bar
 	FilesCountEmpty : '<Tom Mappe>',
@@ -195,10 +183,8 @@ CKFinder.lang['no'] =
 	FilesCountMany	: '%1 filer',
 
 	// Size and Speed
-	Kb				: '%1 KB',
-	Mb				: '%1 MB',
-	Gb				: '%1 GB',
-	SizePerSecond	: '%1/s',
+	Kb				: '%1 kB',
+	KbPerSecond		: '%1 kB/s',
 
 	// Connector Error Messages.
 	ErrorUnknown	: 'Det var ikke mulig å utføre forespørselen. (Feil %1)',
@@ -213,7 +199,6 @@ CKFinder.lang['no'] =
 	105 : 'Ugyldig filtype.',
 	109 : 'Ugyldig forespørsel.',
 	110 : 'Ukjent feil.',
-	111 : 'It was not possible to complete the request due to resulting file size.', // MISSING
 	115 : 'Det finnes allerede en fil eller mappe med dette navnet.',
 	116 : 'Kunne ikke finne mappen. Oppdater vinduet og prøv igjen.',
 	117 : 'Kunne ikke finne filen. Oppdater vinduet og prøv igjen.',
@@ -237,8 +222,6 @@ CKFinder.lang['no'] =
 		FileEmpty		: 'Filnavnet kan ikke være tomt.',
 		FileExists		: 'Filen %s finnes alt.',
 		FolderEmpty		: 'Mappenavnet kan ikke være tomt.',
-		FolderExists	: 'Folder %s already exists.', // MISSING
-		FolderNameExists	: 'Folder already exists.', // MISSING
 
 		FileInvChar		: 'Filnavnet kan ikke inneholde følgende tegn: \n\\ / : * ? " < > |',
 		FolderInvChar	: 'Mappenavnet kan ikke inneholde følgende tegn: \n\\ / : * ? " < > |',
@@ -253,7 +236,7 @@ CKFinder.lang['no'] =
 	Imageresize :
 	{
 		dialogTitle		: 'Endre størrelse %s',
-		sizeTooBig		: 'Kan ikke sette høyde og bredde til større enn orginalstørrelse (%size).',
+		sizeTooBig		: 'Cannot set image height or width to a value bigger than the original size (%size).', // MISSING
 		resizeSuccess	: 'Endring av bildestørrelse var vellykket.',
 		thumbnailNew	: 'Lag ett nytt miniatyrbilde',
 		thumbnailSmall	: 'Liten (%s)',
@@ -287,21 +270,5 @@ CKFinder.lang['no'] =
 	{
 		maximize : 'Maksimer',
 		minimize : 'Minimer'
-	},
-
-	Gallery :
-	{
-		current : 'Bilde {current} av {total}'
-	},
-
-	Zip :
-	{
-		extractHereLabel	: 'Extract here', // MISSING
-		extractToLabel		: 'Extract to...', // MISSING
-		downloadZipLabel	: 'Download as zip', // MISSING
-		compressZipLabel	: 'Compress to zip', // MISSING
-		removeAndExtract	: 'Remove existing and extract', // MISSING
-		extractAndOverwrite	: 'Extract overwriting existing files', // MISSING
-		extractSuccess		: 'File extracted successfully.' // MISSING
 	}
 };

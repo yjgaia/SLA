@@ -75,18 +75,16 @@ CKFinder.lang['fr'] =
 	FolderDelete	: 'Êtes-vous sûr de vouloir effacer le dossier "%1"?',
 	FolderRenaming	: ' (Renommage en cours...)',
 	FolderDeleting	: ' (Suppression en cours...)',
-	DestinationFolder	: 'Destination Folder', // MISSING
 
 	// Files
 	FileRename		: 'Entrez le nouveau nom du fichier: ',
 	FileRenameExt	: 'Êtes-vous sûr de vouloir changer l\'extension de ce fichier? Le fichier pourrait devenir inutilisable.',
 	FileRenaming	: 'Renommage en cours...',
 	FileDelete		: 'Êtes-vous sûr de vouloir effacer le fichier "%1"?',
-	FilesDelete	: 'Are you sure you want to delete %1 files?', // MISSING
 	FilesLoading	: 'Chargement...',
 	FilesEmpty		: 'Répertoire vide',
-	DestinationFile	: 'Destination File', // MISSING
-	SkippedFiles	: 'List of skipped files:', // MISSING
+	FilesMoved		: 'Fichier %1 déplacé vers %2:%3.',
+	FilesCopied		: 'Fichier %1 copié vers %2:%3.',
 
 	// Basket
 	BasketFolder		: 'Corbeille',
@@ -95,21 +93,13 @@ CKFinder.lang['fr'] =
 	BasketOpenFolder	: 'Ouvrir le répertiore parent',
 	BasketTruncateConfirm : 'Êtes vous sûr de vouloir supprimer tous les fichiers de la corbeille?',
 	BasketRemoveConfirm	: 'Êtes vous sûr de vouloir supprimer le fichier "%1" de la corbeille?',
-	BasketRemoveConfirmMultiple	: 'Do you really want to remove %1 files from the basket?', // MISSING
 	BasketEmpty			: 'Aucun fichier dans la corbeille, déposez en queques uns.',
 	BasketCopyFilesHere	: 'Copier des fichiers depuis la corbeille',
 	BasketMoveFilesHere	: 'Déplacer des fichiers depuis la corbeille',
 
-	// Global messages
-	OperationCompletedSuccess	: 'Operation completed successfully.', // MISSING
-	OperationCompletedErrors		: 'Operation completed with errors.', // MISSING
-	FileError				: '%s: %e', // MISSING
-
-	// Move and Copy files
-	MovedFilesNumber		: 'Number of files moved: %s.', // MISSING
-	CopiedFilesNumber	: 'Number of files copied: %s.', // MISSING
-	MoveFailedList		: 'The following files could not be moved:<br />%s', // MISSING
-	CopyFailedList		: 'The following files could not be copied:<br />%s', // MISSING
+	BasketPasteErrorOther	: 'Fichier %s erreur: %e.',
+	BasketPasteMoveSuccess	: 'Les fichiers suivant ont été déplacés: %s',
+	BasketPasteCopySuccess	: 'Les fichiers suivant ont été copiés: %s',
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: 'Envoyer',
@@ -128,10 +118,9 @@ CKFinder.lang['fr'] =
 	NewSubFolder	: 'Nouveau sous-dossier',
 	Rename			: 'Renommer',
 	Delete			: 'Effacer',
-	DeleteFiles		: 'Delete Files', // MISSING
 
-	CopyDragDrop	: 'Copier ici',
-	MoveDragDrop	: 'Déplacer ici',
+	CopyDragDrop	: 'Copier les fichiers ici',
+	MoveDragDrop	: 'Déplacer les fichiers ici',
 
 	// Dialogs
 	RenameDlgTitle		: 'Renommer',
@@ -141,7 +130,6 @@ CKFinder.lang['fr'] =
 
 	FileOverwrite	: 'Ré-écrire',
 	FileAutorename	: 'Re-nommage automatique',
-	ManuallyRename	: 'Manually rename', // MISSING
 
 	// Generic
 	OkBtn		: 'OK',
@@ -195,10 +183,8 @@ CKFinder.lang['fr'] =
 	FilesCountMany	: '%1 fichiers',
 
 	// Size and Speed
-	Kb				: '%1 Ko',
-	Mb				: '%1 Mo',
-	Gb				: '%1 Go',
-	SizePerSecond	: '%1/s',
+	Kb				: '%1 ko',
+	KbPerSecond		: '%1 ko/s',
 
 	// Connector Error Messages.
 	ErrorUnknown	: 'La demande n\'a pas abouti. (Erreur %1)',
@@ -213,7 +199,6 @@ CKFinder.lang['fr'] =
 	105 : 'Extension de fichier invalide.',
 	109 : 'Demande invalide.',
 	110 : 'Erreur inconnue.',
-	111 : 'It was not possible to complete the request due to resulting file size.', // MISSING
 	115 : 'Un fichier ou un dossier avec ce nom existe déjà.',
 	116 : 'Ce dossier n\'existe pas. Veuillez rafraîchir la page et réessayer.',
 	117 : 'Ce fichier n\'existe pas. Veuillez rafraîchir la page et réessayer.',
@@ -237,8 +222,6 @@ CKFinder.lang['fr'] =
 		FileEmpty		: 'Le nom du fichier ne peut être vide.',
 		FileExists		: 'Le fichier %s existes déjà.',
 		FolderEmpty		: 'Le nom du dossier ne peut être vide.',
-		FolderExists	: 'Folder %s already exists.', // MISSING
-		FolderNameExists	: 'Folder already exists.', // MISSING
 
 		FileInvChar		: 'Le nom du fichier ne peut pas contenir les charactères suivants : \n\\ / : * ? " < > |',
 		FolderInvChar	: 'Le nom du dossier ne peut pas contenir les charactères suivants : \n\\ / : * ? " < > |',
@@ -287,21 +270,5 @@ CKFinder.lang['fr'] =
 	{
 		maximize : 'Agrandir',
 		minimize : 'Minimiser'
-	},
-
-	Gallery :
-	{
-		current : 'Image {current} sur {total}'
-	},
-
-	Zip :
-	{
-		extractHereLabel	: 'Extract here', // MISSING
-		extractToLabel		: 'Extract to...', // MISSING
-		downloadZipLabel	: 'Download as zip', // MISSING
-		compressZipLabel	: 'Compress to zip', // MISSING
-		removeAndExtract	: 'Remove existing and extract', // MISSING
-		extractAndOverwrite	: 'Extract overwriting existing files', // MISSING
-		extractSuccess		: 'File extracted successfully.' // MISSING
 	}
 };

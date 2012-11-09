@@ -64,7 +64,7 @@ CKFinder.lang['he'] =
 	//		MM   : Minute (padding zero)
 	//		a    : Firt char of AM/PM
 	//		aa   : AM/PM
-	DateTime : 'd/m/yyyy HH:MM',
+	DateTime : 'm/d/yyyy h:MM aa',
 	DateAmPm : ['AM', 'PM'],
 
 	// Folders
@@ -75,18 +75,16 @@ CKFinder.lang['he'] =
 	FolderDelete	: 'האם למחוק את התיקיה "%1" ?',
 	FolderRenaming	: ' (משנה שם...)',
 	FolderDeleting	: ' (מוחק...)',
-	DestinationFolder	: 'תיקיית יעד',
 
 	// Files
 	FileRename		: 'יש להקליד שם חדש לקובץ: ',
 	FileRenameExt	: 'האם לשנות את הסיומת של הקובץ?',
 	FileRenaming	: 'משנה שם...',
 	FileDelete		: 'האם למחוק את הקובץ "%1"?',
-	FilesDelete	: 'האם למחוק %1 קבצים?',
 	FilesLoading	: 'טוען...',
 	FilesEmpty		: 'תיקיה ריקה',
-	DestinationFile	: 'קובץ יעד',
-	SkippedFiles	: 'רשימת קבצים שדולגו:',
+	FilesMoved		: 'קובץ %1 הוזז ל- %2:%3',
+	FilesCopied		: 'קובץ %1 הועתק ל- %2:%3',
 
 	// Basket
 	BasketFolder		: 'סל קבצים',
@@ -95,21 +93,13 @@ CKFinder.lang['he'] =
 	BasketOpenFolder	: 'פתיחת תיקיית אב',
 	BasketTruncateConfirm : 'האם למחוק את כל הקבצים מסל הקבצים?',
 	BasketRemoveConfirm	: 'האם למחוק את הקובץ "%1" מסל הקבצים?',
-	BasketRemoveConfirmMultiple	: 'האם למחוק %1 קבצים מסל הקבצים?',
 	BasketEmpty			: 'אין קבצים בסל הקבצים, יש לגרור לכאן קובץ.',
 	BasketCopyFilesHere	: 'העתקת קבצים מסל הקבצים',
 	BasketMoveFilesHere	: 'הזזת קבצים מסל הקבצים',
 
-	// Global messages
-	OperationCompletedSuccess	: 'הפעולה הושלמה בהצלחה.',
-	OperationCompletedErrors		: 'הפעולה הושלמה עם שגיאות.',
-	FileError				: '%s: %e',
-
-	// Move and Copy files
-	MovedFilesNumber		: 'מספר קבצים שהוזזו: %s.',
-	CopiedFilesNumber	: 'מספר קבצים שהועתקו: %s.',
-	MoveFailedList		: 'המערכת לא הצליחה להזיז את הקבצים הבאים:<br />%s',
-	CopyFailedList		: 'המערכת לא הצליחה להעתיק את הקבצים הבאים:<br />%s',
+	BasketPasteErrorOther	: 'שגיאה %e בקובץ %s',
+	BasketPasteMoveSuccess	: 'הקבצים הבאים הוזזו: %s',
+	BasketPasteCopySuccess	: 'הקבצים הבאים הועתקו: %s',
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: 'העלאה',
@@ -128,7 +118,6 @@ CKFinder.lang['he'] =
 	NewSubFolder	: 'תת-תיקיה חדשה',
 	Rename			: 'שינוי שם',
 	Delete			: 'מחיקה',
-	DeleteFiles		: 'מחיקת קבצים',
 
 	CopyDragDrop	: 'העתקת קבצים לכאן',
 	MoveDragDrop	: 'הזזת קבצים לכאן',
@@ -141,7 +130,6 @@ CKFinder.lang['he'] =
 
 	FileOverwrite	: 'החלפה',
 	FileAutorename	: 'שינוי שם אוטומטי',
-	ManuallyRename	: 'שינוי שם ידני',
 
 	// Generic
 	OkBtn		: 'אישור',
@@ -195,10 +183,8 @@ CKFinder.lang['he'] =
 	FilesCountMany	: '%1 קבצים',
 
 	// Size and Speed
-	Kb				: '%1KB',
-	Mb				: '%1MB',
-	Gb				: '%1GB',
-	SizePerSecond	: '%1/s',
+	Kb				: '%1 kB',
+	KbPerSecond		: '%1 kB/s',
 
 	// Connector Error Messages.
 	ErrorUnknown	: 'לא היה ניתן להשלים את הבקשה. (שגיאה %1)',
@@ -213,7 +199,6 @@ CKFinder.lang['he'] =
 	105 : 'סיומת הקובץ לא תקינה.',
 	109 : 'בקשה לא תקינה.',
 	110 : 'שגיאה לא ידועה.',
-	111 : 'לא ניתן היה להשלים את הבקשה בשל הגודל החריג של הקובץ הנוצר.',
 	115 : 'כבר קיים/ת קובץ או תיקיה באותו השם.',
 	116 : 'התיקיה לא נמצאה. נא לרענן ולנסות שוב.',
 	117 : 'הקובץ לא נמצא. נא לרענן ולנסות שוב.',
@@ -237,8 +222,6 @@ CKFinder.lang['he'] =
 		FileEmpty		: 'שם הקובץ לא יכול להיות ריק',
 		FileExists		: 'הקובץ %s כבר קיים',
 		FolderEmpty		: 'שם התיקיה לא יכול להיות ריק',
-		FolderExists	: 'התיקיה %s כבר קיימת.',
-		FolderNameExists	: 'התיקיה כבר קיימת.',
 
 		FileInvChar		: 'שם הקובץ לא יכול לכלול תווים הבאים: \n\\ / : * ? " < > |',
 		FolderInvChar	: 'שם התיקיה לא יכול לכלול תווים הבאים: \n\\ / : * ? " < > |',
@@ -287,21 +270,5 @@ CKFinder.lang['he'] =
 	{
 		maximize : 'הגדלה למקסימום',
 		minimize : 'הקטנה למינימום'
-	},
-
-	Gallery :
-	{
-		current : 'תמונה {current} מתוך {total}'
-	},
-
-	Zip :
-	{
-		extractHereLabel	: 'חילוץ לפה',
-		extractToLabel		: 'חילוץ ל...',
-		downloadZipLabel	: 'הורדה כקובץ ZIP',
-		compressZipLabel	: 'דחיסה לקובץ ZIP',
-		removeAndExtract	: 'מחיקת הקובץ וחילוצו',
-		extractAndOverwrite	: 'חילוץ והחלפת קבצים קיימים',
-		extractSuccess		: 'הקבצים חולצו בהצלחה.'
 	}
 };

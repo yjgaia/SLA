@@ -75,18 +75,16 @@ CKFinder.lang['fa'] =
 	FolderDelete	: 'آیا اطمینان دارید که قصد حذف کردن پوشه "%1" را دارید؟',
 	FolderRenaming	: ' (در حال تغییر نام...)',
 	FolderDeleting	: ' (در حال حذف...)',
-	DestinationFolder	: 'Destination Folder', // MISSING
 
 	// Files
 	FileRename		: 'لطفا نام جدید فایل را درج کنید: ',
 	FileRenameExt	: 'آیا اطمینان دارید که قصد تغییر نام پسوند این فایل را دارید؟ ممکن است فایل غیر قابل استفاده شود',
 	FileRenaming	: 'در حال تغییر نام...',
 	FileDelete		: 'آیا اطمینان دارید که قصد حذف نمودن فایل "%1" را دارید؟',
-	FilesDelete	: 'Are you sure you want to delete %1 files?', // MISSING
 	FilesLoading	: 'بارگذاری...',
 	FilesEmpty		: 'این پوشه خالی است',
-	DestinationFile	: 'Destination File', // MISSING
-	SkippedFiles	: 'List of skipped files:', // MISSING
+	FilesMoved		: 'فایل %1 به مسیر %2:%3 منتقل شد.',
+	FilesCopied		: 'فایل %1 در مسیر %2:%3 کپی شد.',
 
 	// Basket
 	BasketFolder		: 'سبد',
@@ -95,21 +93,13 @@ CKFinder.lang['fa'] =
 	BasketOpenFolder	: 'باز نمودن پوشه والد',
 	BasketTruncateConfirm : 'تمام فایل های موجود در سبد حذف شود؟',
 	BasketRemoveConfirm	: 'فایل "%1" از سبد حذف شود؟',
-	BasketRemoveConfirmMultiple	: 'Do you really want to remove %1 files from the basket?', // MISSING
 	BasketEmpty			: 'هیچ فایلی در سبد نیست, برای افزودن فایل را به اینجا بکشید و رها کنید',
 	BasketCopyFilesHere	: 'کپی فایلها از سبد',
 	BasketMoveFilesHere	: 'انتقال فایلها از سبد',
 
-	// Global messages
-	OperationCompletedSuccess	: 'Operation completed successfully.', // MISSING
-	OperationCompletedErrors		: 'Operation completed with errors.', // MISSING
-	FileError				: '%s: %e', // MISSING
-
-	// Move and Copy files
-	MovedFilesNumber		: 'Number of files moved: %s.', // MISSING
-	CopiedFilesNumber	: 'Number of files copied: %s.', // MISSING
-	MoveFailedList		: 'The following files could not be moved:<br />%s', // MISSING
-	CopyFailedList		: 'The following files could not be copied:<br />%s', // MISSING
+	BasketPasteErrorOther	: 'خطای %e فایل: %s',
+	BasketPasteMoveSuccess	: 'فایلهای مقابل منتقل شدند: %s',
+	BasketPasteCopySuccess	: 'این فایلها کپی شدند: %s',
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: 'آپلود',
@@ -128,7 +118,6 @@ CKFinder.lang['fa'] =
 	NewSubFolder	: 'زیرپوشه جدید',
 	Rename			: 'تغییر نام',
 	Delete			: 'حذف',
-	DeleteFiles		: 'Delete Files', // MISSING
 
 	CopyDragDrop	: 'کپی فایل به اینجا',
 	MoveDragDrop	: 'انتقال فایل به اینجا',
@@ -141,7 +130,6 @@ CKFinder.lang['fa'] =
 
 	FileOverwrite	: 'رونویسی',
 	FileAutorename	: 'تغییر نام خودکار',
-	ManuallyRename	: 'Manually rename', // MISSING
 
 	// Generic
 	OkBtn		: 'تایید',
@@ -195,10 +183,8 @@ CKFinder.lang['fa'] =
 	FilesCountMany	: '%1 فایل',
 
 	// Size and Speed
-	Kb				: '%1KB',
-	Mb				: '%1MB',
-	Gb				: '%1GB',
-	SizePerSecond	: '%1/s',
+	Kb				: '%1 kB',
+	KbPerSecond		: '%1 kB/s',
 
 	// Connector Error Messages.
 	ErrorUnknown	: 'امکان تکمیل درخواست فوق وجود ندارد (خطا: %1)',
@@ -213,7 +199,6 @@ CKFinder.lang['fa'] =
 	105 : 'پسوند فایل نامعتبر  است.',
 	109 : 'درخواست نامعتبر است.',
 	110 : 'خطای ناشناخته.',
-	111 : 'It was not possible to complete the request due to resulting file size.', // MISSING
 	115 : 'فایل یا پوشه ای با این نام وجود دارد',
 	116 : 'پوشه یافت نشد. لطفا بروزرسانی کرده و مجددا تلاش کنید.',
 	117 : 'فایل یافت نشد. لطفا فهرست فایلها را بروزرسانی کرده و مجددا تلاش کنید.',
@@ -237,8 +222,6 @@ CKFinder.lang['fa'] =
 		FileEmpty		: 'نام فایل نمیتواند خالی باشد',
 		FileExists		: 'فایل %s از قبل وجود دارد',
 		FolderEmpty		: 'نام پوشه نمیتواند خالی باشد',
-		FolderExists	: 'Folder %s already exists.', // MISSING
-		FolderNameExists	: 'Folder already exists.', // MISSING
 
 		FileInvChar		: 'نام فایل نباید شامل این کاراکترها باشد: \n\\ / : * ? " < > |',
 		FolderInvChar	: 'نام پوشه نباید شامل این کاراکترها باشد: \n\\ / : * ? " < > |',
@@ -287,21 +270,5 @@ CKFinder.lang['fa'] =
 	{
 		maximize : 'بیشینه',
 		minimize : 'کمینه'
-	},
-
-	Gallery :
-	{
-		current : 'Image {current} of {total}' // MISSING
-	},
-
-	Zip :
-	{
-		extractHereLabel	: 'Extract here', // MISSING
-		extractToLabel		: 'Extract to...', // MISSING
-		downloadZipLabel	: 'Download as zip', // MISSING
-		compressZipLabel	: 'Compress to zip', // MISSING
-		removeAndExtract	: 'Remove existing and extract', // MISSING
-		extractAndOverwrite	: 'Extract overwriting existing files', // MISSING
-		extractSuccess		: 'File extracted successfully.' // MISSING
 	}
 };

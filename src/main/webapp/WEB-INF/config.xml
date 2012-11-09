@@ -68,7 +68,7 @@
 		<enabled>true</enabled>
 		<url>%BASE_URL%_thumbs/</url>
 		<directory>%BASE_DIR%_thumbs</directory>
-		<directAccess>false</directAccess>
+		<!-- <directAccess>false</directAccess> -->
 		<maxHeight>100</maxHeight>
 		<maxWidth>100</maxWidth>
 		<quality>80</quality>

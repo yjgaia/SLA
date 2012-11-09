@@ -75,18 +75,16 @@ CKFinder.lang['nl'] =
 	FolderDelete	: 'Weet je het zeker dat je de map "%1" wilt verwijderen?',
 	FolderRenaming	: ' (Aanpassen...)',
 	FolderDeleting	: ' (Verwijderen...)',
-	DestinationFolder	: 'Destination Folder', // MISSING
 
 	// Files
 	FileRename		: 'Vul de nieuwe bestandsnaam in: ',
 	FileRenameExt	: 'Weet je zeker dat je de extensie wilt wijzigen? Het bestand kan onbruikbaar worden.',
 	FileRenaming	: 'Aanpassen...',
 	FileDelete		: 'Weet je zeker dat je het bestand "%1" wilt verwijderen?',
-	FilesDelete	: 'Are you sure you want to delete %1 files?', // MISSING
 	FilesLoading	: 'Laden...',
 	FilesEmpty		: 'De map is leeg.',
-	DestinationFile	: 'Destination File', // MISSING
-	SkippedFiles	: 'List of skipped files:', // MISSING
+	FilesMoved		: 'Bestand %1 is verplaatst naar %2:%3.',
+	FilesCopied		: 'Bestand %1 is gekopieerd naar %2:%3.',
 
 	// Basket
 	BasketFolder		: 'Mandje',
@@ -95,21 +93,13 @@ CKFinder.lang['nl'] =
 	BasketOpenFolder	: 'Bovenliggende map openen',
 	BasketTruncateConfirm : 'Weet je zeker dat je alle bestand uit het mandje wilt verwijderen?',
 	BasketRemoveConfirm	: 'Weet je zeker dat je het bestand "%1" uit het mandje wilt verwijderen?',
-	BasketRemoveConfirmMultiple	: 'Do you really want to remove %1 files from the basket?', // MISSING
 	BasketEmpty			: 'Geen bestanden in het mandje, sleep bestanden hierheen.',
 	BasketCopyFilesHere	: 'Bestanden kopiëren uit het mandje',
 	BasketMoveFilesHere	: 'Bestanden verplaatsen uit het mandje',
 
-	// Global messages
-	OperationCompletedSuccess	: 'Operation completed successfully.', // MISSING
-	OperationCompletedErrors		: 'Operation completed with errors.', // MISSING
-	FileError				: '%s: %e', // MISSING
-
-	// Move and Copy files
-	MovedFilesNumber		: 'Number of files moved: %s.', // MISSING
-	CopiedFilesNumber	: 'Number of files copied: %s.', // MISSING
-	MoveFailedList		: 'The following files could not be moved:<br />%s', // MISSING
-	CopyFailedList		: 'The following files could not be copied:<br />%s', // MISSING
+	BasketPasteErrorOther	: 'Bestand %s foutmelding: %e',
+	BasketPasteMoveSuccess	: 'De volgende bestanden zijn verplaatst: %s',
+	BasketPasteCopySuccess	: 'De volgende bestanden zijn gekopieerd: %s',
 
 	// Toolbar Buttons (some used elsewhere)
 	Upload		: 'Uploaden',
@@ -128,10 +118,9 @@ CKFinder.lang['nl'] =
 	NewSubFolder	: 'Nieuwe onderliggende map',
 	Rename			: 'Naam wijzigen',
 	Delete			: 'Verwijderen',
-	DeleteFiles		: 'Delete Files', // MISSING
 
-	CopyDragDrop	: 'Hierheen kopiëren',
-	MoveDragDrop	: 'Hierheen verplaatsen',
+	CopyDragDrop	: 'Bestand hierheen kopiëren',
+	MoveDragDrop	: 'Bestand hierheen verplaatsen',
 
 	// Dialogs
 	RenameDlgTitle		: 'Naam wijzigen',
@@ -141,7 +130,6 @@ CKFinder.lang['nl'] =
 
 	FileOverwrite	: 'Overschrijven',
 	FileAutorename	: 'Automatisch hernoemen',
-	ManuallyRename	: 'Manually rename', // MISSING
 
 	// Generic
 	OkBtn		: 'OK',
@@ -195,10 +183,8 @@ CKFinder.lang['nl'] =
 	FilesCountMany	: '%1 bestanden',
 
 	// Size and Speed
-	Kb				: '%1 KB',
-	Mb				: '%1 MB',
-	Gb				: '%1 GB',
-	SizePerSecond	: '%1/s',
+	Kb				: '%1 kB',
+	KbPerSecond		: '%1 kB/s',
 
 	// Connector Error Messages.
 	ErrorUnknown	: 'Het was niet mogelijk om deze actie uit te voeren. (Fout %1)',
@@ -213,7 +199,6 @@ CKFinder.lang['nl'] =
 	105 : 'Ongeldige bestandsextensie.',
 	109 : 'Ongeldige aanvraag.',
 	110 : 'Onbekende fout.',
-	111 : 'It was not possible to complete the request due to resulting file size.', // MISSING
 	115 : 'Er bestaat al een bestand of map met deze naam.',
 	116 : 'Map niet gevonden, vernieuw de mappenlijst of kies een andere map.',
 	117 : 'Bestand niet gevonden, vernieuw de mappenlijst of kies een andere map.',
@@ -237,8 +222,6 @@ CKFinder.lang['nl'] =
 		FileEmpty		: 'De bestandsnaam mag niet leeg zijn.',
 		FileExists		: 'Bestand %s bestaat al.',
 		FolderEmpty		: 'De mapnaam mag niet leeg zijn.',
-		FolderExists	: 'Folder %s already exists.', // MISSING
-		FolderNameExists	: 'Folder already exists.', // MISSING
 
 		FileInvChar		: 'De bestandsnaam mag de volgende tekens niet bevatten: \n\\ / : * ? " < > |',
 		FolderInvChar	: 'De mapnaam mag de volgende tekens niet bevatten: \n\\ / : * ? " < > |',
@@ -287,21 +270,5 @@ CKFinder.lang['nl'] =
 	{
 		maximize : 'Maximaliseren',
 		minimize : 'Minimaliseren'
-	},
-
-	Gallery :
-	{
-		current : 'Afbeelding {current} van {total}'
-	},
-
-	Zip :
-	{
-		extractHereLabel	: 'Extract here', // MISSING
-		extractToLabel		: 'Extract to...', // MISSING
-		downloadZipLabel	: 'Download as zip', // MISSING
-		compressZipLabel	: 'Compress to zip', // MISSING
-		removeAndExtract	: 'Remove existing and extract', // MISSING
-		extractAndOverwrite	: 'Extract overwriting existing files', // MISSING
-		extractSuccess		: 'File extracted successfully.' // MISSING
 	}
 };
