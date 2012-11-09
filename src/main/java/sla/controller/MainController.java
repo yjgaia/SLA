@@ -40,7 +40,6 @@ public class MainController {
 		final UserAgent userAgent = UserAgent.parseUserAgentString(httpServletRequest.getHeader("User-Agent"));
 		
 		final String ip=httpServletRequest.getRemoteAddr();
-		System.out.println(ip);
 		String storedUrl;
 		if((storedUrl=keyValueCache.getStringAndResetExpireByKey(shortUrl))!=null){
 			//캐싱되어있음

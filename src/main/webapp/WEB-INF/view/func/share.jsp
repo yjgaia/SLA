@@ -41,8 +41,10 @@
 	margin: auto;
 	width: 600px;
 	padding-top: 30px;
+	
 }
 td{
+	font-family:Arial;
 	word-wrap:break-word;
 	word-break:break-all;
 }
@@ -156,7 +158,6 @@ td{
 }
 
 #share-form form {
-	padding: 10px;
 	overflow: auto;
 }
 
@@ -271,9 +272,9 @@ td{
 							</c:choose>
 						</td>
 					</tr>
-					<tr>
+					<tr style="margin-top: 10px">
 						<td width="150px"><c:if test="${maxImage ne null }"><img src="${maxImage }" width="${width }" height="${height }"></c:if></td>
-						<td valign="top">${summary }</td>
+						<td valign="top"><b>${title }</b><br/>${summary }</td>
 					</tr>
 					
 				</table>

@@ -7,6 +7,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<style>
 		body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0;font-family:'맑은고딕',malgun gothic,'돋움',dotum, Arial, sans-serif;}
+		a{
+			word-wrap:break-word;
+			word-break:break-all;
+		}
 			#wrapper {
 				margin: auto;
 				width: 700px;

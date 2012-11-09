@@ -54,7 +54,51 @@ public class GetPageUtil {
 		}
 		return imageUrls;
 	}
-	
+	public static String getPageTitle(URL url) throws Exception {
+
+
+	    BufferedReader in = new BufferedReader(
+				new InputStreamReader(url.openStream()));
+
+	    Pattern pHead = Pattern.compile("(?i)</HEAD>");
+	    Matcher mHead;
+	    Pattern pTitle = Pattern.compile("(?i)</TITLE>");
+	    Matcher mTitle;
+	    
+	    String inputLine;
+	    boolean found=false;
+	    boolean notFound=false;
+	    String html = "";
+	    String title=new String();
+	    try{
+		    while (!(((inputLine = in.readLine()) == null) || found || notFound)){
+		    	html=html+inputLine;
+		    	mHead=pHead.matcher(inputLine);
+		    	if(mHead.find()){
+		    		notFound=true;
+		    		}
+		    	else{
+		    		mTitle=pTitle.matcher(inputLine);
+		    		if(mTitle.find()){
+		    			found=true;
+		    			//System.out.println(inputLine);
+		    		}
+		    	}	    					    		
+		    }
+		    in.close();
+	   
+		    html = html.replaceAll("\\s+", " ");
+		    if(found){
+			    Pattern p = Pattern.compile("(?i)<TITLE.*?>(.*?)</TITLE>");
+			    Matcher m = p.matcher(html);		    
+			    while (m.find() == true) {
+			    	title=m.group(1);
+			    }
+		    }
+	    }catch(Exception e){
+	    }
+	    return title;
+	  }
 	public static void main(String[] args) throws Exception {
 		String mainUrl="http://sports.news.naver.com/sports/index.nhn?category=baseball&ctg=news&mod=read&office_id=117&article_id=0002283863";
 		List<String > images=getImageUrls(mainUrl);
@@ -76,6 +120,7 @@ public class GetPageUtil {
 	        }
 		}
 		System.out.println("max:"+maxUrl);
+		System.out.println(getPageTitle(new URL("http://www.naver.com")));
 		
 		
 	}

@@ -212,7 +212,6 @@ public class FuncController {
 	@Secured("ROLE_USER")
 	@RequestMapping(value = "share", method = RequestMethod.GET)
 	public void share(String url , Model model) throws Exception {
-		System.out.println(url);
 		if(url!=null&&!"".equals(url)){
 			if(!url.contains("http://")&&!url.contains("https://")) url="http://"+url;
 			
@@ -254,18 +253,16 @@ public class FuncController {
 			model.addAttribute("height",(int)maxHeight);
 			int textLimit=300;
 			URL urlObj;
+			urlObj = new URL(url);
+			// NOTE: Use ArticleExtractor unless DefaultExtractor gives better results for you
+			String text=DefaultExtractor.INSTANCE.getText(urlObj);;
+			//String text = ArticleExtractor.INSTANCE.getText(urlObj);
 			
-				urlObj = new URL(url);
-				// NOTE: Use ArticleExtractor unless DefaultExtractor gives better results for you
-				String text=DefaultExtractor.INSTANCE.getText(urlObj);;
-				//String text = ArticleExtractor.INSTANCE.getText(urlObj);
-				
-				if(text.length()>textLimit){
-					text=text.substring(0,textLimit)+"...";
-
-					
-				}
-				model.addAttribute("summary",text);
+			if(text.length()>textLimit){
+				text=text.substring(0,textLimit)+"...";				
+			}
+			model.addAttribute("title",GetPageUtil.getPageTitle(urlObj));
+			model.addAttribute("summary",text);
 			
 			   
 			
