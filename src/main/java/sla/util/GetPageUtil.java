@@ -1,5 +1,6 @@
 package sla.util;
 
+import java.awt.Image;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -8,6 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import javax.imageio.ImageIO;
+
+import de.l3s.boilerpipe.extractors.ArticleExtractor;
 
 public class GetPageUtil {
 
@@ -44,14 +49,35 @@ public class GetPageUtil {
 
 		while (m.find()) {
 			String imageUrl = m.group(1);
-			System.out.println(imageUrl);
+			//System.out.println(imageUrl);
 			imageUrls.add(imageUrl);
 		}
 		return imageUrls;
 	}
 	
 	public static void main(String[] args) throws Exception {
-		System.out.println(getImageUrls("http://naver.com").size());
+		String mainUrl="http://sports.news.naver.com/sports/index.nhn?category=baseball&ctg=news&mod=read&office_id=117&article_id=0002283863";
+		List<String > images=getImageUrls(mainUrl);
+		int max=0;
+		String maxUrl="";
+		for(int i=0;i<images.size();i++){
+			String urlStr=images.get(i);
+			if(urlStr.startsWith("/")){
+				urlStr=mainUrl+urlStr;
+			}
+			URL url = new URL(urlStr);
+			
+	        Image image = ImageIO.read(url);
+	        int width = image.getWidth(null);
+	        int height = image.getHeight(null);
+	        if(width*height>max){
+	        	max=width*height;
+	        	maxUrl=urlStr;
+	        }
+		}
+		System.out.println("max:"+maxUrl);
+		
+		
 	}
 
 }

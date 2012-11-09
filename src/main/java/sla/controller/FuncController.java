@@ -1,10 +1,14 @@
 package sla.controller;
 
+import java.awt.Image;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -26,7 +30,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import sla.model.KeyCount;
@@ -40,7 +43,11 @@ import sla.service.AnalyzeService;
 import sla.social.SocialConfig;
 import sla.util.AuthUtil;
 import sla.util.DateUtil;
+import sla.util.GetPageUtil;
 import sla.util.ShortUrlUtil;
+import de.l3s.boilerpipe.BoilerpipeProcessingException;
+import de.l3s.boilerpipe.extractors.ArticleExtractor;
+import de.l3s.boilerpipe.extractors.DefaultExtractor;
 
 @Controller
 @RequestMapping("func")
@@ -160,12 +167,12 @@ public class FuncController {
 			UserInfo sharer = analyzeService.getUserInfoWithShortUrl(shortUrl);
 			long sharePostCount=ShortUrl.getUserSharePostCount(sharer.getId());
 			List<Long> countSumBySharer=VisitCount.getCountSumByUser(sharer.getId());
-			long totalCountSum=0;
+			double totalCountSum=0;
 			for(int i=0;i<countSumBySharer.size();i++){
 				totalCountSum+=countSumBySharer.get(i);
 			}
 			double sharerFriendVisitorRatio;
-			long averageCount=totalCountSum/sharePostCount;
+			double averageCount=totalCountSum/sharePostCount;
 			if(sharer.getSocialFriendCount()==0){
 				sharerFriendVisitorRatio=0;
 			}else{
@@ -175,8 +182,8 @@ public class FuncController {
 			model.addAttribute("shortUrlRecord",shortUrlRecord);
 			model.addAttribute("sharer",sharer);
 			model.addAttribute("sharerPostCount",sharePostCount);
-			model.addAttribute("sharerTotalVisitCount",totalCountSum);
-			model.addAttribute("sharerAverageVisitCount",averageCount);
+			model.addAttribute("sharerTotalVisitCount",(int)totalCountSum);
+			model.addAttribute("sharerAverageVisitCount",Math.floor(averageCount*10)/10);
 			model.addAttribute("sharerFriendVisitorRatio",sharerFriendVisitorRatio);
 			model.addAttribute("shareRank",shareRank);
 			
@@ -204,8 +211,65 @@ public class FuncController {
 
 	@Secured("ROLE_USER")
 	@RequestMapping(value = "share", method = RequestMethod.GET)
-	public void share() {
-		// just view
+	public void share(String url , Model model) throws Exception {
+		System.out.println(url);
+		if(url!=null&&!"".equals(url)){
+			if(!url.contains("http://")&&!url.contains("https://")) url="http://"+url;
+			
+			String mainUrl=url;
+			List<String > images=GetPageUtil.getImageUrls(mainUrl);
+			int max=0;
+			double maxWidthPixel=150;
+			double maxWidth = 0;
+			double maxHeight=0;
+			String maxUrl="";
+			for(int i=0;i<images.size();i++){
+				String urlStr=images.get(i);
+				if(urlStr.startsWith("/")){
+					urlStr=mainUrl+urlStr;
+				}
+				try{
+				URL urlObj = new URL(urlStr);
+				
+		        Image image = ImageIO.read(urlObj);
+		        int width = image.getWidth(null);
+		        int height = image.getHeight(null);
+		        if(width*height>max){
+		        	max=width*height;
+		        	maxUrl=urlStr;
+		        	maxWidth=width;
+		        	maxHeight=height;
+		        }
+		        }catch(Exception e){
+					System.out.println(e.toString());
+				}
+				
+			}
+			if(maxWidth>maxWidthPixel){
+				maxHeight=maxHeight*(maxWidthPixel/maxWidth);
+				maxWidth=maxWidthPixel;
+			}
+			model.addAttribute("maxImage",maxUrl);
+			model.addAttribute("width",(int)maxWidth);
+			model.addAttribute("height",(int)maxHeight);
+			int textLimit=300;
+			URL urlObj;
+			
+				urlObj = new URL(url);
+				// NOTE: Use ArticleExtractor unless DefaultExtractor gives better results for you
+				String text=DefaultExtractor.INSTANCE.getText(urlObj);;
+				//String text = ArticleExtractor.INSTANCE.getText(urlObj);
+				
+				if(text.length()>textLimit){
+					text=text.substring(0,textLimit)+"...";
+
+					
+				}
+				model.addAttribute("summary",text);
+			
+			   
+			
+		}
 	}
 
 	/*초기 공유(마케팅 담당자)
@@ -217,7 +281,6 @@ public class FuncController {
 		if (bindingResult.hasErrors()) {
 			return false;
 		} else {
-			System.out.println(shortUrl.getUrl().charAt(shortUrl.getUrl().length()-1));
 			String url=shortUrl.getUrl();
 			String lastCharacter=String.valueOf(url.charAt(url.length()-1));
 			if("/".equals(lastCharacter)){

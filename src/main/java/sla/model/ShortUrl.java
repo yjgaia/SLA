@@ -76,6 +76,14 @@ public class ShortUrl {
 						ShortUrl.class).setParameter("shortUrl", shortUrl)
 				.getSingleResult();
 	}
+	public static ShortUrl findShortUrlByUserAndShortUrl(long userId,String url) {
+		
+		return entityManager()
+				.createQuery(
+						"SELECT o FROM ShortUrl o WHERE o.url = :url AND o.hide != false AND o.userInfo.id=:userId",
+						ShortUrl.class).setParameter("url", url).setParameter("userId", userId)
+				.getSingleResult();
+	}
 	
 	public static List<ShortUrl> findShortUrlsByUserId(Long userId) {
 		
