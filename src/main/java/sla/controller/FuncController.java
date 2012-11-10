@@ -23,6 +23,9 @@ import org.springframework.social.connect.Connection;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.FacebookLink;
 import org.springframework.social.facebook.api.impl.FacebookTemplate;
+import org.springframework.social.twitter.api.Tweet;
+import org.springframework.social.twitter.api.Twitter;
+import org.springframework.social.twitter.api.impl.TwitterTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -145,6 +148,18 @@ public class FuncController {
 	@RequestMapping("myanalyze")
 	public void analyzeList(Model model) {
 		model.addAttribute("list", ShortUrl.findShortUrlsByUserId(AuthUtil.getUserId()));
+	}
+	
+	@Secured("ROLE_USER")
+	@RequestMapping(value = "delanalyze", method = RequestMethod.GET)
+	public void deleteAnalyze(String shortUrl) {
+		// just view
+	}
+	
+	@Secured("ROLE_USER")
+	@RequestMapping(value = "delanalyze", method = RequestMethod.POST)
+	public void deleteAnalyze(String shortUrl, Model model) {
+		// TODO:
 	}
 	
 	@RequestMapping("analyze")
@@ -289,15 +304,27 @@ public class FuncController {
 			shortUrl.setShortUrl(convertedShortUrl);
 			 
 			
-			
-			Connection<Facebook> connection = socialConfig.connectionRepository().findPrimaryConnection(Facebook.class);
-			Facebook facebook = connection != null ? connection.getApi() : new FacebookTemplate();
-			
-			String shortUrlString = getUrlWithContextPath(request) + "/" + shortUrl.getShortUrl();
-			
-			FacebookLink link = new FacebookLink(shortUrlString, null, shortUrl.getUrl(), null);
-			String entityId=facebook.feedOperations().postLink(shortUrl.getContent(), link);
-			shortUrl.setEntityId(entityId);
+			String socialProviderId = AuthUtil.getUserInfo().getSocialProviderId();
+			if (socialProviderId != null) {
+				if (socialProviderId.equals("facebook")) {
+					Connection<Facebook> connection = socialConfig.connectionRepository().findPrimaryConnection(Facebook.class);
+					Facebook facebook = connection != null ? connection.getApi() : new FacebookTemplate();
+					
+					String shortUrlString = getUrlWithContextPath(request) + "/" + shortUrl.getShortUrl();
+					
+					FacebookLink link = new FacebookLink(shortUrlString, null, shortUrl.getUrl(), null);
+					String entityId=facebook.feedOperations().postLink(shortUrl.getContent(), link);
+					shortUrl.setEntityId(entityId);
+				} else if (socialProviderId.equals("twitter")) {
+					Connection<Twitter> connection = socialConfig.connectionRepository().findPrimaryConnection(Twitter.class);
+					Twitter twitter = connection != null ? connection.getApi() : new TwitterTemplate();
+					
+					String shortUrlString = getUrlWithContextPath(request) + "/" + shortUrl.getShortUrl();
+					
+					Tweet entity=twitter.timelineOperations().updateStatus(shortUrl.getContent() + " " + shortUrlString);
+					shortUrl.setEntityId(Long.toString(entity.getId()));
+				}
+			}
 			shortUrl.merge();
 			return true;
 		}

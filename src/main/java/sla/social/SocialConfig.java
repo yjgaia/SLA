@@ -23,6 +23,7 @@ import org.springframework.social.connect.support.ConnectionFactoryRegistry;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.impl.FacebookTemplate;
 import org.springframework.social.facebook.connect.FacebookConnectionFactory;
+import org.springframework.social.twitter.connect.TwitterConnectionFactory;
 
 import sla.model.UserInfo;
 
@@ -37,6 +38,10 @@ public class SocialConfig {
 		registry.addConnectionFactory(new FacebookConnectionFactory(environment
 				.getProperty("facebook.appId"), environment
 				.getProperty("facebook.appSecret")));
+		
+		registry.addConnectionFactory(new TwitterConnectionFactory(environment
+				.getProperty("twitter.consumerKey"), environment
+				.getProperty("twitter.consumerSecret")));
 		
 		return registry;
 	}

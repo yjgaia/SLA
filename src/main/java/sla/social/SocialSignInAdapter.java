@@ -16,7 +16,8 @@ import org.springframework.social.connect.Connection;
 import org.springframework.social.connect.web.SignInAdapter;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.FacebookProfile;
-import org.springframework.social.facebook.api.Post;
+import org.springframework.social.twitter.api.Twitter;
+import org.springframework.social.twitter.api.TwitterProfile;
 import org.springframework.web.context.request.NativeWebRequest;
 
 import sla.model.ShortUrl;
@@ -64,6 +65,14 @@ public final class SocialSignInAdapter implements SignInAdapter {
 					//System.out.println("like:"+post.getLikeCount());
 				}
 			}
+		}
+		if (connection.getApi() instanceof Twitter) { // 변경 되는 트위터 정보이므로 매번 체크해서 업데이트 해줌
+			Twitter twitter = (Twitter) connection.getApi();
+			TwitterProfile tp = twitter.userOperations().getUserProfile();
+			System.out.println("Name: " + tp.getName());
+			userInfo.setSocialName(tp.getName());
+			System.out.println("friendList("+tp.getFollowersCount()+")");
+			userInfo.setSocialFriendCount(tp.getFollowersCount());
 		}
 		userInfo.merge();
 		

@@ -68,10 +68,16 @@
 				<div>
 					<h4>오우택 멘토</h4>
 					<img class="profile" src="${pageContext.request.contextPath}/img/owt.jpg">
+					<p>
+						부끄럽다 얘들아. 자랑스러운 프로젝트가 될 수 있도록 더 열심히 멋진 결과물 만들자.
+					</p>
 				</div>
 				<div>
 					<h4>심영재</h4>
 					<img class="profile" src="${pageContext.request.contextPath}/img/syj.jpg">
+					<p>
+						항상 우리팀, 우리 멘토님이 최고라고 생각합니다. 짧은 시간이지만 열심히 노력하겠습니다. 화이팅!
+					</p>
 				</div>
 				<div>
 					<h4>이한솔</h4>
