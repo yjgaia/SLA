@@ -5,7 +5,6 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Query;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -72,7 +71,7 @@ public class ShortUrl {
 		
 		return entityManager()
 				.createQuery(
-						"SELECT o FROM ShortUrl o WHERE o.shortUrl = :shortUrl AND o.hide != false",
+						"SELECT o FROM ShortUrl o WHERE o.shortUrl = :shortUrl",
 						ShortUrl.class).setParameter("shortUrl", shortUrl)
 				.getSingleResult();
 	}
@@ -80,7 +79,7 @@ public class ShortUrl {
 		
 		return entityManager()
 				.createQuery(
-						"SELECT o FROM ShortUrl o WHERE o.url = :url AND o.hide != false AND o.userInfo.id=:userId",
+						"SELECT o FROM ShortUrl o WHERE o.url = :url AND o.userInfo.id=:userId",
 						ShortUrl.class).setParameter("url", url).setParameter("userId", userId)
 				.getSingleResult();
 	}
@@ -89,7 +88,7 @@ public class ShortUrl {
 		
 		return entityManager()
 				.createQuery(
-						"SELECT o FROM ShortUrl o WHERE o.userInfo.id = :userId",
+						"SELECT o FROM ShortUrl o WHERE o.hide != true AND o.userInfo.id = :userId",
 						ShortUrl.class).setParameter("userId", userId)
 				.getResultList();
 	}

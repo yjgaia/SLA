@@ -23,6 +23,8 @@ import org.springframework.social.connect.support.ConnectionFactoryRegistry;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.impl.FacebookTemplate;
 import org.springframework.social.facebook.connect.FacebookConnectionFactory;
+import org.springframework.social.twitter.api.Twitter;
+import org.springframework.social.twitter.api.impl.TwitterTemplate;
 import org.springframework.social.twitter.connect.TwitterConnectionFactory;
 
 import sla.model.UserInfo;
@@ -80,6 +82,13 @@ public class SocialConfig {
 	public Facebook facebook() {
 		Connection<Facebook> facebook = connectionRepository().findPrimaryConnection(Facebook.class);
 		return facebook != null ? facebook.getApi() : new FacebookTemplate();
+	}
+	
+	@Bean
+	@Scope(value="request", proxyMode=ScopedProxyMode.INTERFACES)	
+	public Twitter twitter() {
+		Connection<Twitter> twitter = connectionRepository().findPrimaryConnection(Twitter.class);
+		return twitter != null ? twitter.getApi() : new TwitterTemplate();
 	}
 	
 	@Bean

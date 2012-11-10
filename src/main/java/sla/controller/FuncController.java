@@ -2,7 +2,6 @@ package sla.controller;
 
 import java.awt.Image;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.Date;
@@ -48,8 +47,6 @@ import sla.util.AuthUtil;
 import sla.util.DateUtil;
 import sla.util.GetPageUtil;
 import sla.util.ShortUrlUtil;
-import de.l3s.boilerpipe.BoilerpipeProcessingException;
-import de.l3s.boilerpipe.extractors.ArticleExtractor;
 import de.l3s.boilerpipe.extractors.DefaultExtractor;
 
 @Controller
@@ -151,15 +148,13 @@ public class FuncController {
 	}
 	
 	@Secured("ROLE_USER")
-	@RequestMapping(value = "delanalyze", method = RequestMethod.GET)
-	public void deleteAnalyze(String shortUrl) {
-		// just view
-	}
-	
-	@Secured("ROLE_USER")
-	@RequestMapping(value = "delanalyze", method = RequestMethod.POST)
-	public void deleteAnalyze(String shortUrl, Model model) {
-		// TODO:
+	@RequestMapping("delanalyze")
+	public String deleteAnalyze(String shortUrl) {
+		long id = ShortUrlUtil.complicatedRevert(shortUrl);
+		ShortUrl su = ShortUrl.findShortUrl(id);
+		su.setHide(true);
+		su.merge();
+		return "redirect:/func/myanalyze";
 	}
 	
 	@RequestMapping("analyze")

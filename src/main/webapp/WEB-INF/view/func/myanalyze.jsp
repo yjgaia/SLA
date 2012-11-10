@@ -99,7 +99,7 @@
 					<c:forEach items="${list}" var="item">
 					<li>
 						<a href="${pageContext.request.contextPath}/func/analyze?shortUrl=${item.shortUrl}" target="_blank">${item.url}</a>
-						<a class="func" href="${pageContext.request.contextPath}/func/delanalyze?shortUrl=${item.shortUrl}">삭제</a>
+						<a class="func" href="javascript:if(confirm('정말 삭제 하시겠습니까?')){location.href='${pageContext.request.contextPath}/func/delanalyze?shortUrl=${item.shortUrl}';}">삭제</a>
 					</li>
 					</c:forEach>
 				</ul>
