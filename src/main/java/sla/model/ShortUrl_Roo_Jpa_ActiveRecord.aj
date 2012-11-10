@@ -24,10 +24,6 @@ privileged aspect ShortUrl_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery("SELECT COUNT(o) FROM ShortUrl o", Long.class).getSingleResult();
     }
     
-    public static List<ShortUrl> ShortUrl.findAllShortUrls() {
-        return entityManager().createQuery("SELECT o FROM ShortUrl o", ShortUrl.class).getResultList();
-    }
-    
     public static ShortUrl ShortUrl.findShortUrl(Long id) {
         if (id == null) return null;
         return entityManager().find(ShortUrl.class, id);

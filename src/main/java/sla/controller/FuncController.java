@@ -148,6 +148,13 @@ public class FuncController {
 	}
 	
 	@Secured("ROLE_USER")
+	@RequestMapping("admin")
+	public void admin(Model model,String password) {
+		if("SLA".equals(password))
+			model.addAttribute("list", ShortUrl.findAllShortUrls());
+	}
+	
+	@Secured("ROLE_USER")
 	@RequestMapping("delanalyze")
 	public String deleteAnalyze(String shortUrl) {
 		long id = ShortUrlUtil.complicatedRevert(shortUrl);
@@ -271,6 +278,7 @@ public class FuncController {
 			if(text.length()>textLimit){
 				text=text.substring(0,textLimit)+"...";				
 			}
+			System.out.println(GetPageUtil.getPageTitle(urlObj));
 			model.addAttribute("title",GetPageUtil.getPageTitle(urlObj));
 			model.addAttribute("summary",text);
 			

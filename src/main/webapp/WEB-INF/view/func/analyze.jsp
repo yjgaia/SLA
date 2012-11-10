@@ -553,7 +553,7 @@
 			<table style="text-align: right">
 				<tr><td colspan=2>이 주소의 <b>${shareRank }번째</b> 공유자 입니다!</td></tr>
 				<tr><th><img src="${sharer.socialImageUrl }"></th>
-				<td><a class="userLink" href="http://facebook.com/${sharer.socialProviderUserId }" target="_blank">${sharer.socialName }</a></td></tr>
+				<td><a class="userLink" href="${sharer.socialProfileUrl }" target="_blank">${sharer.socialName }</a></td></tr>
 				<tr><th>친구 수</th><td>${sharer.socialFriendCount }명</td></tr>
 				<tr><th>공유 글 수</th><td>${sharerPostCount }건</td></tr>
 				<tr><th>누적 방문자 수</th><td>${sharerTotalVisitCount }명</td></tr>

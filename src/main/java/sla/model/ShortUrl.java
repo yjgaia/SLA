@@ -93,6 +93,15 @@ public class ShortUrl {
 				.getResultList();
 	}
 	
+	public static List<ShortUrl> findAllShortUrls() {
+		
+		return entityManager()
+				.createQuery(
+						"SELECT o FROM ShortUrl o WHERE o.hide != true",
+						ShortUrl.class)
+				.getResultList();
+	}
+	
 	
 	public static Long getUserSharePostCount(long userId){
 		return entityManager()
