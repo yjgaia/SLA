@@ -75,7 +75,7 @@ tail -30f apache-tomcat-7.0.32/logs/catalina.out
 # 운영시
 src/main/java/sla/social/config.properties
 src/main/java/sla/ckfinder/PathBuilder.java
-src/main/webapp/scriptjs.js
+src/main/webapp/script/js.js
 내용 수정
 
 
@@ -84,5 +84,6 @@ src/main/webapp/scriptjs.js
 apache-tomcat-7.0.32/bin/catalina.sh stop
 rm -rf apache-tomcat-7.0.32/webapps/run/ROOT
 mv /root/SLA.war apache-tomcat-7.0.32/webapps/run/ROOT.war
+y
 apache-tomcat-7.0.32/bin/catalina.sh start
 tail -30f apache-tomcat-7.0.32/logs/catalina.out
