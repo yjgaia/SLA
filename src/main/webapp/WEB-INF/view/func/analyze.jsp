@@ -77,6 +77,9 @@
 						renderTo: 'chart1',
 						type: 'line'
 					},
+					credits: {
+						enabled:false
+					},
 					title: {
 						text: ''
 					},exporting: {
@@ -96,6 +99,9 @@
 					chart: {
 						renderTo: 'chart3',
 						type: 'line'
+					},
+					credits: {
+						enabled:false
 					},
 					title: {
 						text: ''
@@ -119,6 +125,9 @@
 						plotBackgroundColor: null,
 						plotBorderWidth: null,
 						plotShadow: false
+					},
+					credits: {
+						enabled:false
 					},
 					title: {
 						text: ''
@@ -149,6 +158,9 @@
 					chart: {
 						renderTo: 'chart5',
 						type: 'bar'
+					},
+					credits: {
+						enabled:false
 					},
 					title: {
 						text: ''
@@ -191,6 +203,9 @@
 						plotBorderWidth: null,
 						plotShadow: false
 					},
+					credits: {
+						enabled:false
+					},
 					title: {
 						text: ''
 					},exporting: {
@@ -223,6 +238,9 @@
 						plotBackgroundColor: null,
 						plotBorderWidth: null,
 						plotShadow: false
+					},
+					credits: {
+						enabled:false
 					},
 					title: {
 						text: ''
