@@ -7,6 +7,14 @@ import sla.model.Achievement;
 
 privileged aspect Achievement_Roo_JavaBean {
     
+    public String Achievement.getName() {
+        return this.name;
+    }
+    
+    public void Achievement.setName(String name) {
+        this.name = name;
+    }
+    
     public String Achievement.getDescription() {
         return this.description;
     }
