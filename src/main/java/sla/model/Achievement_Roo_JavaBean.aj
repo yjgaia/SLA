@@ -7,12 +7,12 @@ import sla.model.Achievement;
 
 privileged aspect Achievement_Roo_JavaBean {
     
-    public String Achievement.getName() {
-        return this.name;
+    public String Achievement.getDescription() {
+        return this.description;
     }
     
-    public void Achievement.setName(String name) {
-        this.name = name;
+    public void Achievement.setDescription(String description) {
+        this.description = description;
     }
     
     public int Achievement.getScore() {
@@ -29,14 +29,6 @@ privileged aspect Achievement_Roo_JavaBean {
     
     public void Achievement.setCategory(String category) {
         this.category = category;
-    }
-    
-    public String Achievement.getDescription() {
-        return this.description;
-    }
-    
-    public void Achievement.setDescription(String description) {
-        this.description = description;
     }
     
 }

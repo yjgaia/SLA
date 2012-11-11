@@ -18,6 +18,7 @@ public class UserAchieve {
 	@ManyToOne
 	@JoinColumn(name = "achievementId", nullable = false)
 	private Achievement acheivement;
-
+	
+	private boolean identified;
 
 }

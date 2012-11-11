@@ -9,12 +9,14 @@ import org.springframework.social.connect.ConnectionSignUp;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.FacebookProfile;
 
+import sla.model.Achievement;
 import sla.model.UserInfo;
 
 /**
  * @author 심영재
  */
 public final class SocialConnectionSignUp implements ConnectionSignUp {
+
 
 	@Override
 	public String execute(Connection<?> connection) {
@@ -40,7 +42,13 @@ public final class SocialConnectionSignUp implements ConnectionSignUp {
 			List<String> friendList=facebook.friendOperations().getFriendIds();
 			userInfo.setSocialFriendCount(friendList.size());
 		}
+		System.out.println("가입"+userInfo.getLoginCount());
+
 		userInfo.persist();
+		if(userInfo.getLoginCount()==0){
+			System.out.println("첫 로그인");
+			Achievement.addAchievementToUser(userInfo.getId(), Achievement.FIRST_LOGIN.getId());
+		}
 		
 		return userInfo.getId().toString();
 	}

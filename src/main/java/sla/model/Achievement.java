@@ -8,8 +8,26 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooToString
 @RooJpaActiveRecord
 public class Achievement {
+	
+	public static final Achievement FIRST_LOGIN=new Achievement(0,"첫 로그인",10,"loginCount");
+	public static final Achievement[] ACHEIVES={FIRST_LOGIN};
+	
+	public Achievement(long id,String description,int score,String category){
+		setId(id);
+		this.description=description;
+		this.score=score;
+		this.category=category;
+	}
 	String name;
+	String description;
 	int score;
 	String category;
-	String description;
+	
+	public static void addAchievementToUser(long userId,long achievementId){
+		System.out.println("addAchievement");
+		UserAchieve userAchieve=new UserAchieve();
+		userAchieve.setUserInfo(UserInfo.findUserInfo(userId));
+		userAchieve.setAcheivement(findAchievement(achievementId));
+		userAchieve.merge();
+	}
 }
