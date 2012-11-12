@@ -46,8 +46,7 @@ public final class SocialConnectionSignUp implements ConnectionSignUp {
 
 		userInfo.persist();
 		if(userInfo.getLoginCount()==0){
-			System.out.println("첫 로그인");
-			Achievement.addAchievementToUser(userInfo.getId(), Achievement.FIRST_LOGIN.getId());
+			Achievement.addAchievementToUser(userInfo.getId(), Achievement.get("first_login").getId());
 		}
 		
 		return userInfo.getId().toString();

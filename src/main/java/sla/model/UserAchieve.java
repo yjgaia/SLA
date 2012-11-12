@@ -19,6 +19,6 @@ public class UserAchieve {
 	@JoinColumn(name = "achievementId", nullable = false)
 	private Achievement acheivement;
 	
-	private boolean identified;
+	private boolean identified=false;
 
 }
