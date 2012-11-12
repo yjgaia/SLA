@@ -58,7 +58,7 @@ public class Achievement {
 			if(!UserAchieve.existsAchieve(userId, achievement)){
 				System.out.println("addAchievement:"+UserInfo.findUserInfo(userId)+"에 "+achievement+"추가");
 				UserAchieve userAchieve=new UserAchieve();
-				//userAchieve.setUserInfo(AuthUtil.getUserInfo());
+				userAchieve.setUserInfo(AuthUtil.getUserInfo());
 				userAchieve.setAcheivement(achievement);
 				userAchieve.merge();
 			}
