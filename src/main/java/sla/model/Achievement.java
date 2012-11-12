@@ -59,7 +59,7 @@ public class Achievement {
 				System.out.println("addAchievement:"+UserInfo.findUserInfo(userId)+"에 "+achievement+"추가");
 				UserAchieve userAchieve=new UserAchieve();
 				userAchieve.setUserInfo(AuthUtil.getUserInfo());
-				userAchieve.setAcheivement(achievement);
+				userAchieve.setAchievement(achievement);
 				userAchieve.merge();
 			}
 		}
