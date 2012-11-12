@@ -136,7 +136,6 @@ public class FuncController {
 	@RequestMapping("sla/intro")
 	public void slaIntro() {
 		UserInfo userInfo=AuthUtil.getUserInfo();
-		System.out.println(userInfo);
 		if(userInfo!=null){
 			AchievementService.viewIntro(userInfo.getId());
 		}
