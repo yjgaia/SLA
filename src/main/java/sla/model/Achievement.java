@@ -51,10 +51,13 @@ public class Achievement {
 			return achievementList;
 		}
 	}
-	public static void addAchievementToUser(long userId,long achievementId){
-		UserAchieve userAchieve=new UserAchieve();
-		userAchieve.setUserInfo(UserInfo.findUserInfo(userId));
-		userAchieve.setAcheivement(findAchievement(achievementId));
-		userAchieve.merge();
+	public static void addAchievementToUser(long userId,Achievement achievement){
+		if(achievement!=null){
+			System.out.println("addAchievement:"+userId+"에 "+achievement+"추가");
+			UserAchieve userAchieve=new UserAchieve();
+			userAchieve.setUserInfo(UserInfo.findUserInfo(userId));
+			userAchieve.setAcheivement(achievement);
+			userAchieve.merge();
+		}
 	}
 }

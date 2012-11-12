@@ -42,11 +42,10 @@ public final class SocialConnectionSignUp implements ConnectionSignUp {
 			List<String> friendList=facebook.friendOperations().getFriendIds();
 			userInfo.setSocialFriendCount(friendList.size());
 		}
-		System.out.println("가입"+userInfo.getLoginCount());
 
 		userInfo.persist();
 		if(userInfo.getLoginCount()==0){
-			Achievement.addAchievementToUser(userInfo.getId(), Achievement.get("first_login").getId());
+			Achievement.addAchievementToUser(userInfo.getId(), Achievement.get("first_login"));
 		}
 		
 		return userInfo.getId().toString();
