@@ -31,7 +31,6 @@ public class MainController {
 	public String home(Model model) {
 		model.addAttribute("userCount", UserInfo.getUserCount());
 		model.addAttribute("shareCount", ShortUrl.getShortUrlCount());
-		System.out.println(Achievement.getAchieveHashMap());
 		return "home";
 	}
 

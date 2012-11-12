@@ -11,6 +11,7 @@ import org.springframework.social.facebook.api.FacebookProfile;
 
 import sla.model.Achievement;
 import sla.model.UserInfo;
+import sla.service.AchievementService;
 
 /**
  * @author 심영재
@@ -44,9 +45,8 @@ public final class SocialConnectionSignUp implements ConnectionSignUp {
 		}
 
 		userInfo.persist();
-		if(userInfo.getLoginCount()==0){
-			Achievement.addAchievementToUser(userInfo.getId(), Achievement.get("first_login"));
-		}
+		AchievementService.firstLogin(userInfo.getId(),userInfo.getLoginCount());
+		
 		
 		return userInfo.getId().toString();
 	}

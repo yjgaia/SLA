@@ -34,6 +34,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import sla.model.Achievement;
 import sla.model.KeyCount;
 import sla.model.Page;
 import sla.model.Result;
@@ -41,6 +42,7 @@ import sla.model.ShortUrl;
 import sla.model.ShortUserInfoWithCount;
 import sla.model.UserInfo;
 import sla.model.VisitCount;
+import sla.service.AchievementService;
 import sla.service.AnalyzeService;
 import sla.social.SocialConfig;
 import sla.util.AuthUtil;
@@ -133,7 +135,11 @@ public class FuncController {
 	
 	@RequestMapping("sla/intro")
 	public void slaIntro() {
-		// just view
+		UserInfo userInfo=AuthUtil.getUserInfo();
+		System.out.println(userInfo);
+		if(userInfo!=null){
+			AchievementService.viewIntro(userInfo.getId());
+		}
 	}
 	
 	@RequestMapping("ckfinder")
@@ -329,6 +335,10 @@ public class FuncController {
 				}
 			}
 			shortUrl.merge();
+			
+			long sharePost=ShortUrl.getUserSharePostCount(AuthUtil.getUserId());
+			AchievementService.shareCountAchievement(AuthUtil.getUserId(),sharePost); //공유 글 수 관련 업적
+			
 			return true;
 		}
 	}

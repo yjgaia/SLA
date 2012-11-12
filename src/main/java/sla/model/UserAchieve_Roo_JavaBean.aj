@@ -17,12 +17,20 @@ privileged aspect UserAchieve_Roo_JavaBean {
         this.userInfo = userInfo;
     }
     
-    public Achievement UserAchieve.getAcheivement() {
-        return this.acheivement;
+    public Achievement UserAchieve.getAchievement() {
+        return this.achievement;
     }
     
-    public void UserAchieve.setAcheivement(Achievement acheivement) {
-        this.acheivement = acheivement;
+    public void UserAchieve.setAchievement(Achievement achievement) {
+        this.achievement = achievement;
+    }
+    
+    public boolean UserAchieve.isIdentified() {
+        return this.identified;
+    }
+    
+    public void UserAchieve.setIdentified(boolean identified) {
+        this.identified = identified;
     }
     
 }

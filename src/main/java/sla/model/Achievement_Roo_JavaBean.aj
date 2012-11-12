@@ -15,6 +15,14 @@ privileged aspect Achievement_Roo_JavaBean {
         this.name = name;
     }
     
+    public String Achievement.getAlias() {
+        return this.alias;
+    }
+    
+    public void Achievement.setAlias(String alias) {
+        this.alias = alias;
+    }
+    
     public String Achievement.getDescription() {
         return this.description;
     }
@@ -37,6 +45,14 @@ privileged aspect Achievement_Roo_JavaBean {
     
     public void Achievement.setCategory(String category) {
         this.category = category;
+    }
+    
+    public boolean Achievement.isHide() {
+        return this.hide;
+    }
+    
+    public void Achievement.setHide(boolean hide) {
+        this.hide = hide;
     }
     
 }

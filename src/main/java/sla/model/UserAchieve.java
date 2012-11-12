@@ -17,8 +17,17 @@ public class UserAchieve {
 	
 	@ManyToOne
 	@JoinColumn(name = "achievementId", nullable = false)
-	private Achievement acheivement;
+	private Achievement achievement;
+	
 	
 	private boolean identified=false;
+	
+	public static boolean existsAchieve(long userId,Achievement achievement) {
+		return entityManager()
+				.createQuery(
+						"SELECT COUNT(o) FROM UserAchieve o WHERE o.userInfo.id = :userId and o.achievement.id= :achievementId",
+						Long.class).setParameter("userId", userId).setParameter("achievementId", achievement.getId())
+				.getSingleResult() > 0l;
+	}
 
 }

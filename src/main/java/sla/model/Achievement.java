@@ -9,6 +9,8 @@ import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
 
+import sla.util.AuthUtil;
+
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord
@@ -53,11 +55,13 @@ public class Achievement {
 	}
 	public static void addAchievementToUser(long userId,Achievement achievement){
 		if(achievement!=null){
-			System.out.println("addAchievement:"+userId+"에 "+achievement+"추가");
-			UserAchieve userAchieve=new UserAchieve();
-			userAchieve.setUserInfo(UserInfo.findUserInfo(userId));
-			userAchieve.setAcheivement(achievement);
-			userAchieve.merge();
+			if(!UserAchieve.existsAchieve(userId, achievement)){
+				System.out.println("addAchievement:"+UserInfo.findUserInfo(userId)+"에 "+achievement+"추가");
+				UserAchieve userAchieve=new UserAchieve();
+				//userAchieve.setUserInfo(AuthUtil.getUserInfo());
+				userAchieve.setAcheivement(achievement);
+				userAchieve.merge();
+			}
 		}
 	}
 }

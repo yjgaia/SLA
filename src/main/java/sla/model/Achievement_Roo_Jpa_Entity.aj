@@ -24,10 +24,6 @@ privileged aspect Achievement_Roo_Jpa_Entity {
     @Column(name = "version")
     private Integer Achievement.version;
     
-    public Achievement.new() {
-        super();
-    }
-
     public Long Achievement.getId() {
         return this.id;
     }
