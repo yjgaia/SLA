@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import sla.data.KeyValueCache;
 import sla.model.ShortUrl;
 import sla.model.UserInfo;
+import sla.service.AchievementService;
 import sla.service.UserAgentService;
 import sla.service.VisitCountService;
+import sla.util.AuthUtil;
 import sla.util.ShortUrlUtil;
 
 @Controller
@@ -28,6 +30,10 @@ public class MainController {
 	
 	@RequestMapping("/")
 	public String home(Model model)  {
+		UserInfo userInfo=AuthUtil.getUserInfo();
+		if(userInfo!=null){
+			AchievementService.viewMain(userInfo.getId());
+		}
 		model.addAttribute("userCount", UserInfo.getUserCount());
 		model.addAttribute("shareCount", ShortUrl.getShortUrlCount());
 		return "home";

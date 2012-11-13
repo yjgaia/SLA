@@ -244,25 +244,29 @@ public class FuncController {
 			double maxWidth = 0;
 			double maxHeight=0;
 			String maxUrl="";
+			int size=images.size();
 			for(int i=0;i<images.size();i++){
 				String urlStr=images.get(i);
-				if(urlStr.startsWith("/")){
+				if(urlStr.startsWith("/")&&!urlStr.startsWith("//")){
 					urlStr=mainUrl+urlStr;
 				}
 				try{
 				URL urlObj = new URL(urlStr);
 				
 		        Image image = ImageIO.read(urlObj);
-		        int width = image.getWidth(null);
-		        int height = image.getHeight(null);
-		        if(width*height>max){
-		        	max=width*height;
-		        	maxUrl=urlStr;
-		        	maxWidth=width;
-		        	maxHeight=height;
+		        System.out.println(urlObj+","+image);
+		        if(image!=null){
+		        	int width = image.getWidth(null);
+		        	int height = image.getHeight(null);
+		        	if(width*height>max){
+		        		max=width*height;
+		        		maxUrl=urlStr;
+		        		maxWidth=width;
+		        		maxHeight=height;
+		        	}
 		        }
 		        }catch(Exception e){
-					System.out.println(e.toString());
+					System.out.println("error:"+e.toString()+images.size()+urlStr);
 				}
 				
 			}

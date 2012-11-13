@@ -32,6 +32,9 @@ public class AchievementService {
 	public static void viewIntro(Long id) {
 		Achievement.addAchievementToUser(id, Achievement.get("view_intro"));
 	}
+	public static void viewMain(Long id) {
+		Achievement.addAchievementToUser(id, Achievement.get("view_main"));
+	}
 
 	public static void firstLogin(Long userId, int loginCount) {
 		if(loginCount==0){
