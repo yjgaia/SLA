@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Size;
 
@@ -22,11 +23,15 @@ public class ShortUrl {
 	private String shortUrl;
 	
 	private String entityId;
-	@Size(max = 3000)
-	@Column(length = 3000)
+	
+	@Lob
+	@Size
+	@Column
 	private String comments;
-	@Size(max = 3000)
-	@Column(length = 3000)
+	
+	@Lob
+	@Size
+	@Column
 	private String likes;
 	private Integer likeCount;
 	@ManyToOne
