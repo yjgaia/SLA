@@ -14,7 +14,7 @@ public class VisitCountService {
 		String nowTimePeriodString=getTimePeriod(nowDate);
 		int nowTimePeriod=Integer.parseInt(nowTimePeriodString);
 		ShortUrl shortUrl=ShortUrl.findShortUrl(encodedKeyId);
-		shortUrl.increaseVisitCount();
+		shortUrl.increaseVisitCountSum();
 		shortUrl.merge();
 		if(VisitCount.existsVisitCount(encodedKeyId, nowTimePeriod)){ //존재 시 count++ 수행
 			VisitCount visitCount= VisitCount.findVisitCountByHashedKeyAndTimePeriod(encodedKeyId,nowTimePeriod);

@@ -24,12 +24,12 @@ privileged aspect ShortUrl_Roo_JavaBean {
         this.entityId = entityId;
     }
     
-    public Integer ShortUrl.getVisitCount() {
-        return this.visitCount;
+    public Integer ShortUrl.getVisitCountSum() {
+        return this.visitCountSum;
     }
     
-    public void ShortUrl.setVisitCount(Integer visitCount) {
-        this.visitCount = visitCount;
+    public void ShortUrl.setVisitCountSum(Integer visitCountSum) {
+        this.visitCountSum = visitCountSum;
     }
     
     public String ShortUrl.getComments() {

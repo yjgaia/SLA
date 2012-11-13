@@ -24,9 +24,9 @@ public class ShortUrl {
 	
 	private String entityId;
 	
-	private Integer visitCount=0;
-	public Integer increaseVisitCount(){
-		return visitCount++;
+	private Integer visitCountSum=0;
+	public Integer increaseVisitCountSum(){
+		return visitCountSum++;
 	}
 	@Lob
 	@Size
