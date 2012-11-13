@@ -86,8 +86,21 @@ public class MainController {
 	public void saveStatistics(ShortUrl su,String ip,String shortUrl,UserAgent userAgent){
 		if(!keyValueCache.exists(keyValueCache.generateIpKey(ip, shortUrl))){
 			keyValueCache.setStringWithKey(keyValueCache.generateIpKey(ip, shortUrl), "1");
-			visitCountService.increaseVisitCount(su.getId());
-			userAgentService.increaseUseCount(su.getId(), userAgent.getOperatingSystem().name(), userAgent.getBrowser().name(), userAgent.getBrowserVersion().getVersion());
+			
+			if(su.getVersion()!=0){
+				su.increaseVisitCountSum();
+				su.merge();
+	
+				visitCountService.increaseVisitCount(su.getId());
+			}
+			
+			if(userAgent!=null){
+				String osName=userAgent.getOperatingSystem()==null?"":userAgent.getOperatingSystem().name();
+				String browserName=userAgent.getBrowser()==null?"":userAgent.getBrowser().name();
+				String browserVersion=userAgent.getBrowserVersion()==null?"":userAgent.getBrowserVersion().getVersion();
+				userAgentService.increaseUseCount(su.getId(), osName, browserName, browserVersion);
+			}
+			
 		}
 	}
 

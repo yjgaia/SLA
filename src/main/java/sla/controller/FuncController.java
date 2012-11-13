@@ -314,7 +314,6 @@ public class FuncController {
 			shortUrl.persist();
 			String convertedShortUrl=ShortUrlUtil.complicatedConvert(shortUrl.getId());
 			shortUrl.setShortUrl(convertedShortUrl);
-			 
 			
 			String socialProviderId = AuthUtil.getUserInfo().getSocialProviderId();
 			if (socialProviderId != null) {
