@@ -1,12 +1,16 @@
 package sla.controller;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 
 import nl.bitwalker.useragentutils.UserAgent;
 
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -28,7 +32,7 @@ public class MainController {
 	KeyValueCache keyValueCache;
 	
 	@RequestMapping("/")
-	public String home(Model model) {
+	public String home(Model model)  {
 		model.addAttribute("userCount", UserInfo.getUserCount());
 		model.addAttribute("shareCount", ShortUrl.getShortUrlCount());
 		return "home";

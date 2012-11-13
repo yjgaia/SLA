@@ -42,7 +42,7 @@ public class Achievement {
 			return achievementHashMap;
 		}
 	}
-	private static List<Achievement> getAchievementList() {
+	public static List<Achievement> getAchievementList() {
 		if(achievementList==null){
 			return entityManager()
 					.createQuery(
