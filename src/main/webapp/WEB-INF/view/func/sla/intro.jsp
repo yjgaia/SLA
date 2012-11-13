@@ -83,7 +83,7 @@
 					<h4>이한솔</h4>
 					<img class="profile" src="${pageContext.request.contextPath}/img/lhs.jpg">
 					<p>
-						누가 시켜서 하는게 아닌 우리가 만들고 싶은 걸 우리가 만들고 싶은 방식으로 만든다는 것 그 자체만으로도 즐겁습니다.
+						누가 시켜서 하는게 아닌 우리가 만들고 싶은 걸 우리가 만들고 싶은 방식으로 만든다는 것 그 자체만으로도 의미가 크다고 생각합니다. YOG.IO 화이팅!
 					</p>
 				</div>
 				<div>
