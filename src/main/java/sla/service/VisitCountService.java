@@ -4,6 +4,7 @@ import java.util.Calendar;
 
 import org.springframework.stereotype.Service;
 
+import sla.model.ShortUrl;
 import sla.model.VisitCount;
 
 @Service
@@ -12,6 +13,9 @@ public class VisitCountService {
 		Calendar nowDate=Calendar.getInstance();
 		String nowTimePeriodString=getTimePeriod(nowDate);
 		int nowTimePeriod=Integer.parseInt(nowTimePeriodString);
+		ShortUrl shortUrl=ShortUrl.findShortUrl(encodedKeyId);
+		shortUrl.increaseVisitCount();
+		shortUrl.merge();
 		if(VisitCount.existsVisitCount(encodedKeyId, nowTimePeriod)){ //존재 시 count++ 수행
 			VisitCount visitCount= VisitCount.findVisitCountByHashedKeyAndTimePeriod(encodedKeyId,nowTimePeriod);
 			visitCount.increaseVisitCount();

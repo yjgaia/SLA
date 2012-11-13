@@ -24,6 +24,14 @@ privileged aspect ShortUrl_Roo_JavaBean {
         this.entityId = entityId;
     }
     
+    public Integer ShortUrl.getVisitCount() {
+        return this.visitCount;
+    }
+    
+    public void ShortUrl.setVisitCount(Integer visitCount) {
+        this.visitCount = visitCount;
+    }
+    
     public String ShortUrl.getComments() {
         return this.comments;
     }

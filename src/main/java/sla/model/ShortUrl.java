@@ -24,6 +24,10 @@ public class ShortUrl {
 	
 	private String entityId;
 	
+	private Integer visitCount=0;
+	public Integer increaseVisitCount(){
+		return visitCount++;
+	}
 	@Lob
 	@Size
 	@Column
@@ -33,7 +37,7 @@ public class ShortUrl {
 	@Size
 	@Column
 	private String likes;
-	private Integer likeCount;
+	private Integer likeCount=0;
 	@ManyToOne
 	@JoinColumn(name = "userId", nullable = false)
 	private UserInfo userInfo;
