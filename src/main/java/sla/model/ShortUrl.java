@@ -22,7 +22,12 @@ public class ShortUrl {
 	private String shortUrl;
 	
 	private String entityId;
+	@Size(max = 3000)
+	@Column(length = 3000)
 	private String comments;
+	@Size(max = 3000)
+	@Column(length = 3000)
+	private String likes;
 	private Integer likeCount;
 	@ManyToOne
 	@JoinColumn(name = "userId", nullable = false)

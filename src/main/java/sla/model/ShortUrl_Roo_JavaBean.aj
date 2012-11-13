@@ -32,6 +32,14 @@ privileged aspect ShortUrl_Roo_JavaBean {
         this.comments = comments;
     }
     
+    public String ShortUrl.getLikes() {
+        return this.likes;
+    }
+    
+    public void ShortUrl.setLikes(String likes) {
+        this.likes = likes;
+    }
+    
     public Integer ShortUrl.getLikeCount() {
         return this.likeCount;
     }

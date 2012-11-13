@@ -9,13 +9,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.security.web.WebAttributes;
 import org.springframework.security.web.savedrequest.RequestCache;
 import org.springframework.security.web.savedrequest.SavedRequest;
 import org.springframework.social.connect.Connection;
 import org.springframework.social.connect.web.SignInAdapter;
+import org.springframework.social.facebook.api.Comment;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.FacebookProfile;
+import org.springframework.social.facebook.api.Post;
+import org.springframework.social.facebook.api.Reference;
 import org.springframework.social.twitter.api.Twitter;
 import org.springframework.social.twitter.api.TwitterProfile;
 import org.springframework.web.context.request.NativeWebRequest;
@@ -64,11 +68,25 @@ public final class SocialSignInAdapter implements SignInAdapter {
 				ShortUrl su=shortUrlList.get(i);
 				
 				if(su.getEntityId()!=null){
-					System.out.println(su.getEntityId());
-					//Post post=facebook.feedOperations().getPost(su.getEntityId());
-					//System.out.println(post);
-					//System.out.println("comments:"+post.getComments().size());
-					//System.out.println("like:"+post.getLikeCount());
+					try{
+					ObjectMapper objMapper=new ObjectMapper();
+					Post post=facebook.feedOperations().getPost(su.getEntityId());
+					if(post!=null){
+						List<Comment> commentList=post.getComments();
+						if(commentList!=null){
+							su.setComments(objMapper.writeValueAsString(commentList));
+						}
+						List<Reference> likes=facebook.likeOperations().getLikes(su.getEntityId());
+						if(likes!=null){
+							su.setLikes(objMapper.writeValueAsString(likes));
+							su.setLikeCount(post.getLikeCount());
+						}
+						
+					}
+					}catch (Exception e){
+						System.out.println("exception:"+e.toString());
+					}
+					su.merge();
 				}
 			}
 		}

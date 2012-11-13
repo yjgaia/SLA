@@ -6,23 +6,23 @@ public class AchievementService {
 	public static void loginCountAchievement(long userId,int loginCount){
 		if(loginCount>=10&&loginCount<25){
 			Achievement.addAchievementToUser(userId, Achievement.get("login_10"));
-		}else if(loginCount>=25&&loginCount<50){
+		}else if(loginCount==25&&loginCount<50){
 			Achievement.addAchievementToUser(userId, Achievement.get("login_25"));
-		}else if(loginCount>=50&&loginCount<100){
+		}else if(loginCount==50&&loginCount<100){
 			Achievement.addAchievementToUser(userId, Achievement.get("login_50"));
-		}else if(loginCount>=100){
+		}else if(loginCount==100){
 			Achievement.addAchievementToUser(userId, Achievement.get("login_100"));
 		}
 	}
 
 	public static void shareCountAchievement(Long userId, long shareCount) {
-		if(shareCount>=1&&shareCount<10){
+		if(shareCount==1&&shareCount<10){
 			Achievement.addAchievementToUser(userId, Achievement.get("first_share"));
-		}else if(shareCount>=10&&shareCount<25){
+		}else if(shareCount==10&&shareCount<25){
 			Achievement.addAchievementToUser(userId, Achievement.get("share_10"));
-		}else if(shareCount>=25&&shareCount<50){
+		}else if(shareCount==25&&shareCount<50){
 			Achievement.addAchievementToUser(userId, Achievement.get("share_25"));
-		}else if(shareCount>=50&&shareCount<100){
+		}else if(shareCount==50&&shareCount<100){
 			Achievement.addAchievementToUser(userId, Achievement.get("share_50"));
 		}else if(shareCount==100){
 			Achievement.addAchievementToUser(userId, Achievement.get("share_100"));
