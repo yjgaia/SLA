@@ -56,11 +56,15 @@ public class Achievement {
 	public static void addAchievementToUser(long userId,Achievement achievement){
 		if(achievement!=null){
 			if(!UserAchieve.existsAchieve(userId, achievement)){
-				System.out.println("addAchievement:"+UserInfo.findUserInfo(userId)+"에 "+achievement+"추가");
+				UserInfo userInfo=UserInfo.findUserInfo(userId);
+				System.out.println("addAchievement:"+userInfo+"에 "+achievement+"추가");
+				
 				UserAchieve userAchieve=new UserAchieve();
-				userAchieve.setUserInfo(UserInfo.findUserInfo(userId));
+				userAchieve.setUserInfo(userInfo);
 				userAchieve.setAchievement(achievement);
 				userAchieve.merge();
+				userInfo.addAchieveScore(achievement.getScore());
+				userInfo.merge();
 			}
 		}
 	}
