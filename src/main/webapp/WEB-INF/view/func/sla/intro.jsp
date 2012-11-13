@@ -86,6 +86,9 @@
 				<div>
 					<h4>이희덕</h4>
 					<img class="profile" src="${pageContext.request.contextPath}/img/lhd.jpg">
+					<p>
+						나는 차가운 도시개발자 하지만 내 코드에겐 따뜻하겠지...
+					</p>
 				</div>
 			</div>
 			<div id="footer">
