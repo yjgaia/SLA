@@ -324,12 +324,17 @@
 							  $layer.show();
 							  
 							  //id 다음부분에 user.id 가 들어가도록 해줄 것
-							  $.getJSON('${pageContext.request.contextPath}/api/userInfo?id=3', function(datas) {
+							  $.getJSON('${pageContext.request.contextPath}/api/userInfo?id='+event.point.id, function(datas) {
 								  var dat = datas.data;
-								 $("popup_prop1") = dat.socialName;
-								 $("popup_prop2") = dat.socialFriendCount;
+								 $("div#popup_prop1").text(dat.socialName);
+								 $("div#popup_prop2").text(dat.socialFriendCount);
+								 if(dat.socialGender == "male")
+								 	$("div#popup_prop3").text("남");
+								 else
+									$("div#popup_prop3").text("여");
 								 
-								 
+								 $("div#popup_prop4").text(dat.socialBirthday);
+								 $("div#popup_prop5").text(dat.socialEmail);
 							  });
 						  }
 						}
@@ -511,13 +516,12 @@
 	</head>
 	<body>
 	<div class="layer">
-			<table>
-				<tr><th>이름</th><td><div class="popup_prop1"></div></td></tr>
-				<tr><th>친구 수</th><td><div class="popup_prop2"></td></tr>
-				<tr><th>공유 글 수</th><td><div class="popup_prop3"></td></tr>
-				<tr><th>누적 방문자 수</th><td><div class="popup_prop4"></td></tr>
-				<tr><th>평균 방문자 수</th><td><div class="popup_prop5"></td></tr>
-				<tr><th>평균 방문자/친구 비율</th><td><div class="popup_prop6"></td></tr>
+			<table width="100%">
+				<tr><th>이름</th><td><div id="popup_prop1"></div></td></tr>
+				<tr><th>친구 수</th><td><div id="popup_prop2"></td></tr>
+				<tr><th>성별</th><td><div id="popup_prop3"></td></tr>
+				<tr><th>생일</th><td><div id="popup_prop4"></td></tr>
+				<tr><th>이메일</th><td><div id="popup_prop5"></td></tr>
 			</table>
 		<br>
 		<button type="button" class="closeBtn">창 닫기</button>
