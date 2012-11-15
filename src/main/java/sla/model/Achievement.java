@@ -1,5 +1,6 @@
 package sla.model;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -62,6 +63,7 @@ public class Achievement {
 				UserAchieve userAchieve=new UserAchieve();
 				userAchieve.setUserInfo(userInfo);
 				userAchieve.setAchievement(achievement);
+				userAchieve.setAcquireDate(new Date());
 				userAchieve.merge();
 				userInfo.addAchieveScore(achievement.getScore());
 				userInfo.merge();

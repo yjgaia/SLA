@@ -3,6 +3,7 @@
 
 package sla.model;
 
+import java.util.Date;
 import sla.model.Achievement;
 import sla.model.UserAchieve;
 import sla.model.UserInfo;
@@ -23,6 +24,14 @@ privileged aspect UserAchieve_Roo_JavaBean {
     
     public void UserAchieve.setAchievement(Achievement achievement) {
         this.achievement = achievement;
+    }
+    
+    public Date UserAchieve.getAcquireDate() {
+        return this.acquireDate;
+    }
+    
+    public void UserAchieve.setAcquireDate(Date acquireDate) {
+        this.acquireDate = acquireDate;
     }
     
     public boolean UserAchieve.isIdentified() {

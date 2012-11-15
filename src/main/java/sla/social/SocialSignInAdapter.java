@@ -75,6 +75,7 @@ public final class SocialSignInAdapter implements SignInAdapter {
 						List<Comment> commentList=post.getComments();
 						if(commentList!=null){
 							su.setComments(objMapper.writeValueAsString(commentList));
+							su.setCommentCount(commentList.size());
 						}
 						List<Reference> likes=facebook.likeOperations().getLikes(su.getEntityId());
 						if(likes!=null){

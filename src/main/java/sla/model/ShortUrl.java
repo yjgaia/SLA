@@ -33,6 +33,7 @@ public class ShortUrl {
 	@Column
 	private String comments;
 	
+	private Integer commentCount=0;
 	@Lob
 	@Size
 	@Column

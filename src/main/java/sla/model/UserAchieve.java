@@ -1,5 +1,7 @@
 package sla.model;
 
+import java.util.Date;
+
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
@@ -19,6 +21,7 @@ public class UserAchieve {
 	@JoinColumn(name = "achievementId", nullable = false)
 	private Achievement achievement;
 	
+	private Date acquireDate;
 	
 	private boolean identified=false;
 	
