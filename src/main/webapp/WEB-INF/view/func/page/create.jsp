@@ -32,6 +32,70 @@
 			#create-page-form {
 				clear: both;
 			}
+			#create-page-form p {
+				margin: 0;
+				padding: 0;
+				margin-top: 20px;
+			}
+			#create-page-form h4 {
+				margin: 0;
+				padding: 0;
+				margin-bottom: 10px;
+			}
+			#submit {
+				margin-top: -2px;
+				-webkit-appearance: none;
+				-webkit-border-horizontal-spacing: 0px;
+				-webkit-border-image: none;
+				-webkit-border-vertical-spacing: 0px;
+				-webkit-box-align: center;
+				-webkit-box-shadow: white 0px 1px 0px 0px;
+				background-color: #019AD2;
+				background-image: -webkit-linear-gradient(top, #33BCEF, #019AD2);
+				background-repeat: repeat-x;
+				border-radius: .5em;
+				box-shadow: white 0px 1px 0px 0px;
+				box-sizing: border-box;
+				cursor: pointer;
+				display: block;
+				font-size: 13px;
+				font-weight: bold;
+				height: 30px;
+				letter-spacing: normal;
+				line-height: 18px;
+				margin-bottom: 30px;
+				margin-left: 0px;
+				margin-right: 0px;
+				overflow-x: visible;
+				overflow-y: visible;
+				padding: .45em 2em .55em;
+				position: relative;
+				text-align: center;
+				text-decoration: none;
+				font: Arial, Helvetica, sans-serif;
+				text-shadow: 0 1px 1px rgba(0,0,0,.3);
+			}
+			#submit {
+				color: #fef4e9;
+				border: solid 1px #da7c0c;
+				background: #f78d1d;
+				background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+				background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
+				filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+			}
+			#submit:hover {
+				background: #f47c20;
+				background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+				background: -moz-linear-gradient(top,  #f88e11,  #f06015);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+			}
+			#submit:active {
+				color: #fcd3a5;
+				background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
+				background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+			}
+			
 			#footer {
 				padding: 10px;
 				font-size: 11px;
@@ -81,7 +145,7 @@
 						<label>비밀번호 <form:password path="password" /></label>
 					</p>
 					<p>
-						<input type="submit" value="페이지 생성">
+						<input id="submit" type="submit" value="페이지 생성">
 					</p>
 				</div>
 			</form:form>
