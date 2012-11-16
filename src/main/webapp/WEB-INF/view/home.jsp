@@ -162,9 +162,75 @@
 				background-position: center left;
 				padding-left: 22px;
 			}
+			#header ul {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				float: right;
+			}
+			#header ul li {
+				padding: 0;
+				margin: 0;
+				margin-left: 10px;
+				list-style: none;
+				float: left;
+			}
+			#go-achievement {
+				margin-top: -2px;
+				-webkit-appearance: none;
+				-webkit-border-horizontal-spacing: 0px;
+				-webkit-border-image: none;
+				-webkit-border-vertical-spacing: 0px;
+				-webkit-box-align: center;
+				-webkit-box-shadow: white 0px 1px 0px 0px;
+				background-color: #019AD2;
+				background-image: -webkit-linear-gradient(top, #33BCEF, #019AD2);
+				background-repeat: repeat-x;
+				border-radius: .5em;
+				box-shadow: white 0px 1px 0px 0px;
+				box-sizing: border-box;
+				cursor: pointer;
+				display: block;
+				float: right;
+				font-size: 13px;
+				font-weight: bold;
+				height: 30px;
+				letter-spacing: normal;
+				line-height: 18px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				overflow-x: visible;
+				overflow-y: visible;
+				padding: .45em 2em .55em;
+				position: relative;
+				text-align: center;
+				text-decoration: none;
+				font: Arial, Helvetica, sans-serif;
+				text-shadow: 0 1px 1px rgba(0,0,0,.3);
+			}
+			#go-achievement {
+				color: #fef4e9;
+				border: solid 1px #da7c0c;
+				background: #f78d1d;
+				background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+				background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
+				filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+			}
+			#go-achievement:hover {
+				background: #f47c20;
+				background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+				background: -moz-linear-gradient(top,  #f88e11,  #f06015);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+			}
+			#go-achievement:active {
+				color: #fcd3a5;
+				background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
+				background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+			}
 			#go-analyze-result {
 				margin-top: -2px;
-				float: right;
 				-webkit-appearance: none;
 				-webkit-border-horizontal-spacing: 0px;
 				-webkit-border-image: none;
@@ -257,7 +323,10 @@
 		<div id="wrapper">
 			<div id="header">
 				<a id="logo" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/img/logo.png"></a>
-				<a id="go-analyze-result" href="${pageContext.request.contextPath}/func/myanalyze">분석 결과 보기</a>
+				<ul>
+					<li><a id="go-achievement" href="${pageContext.request.contextPath}/func/achievement">업적 보기</a></li>
+					<li><a id="go-analyze-result" href="${pageContext.request.contextPath}/func/myanalyze">분석 결과 보기</a></li>
+				</ul>
 			</div>
 			<div id="banner">
 				<img src="${pageContext.request.contextPath}/img/banner.png">

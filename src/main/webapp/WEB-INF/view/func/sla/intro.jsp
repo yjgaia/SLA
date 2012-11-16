@@ -25,6 +25,12 @@
 			#sla-intro {
 				background-color: #EEE;
 			}
+			#sla-intro .top {
+				text-align: center;
+			}
+			#sla-intro .top p {
+				text-align: left;
+			}
 			#sla-intro div {
 			}
 			#sla-intro h3 {
@@ -64,7 +70,7 @@
 			</div>
 			<div id="sla-intro">
 				<h3>SLA 팀 소개</h3>
-				<div>
+				<div class="top">
 					<h4>SLA: Shared Link Analyzer</h4>
 					<img src="${pageContext.request.contextPath}/img/swmaestro.jpg">
 					<p>

@@ -41,7 +41,13 @@
 				padding: 5px;
 				font-size: 20px;
 			}
-			#submit {
+			.bottom {
+				overflow: auto;
+			}
+			.bottom label {
+				float: left;
+			}
+			.submit {
 				margin-top: -2px;
 				float: right;
 				-webkit-appearance: none;
@@ -76,7 +82,7 @@
 				font: Arial, Helvetica, sans-serif;
 				text-shadow: 0 1px 1px rgba(0,0,0,.3);
 			}
-			#submit {
+			.submit {
 				color: #fef4e9;
 				border: solid 1px #da7c0c;
 				background: #f78d1d;
@@ -84,17 +90,20 @@
 				background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
 				filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
 			}
-			#submit:hover {
+			.submit:hover {
 				background: #f47c20;
 				background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
 				background: -moz-linear-gradient(top,  #f88e11,  #f06015);
 				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
 			}
-			#submit:active {
+			.submit:active {
 				color: #fcd3a5;
 				background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
 				background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
 				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+			}
+			.bottom .submit {
+				margin-top: 17px;
 			}
 			#header h3 {
 				padding: 0;
@@ -141,7 +150,7 @@
 				<div id="header">
 					<a id="logo" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/img/logo.png"></a>
 					<h3>페이지 만들기</h3>
-					<input id="submit" type="submit" value="저장">
+					<input class="submit" type="submit" value="저장">
 				</div>
 				<div id="create-page-form">
 					<p>
@@ -179,14 +188,14 @@
 						filebrowserFlashUploadUrl : '${pageContext.request.contextPath}/func/ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Flash'
 					});
 					</script>
-					<label>비밀번호 확인 <form:password path="password" /></label>
-					<!-- <a href="javascript:alert('준비중입니다.');">비밀번호 변경</a> -->
+					<div class="bottom">
+						<label>비밀번호 확인 <form:password path="password" /></label>
+						<!-- <a href="javascript:alert('준비중입니다.');">비밀번호 변경</a> -->
+						<input class="submit" type="submit" value="저장">
+					</div>
 				</div>
 			</form:form>
 			<div id="footer">
-				<div class="left">
-					<script>YOGIO();</script>
-				</div>
 				<div class="right">
 					&copy; <a href="http://swmaestro.kr" target="_blank">SW Maestro</a> 3rd <a href="${pageContext.request.contextPath}/func/sla/intro">SLA팀</a>
 				</div>
