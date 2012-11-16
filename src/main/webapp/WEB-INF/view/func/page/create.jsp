@@ -111,6 +111,13 @@
 			#footer a {
 				color: #999;
 			}
+			input {
+				border: 1px solid #a3a3a3;
+				border-radius: 4px;
+				width: 200px;
+				padding: 5px;
+				font-size: 20px;
+			}
 			.error {
 				color: red;
 				display: block;
@@ -137,12 +144,12 @@
 					<p>
 						<h4>페이지의 제목을 입력해주세요.</h4>
 						<form:errors path="title" cssClass="error" />
-						<label>제목 <form:input path="title" /></label>
+						<form:input path="title" placeholder="제목" />
 					</p>
 					<p>
 						<h4>편집을 위한 비밀번호를 입력해주세요.</h4>
 						<form:errors path="password" cssClass="error" />
-						<label>비밀번호 <form:password path="password" /></label>
+						<form:password path="password" placeholder="비밀번호" />
 					</p>
 					<p>
 						<input id="submit" type="submit" value="페이지 생성">
