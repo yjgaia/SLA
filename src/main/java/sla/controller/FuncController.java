@@ -183,7 +183,6 @@ public class FuncController {
 		model.addAttribute("achievement",acquiredAchievement);
 		model.addAttribute("unIdentified",obj.writeValueAsString(unIdentified));
 		model.addAttribute("userInfo",userInfo);
-		System.out.println(userInfo);
 	}
 	
 	@Secured("ROLE_USER")
