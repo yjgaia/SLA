@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>YOG.IO! 공유버튼 파라미터 자세히 보기</title>
+		<title>스마트한 공유하기, YOG.IO!</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="${pageContext.request.contextPath}/style/prettify.css" type="text/css" rel="stylesheet" />
 		<script src="${pageContext.request.contextPath}/script/jquery-1.7.2.min.js"></script>

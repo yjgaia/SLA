@@ -2,4 +2,10 @@
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
 
 <sqlMap namespace="Common">
+	<typeAlias alias="Achievement" type="sla.model.Achievement"/>
+	<select id="getAcquiredAchievement" parameterClass="Long" resultClass="Achievement">
+		SELECT a.*,COALESCE(b.version,-1) AS acquired FROM achievement a LEFT JOIN
+ 		(SELECT * FROM user_achieve WHERE user_id=#value#) b ON a.id=b.achievement_id
+ 		ORDER BY COALESCE(b.version,-1) DESC,b.acquire_date,a.id
+	</select>
 </sqlMap>

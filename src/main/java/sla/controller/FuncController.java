@@ -59,6 +59,9 @@ public class FuncController {
 	private AnalyzeService analyzeService;
 	
 	@Autowired
+	private AchievementService achievementService;
+	
+	@Autowired
 	private SocialConfig socialConfig;
 	
 	@Autowired
@@ -150,6 +153,23 @@ public class FuncController {
 	@RequestMapping("myanalyze")
 	public void analyzeList(Model model) {
 		model.addAttribute("list", ShortUrl.findShortUrlsByUserId(AuthUtil.getUserId()));
+	}
+	
+	@Secured("ROLE_USER") 
+	@RequestMapping("achievement")
+	public void achievement(Model model) throws SQLException{
+		UserInfo userInfo=AuthUtil.getUserInfo();
+		List<Achievement>  acquiredAchievement=achievementService.getAcquiredAchievement(userInfo.getId());
+		int size=acquiredAchievement.size();
+		int acquired=0;
+		for(int i=0;i<size;i++){
+			if(acquiredAchievement.get(i).getAcquired()==0){
+				acquired++;
+			}
+		}
+		model.addAttribute("total",size);
+		model.addAttribute("acquired",acquired);
+		model.addAttribute("achievement",acquiredAchievement);
 	}
 	
 	@Secured("ROLE_USER")
@@ -296,8 +316,7 @@ public class FuncController {
 		}
 	}
 
-	/*초기 공유(마케팅 담당자)
-	 * reShare=true로 들어올 시 헤당 shortUrl*/
+
 	@Secured("ROLE_USER")
 	@ResponseBody
 	@RequestMapping(value = "share", method = RequestMethod.POST)
