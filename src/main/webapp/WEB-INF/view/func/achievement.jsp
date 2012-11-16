@@ -11,6 +11,8 @@
 	type="text/css" rel="stylesheet" />
 <script
 	src="${pageContext.request.contextPath}/script/jquery-1.7.2.min.js"></script>
+<script src="${pageContext.request.contextPath}/script/jquery.gritter.js"></script>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style/jquery.gritter.css" />
   <script src="${pageContext.request.contextPath}/script/jquery.percentageloader/jquery.percentageloader-0.1.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/script/jquery.percentageloader/jquery.percentageloader-0.1.css"></script>
 <style>
@@ -87,6 +89,28 @@ ul {
 	font-size:30px;
 }
 </style>
+<script>
+$(function(){
+	console.log(${unIdentified});
+	var datas=${unIdentified};
+	for(var i=0;i<datas.length;i++){
+		var data=datas[i];
+		$.gritter.add({
+			// (string | mandatory) the heading of the notification
+			title: data.alias,
+			// (string | mandatory) the text inside the notification
+			text: data.description,
+			// (string | optional) the image to display on the left
+			image: 'http://a0.twimg.com/profile_images/59268975/jquery_avatar_bigger.png',
+			// (bool | optional) if you want it to fade out on its own or just sit there
+			sticky: false,
+			// (int | optional) the time you want it to be alive for before fading out
+			time: ''
+		});
+	}
+	
+});
+</script>
 </head>
 
 <body>

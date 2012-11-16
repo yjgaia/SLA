@@ -159,7 +159,7 @@ public class FuncController {
 	
 	@Secured("ROLE_USER") 
 	@RequestMapping("achievement")
-	public void achievement(Model model) throws SQLException{
+	public void achievement(Model model) throws SQLException, JsonGenerationException, JsonMappingException, IOException{
 		UserInfo userInfo=AuthUtil.getUserInfo();
 		List<Achievement>  acquiredAchievement=achievementService.getAcquiredAchievement(userInfo.getId());
 		int size=acquiredAchievement.size();
@@ -177,10 +177,11 @@ public class FuncController {
 				}
 			}
 		}
+		ObjectMapper obj=new ObjectMapper();
 		model.addAttribute("total",size);
 		model.addAttribute("acquired",acquired);
 		model.addAttribute("achievement",acquiredAchievement);
-		model.addAttribute("unIdentified",unIdentified);
+		model.addAttribute("unIdentified",obj.writeValueAsString(unIdentified));
 		model.addAttribute("userInfo",userInfo);
 		System.out.println(userInfo);
 	}
