@@ -245,6 +245,11 @@
 				color: #999;
 			}
 		</style>
+		<script type="text/javascript">
+		$(function() {
+			$('#share-form .url').focus();
+		});
+		</script>
 	</head>
 	
 	<body>

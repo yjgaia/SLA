@@ -54,12 +54,13 @@
 			}
 			#my-analyze-list li {
 				margin: 0;
-				padding: 5px;
+				padding: 10px;
 				list-style: none;
 				border-top: 1px solid #CCC;
 				border-left: 5px solid #CCC;
 				background-color: #FFF;
 				font-size: 12px;
+				color: #666;
 			}
 			#my-analyze-list li a {
 				text-decoration: none;
@@ -68,8 +69,15 @@
 			#my-analyze-list li a:hover {
 				text-decoration: underline;
 			}
+			#my-analyze-list li .url {
+				display: block;
+				font-size: 16px;
+				color: #18AAE0;
+				font-weight: bold;
+			}
 			#my-analyze-list li .func {
 				float: right;
+				color: orange;
 			}
 			#footer {
 				padding: 10px;
@@ -98,7 +106,7 @@
 				<ul>
 					<c:forEach items="${list}" var="item">
 					<li>
-						<a href="${pageContext.request.contextPath}/func/analyze?shortUrl=${item.shortUrl}" target="_blank">${item.url}</a>
+						<a class="url" href="${pageContext.request.contextPath}/func/analyze?shortUrl=${item.shortUrl}" target="_blank">${item.url}</a>
 						<br/><b>${item.visitCountSum}</b>명 방문, <b>${item.likeCount }</b>명이 좋아하고 <b>${item.commentCount }</b>명이 댓글을 달았습니다.
 						<a class="func" href="javascript:if(confirm('정말 삭제 하시겠습니까?')){location.href='${pageContext.request.contextPath}/func/delanalyze?shortUrl=${item.shortUrl}';}">삭제</a>
 					</li>

@@ -29,6 +29,18 @@
 			#logo img {
 				border: none;
 			}
+			label {
+				display: block;
+				font-weight: bold;
+				margin: 10px;
+			}
+			input {
+				border: 1px solid #a3a3a3;
+				border-radius: 4px;
+				width: 200px;
+				padding: 5px;
+				font-size: 20px;
+			}
 			#submit {
 				margin-top: -2px;
 				float: right;
@@ -99,6 +111,7 @@
 				font-size: 11px;
 				text-align: center;
 				color: #999;
+				margin-bottom: 70px;
 			}
 			#footer .left {
 				float: left;
@@ -167,7 +180,7 @@
 					});
 					</script>
 					<label>비밀번호 확인 <form:password path="password" /></label>
-					<a href="javascript:alert('준비중입니다.');">비밀번호 변경</a>
+					<!-- <a href="javascript:alert('준비중입니다.');">비밀번호 변경</a> -->
 				</div>
 			</form:form>
 			<div id="footer">
