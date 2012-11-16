@@ -4,6 +4,7 @@ import java.awt.Image;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -40,6 +41,7 @@ import sla.model.Page;
 import sla.model.Result;
 import sla.model.ShortUrl;
 import sla.model.ShortUserInfoWithCount;
+import sla.model.UserAchieve;
 import sla.model.UserInfo;
 import sla.model.VisitCount;
 import sla.service.AchievementService;
@@ -162,14 +164,25 @@ public class FuncController {
 		List<Achievement>  acquiredAchievement=achievementService.getAcquiredAchievement(userInfo.getId());
 		int size=acquiredAchievement.size();
 		int acquired=0;
+		List<Achievement> unIdentified=new ArrayList<Achievement>();
 		for(int i=0;i<size;i++){
-			if(acquiredAchievement.get(i).getAcquired()==0){
+			Achievement achievement=acquiredAchievement.get(i);
+			if(achievement.getAcquired()!=-1){
 				acquired++;
+				if(achievement.getIdentified()!=null&&achievement.getIdentified()==0){
+					UserAchieve userAchieve=UserAchieve.findUserAchieve(achievement.getAcquired());
+					userAchieve.setIdentified(true);
+					userAchieve.merge();
+					unIdentified.add(achievement);
+				}
 			}
 		}
 		model.addAttribute("total",size);
 		model.addAttribute("acquired",acquired);
 		model.addAttribute("achievement",acquiredAchievement);
+		model.addAttribute("unIdentified",unIdentified);
+		model.addAttribute("userInfo",userInfo);
+		System.out.println(userInfo);
 	}
 	
 	@Secured("ROLE_USER")

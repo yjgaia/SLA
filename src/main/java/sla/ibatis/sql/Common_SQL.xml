@@ -4,8 +4,8 @@
 <sqlMap namespace="Common">
 	<typeAlias alias="Achievement" type="sla.model.Achievement"/>
 	<select id="getAcquiredAchievement" parameterClass="Long" resultClass="Achievement">
-		SELECT a.*,COALESCE(b.version,-1) AS acquired FROM achievement a LEFT JOIN
+		SELECT a.*,COALESCE(b.id,-1) AS acquired,b.identified+0 as identified FROM achievement a LEFT JOIN
  		(SELECT * FROM user_achieve WHERE user_id=#value#) b ON a.id=b.achievement_id
- 		ORDER BY COALESCE(b.version,-1) DESC,b.acquire_date,a.id
+ 		ORDER BY COALESCE(b.id,-1) DESC,b.acquire_date,a.id
 	</select>
 </sqlMap>

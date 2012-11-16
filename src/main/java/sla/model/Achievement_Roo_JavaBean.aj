@@ -55,12 +55,20 @@ privileged aspect Achievement_Roo_JavaBean {
         this.hide = hide;
     }
     
-    public int Achievement.getAcquired() {
+    public long Achievement.getAcquired() {
         return this.acquired;
     }
     
-    public void Achievement.setAcquired(int acquired) {
+    public void Achievement.setAcquired(long acquired) {
         this.acquired = acquired;
+    }
+    
+    public Integer Achievement.getIdentified() {
+        return this.identified;
+    }
+    
+    public void Achievement.setIdentified(Integer identified) {
+        this.identified = identified;
     }
     
 }

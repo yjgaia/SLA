@@ -11,4 +11,5 @@ public class ShortUserInfoWithCount   {
 	private String social_name;
 	private String social_image_url;
 	private int cnt;
+	private String shortUrl;
 }

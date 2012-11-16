@@ -23,7 +23,9 @@ public class Achievement {
 	String category;
 	private boolean hide = false;
 	@Transient
-	int acquired;
+	long acquired;
+	@Transient
+	Integer identified;
 	@Transient
 	static List<Achievement> achievementList;
 	@Transient

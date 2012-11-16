@@ -11,7 +11,8 @@
 	type="text/css" rel="stylesheet" />
 <script
 	src="${pageContext.request.contextPath}/script/jquery-1.7.2.min.js"></script>
-
+  <script src="${pageContext.request.contextPath}/script/jquery.percentageloader/jquery.percentageloader-0.1.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/script/jquery.percentageloader/jquery.percentageloader-0.1.css"></script>
 <style>
 ul {
 	word-wrap: break-word;
@@ -96,12 +97,52 @@ ul {
 				border="0" src="${pageContext.request.contextPath}/img/logo.png"></a>
 			<h3>업적 조회실</h3>
 		</div>
-		<div id="achievement">
+		<div>
+			<div id="topLoader">      
+      		</div>
+			<script>
+        $(function() {
+          var $topLoader = $("#topLoader").percentageLoader({width: 256, height: 256, controllable : false, progress : 0.5, onProgressUpdate : function(val) {
+              
+            }});
+
+          var topLoaderRunning = false;
+          $("#animateButton").click(function() {
+            if (topLoaderRunning) {
+              return;
+            }
+            topLoaderRunning = true;
+           
+            
+          });
+          $topLoader.setProgress(0);
+          $topLoader.setValue('0');
+          var kb = 0;
+          var offset=10;
+          var totalKb = ${total}*offset;
+          
+          var animateFunc = function() {
+            kb += 1;
+            $topLoader.setProgress(kb / totalKb);
+            $topLoader.setValue(kb/offset+"개");
+            
+            if (kb < ${acquired}*offset) {
+              setTimeout(animateFunc, 25);
+            } else {
+              topLoaderRunning = false;
+            }
+          }
+          
+          setTimeout(animateFunc, 25);
+        });      
+      </script>
+		</div>
+		<div id="achievementList">
 			<c:forEach items="${achievement}" var="achievement">
 				<div class="achievement 
 					<c:choose>
-						<c:when test="${achievement.acquired eq 0 }">a_active</c:when>
-						<c:otherwise>a_unactive</c:otherwise>
+						<c:when test="${achievement.acquired eq -1 }">a_unactive</c:when>
+						<c:otherwise>a_active</c:otherwise>
 					</c:choose>
 				">
 					<div class="a_icon"><img src="${pageContext.request.contextPath}/img/logo.png" width="90%" height="90%"/></div>
