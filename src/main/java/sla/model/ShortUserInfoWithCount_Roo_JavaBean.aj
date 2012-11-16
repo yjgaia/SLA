@@ -39,12 +39,12 @@ privileged aspect ShortUserInfoWithCount_Roo_JavaBean {
         this.cnt = cnt;
     }
     
-    public String ShortUserInfoWithCount.getShortUrl() {
-        return this.shortUrl;
+    public String ShortUserInfoWithCount.getShort_url() {
+        return this.short_url;
     }
     
-    public void ShortUserInfoWithCount.setShortUrl(String shortUrl) {
-        this.shortUrl = shortUrl;
+    public void ShortUserInfoWithCount.setShort_url(String short_url) {
+        this.short_url = short_url;
     }
     
 }

@@ -312,6 +312,7 @@
 				chart3.addSeries(series);
 
 				datas=${countRecord };
+				console.log(datas);
 				var series = {
 						id: 'series',
 						name: '방문자 수',

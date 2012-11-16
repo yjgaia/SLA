@@ -2,6 +2,7 @@ package sla.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
 
 import org.codehaus.jackson.JsonGenerationException;
@@ -16,19 +17,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import sla.model.KeyCount;
 import sla.model.Result;
+import sla.model.ShortUrl;
 import sla.model.ShortUserInfoWithCount;
 import sla.model.UserInfo;
 import sla.service.AnalyzeService;
 import sla.util.DateUtil;
+import sla.util.ShortUrlUtil;
 
 @Controller
 @RequestMapping("api")
 public class ApiController {
-	
+	ObjectMapper om=new ObjectMapper();
 	@Autowired
 	AnalyzeService analyzeService;
 	public String ret(Model model,Object object ) throws JsonGenerationException, JsonMappingException, IOException{
-		ObjectMapper om=new ObjectMapper();
+		
 		
 			model.addAttribute("result",om.writeValueAsString(new Result(object)));
 		
@@ -41,6 +44,19 @@ public class ApiController {
 	public String getUserInfo(Model model,@RequestParam long id) throws JsonGenerationException, JsonMappingException, IOException{
 		UserInfo userInfo=UserInfo.findUserInfo(id);
 		return ret(model,userInfo);
+	}
+	
+	@Secured("ROLE_USER")
+	@RequestMapping("userInfoAndShortUrl")
+	public String userInfoAndShortUrl(Model model,@RequestParam long id,@RequestParam String shortUrl) throws JsonGenerationException, JsonMappingException, IOException{
+		UserInfo userInfo=UserInfo.findUserInfo(id);
+		HashMap<String,Object> result=new HashMap<String,Object>();
+		result.put("userInfo", userInfo);
+		long shortUrlId=ShortUrlUtil.complicatedRevert(shortUrl);
+		if(ShortUrl.existsShortUrl(shortUrlId)){
+			result.put("shortUrl", ShortUrl.findShortUrl(shortUrlId));
+		}
+		return ret(model,result);
 	}
 	
 	@RequestMapping("countRecord")
