@@ -23,6 +23,8 @@ public class Achievement {
 	String category;
 	private boolean hide = false;
 	@Transient
+	int acquired;
+	@Transient
 	static List<Achievement> achievementList;
 	@Transient
 	static HashMap<String,Achievement> achievementHashMap;
