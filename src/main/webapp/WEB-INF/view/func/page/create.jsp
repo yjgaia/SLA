@@ -6,29 +6,12 @@
 		<meta charset="utf-8">
 		<title>YOG.IO! 페이지 만들기</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="${pageContext.request.contextPath}/style/style.css" rel="stylesheet" type="text/css" media="screen" />
 		<script src="${pageContext.request.contextPath}/script/jquery-1.7.2.min.js"></script>
 		<script src="${pageContext.request.contextPath}/ckeditor/ckeditor.js"></script>
 		<script src="${pageContext.request.contextPath}/script/js.js"></script>
 		<style>
-			#wrapper {
-				margin: auto;
-				width: 600px;
-				padding-top: 30px;
-			}
-			#wrapper p {
-				font-size: 15px;
-				margin: 0;
-				padding: 10px;
-			}
-			#header {
-				height: 36px;
-			}
-			#logo {
-				float: left;
-			}
-			#logo img {
-				border: none;
-			}
+			
 			#create-page-form {
 				clear: both;
 			}
@@ -132,38 +115,58 @@
 	
 	<body>
 	
+		<div id="menu-wrapper">
+		<div id="menu">
+			<ul>
+				<li><a href="${pageContext.request.contextPath}">홈</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/myanalyze">분석결과</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/achievement">업적</a></li>
+				<li class="current_page_item"><a href="${pageContext.request.contextPath}/func/page/create">페이지</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/intro">소개</a></li>
+			</ul>
+		</div>
+		<!-- end #menu -->
+	</div>
+	<div id="header-wrapper">
+	<div id="header">
+			<div id="logo">
+				<a href="#"><img src = "${pageContext.request.contextPath}/img/logo.png"></a>
+			</div>
+		</div>
+	</div>
 		<div id="wrapper">
-			<form:form>
-				<div id="header">
-					<a id="logo" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/img/logo.png"></a>
-				</div>
-				<div id="create-page-form">
-					<p>
-						페이지를 생성합니다.
-					</p>
-					<p>
-						<h4>페이지의 제목을 입력해주세요.</h4>
-						<form:errors path="title" cssClass="error" />
-						<form:input path="title" placeholder="제목" />
-					</p>
-					<p>
-						<h4>편집을 위한 비밀번호를 입력해주세요.</h4>
-						<form:errors path="password" cssClass="error" />
-						<form:password path="password" placeholder="비밀번호" />
-					</p>
-					<p>
-						<input id="submit" type="submit" value="페이지 생성">
-					</p>
+			<div id="page">
+				<div id="page-bgtop">
+					<div id="page-bgbtm">
+						<div id="content">
+						<form:form>
+							<div id="create-page-form">
+								<p>
+									페이지를 생성합니다.
+								</p>
+								<p>
+									<h4>페이지의 제목을 입력해주세요.</h4>
+									<form:errors path="title" cssClass="error" />
+									<form:input path="title" placeholder="제목" />
+								</p>
+								<p>
+									<h4>편집을 위한 비밀번호를 입력해주세요.</h4>
+									<form:errors path="password" cssClass="error" />
+									<form:password path="password" placeholder="비밀번호" />
+								</p>
+								<p>
+									<input id="submit" type="submit" value="페이지 생성">
+								</p>
 				</div>
 			</form:form>
-			<div id="footer">
-				<div class="left">
-					<script>YOGIO();</script>
-				</div>
-				<div class="right">
-					&copy; <a href="http://swmaestro.kr" target="_blank">SW Maestro</a> 3rd <a href="${pageContext.request.contextPath}/func/sla/intro">SLA팀</a>
-				</div>
 			</div>
+			</div>
+			</div>
+			</div>
+			
+			<div id="footer">
+	<p>&copy; 2012 Yog.io | SW Maestro SLA Team.</p>
+	</div>	
 		</div>
 		
 	</body>

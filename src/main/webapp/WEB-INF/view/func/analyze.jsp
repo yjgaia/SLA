@@ -5,17 +5,14 @@
 		<meta charset="utf-8">
 		<title>YOG.IO!</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="${pageContext.request.contextPath}/style/style.css" rel="stylesheet" type="text/css" media="screen" />
 		<style>
 		body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0;font-family:'맑은고딕',malgun gothic,'돋움',dotum, Arial, sans-serif;}
 		a{
 			word-wrap:break-word;
 			word-break:break-all;
 		}
-			#wrapper {
-				margin: auto;
-				width: 700px;
-				padding-top: 30px;
-			}
+			
 			.content_in_title{
 				font-size:15px;
 				font-weight:bold;
@@ -549,10 +546,30 @@
 			</table>
 		<button type="button" class="closeBtn">창 닫기</button>
 	</div>
-	<div id="wrapper" style="display:table;">
-		<div id="header">
-			<a href="${pageContext.request.contextPath}/"><img border="0" src="${pageContext.request.contextPath}/img/logo.png"></a>
+	<div id="menu-wrapper">
+		<div id="menu">
+			<ul>
+				<li><a href="${pageContext.request.contextPath}">홈</a></li>
+				<li class="current_page_item"><a href="${pageContext.request.contextPath}/func/myanalyze">분석결과</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/achievement">업적</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/page/create">페이지</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/intro">소개</a></li>
+			</ul>
 		</div>
+		<!-- end #menu -->
+	</div>
+	<div id="header-wrapper">
+	<div id="header">
+			<div id="logo">
+				<a href="#"><img src = "${pageContext.request.contextPath}/img/logo.png"></a>
+			</div>
+		</div>
+	</div>
+		<div id="wrapper">
+			<div id="page">
+				<div id="page-bgtop">
+					<div id="page-bgbtm">
+						<div id="content">
 		<h3 style="text-align:center;font-weight: normal;"><b><a class="userLink" href="${shortUrlRecord.url }" target="_blank">${shortUrlRecord.url }</a></b><br/>의 공유 효과</h3>
 		<div id="main-row1">
 			<div style="width: 550px;float:left;position:relative;">
@@ -565,18 +582,18 @@
 				<input type="radio" name="radio" value="c">월</input>
 				</font>
 			</div>
-			<div id="chart1" style="min-width: 700px; height: 300px; margin: 0 auto"></div>
+			<div id="chart1" style="min-width: 600px; height: 300px; margin: 0 auto"></div>
 		</div>
 		<div id="main-row1-spacing" style="height:20px;"></div>
 		<div id="main-row2">
-			<div style="width: 350px;float:left;position:relative;">
+			<div style="width: 300px;float:left;position:relative;">
 				<div class="content_in_title">이 주소의 공유자는?</div>
 			</div>
-			<div style="width: 350px;float:left;position:relative;">
+			<div style="width: 300px;float:left;position:relative;">
 				<div class="content_in_title">시간 별 방문자</div>
 			</div>
 			
-			<div style="width: 350px; height: 200px;float:left;position:relative;">
+			<div style="width: 300px; height: 200px;float:left;position:relative;">
 			<table style="text-align: right">
 				<tr><td colspan=2>이 주소의 <b>${shareRank }번째</b> 공유자 입니다!</td></tr>
 				<tr><th><img src="${sharer.socialImageUrl }"></th>
@@ -588,31 +605,39 @@
 				<tr><th>평균 방문자/친구 비율</th><td>${sharerFriendVisitorRatio }</td></tr>
 			</table>
 			</div>
-			<div id="chart3" style="width: 350px; height: 200px;float:left;position:relative;"></div>
+			<div id="chart3" style="width: 300px; height: 200px;float:left;position:relative;"></div>
 		</div>
+		<div id="main-row2-spacing" style="height:20px;"></div>
 		<div id="main-row3">
 			
-			<div style="width: 350px;float:left;position:relative;">
+			<div style="width: 300px;float:left;position:relative;">
 				<div class="content_in_title">공유자들의 성별</div>
 			</div>
-			<div style="width: 350px;float:left;position:relative;">
+			<div style="width: 300px;float:left;position:relative;">
 				<div class="content_in_title">공유 영향력</div>
 			</div>
 
-			<div id="chart4" style="width: 350px; height: 200px;float:left;position:relative;"></div>
-			<div id="chart5" style="width: 350px; height: 200px;float:left;position:relative;"></div>
+			<div id="chart4" style="width: 300px; height: 200px;float:left;position:relative;"></div>
+			<div id="chart5" style="width: 300px; height: 200px;float:left;position:relative;"></div>
 			
 		</div>
 		<div id="main-row4">
-			<div style="width: 350px;float:left;position:relative;">
+			<div style="width: 300px;float:left;position:relative;">
 				<div class="content_in_title">방문자들이 사용중인 OS</div>
 			</div>
-			<div style="width: 350px;float:left;position:relative;">
+			<div style="width: 300px;float:left;position:relative;">
 				<div class="content_in_title">방문자들이 사용중인 Browser</div>
 			</div>
-			<div id="chart6" style="width: 350px; height: 200px;float:left;position:relative;"></div>
-			<div id="chart7" style="width: 350px; height: 200px;float:left;position:relative;"></div>
+			<div id="chart6" style="width: 300px; height: 200px;float:left;position:relative;"></div>
+			<div id="chart7" style="width: 300px; height: 200px;float:left;position:relative;"></div>
 		</div>
 	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	<div id="footer">
+	<p>&copy; 2012 Yog.io | SW Maestro SLA Team.</p>
+	</div>	
 	</body>
 </html>

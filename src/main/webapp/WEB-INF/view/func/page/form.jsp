@@ -6,29 +6,12 @@
 		<meta charset="utf-8">
 		<title>YOG.IO! 페이지 만들기</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="${pageContext.request.contextPath}/style/style.css" rel="stylesheet" type="text/css" media="screen" />
 		<script src="${pageContext.request.contextPath}/script/jquery-1.7.2.min.js"></script>
 		<script src="${pageContext.request.contextPath}/ckeditor/ckeditor.js"></script>
 		<script src="${pageContext.request.contextPath}/script/js.js"></script>
 		<style>
-			#wrapper {
-				margin: auto;
-				width: 600px;
-				padding-top: 30px;
-			}
-			#wrapper p {
-				font-size: 15px;
-				margin: 0;
-				padding: 10px;
-			}
-			#header {
-				height: 36px;
-			}
-			#logo {
-				float: left;
-			}
-			#logo img {
-				border: none;
-			}
+			
 			label {
 				display: block;
 				font-weight: bold;
@@ -105,32 +88,6 @@
 			.bottom .submit {
 				margin-top: 17px;
 			}
-			#header h3 {
-				padding: 0;
-				padding-top: 1px;
-				margin: 0;
-				margin-left: 20px;
-				float: left;
-			}
-			#create-page-form {
-				clear: both;
-			}
-			#footer {
-				padding: 10px;
-				font-size: 11px;
-				text-align: center;
-				color: #999;
-				margin-bottom: 70px;
-			}
-			#footer .left {
-				float: left;
-			}
-			#footer .right {
-				float: right;
-			}
-			#footer a {
-				color: #999;
-			}
 			.error {
 				color: red;
 				display: block;
@@ -144,19 +101,41 @@
 	</head>
 	
 	<body>
-	
+	<div id="menu-wrapper">
+		<div id="menu">
+			<ul>
+				<li><a href="${pageContext.request.contextPath}">홈</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/myanalyze">분석결과</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/achievement">업적</a></li>
+				<li class="current_page_item"><a href="${pageContext.request.contextPath}/func/page/create">페이지</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/intro">소개</a></li>
+			</ul>
+		</div>
+		<!-- end #menu -->
+	</div>
+	<div id="header-wrapper">
+	<div id="header">
+			<div id="logo">
+				<a href="#"><img src = "${pageContext.request.contextPath}/img/logo.png"></a>
+			</div>
+		</div>
+	</div>
 		<div id="wrapper">
-			<form:form>
-				<div id="header">
-					<a id="logo" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/img/logo.png"></a>
-					<h3>페이지 만들기</h3>
-					<input class="submit" type="submit" value="저장">
-				</div>
-				<div id="create-page-form">
-					<p>
+			<div id="page">
+				<div id="page-bgtop">
+					<div id="page-bgbtm">
+						<div id="content">
+		
+					
+						<h3>페이지 만들기</h3>
+						<input class="submit" type="submit" value="저장">
+					
+					<div id="create-page-form">
+						<p>
 						<strong>잊지말고 적어두세요!!</strong>
 						현재 작성중인 페이지의 주소는 <a href="http://yog.io/func/page/view/${command.id}" target="_blank">http://yog.io/func/page/view/${command.id}</a> 입니다!
-					</p>
+						</p>
+					<form:form>
 					<form:hidden path="id" />
 					<form:errors path="*" cssClass="error" />
 					<label>제목 <form:input path="title" /></label>
@@ -195,12 +174,15 @@
 					</div>
 				</div>
 			</form:form>
-			<div id="footer">
-				<div class="right">
-					&copy; <a href="http://swmaestro.kr" target="_blank">SW Maestro</a> 3rd <a href="${pageContext.request.contextPath}/func/sla/intro">SLA팀</a>
-				</div>
-			</div>
 		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		
+		<div id="footer">
+			<p>&copy; 2012 Yog.io | SW Maestro SLA Team.</p>
+		</div>	
 		
 	</body>
 </html>

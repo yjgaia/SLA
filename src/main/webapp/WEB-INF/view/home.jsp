@@ -7,12 +7,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="${pageContext.request.contextPath}/script/jquery-1.7.2.min.js"></script>
 		<script src="${pageContext.request.contextPath}/script/js.js"></script>
+		<link href="${pageContext.request.contextPath}/style/style.css" rel="stylesheet" type="text/css" media="screen" />
 		<style>
-			#wrapper {
-				margin: auto;
-				width: 600px;
-				padding-top: 40px;
-			}
 			.layer {
 				height: 150px;
 			}
@@ -77,15 +73,6 @@
 				background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
 				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
 			}
-			#header {
-				height: 32px;
-			}
-			#logo {
-				float: left;
-			}
-			#logo img {
-				border: none;
-			}
 			#banner {
 				padding-top: 20px;
 				padding-bottom: 10px;
@@ -95,6 +82,7 @@
 				color: blue;
 			}
 			#share-form {
+				width:600px;
 				clear: both;
 				border-radius: .5em;
 				background-color: #33BCEF;
@@ -278,10 +266,12 @@
 				text-shadow: 0 1px 1px rgba(0,0,0,.3);
 			}
 			#yogio-intro {
+				width:600px;
 				background-image: url(${pageContext.request.contextPath}/img/intro.jpg);
 				border-radius: .5em .5em 0 0;
 			}
 			#attach-button-intro {
+				width:600px;
 				background-image: url(${pageContext.request.contextPath}/img/share.jpg);
 				color: #FFF;
 			}
@@ -289,27 +279,10 @@
 				margin: 0;
 			}
 			#create-page-intro {
+				width:600px;
 				background-image: url(${pageContext.request.contextPath}/img/page.jpg);
 				border-radius: 0 0 .5em .5em;
 				text-align: right;
-			}
-			#footer {
-				padding: 10px;
-				font-size: 11px;
-				text-align: center;
-				color: #999;
-				margin-bottom: 100px;
-			}
-			#footer .left {
-				float: left;
-				margin-right: 10px;
-			}
-			#footer .right {
-				float: right;
-			}
-			#footer a {
-				color: #999;
-			}
 		</style>
 		<script type="text/javascript">
 		$(function() {
@@ -319,15 +292,30 @@
 	</head>
 	
 	<body>
-	
-		<div id="wrapper">
-			<div id="header">
-				<a id="logo" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/img/logo.png"></a>
-				<ul>
-					<li><a id="go-achievement" href="${pageContext.request.contextPath}/func/achievement">업적 보기</a></li>
-					<li><a id="go-analyze-result" href="${pageContext.request.contextPath}/func/myanalyze">분석 결과 보기</a></li>
-				</ul>
+	<div id="menu-wrapper">
+		<div id="menu">
+			<ul>
+				<li class="current_page_item"><a href="${pageContext.request.contextPath}">홈</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/myanalyze">분석결과</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/achievement">업적</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/page/create">페이지</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/intro">소개</a></li>
+			</ul>
+		</div>
+		<!-- end #menu -->
+	</div>
+	<div id="header-wrapper">
+	<div id="header">
+			<div id="logo">
+				<a href="#"><img src = "${pageContext.request.contextPath}/img/logo.png"></a>
 			</div>
+		</div>
+	</div>
+		<div id="wrapper">
+			<div id="page">
+				<div id="page-bgtop">
+					<div id="page-bgbtm">
+						<div id="content">
 			<div id="banner">
 				<img src="${pageContext.request.contextPath}/img/banner.png">
 			</div>
@@ -374,18 +362,13 @@
 					<a href="${pageContext.request.contextPath}/func/page/create" class="button orange">페이지 만들기</a>
 				</div>
 			</div>
-			<div id="footer">
-				<div class="left">
-					<script>YOGIO();</script>
-				</div>
-				<div class="left">
-					피드백은 mr@hanul.co 로 부탁드립니다~^^!
-				</div>
-				<div class="right">
-					&copy; <a href="http://swmaestro.kr" target="_blank">SW Maestro</a> 3rd <a href="${pageContext.request.contextPath}/func/sla/intro">SLA팀</a>
-				</div>
-			</div>
 		</div>
-		
+		</div>
+		</div>
+		</div>
+		</div>
+	<div id="footer">
+	<p>&copy; 2012 Yog.io | SW Maestro SLA Team.</p>
+	</div>	
 	</body>
 </html>

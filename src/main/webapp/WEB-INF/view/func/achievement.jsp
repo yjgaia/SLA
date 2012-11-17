@@ -7,6 +7,7 @@
 <meta charset="utf-8">
 <title>스마트한 공유하기, YOG.IO!</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="${pageContext.request.contextPath}/style/style.css" rel="stylesheet" type="text/css" media="screen" />
 <link href="${pageContext.request.contextPath}/style/prettify.css"
 	type="text/css" rel="stylesheet" />
 <script
@@ -19,44 +20,6 @@
 ul {
 	word-wrap: break-word;
 	word-break: break-all;
-}
-
-#wrapper {
-	margin: auto;
-	width: 600px;
-	padding-top: 30px;
-}
-
-#wrapper p {
-	font-size: 15px;
-	margin: 0;
-	padding: 10px;
-}
-
-#header {
-	height: 32px;
-}
-
-#header h3 {
-	padding: 0;
-	padding-top: 1px;
-	margin: 0;
-	margin-left: 20px;
-	float: left;
-}
-
-#logo {
-	float: left;
-}
-
-#logo img {
-	border: none;
-}
-
-#footer {
-	padding: 10px;
-	font-size: 12px;
-	text-align: center;
 }
 .achievement{
 	height:100px;
@@ -115,16 +78,33 @@ $(function(){
 
 <body>
 
-	<div id="wrapper">
-		<div id="header">
-			<a id="logo" href="${pageContext.request.contextPath}/"><img
-				border="0" src="${pageContext.request.contextPath}/img/logo.png"></a>
-			<h3>업적 조회실</h3>
+	<div id="menu-wrapper">
+		<div id="menu">
+			<ul>
+				<li><a href="${pageContext.request.contextPath}">홈</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/myanalyze">분석결과</a></li>
+				<li class="current_page_item"><a href="${pageContext.request.contextPath}/func/achievement">업적</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/page/create">페이지</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/intro">소개</a></li>
+			</ul>
 		</div>
-		<div>
-			<div id="topLoader">      
-      		</div>
-			<script>
+		<!-- end #menu -->
+	</div>
+	<div id="header-wrapper">
+	<div id="header">
+			<div id="logo">
+				<a href="#"><img src = "${pageContext.request.contextPath}/img/logo.png"></a>
+			</div>
+		</div>
+	</div>
+		<div id="wrapper">
+			<div id="page">
+				<div id="page-bgtop">
+					<div id="page-bgbtm">
+						<div id="content">
+							<div id="topLoader">      
+				      		</div>
+							<script>
         $(function() {
           var $topLoader = $("#topLoader").percentageLoader({width: 256, height: 256, controllable : false, progress : 0.5, onProgressUpdate : function(val) {
               
@@ -160,7 +140,6 @@ $(function(){
           setTimeout(animateFunc, 25);
         });      
       </script>
-		</div>
 		<div id="achievementList">
 			<c:forEach items="${achievement}" var="achievement">
 				<div class="achievement 
@@ -180,11 +159,12 @@ $(function(){
 				</div>
 			</c:forEach>
 		</div>
-		<div id="footer">
-			&copy; <a href="http://swmaestro.kr" target="_blank">SW Maestro</a>
-			3rd <a href="${pageContext.request.contextPath}/func/sla/intro">SLA팀</a>.
 		</div>
-	</div>
-
+		</div>
+		</div>
+		</div>
+<div id="footer">
+	<p>&copy; 2012 Yog.io | SW Maestro SLA Team.</p>
+	</div>	
 </body>
 </html>

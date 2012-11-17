@@ -6,40 +6,11 @@
 		<meta charset="utf-8">
 		<title>YOG.IO! 공유버튼 파라미터 자세히 보기</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="${pageContext.request.contextPath}/style/style.css" rel="stylesheet" type="text/css" media="screen" />
 		<link href="${pageContext.request.contextPath}/style/prettify.css" type="text/css" rel="stylesheet" />
 		<script src="${pageContext.request.contextPath}/script/jquery-1.7.2.min.js"></script>
 		<script src="${pageContext.request.contextPath}/script/prettify.js"></script>
 		<style>
-			ul{
-				word-wrap:break-word;
-				word-break:break-all;
-			}
-			#wrapper {
-				margin: auto;
-				width: 600px;
-				padding-top: 30px;
-			}
-			#wrapper p {
-				font-size: 15px;
-				margin: 0;
-				padding: 10px;
-			}
-			#header {
-				height: 32px;
-			}
-			#header h3 {
-				padding: 0;
-				padding-top: 1px;
-				margin: 0;
-				margin-left: 20px;
-				float: left;
-			}
-			#logo {
-				float: left;
-			}
-			#logo img {
-				border: none;
-			}
 			#my-analyze-list {
 				background-color: #EEE;
 				border: 1px solid #CCC;
@@ -79,11 +50,6 @@
 				float: right;
 				color: orange;
 			}
-			#footer {
-				padding: 10px;
-				font-size: 12px;
-				text-align: center;
-			}
 		</style>
 		<script>
 		$(function() {
@@ -93,30 +59,51 @@
 	</head>
 	
 	<body>
-	
-		<div id="wrapper">
-			<div id="header">
-				<a id="logo" href="${pageContext.request.contextPath}/"><img border="0" src="${pageContext.request.contextPath}/img/logo.png"></a>
-				<h3>내 분석 결과 리스트</h3>
-			</div>
-			<div id="my-analyze-list">
-				<p>
-					총 <b>${list.size()}</b>개 입니다.
-				</p>
-				<ul>
-					<c:forEach items="${list}" var="item">
-					<li>
-						<a class="url" href="${pageContext.request.contextPath}/func/analyze?shortUrl=${item.shortUrl}" target="_blank">${item.url}</a>
-						<br/><b>${item.visitCountSum}</b>명 방문, <b>${item.likeCount }</b>명이 좋아하고 <b>${item.commentCount }</b>명이 댓글을 달았습니다.
-						<a class="func" href="javascript:if(confirm('정말 삭제 하시겠습니까?')){location.href='${pageContext.request.contextPath}/func/delanalyze?shortUrl=${item.shortUrl}';}">삭제</a>
-					</li>
-					</c:forEach>
-				</ul>
-			</div>
-			<div id="footer">
-				&copy; <a href="http://swmaestro.kr" target="_blank">SW Maestro</a> 3rd <a href="${pageContext.request.contextPath}/func/sla/intro">SLA팀</a>.
+	<div id="menu-wrapper">
+		<div id="menu">
+			<ul>
+				<li><a href="${pageContext.request.contextPath}">홈</a></li>
+				<li class="current_page_item"><a href="${pageContext.request.contextPath}/func/myanalyze">분석결과</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/achievement">업적</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/page/create">페이지</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/intro">소개</a></li>
+			</ul>
+		</div>
+		<!-- end #menu -->
+	</div>
+	<div id="header-wrapper">
+	<div id="header">
+			<div id="logo">
+				<a href="#"><img src = "${pageContext.request.contextPath}/img/logo.png"></a>
 			</div>
 		</div>
-		
+	</div>
+		<div id="wrapper">
+			<div id="page">
+				<div id="page-bgtop">
+					<div id="page-bgbtm">
+						<div id="content">
+							<div id="my-analyze-list">
+								<p>
+									총 <b>${list.size()}</b>개 입니다.
+								</p>
+								<ul>
+									<c:forEach items="${list}" var="item">
+									<li>
+										<a class="url" href="${pageContext.request.contextPath}/func/analyze?shortUrl=${item.shortUrl}" target="_blank">${item.url}</a>
+										<br/><b>${item.visitCountSum}</b>명 방문, <b>${item.likeCount }</b>명이 좋아하고 <b>${item.commentCount }</b>명이 댓글을 달았습니다.
+										<a class="func" href="javascript:if(confirm('정말 삭제 하시겠습니까?')){location.href='${pageContext.request.contextPath}/func/delanalyze?shortUrl=${item.shortUrl}';}">삭제</a>
+									</li>
+									</c:forEach>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+	<p>&copy; 2012 Yog.io | SW Maestro SLA Team.</p>
+	</div>
 	</body>
 </html>
