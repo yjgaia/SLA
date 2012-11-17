@@ -163,6 +163,7 @@ public class MainController {
 			visitDetail=new VisitDetail();
 			visitDetail.setShortUrl(su);
 			visitDetail.setCookieId(cookie.getValue());
+			visitDetail.setSavedUserId(0);
 			
 		}
 		if(visitDetail!=null){

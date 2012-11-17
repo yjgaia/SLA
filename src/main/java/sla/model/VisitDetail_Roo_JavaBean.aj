@@ -24,11 +24,11 @@ privileged aspect VisitDetail_Roo_JavaBean {
         this.cookieId = cookieId;
     }
     
-    public Long VisitDetail.getSavedUserId() {
+    public long VisitDetail.getSavedUserId() {
         return this.savedUserId;
     }
     
-    public void VisitDetail.setSavedUserId(Long savedUserId) {
+    public void VisitDetail.setSavedUserId(long savedUserId) {
         this.savedUserId = savedUserId;
     }
     

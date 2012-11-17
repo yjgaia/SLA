@@ -17,8 +17,11 @@ public class VisitDetail {
 	private ShortUrl shortUrl;
 	
 	private String cookieId;
-	private Long savedUserId;
-	private int visitCount;	
+	
+	
+	private long savedUserId=0;
+	
+	private int visitCount=0;	
 	public void increaseVisitCount(){
 		visitCount++;
 	}
