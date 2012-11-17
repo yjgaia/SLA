@@ -325,17 +325,38 @@
 							  $layer.show();
 							  
 							  //id 다음부분에 user.id 가 들어가도록 해줄 것
-							  $.getJSON('${pageContext.request.contextPath}/api/userInfo?id='+event.point.id, function(datas) {
+							  $.getJSON('${pageContext.request.contextPath}/api/userInfoAndShortUrl?id='+event.point.id+'&shortUrl=${param.shortUrl}', function(datas) {
 								  var dat = datas.data;
-								 $("div#popup_prop1").text(dat.socialName);
-								 $("div#popup_prop2").text(dat.socialFriendCount);
-								 if(dat.socialGender == "male")
+								  
+								 $("div#popup_prop1").text(dat.userInfo.socialName);
+								 $("div#popup_prop2").text(dat.userInfo.socialFriendCount);
+								 if(dat.userInfo.socialGender == "male")
 								 	$("div#popup_prop3").text("남");
 								 else
 									$("div#popup_prop3").text("여");
 								 
-								 $("div#popup_prop4").text(dat.socialBirthday);
-								 $("div#popup_prop5").text(dat.socialEmail);
+								 $("div#popup_prop4").text(dat.userInfo.socialBirthday);
+								 $("div#popup_prop5").text(dat.userInfo.socialEmail);
+								 
+								 var obj = 	$.parseJSON(dat.shortUrl.comments);
+								 console.log(dat);
+								 console.log(obj);
+								 
+								 if(dat.shortUrl.likeCount > 0)
+								 {
+									 $("div#likes_count").text(dat.shortUrl.likeCount+"명이 좋아합니다.")
+								 }
+								 
+								if(dat.shortUrl.comments != "")
+								{
+									var tableString = "<html><head></head><body><table>"
+									for(i=0; i<obj.length; i++)
+									{
+										tableString += "<tr><td><img src='http://graph.facebook.com/"+obj[i].from.id+"/picture' width='25' height='25'></td><td><font size='2'>"+obj[i].from.name+"</font></td><td><font size='2'>"+obj[i].message+"</font></td></tr>"
+									}
+									tableString += "</table></body></html>";
+									$("#reply").contents().find('html').html(tableString);
+								}
 							  });
 						  }
 						}
@@ -519,12 +540,13 @@
 	<div class="layer">
 			<table width="100%">
 				<tr><th>이름</th><td><div id="popup_prop1"></div></td></tr>
-				<tr><th>친구 수</th><td><div id="popup_prop2"></td></tr>
-				<tr><th>성별</th><td><div id="popup_prop3"></td></tr>
-				<tr><th>생일</th><td><div id="popup_prop4"></td></tr>
-				<tr><th>이메일</th><td><div id="popup_prop5"></td></tr>
+				<tr><th>친구 수</th><td><div id="popup_prop2"></div></td></tr>
+				<tr><th>성별</th><td><div id="popup_prop3"></div></td></tr>
+				<tr><th>생일</th><td><div id="popup_prop4"></div></td></tr>
+				<tr><th>이메일</th><td><div id="popup_prop5"></div></td></tr>
+				<tr><td colspan="2"><div id="likes_count"></div></td></tr>
+				<tr><td colspan="2"><iframe id="reply" width="100%" height="150"></iframe></td></tr>
 			</table>
-		<br>
 		<button type="button" class="closeBtn">창 닫기</button>
 	</div>
 	<div id="wrapper" style="display:table;">
