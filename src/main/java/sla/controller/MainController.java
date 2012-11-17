@@ -67,6 +67,7 @@ public class MainController {
 		
 		final String ip=httpServletRequest.getRemoteAddr();
 		String storedUrl;
+		final UserInfo userInfo=AuthUtil.getUserInfo();
 		if((storedUrl=keyValueCache.getStringAndResetExpireByKey(shortUrl))!=null){
 			//캐싱되어있음
 			Thread thread =new Thread(new Runnable() {
@@ -75,7 +76,11 @@ public class MainController {
 				public void run() {
 					if(ShortUrl.existsShortUrl(id)){
 						final ShortUrl su=ShortUrl.findShortUrl(id);
-						saveStatistics(su, ip, shortUrl, userAgent,cookie);
+						try {
+							saveStatistics(su, ip, shortUrl, userAgent,cookie,userInfo);
+						} catch (SQLException e) {
+							e.printStackTrace();
+						}
 						
 					}
 				}
@@ -90,7 +95,11 @@ public class MainController {
 					
 					@Override
 					public void run() {
-						saveStatistics(su, ip, shortUrl, userAgent,cookie);
+						try {
+							saveStatistics(su, ip, shortUrl, userAgent,cookie,userInfo);
+						} catch (SQLException e) {
+							e.printStackTrace();
+						}
 						keyValueCache.setStringWithKey(shortUrl, su.getUrl());
 					}
 				});
@@ -111,7 +120,7 @@ public class MainController {
 			for(int i=0;i<cookies.length;i++){
 				Cookie temp=cookies[i];
 				if(USER_INDENTIFIER.equals(temp.getName())){
-					System.out.println("유저가 갖고 있는 쿠키:"+obj.writeValueAsString(temp));
+					//System.out.println("유저가 갖고 있는 쿠키:"+obj.writeValueAsString(temp));
 					result=temp;
 				}
 			}
@@ -120,13 +129,13 @@ public class MainController {
 			Date date=new Date();
 			Cookie newCookie=new Cookie(USER_INDENTIFIER,ShortUrlUtil.convert(date.getTime()));
 			response.addCookie(newCookie);
-			System.out.println("쿠키 생성:"+obj.writeValueAsString(newCookie));
+			//System.out.println("쿠키 생성:"+obj.writeValueAsString(newCookie));
 			result=newCookie;
 		}
 		return result;
 	}
 
-	public void saveStatistics(ShortUrl su,String ip,String shortUrl,UserAgent userAgent,Cookie cookie){
+	public void saveStatistics(ShortUrl su,String ip,String shortUrl,UserAgent userAgent,Cookie cookie,UserInfo userInfo) throws SQLException{
 		if(!keyValueCache.exists(keyValueCache.generateIpKey(ip, shortUrl))){
 			keyValueCache.setStringWithKey(keyValueCache.generateIpKey(ip, shortUrl), "1");
 			
@@ -159,6 +168,9 @@ public class MainController {
 		if(visitDetail!=null){
 			visitDetail.increaseVisitCount();
 			visitDetail.merge();
+		}
+		if(userInfo!=null){
+			visitCountService.updateSavedUserIdByLoggedInUser(userInfo.getId(),cookie.getValue());
 		}
 	}
 
