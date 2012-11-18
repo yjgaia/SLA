@@ -6,8 +6,11 @@
 		<title>스마트한 공유하기, YOG.IO!</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="${pageContext.request.contextPath}/script/jquery-1.7.2.min.js"></script>
+		<script src="${pageContext.request.contextPath}/script/jquery.easing.1.3.js"></script>
+		<script src="${pageContext.request.contextPath}/script/bootstrap-tooltip.js"></script>
 		<script src="${pageContext.request.contextPath}/script/js.js"></script>
 		<link href="${pageContext.request.contextPath}/style/style.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href="${pageContext.request.contextPath}/style/bootstrap.css" rel="stylesheet" type="text/css" />
 		<style>
 			.layer {
 				height: 150px;
@@ -74,7 +77,7 @@
 				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
 			}
 			#banner {
-				padding-top: 20px;
+				padding-top: 0;
 				padding-bottom: 10px;
 			}
 			#share-form {
@@ -145,6 +148,9 @@
 				background-repeat: no-repeat;
 				background-position: center left;
 				padding-left: 22px;
+			}
+			#header {
+				margin-top: 20px;
 			}
 			#header ul {
 				padding: 0;
@@ -270,6 +276,7 @@
 				width:600px;
 				background-image: url(${pageContext.request.contextPath}/img/share.jpg);
 				color: #FFF;
+				border-radius: .5em .5em 0 0;
 			}
 			#attach-button-intro .code {
 				margin: 0;
@@ -282,11 +289,71 @@
 			}
 			#extra {
 				display: none;
+				clear: both;
+				padding-top: 10px;
+			}
+			#extra-button {
+				border: 1px solid #999;
+				background-color: #ccc;
+				color: #333;
+				padding: 2px 7px;
+				display: block;
+				float: right;
+				font-size: 12px;
+			}
+			#box {
+				
+				/* position absolute so that z-index can be defined and able to move this item using javascript */
+				position:absolute; 
+				left:0; 
+				top:0; 
+				z-index:200; 
+		
+				/* image of the right rounded corner */
+				background:url(${pageContext.request.contextPath}/img/tail.gif) no-repeat right center; 
+				height:35px;
+		
+		
+				/* add padding 8px so that the tail would appear */
+				padding-right:8px;
+				
+				/* set the box position manually */
+				margin-left:5px;
+				
+			}
+			
+			#box .head {
+				/* image of the left rounded corner */
+				background:url(${pageContext.request.contextPath}/img/head.gif) no-repeat 0 0;
+				height:35px;
+				color:#eee;
+				
+				/* force text display in one line */
+				white-space:nowrap;
+		
+				/* set the text position manually */
+				padding-left:8px;
+				padding-top:12px;
 			}
 		</style>
 		<script type="text/javascript">
 		$(function() {
-			$('#share-form .url').focus();
+			$('#share-form .url').select();
+			
+			//transitions
+			//for more transition, goto http://gsgd.co.uk/sandbox/jquery/easing/
+			var style = 'easeOutExpo';
+			var default_left = Math.round($('#share-form .submit').offset().left);
+			var default_top = Math.round($('#share-form .submit').offset().top);
+
+			//Set the default position and text for the tooltips
+			//$('#box').css({left: default_left, top: default_top});
+			//$('#box .head').html('test');
+			
+			setTimeout(function() {
+				$('#share-form .submit').tooltip('show');
+			}, 1000);
+			
 		});
 		</script>
 	</head>
@@ -326,18 +393,19 @@
 				</p>
 				 -->
 				<form action="${pageContext.request.contextPath}/func/share" onsubmit="OPEN_YOGIO_WIN();" target="YOGIO_WIN">
-					<input class="url" name="url" placeholder="http:// 공유할 주소를 입력해주세요.">
-					<input class="submit" type="submit" value="공유">
+					<input class="url" name="url" placeholder="http:// 공유할 주소를 입력해주세요." value="http://yog.io">
+					<input class="submit" type="submit" rel="tooltip" data-original-title="한번 공유해보세요!" value="공유">
 				</form>
 			</div>
+			<!-- <div id="box"><div class="head"></div></div> -->
 			<div id="notice">
 				<p>
 					현재 <b>${userCount }</b>명의 사용자가 <b>${shareCount }</b>건의 링크를 공유하고 있습니다! 지금 참여해보세요!
 				</p>
 			</div>
-			<a href="javascript:$('#extra').toggle();">더 많은 기능</a>
+			<a id="extra-button" href="javascript:$('#extra').toggle();">더 많은 기능 ▼</a>
 			<div id="extra">
-				<div id="yogio-intro" class="layer">
+				<!-- <div id="yogio-intro" class="layer">
 					<div class="layer-inner">
 						<h3>환영합니다.</h3>
 						<p>
@@ -345,7 +413,7 @@
 						</p>
 						<a id="go-intro" href="${pageContext.request.contextPath}/func/intro">자세히...</a>
 					</div>
-				</div>
+				</div> -->
 				<div id="attach-button-intro" class="layer">
 					<div class="layer-inner">
 						<h3>사이트에 공유버튼을 달아보세요.</h3>
