@@ -68,4 +68,12 @@ privileged aspect ShortUrl_Roo_JavaBean {
         this.hide = hide;
     }
     
+    public int ShortUrl.getCount() {
+        return this.count;
+    }
+    
+    public void ShortUrl.setCount(int count) {
+        this.count = count;
+    }
+    
 }
