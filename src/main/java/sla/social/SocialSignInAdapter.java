@@ -9,19 +9,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.security.web.WebAttributes;
 import org.springframework.security.web.savedrequest.RequestCache;
 import org.springframework.security.web.savedrequest.SavedRequest;
 import org.springframework.social.connect.Connection;
 import org.springframework.social.connect.web.SignInAdapter;
+import org.springframework.social.facebook.api.Comment;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.FacebookProfile;
+import org.springframework.social.facebook.api.Post;
+import org.springframework.social.facebook.api.Reference;
 import org.springframework.social.twitter.api.Twitter;
 import org.springframework.social.twitter.api.TwitterProfile;
 import org.springframework.web.context.request.NativeWebRequest;
 
 import sla.model.ShortUrl;
 import sla.model.UserInfo;
+import sla.service.AchievementService;
 import sla.util.AuthUtil;
 
 public final class SocialSignInAdapter implements SignInAdapter {
@@ -42,6 +47,11 @@ public final class SocialSignInAdapter implements SignInAdapter {
 		UserInfo userInfo = UserInfo.findUserInfo(Long.valueOf(userId));
 		userInfo.setLastLoginDate(new Date());
 		userInfo.increaseLoginCount();
+		
+		//loginCount관련 업적 추가
+		int loginCount=userInfo.getLoginCount();
+		AchievementService.loginCountAchievement(userInfo.getId(),loginCount);
+		
 		if (connection.getApi() instanceof Facebook) { //변경 되는 페이스북 정보이므로 매번 체크해서 업데이트 해줌
 			Facebook facebook = (Facebook) connection.getApi();
 			FacebookProfile fp = facebook.userOperations().getUserProfile();
@@ -58,11 +68,26 @@ public final class SocialSignInAdapter implements SignInAdapter {
 				ShortUrl su=shortUrlList.get(i);
 				
 				if(su.getEntityId()!=null){
-					System.out.println(su.getEntityId());
-					//Post post=facebook.feedOperations().getPost(su.getEntityId());
-					//System.out.println(post);
-					//System.out.println("comments:"+post.getComments().size());
-					//System.out.println("like:"+post.getLikeCount());
+					try{
+					ObjectMapper objMapper=new ObjectMapper();
+					Post post=facebook.feedOperations().getPost(su.getEntityId());
+					if(post!=null){
+						List<Comment> commentList=post.getComments();
+						if(commentList!=null){
+							su.setComments(objMapper.writeValueAsString(commentList));
+							su.setCommentCount(commentList.size());
+						}
+						List<Reference> likes=facebook.likeOperations().getLikes(su.getEntityId());
+						if(likes!=null){
+							su.setLikes(objMapper.writeValueAsString(likes));
+							su.setLikeCount(post.getLikeCount());
+						}
+						
+					}
+					}catch (Exception e){
+						System.out.println("exception:"+e.toString());
+					}
+					su.merge();
 				}
 			}
 		}

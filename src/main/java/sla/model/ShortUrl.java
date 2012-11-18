@@ -23,8 +23,22 @@ public class ShortUrl {
 	private String shortUrl;
 	
 	private String entityId;
+	
+	private Integer visitCountSum=0;
+	public Integer increaseVisitCountSum(){
+		return visitCountSum++;
+	}
+	@Lob
+	@Size
+	@Column
 	private String comments;
-	private Integer likeCount;
+	
+	private Integer commentCount=0;
+	@Lob
+	@Size
+	@Column
+	private String likes;
+	private Integer likeCount=0;
 	@ManyToOne
 	@JoinColumn(name = "userId", nullable = false)
 	private UserInfo userInfo;

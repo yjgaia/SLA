@@ -29,6 +29,11 @@ public class UserInfo implements UserDetails {
 	public void increaseLoginCount() {
 		loginCount++;
 	};
+	
+	private int achieveScore=0;
+	public int addAchieveScore(int score){
+		return achieveScore+=score;
+	}
 
 	// 소셜 유저를 위한 설정
 	private boolean socialUser = false;

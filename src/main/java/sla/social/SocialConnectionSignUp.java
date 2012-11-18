@@ -9,12 +9,15 @@ import org.springframework.social.connect.ConnectionSignUp;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.FacebookProfile;
 
+import sla.model.Achievement;
 import sla.model.UserInfo;
+import sla.service.AchievementService;
 
 /**
  * @author 심영재
  */
 public final class SocialConnectionSignUp implements ConnectionSignUp {
+
 
 	@Override
 	public String execute(Connection<?> connection) {
@@ -40,7 +43,10 @@ public final class SocialConnectionSignUp implements ConnectionSignUp {
 			List<String> friendList=facebook.friendOperations().getFriendIds();
 			userInfo.setSocialFriendCount(friendList.size());
 		}
+
 		userInfo.persist();
+		AchievementService.firstLogin(userInfo.getId(),userInfo.getLoginCount());
+		
 		
 		return userInfo.getId().toString();
 	}

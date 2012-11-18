@@ -3,16 +3,12 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>YOG.IO!</title>
+		<title>스마트한 공유하기, YOG.IO!</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="${pageContext.request.contextPath}/script/jquery-1.7.2.min.js"></script>
 		<script src="${pageContext.request.contextPath}/script/js.js"></script>
+		<link href="${pageContext.request.contextPath}/style/style.css" rel="stylesheet" type="text/css" media="screen" />
 		<style>
-			#wrapper {
-				margin: auto;
-				width: 600px;
-				padding-top: 30px;
-			}
 			.layer {
 				height: 150px;
 			}
@@ -77,20 +73,16 @@
 				background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
 				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
 			}
-			#header {
-				height: 32px;
-			}
-			#logo {
-				float: left;
-			}
-			#logo img {
-				border: none;
+			#banner {
+				padding-top: 20px;
+				padding-bottom: 10px;
 			}
 			#go-intro {
 				font-size: 12px;
 				color: blue;
 			}
 			#share-form {
+				width:600px;
 				clear: both;
 				border-radius: .5em;
 				background-color: #33BCEF;
@@ -158,9 +150,75 @@
 				background-position: center left;
 				padding-left: 22px;
 			}
+			#header ul {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				float: right;
+			}
+			#header ul li {
+				padding: 0;
+				margin: 0;
+				margin-left: 10px;
+				list-style: none;
+				float: left;
+			}
+			#go-achievement {
+				margin-top: -2px;
+				-webkit-appearance: none;
+				-webkit-border-horizontal-spacing: 0px;
+				-webkit-border-image: none;
+				-webkit-border-vertical-spacing: 0px;
+				-webkit-box-align: center;
+				-webkit-box-shadow: white 0px 1px 0px 0px;
+				background-color: #019AD2;
+				background-image: -webkit-linear-gradient(top, #33BCEF, #019AD2);
+				background-repeat: repeat-x;
+				border-radius: .5em;
+				box-shadow: white 0px 1px 0px 0px;
+				box-sizing: border-box;
+				cursor: pointer;
+				display: block;
+				float: right;
+				font-size: 13px;
+				font-weight: bold;
+				height: 30px;
+				letter-spacing: normal;
+				line-height: 18px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				overflow-x: visible;
+				overflow-y: visible;
+				padding: .45em 2em .55em;
+				position: relative;
+				text-align: center;
+				text-decoration: none;
+				font: Arial, Helvetica, sans-serif;
+				text-shadow: 0 1px 1px rgba(0,0,0,.3);
+			}
+			#go-achievement {
+				color: #fef4e9;
+				border: solid 1px #da7c0c;
+				background: #f78d1d;
+				background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+				background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
+				filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+			}
+			#go-achievement:hover {
+				background: #f47c20;
+				background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+				background: -moz-linear-gradient(top,  #f88e11,  #f06015);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+			}
+			#go-achievement:active {
+				color: #fcd3a5;
+				background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
+				background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+			}
 			#go-analyze-result {
 				margin-top: -2px;
-				float: right;
 				-webkit-appearance: none;
 				-webkit-border-horizontal-spacing: 0px;
 				-webkit-border-image: none;
@@ -208,10 +266,12 @@
 				text-shadow: 0 1px 1px rgba(0,0,0,.3);
 			}
 			#yogio-intro {
+				width:600px;
 				background-image: url(${pageContext.request.contextPath}/img/intro.jpg);
 				border-radius: .5em .5em 0 0;
 			}
 			#attach-button-intro {
+				width:600px;
 				background-image: url(${pageContext.request.contextPath}/img/share.jpg);
 				color: #FFF;
 			}
@@ -219,41 +279,52 @@
 				margin: 0;
 			}
 			#create-page-intro {
+				width:600px;
 				background-image: url(${pageContext.request.contextPath}/img/page.jpg);
 				border-radius: 0 0 .5em .5em;
 				text-align: right;
-			}
-			#footer {
-				padding: 10px;
-				font-size: 11px;
-				text-align: center;
-				color: #999;
-				margin-bottom: 50px;
-			}
-			#footer .left {
-				float: left;
-				margin-right: 10px;
-			}
-			#footer .right {
-				float: right;
-			}
-			#footer a {
-				color: #999;
-			}
 		</style>
+		<script type="text/javascript">
+		$(function() {
+			$('#share-form .url').focus();
+		});
+		</script>
 	</head>
 	
 	<body>
-	
+	<div id="menu-wrapper">
+		<div id="menu">
+			<ul>
+				<li class="current_page_item"><a href="${pageContext.request.contextPath}">홈</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/myanalyze">분석결과</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/achievement">업적</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/page/create">페이지</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/intro">소개</a></li>
+			</ul>
+		</div>
+		<!-- end #menu -->
+	</div>
+	<div id="header-wrapper">
+	<div id="header">
+			<div id="logo">
+				<a href="#"><img src = "${pageContext.request.contextPath}/img/logo.png"></a>
+			</div>
+		</div>
+	</div>
 		<div id="wrapper">
-			<div id="header">
-				<a id="logo" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/img/logo.png"></a>
-				<a id="go-analyze-result" href="${pageContext.request.contextPath}/func/myanalyze">분석 결과 보기</a>
+			<div id="page">
+				<div id="page-bgtop">
+					<div id="page-bgbtm">
+						<div id="content">
+			<div id="banner">
+				<img src="${pageContext.request.contextPath}/img/banner.png">
 			</div>
 			<div id="share-form">
+				<!-- 
 				<p>
 					내가 공유한 링크를 얼마나 많은 사람이 눌렀는지 알고싶다면?
 				</p>
+				 -->
 				<form action="${pageContext.request.contextPath}/func/share" onsubmit="OPEN_YOGIO_WIN();" target="YOGIO_WIN">
 					<input class="url" name="url" placeholder="http:// 공유할 주소를 입력해주세요.">
 					<input class="submit" type="submit" value="공유">
@@ -291,18 +362,13 @@
 					<a href="${pageContext.request.contextPath}/func/page/create" class="button orange">페이지 만들기</a>
 				</div>
 			</div>
-			<div id="footer">
-				<div class="left">
-					<script>YOGIO();</script>
-				</div>
-				<div class="left">
-					피드백은 mr@hanul.co 로 부탁드립니다~^^!
-				</div>
-				<div class="right">
-					&copy; <a href="http://swmaestro.kr" target="_blank">SW Maestro</a> 3rd <a href="${pageContext.request.contextPath}/func/sla/intro">SLA팀</a>
-				</div>
-			</div>
 		</div>
-		
+		</div>
+		</div>
+		</div>
+		</div>
+	<div id="footer">
+	<p>&copy; 2012 Yog.io | SW Maestro SLA Team.</p>
+	</div>	
 	</body>
 </html>

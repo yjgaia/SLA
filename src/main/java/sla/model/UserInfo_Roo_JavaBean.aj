@@ -32,6 +32,14 @@ privileged aspect UserInfo_Roo_JavaBean {
         this.loginCount = loginCount;
     }
     
+    public int UserInfo.getAchieveScore() {
+        return this.achieveScore;
+    }
+    
+    public void UserInfo.setAchieveScore(int achieveScore) {
+        this.achieveScore = achieveScore;
+    }
+    
     public boolean UserInfo.isSocialUser() {
         return this.socialUser;
     }

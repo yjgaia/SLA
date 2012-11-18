@@ -4,6 +4,7 @@ import java.awt.Image;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -34,13 +35,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import sla.model.Achievement;
 import sla.model.KeyCount;
 import sla.model.Page;
 import sla.model.Result;
 import sla.model.ShortUrl;
 import sla.model.ShortUserInfoWithCount;
+import sla.model.UserAchieve;
 import sla.model.UserInfo;
 import sla.model.VisitCount;
+import sla.service.AchievementService;
 import sla.service.AnalyzeService;
 import sla.social.SocialConfig;
 import sla.util.AuthUtil;
@@ -55,6 +59,9 @@ public class FuncController {
 
 	@Autowired
 	private AnalyzeService analyzeService;
+	
+	@Autowired
+	private AchievementService achievementService;
 	
 	@Autowired
 	private SocialConfig socialConfig;
@@ -133,7 +140,10 @@ public class FuncController {
 	
 	@RequestMapping("sla/intro")
 	public void slaIntro() {
-		// just view
+		UserInfo userInfo=AuthUtil.getUserInfo();
+		if(userInfo!=null){
+			AchievementService.viewIntro(userInfo.getId());
+		}
 	}
 	
 	@RequestMapping("ckfinder")
@@ -145,6 +155,34 @@ public class FuncController {
 	@RequestMapping("myanalyze")
 	public void analyzeList(Model model) {
 		model.addAttribute("list", ShortUrl.findShortUrlsByUserId(AuthUtil.getUserId()));
+	}
+	
+	@Secured("ROLE_USER") 
+	@RequestMapping("achievement")
+	public void achievement(Model model) throws SQLException, JsonGenerationException, JsonMappingException, IOException{
+		UserInfo userInfo=AuthUtil.getUserInfo();
+		List<Achievement>  acquiredAchievement=achievementService.getAcquiredAchievement(userInfo.getId());
+		int size=acquiredAchievement.size();
+		int acquired=0;
+		List<Achievement> unIdentified=new ArrayList<Achievement>();
+		for(int i=0;i<size;i++){
+			Achievement achievement=acquiredAchievement.get(i);
+			if(achievement.getAcquired()!=-1){
+				acquired++;
+				if(achievement.getIdentified()!=null&&achievement.getIdentified()==0){
+					UserAchieve userAchieve=UserAchieve.findUserAchieve(achievement.getAcquired());
+					userAchieve.setIdentified(true);
+					userAchieve.merge();
+					unIdentified.add(achievement);
+				}
+			}
+		}
+		ObjectMapper obj=new ObjectMapper();
+		model.addAttribute("total",size);
+		model.addAttribute("acquired",acquired);
+		model.addAttribute("achievement",acquiredAchievement);
+		model.addAttribute("unIdentified",obj.writeValueAsString(unIdentified));
+		model.addAttribute("userInfo",userInfo);
 	}
 	
 	@Secured("ROLE_USER")
@@ -239,25 +277,29 @@ public class FuncController {
 			double maxWidth = 0;
 			double maxHeight=0;
 			String maxUrl="";
+			int size=images.size();
 			for(int i=0;i<images.size();i++){
 				String urlStr=images.get(i);
-				if(urlStr.startsWith("/")){
+				if(urlStr.startsWith("/")&&!urlStr.startsWith("//")){
 					urlStr=mainUrl+urlStr;
 				}
 				try{
 				URL urlObj = new URL(urlStr);
 				
 		        Image image = ImageIO.read(urlObj);
-		        int width = image.getWidth(null);
-		        int height = image.getHeight(null);
-		        if(width*height>max){
-		        	max=width*height;
-		        	maxUrl=urlStr;
-		        	maxWidth=width;
-		        	maxHeight=height;
+		        System.out.println(urlObj+","+image);
+		        if(image!=null){
+		        	int width = image.getWidth(null);
+		        	int height = image.getHeight(null);
+		        	if(width*height>max){
+		        		max=width*height;
+		        		maxUrl=urlStr;
+		        		maxWidth=width;
+		        		maxHeight=height;
+		        	}
 		        }
 		        }catch(Exception e){
-					System.out.println(e.toString());
+					System.out.println("error:"+e.toString()+images.size()+urlStr);
 				}
 				
 			}
@@ -287,8 +329,7 @@ public class FuncController {
 		}
 	}
 
-	/*초기 공유(마케팅 담당자)
-	 * reShare=true로 들어올 시 헤당 shortUrl*/
+
 	@Secured("ROLE_USER")
 	@ResponseBody
 	@RequestMapping(value = "share", method = RequestMethod.POST)
@@ -305,7 +346,6 @@ public class FuncController {
 			shortUrl.persist();
 			String convertedShortUrl=ShortUrlUtil.complicatedConvert(shortUrl.getId());
 			shortUrl.setShortUrl(convertedShortUrl);
-			 
 			
 			String socialProviderId = AuthUtil.getUserInfo().getSocialProviderId();
 			if (socialProviderId != null) {
@@ -329,6 +369,10 @@ public class FuncController {
 				}
 			}
 			shortUrl.merge();
+			
+			long sharePost=ShortUrl.getUserSharePostCount(AuthUtil.getUserId());
+			AchievementService.shareCountAchievement(AuthUtil.getUserId(),sharePost); //공유 글 수 관련 업적
+			
 			return true;
 		}
 	}

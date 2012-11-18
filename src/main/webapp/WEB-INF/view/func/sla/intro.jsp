@@ -25,17 +25,29 @@
 			#sla-intro {
 				background-color: #EEE;
 			}
+			#sla-intro .top {
+				text-align: center;
+			}
+			#sla-intro .top p {
+				text-align: left;
+			}
+			#sla-intro div {
+			}
 			#sla-intro h3 {
 				margin: 0;
 				padding: 10px;
 			}
 			#sla-intro h4 {
 				margin: 0;
-				font-size: 14px;
+				font-size: 16px;
+				text-align: center;
+				margin-bottom: 5px;
 			}
 			img.profile {
 				width: 100px;
 				height: 100px;
+			}
+			#sla-intro p {
 			}
 			#footer {
 				padding: 10px;
@@ -58,35 +70,65 @@
 			</div>
 			<div id="sla-intro">
 				<h3>SLA 팀 소개</h3>
-				<div>
+				<div class="top">
 					<h4>SLA: Shared Link Analyzer</h4>
 					<img src="${pageContext.request.contextPath}/img/swmaestro.jpg">
 					<p>
 						SLA는 SW 마에스트로 3기 연수생인 심영재, 이한솔, 이희덕 군이 팀을 이루어 오우택 멘토님의 도움을 받아 진행하는 소셜 네트워크 공유-링크 분석시스템 개발 프로젝트 팀 입니다.
 					</p>
 				</div>
-				<div>
-					<h4>오우택 멘토</h4>
-					<img class="profile" src="${pageContext.request.contextPath}/img/owt.jpg">
-					<p>
-						부끄럽다 얘들아. 자랑스러운 프로젝트가 될 수 있도록 더 열심히 멋진 결과물 만들자.
-					</p>
-				</div>
-				<div>
-					<h4>심영재</h4>
-					<img class="profile" src="${pageContext.request.contextPath}/img/syj.jpg">
-					<p>
-						항상 우리팀, 우리 멘토님이 최고라고 생각합니다. 짧은 시간이지만 열심히 노력하겠습니다. 화이팅!
-					</p>
-				</div>
-				<div>
-					<h4>이한솔</h4>
-					<img class="profile" src="${pageContext.request.contextPath}/img/lhs.jpg">
-				</div>
-				<div>
-					<h4>이희덕</h4>
-					<img class="profile" src="${pageContext.request.contextPath}/img/lhd.jpg">
-				</div>
+				<table>
+					<tr>
+						<td>
+							<h4>오우택 멘토</h4>
+							<img class="profile" src="${pageContext.request.contextPath}/img/owt.jpg">
+						</td>
+						<td>
+							<p>
+								부끄럽다 얘들아. 자랑스러운 프로젝트가 될 수 있도록 더 열심히 멋진 결과물 만들자.
+							</p>
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>
+							<h4>심영재</h4>
+							<img class="profile" src="${pageContext.request.contextPath}/img/syj.jpg">
+						</td>
+						<td>
+							<p>
+								항상 우리팀, 우리 멘토님이 최고라고 생각합니다. 짧은 시간이지만 열심히 노력하겠습니다. 화이팅!
+							</p>
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>
+							<h4>이한솔</h4>
+							<img class="profile" src="${pageContext.request.contextPath}/img/lhs.jpg">
+						</td>
+						<td>
+							<p>
+								누가 시켜서 하는게 아닌 우리가 만들고 싶은 걸 우리가 만들고 싶은 방식으로 만든다는 것 그 자체만으로도 의미가 크다고 생각합니다. YOG.IO 화이팅!
+							</p>
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>
+							<h4>이희덕</h4>
+							<img class="profile" src="${pageContext.request.contextPath}/img/lhd.jpg">
+						</td>
+						<td>
+							<p>
+								나는 차가운 도시개발자 하지만 내 코드에겐 따뜻하겠지...
+							</p>
+						</td>
+					</tr>
+				</table>
 			</div>
 			<div id="footer">
 				&copy; <a href="http://swmaestro.kr" target="_blank">SW Maestro</a> 3rd <a href="${pageContext.request.contextPath}/func/sla/intro">SLA팀</a>.
