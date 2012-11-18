@@ -293,7 +293,10 @@
 				padding-top: 10px;
 			}
 			#extra-button {
-				border: 1px solid #999;
+				border-top: 1px solid #eee;
+				border-right: 1px solid #eee;
+				border-left: 1px solid #aaa;
+				border-bottom: 1px solid #aaa;
 				background-color: #ccc;
 				color: #333;
 				padding: 2px 7px;
@@ -403,7 +406,7 @@
 					현재 <b>${userCount }</b>명의 사용자가 <b>${shareCount }</b>건의 링크를 공유하고 있습니다! 지금 참여해보세요!
 				</p>
 			</div>
-			<a id="extra-button" href="javascript:$('#extra').toggle();">더 많은 기능 ▼</a>
+			<a id="extra-button" href="javascript:$('#extra').slideToggle();">더 많은 기능 ▼</a>
 			<div id="extra">
 				<!-- <div id="yogio-intro" class="layer">
 					<div class="layer-inner">
