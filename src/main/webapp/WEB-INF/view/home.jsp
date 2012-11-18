@@ -77,10 +77,6 @@
 				padding-top: 20px;
 				padding-bottom: 10px;
 			}
-			#go-intro {
-				font-size: 12px;
-				color: blue;
-			}
 			#share-form {
 				width:600px;
 				clear: both;
