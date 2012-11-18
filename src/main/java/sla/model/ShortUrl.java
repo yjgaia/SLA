@@ -59,6 +59,8 @@ public class ShortUrl {
 	private String content;
 	
 	private boolean hide = false;
+	
+	private int count;
 
 	public static Long getShortUrlCount(){
 		return entityManager()
