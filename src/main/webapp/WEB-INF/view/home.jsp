@@ -283,6 +283,10 @@
 				background-image: url(${pageContext.request.contextPath}/img/page.jpg);
 				border-radius: 0 0 .5em .5em;
 				text-align: right;
+			}
+			#extra {
+				display: none;
+			}
 		</style>
 		<script type="text/javascript">
 		$(function() {
@@ -335,31 +339,34 @@
 					현재 <b>${userCount }</b>명의 사용자가 <b>${shareCount }</b>건의 링크를 공유하고 있습니다! 지금 참여해보세요!
 				</p>
 			</div>
-			<div id="yogio-intro" class="layer">
-				<div class="layer-inner">
-					<h3>환영합니다.</h3>
-					<p>
-						YOG.IO!는 소셜 네트워크에 쉽게 링크를 공유할 수 있고, 공유된 링크의 영향력에 대한 분석 결과를 제공하는 서비스입니다.
-					</p>
-					<a id="go-intro" href="${pageContext.request.contextPath}/func/intro">자세히...</a>
+			<a href="javascript:$('#extra').toggle();">더 많은 기능</a>
+			<div id="extra">
+				<div id="yogio-intro" class="layer">
+					<div class="layer-inner">
+						<h3>환영합니다.</h3>
+						<p>
+							YOG.IO!는 소셜 네트워크에 쉽게 링크를 공유할 수 있고, 공유된 링크의 영향력에 대한 분석 결과를 제공하는 서비스입니다.
+						</p>
+						<a id="go-intro" href="${pageContext.request.contextPath}/func/intro">자세히...</a>
+					</div>
 				</div>
-			</div>
-			<div id="attach-button-intro" class="layer">
-				<div class="layer-inner">
-					<h3>사이트에 공유버튼을 달아보세요.</h3>
-					<p>
-						사이트나 블로그에 YOG.IO! 공유하기 버튼을 달 수 있습니다.
-					</p>
-					<a href="${pageContext.request.contextPath}/func/button/intro" class="button orange">자세히 보기</a>
+				<div id="attach-button-intro" class="layer">
+					<div class="layer-inner">
+						<h3>사이트에 공유버튼을 달아보세요.</h3>
+						<p>
+							사이트나 블로그에 YOG.IO! 공유하기 버튼을 달 수 있습니다.
+						</p>
+						<a href="${pageContext.request.contextPath}/func/button/intro" class="button orange">자세히 보기</a>
+					</div>
 				</div>
-			</div>
-			<div id="create-page-intro" class="layer">
-				<div class="layer-inner">
-					<h3>사이트가 없다면 페이지를 만들어보세요.</h3>
-					<p>
-						이벤트 페이지나, 모임 공지등을 만들때에 유용합니다.
-					</p>
-					<a href="${pageContext.request.contextPath}/func/page/create" class="button orange">페이지 만들기</a>
+				<div id="create-page-intro" class="layer">
+					<div class="layer-inner">
+						<h3>사이트가 없다면 페이지를 만들어보세요.</h3>
+						<p>
+							이벤트 페이지나, 모임 공지등을 만들때에 유용합니다.
+						</p>
+						<a href="${pageContext.request.contextPath}/func/page/create" class="button orange">페이지 만들기</a>
+					</div>
 				</div>
 			</div>
 		</div>
