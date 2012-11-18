@@ -11,13 +11,9 @@ public class RedisTest {
 		// TODO Auto-generated method stub
 		Jedis jedis=new Jedis("yog.io");
 		jedis.auth("ekfrrhrl0");
-		System.out.println(jedis.keys("url:MM:*"));
+		System.out.println(jedis.keys("url:IP:*"));
 		jedis.del("url:Rc:127.0.0.1");
-		//jedis.set("IP","http://www.naver.com");
-		jedis.del("IP");
-		String url=jedis.get("IP");
 		
-		System.out.println(url==null);
 	}
 
 }

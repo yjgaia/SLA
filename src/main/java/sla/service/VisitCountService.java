@@ -1,14 +1,22 @@
 package sla.service;
 
+import java.sql.SQLException;
 import java.util.Calendar;
+import java.util.HashMap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import sla.model.ShortUrl;
 import sla.model.VisitCount;
+
+import com.ibatis.sqlmap.client.SqlMapClient;
 
 @Service
 public class VisitCountService {
+	
+	@Autowired
+	SqlMapClient sqlMapClient;
+	
 	public int increaseVisitCount(long encodedKeyId){
 		Calendar nowDate=Calendar.getInstance();
 		String nowTimePeriodString=getTimePeriod(nowDate);
@@ -44,5 +52,12 @@ public class VisitCountService {
 		}else{
 			return String.valueOf(num);
 		}
+	}
+	
+	public int updateSavedUserIdByLoggedInUser(long savedUserId,String cookieId) throws SQLException{
+		HashMap<String,Object> hm=new HashMap<String,Object>();
+		hm.put("savedUserId", savedUserId);
+		hm.put("cookieId", cookieId);
+		return sqlMapClient.update("Common.updateSavedUserIdByLoggedInUser",hm);
 	}
 }

@@ -8,4 +8,7 @@
  		(SELECT * FROM user_achieve WHERE user_id=#value#) b ON a.id=b.achievement_id
  		ORDER BY COALESCE(b.id,-1) DESC,b.acquire_date,a.id
 	</select>
+	<update id="updateSavedUserIdByLoggedInUser" parameterClass="Map">
+	UPDATE visit_detail SET saved_user_id=#savedUserId# WHERE cookie_id=#cookieId#
+	</update>
 </sqlMap>
