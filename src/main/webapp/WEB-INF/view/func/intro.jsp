@@ -57,11 +57,11 @@
 	<div id="menu-wrapper">
 		<div id="menu">
 			<div style="display:table-cell;float:left;padding:5px 10px 0px 10px;">
-				<a href="${pageContext.request.contextPath}"><img src = "${pageContext.request.contextPath}/img/logo_small.png" border="0"></a>
+				<a href="${pageContext.request.contextPath}/"><img src = "${pageContext.request.contextPath}/img/logo_small.png" border="0"></a>
 			</div>
 			<div id="menuin" style="display:table-cell">
 			<ul>
-				<li><a href="${pageContext.request.contextPath}">홈</a></li>
+				<li><a href="${pageContext.request.contextPath}/">홈</a></li>
 				<li><a href="${pageContext.request.contextPath}/func/myanalyze">분석결과</a></li>
 				<li><a href="${pageContext.request.contextPath}/func/achievement">업적</a></li>
 				<li><a href="${pageContext.request.contextPath}/func/page/create">페이지</a></li>
