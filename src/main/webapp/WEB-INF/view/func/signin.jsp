@@ -26,6 +26,10 @@
 	<body>
 		<div id="menu-wrapper">
 		<div id="menu">
+			<div style="display:table-cell;float:left;padding:5px 10px 0px 10px;">
+				<a href="${pageContext.request.contextPath}"><img src = "${pageContext.request.contextPath}/img/logo_small.png" border="0"></a>
+			</div>
+			<div id="menuin" style="display:table-cell">
 			<ul>
 				<li class="current_page_item"><a href="${pageContext.request.contextPath}">홈</a></li>
 				<li><a href="${pageContext.request.contextPath}/func/myanalyze">분석결과</a></li>
@@ -33,15 +37,9 @@
 				<li><a href="${pageContext.request.contextPath}/func/page/create">페이지</a></li>
 				<li><a href="${pageContext.request.contextPath}/func/intro">소개</a></li>
 			</ul>
-		</div>
-		<!-- end #menu -->
-	</div>
-	<div id="header-wrapper">
-	<div id="header">
-			<div id="logo">
-				<a href="#"><img src = "${pageContext.request.contextPath}/img/logo.png"></a>
 			</div>
 		</div>
+		<!-- end #menu -->
 	</div>
 		<div id="wrapper">
 			<div id="page">
@@ -49,19 +47,21 @@
 					<div id="page-bgbtm">
 						<div id="content">
 							<h1>어떤 SNS를 이용하십니까?</h1>
+							<center>
 							<div class="sns-button">
 								<h3>페이스북</h3>
 								<form id="facebook-login-form" action="${pageContext.request.contextPath}/func/signin/facebook" method="POST">
 									<input type="hidden" name="scope" value="email,publish_stream,offline_access,user_birthday,user_location" />
-									<a href="javascript:$('#facebook-login-form').submit();" rel="tooltip" title="페이스북 로그인"><img alt="페이스북 로그인" src="${pageContext.request.contextPath}/img/facebook.png"></a>
+									<a href="javascript:$('#facebook-login-form').submit();" rel="tooltip" title="페이스북 로그인"><img alt="페이스북 로그인" border="0" src="${pageContext.request.contextPath}/img/facebook.png"></a>
 							    </form>
 							</div>
 							<div class="sns-button">
 							    <h3>트위터</h3>
 							    <form id="twitter-login-form" action="${pageContext.request.contextPath}/func/signin/twitter" method="POST">
-							    	<a href="javascript:$('#twitter-login-form').submit();" rel="tooltip" title="트위터 로그인"><img alt="트위터 로그인" src="${pageContext.request.contextPath}/img/twitter.png"></a>
+							    	<a href="javascript:$('#twitter-login-form').submit();" rel="tooltip" title="트위터 로그인"><img alt="트위터 로그인" border="0" src="${pageContext.request.contextPath}/img/twitter.png"></a>
 								</form>
 						    </div>
+						    </center>
 						</div>
 					</div>
 				</div>
@@ -69,8 +69,8 @@
 		</div>
 		
 	<div id="footer">
-		<p>&copy; 2012 Yog.io | SW Maestro SLA Team.</p>
-	</div>
+			<p>&copy; 2012 Yog.io | SW Maestro <a href="${pageContext.request.contextPath}/func/sla/intro">SLA Team.</a></p>
+		</div>	
 						   
 	</body>
 </html>

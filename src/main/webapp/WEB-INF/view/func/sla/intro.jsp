@@ -6,13 +6,14 @@
 		<title>SLA 팀 소개</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="${pageContext.request.contextPath}/script/jquery-1.7.2.min.js"></script>
+		<link href="${pageContext.request.contextPath}/style/style.css" rel="stylesheet" type="text/css" media="screen" />
 		<style>
 			html, body {
 				font-family: Malgun Gothic;
 			}
 			#wrapper {
 				margin: auto;
-				width: 600px;
+				width: 700px;
 				padding-top: 30px;
 			}
 			#wrapper p {
@@ -64,10 +65,29 @@
 	
 	<body>
 	
-		<div id="wrapper">
-			<div id="header">
-				<a href="${pageContext.request.contextPath}/"><img border="0" src="${pageContext.request.contextPath}/img/logo.png"></a>
+	<div id="menu-wrapper">
+		<div id="menu">
+			<div style="display:table-cell;float:left;padding:5px 10px 0px 10px;">
+				<a href="${pageContext.request.contextPath}"><img src = "${pageContext.request.contextPath}/img/logo_small.png" border="0"></a>
 			</div>
+			<div id="menuin" style="display:table-cell">
+			<ul>
+				<li><a href="${pageContext.request.contextPath}">홈</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/myanalyze">분석결과</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/achievement">업적</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/page/create">페이지</a></li>
+				<li class="current_page_item"><a href="${pageContext.request.contextPath}/func/intro">소개</a></li>
+			</ul>
+			</div>
+		</div>
+		<!-- end #menu -->
+	</div>
+	
+		<div id="wrapper">
+			<div id="page">
+				<div id="page-bgtop">
+					<div id="page-bgbtm">
+						<div id="content">
 			<div id="sla-intro">
 				<h3>SLA 팀 소개</h3>
 				<div class="top">
@@ -130,10 +150,13 @@
 					</tr>
 				</table>
 			</div>
-			<div id="footer">
-				&copy; <a href="http://swmaestro.kr" target="_blank">SW Maestro</a> 3rd <a href="${pageContext.request.contextPath}/func/sla/intro">SLA팀</a>.
+			</div>
+			</div>
+			</div>
 			</div>
 		</div>
-		
+		<div id="footer">
+			<p>&copy; 2012 Yog.io | SW Maestro <a href="${pageContext.request.contextPath}/func/sla/intro">SLA Team.</a></p>
+		</div>	
 	</body>
 </html>

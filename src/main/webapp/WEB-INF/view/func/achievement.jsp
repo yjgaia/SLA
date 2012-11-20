@@ -78,10 +78,10 @@ $(function(){
 
 <body>
 
-	<div id="menu-wrapper">
+<div id="menu-wrapper">
 		<div id="menu">
-			<div style="display:table-cell;float:left;padding:15px 10px 0px 10px;">
-				<img src = "${pageContext.request.contextPath}/img/logo.png">
+			<div style="display:table-cell;float:left;padding:5px 10px 0px 10px;">
+				<a href="${pageContext.request.contextPath}"><img src = "${pageContext.request.contextPath}/img/logo_small.png" border="0"></a>
 			</div>
 			<div id="menuin" style="display:table-cell">
 			<ul>
@@ -164,7 +164,7 @@ $(function(){
 		</div>
 		</div>
 <div id="footer">
-	<p>&copy; 2012 Yog.io | SW Maestro SLA Team.</p>
-	</div>	
+			<p>&copy; 2012 Yog.io | SW Maestro <a href="${pageContext.request.contextPath}/func/sla/intro">SLA Team.</a></p>
+		</div>
 </body>
 </html>

@@ -61,8 +61,8 @@
 	<body>
 	<div id="menu-wrapper">
 		<div id="menu">
-			<div style="display:table-cell;float:left;padding:15px 10px 0px 10px;">
-				<img src = "${pageContext.request.contextPath}/img/logo.png">
+			<div style="display:table-cell;float:left;padding:5px 10px 0px 10px;">
+				<a href="${pageContext.request.contextPath}"><img src = "${pageContext.request.contextPath}/img/logo_small.png" border="0"></a>
 			</div>
 			<div id="menuin" style="display:table-cell">
 			<ul>
@@ -88,7 +88,7 @@
 								<ul>
 									<c:forEach items="${list}" var="item">
 									<li>
-										<a class="url" href="${pageContext.request.contextPath}/func/analyze?shortUrl=${item.shortUrl}" target="_blank">${item.url}</a>
+										<a class="url" href="${pageContext.request.contextPath}/func/analyze?shortUrl=${item.shortUrl}">${item.url}</a>
 										<br/><b>${item.visitCountSum}</b>명 방문, <b>${item.likeCount }</b>명이 좋아하고 <b>${item.commentCount }</b>명이 댓글을 달았습니다.
 										<a class="func" href="javascript:if(confirm('정말 삭제 하시겠습니까?')){location.href='${pageContext.request.contextPath}/func/delanalyze?shortUrl=${item.shortUrl}';}">삭제</a>
 									</li>
@@ -101,7 +101,7 @@
 			</div>
 		</div>
 		<div id="footer">
-	<p>&copy; 2012 Yog.io | SW Maestro SLA Team.</p>
-	</div>
+			<p>&copy; 2012 Yog.io | SW Maestro <a href="${pageContext.request.contextPath}/func/sla/intro">SLA Team.</a></p>
+		</div>
 	</body>
 </html>

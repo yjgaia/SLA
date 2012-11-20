@@ -169,7 +169,7 @@ a:hover {
 	border-right: 1px solid #FFFFFF;
 }
 
-#menu a {
+#menuin a {
 	display: block;
 	letter-spacing: 1px;
 	line-height: 55px;
@@ -183,13 +183,13 @@ a:hover {
 	border: none;
 }
 
-#menu a:hover, #menu .current_page_item a {
+#menuin a:hover, #menu .current_page_item a {
 	background: #0193CC;
 	text-decoration: none;
 	color: #FFFFFF;
 }
 
-#menu .current_page_item a {
+#menuin .current_page_item a {
 	background: #0193CC;
 }
 

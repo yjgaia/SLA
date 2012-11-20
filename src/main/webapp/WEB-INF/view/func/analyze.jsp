@@ -554,8 +554,8 @@
 	</div>
 		<div id="menu-wrapper">
 		<div id="menu">
-			<div style="display:table-cell;float:left;padding:15px 10px 0px 10px;">
-				<img src = "${pageContext.request.contextPath}/img/logo.png">
+			<div style="display:table-cell;float:left;padding:5px 10px 0px 10px;">
+				<a href="${pageContext.request.contextPath}"><img src = "${pageContext.request.contextPath}/img/logo_small.png" border="0"></a>
 			</div>
 			<div id="menuin" style="display:table-cell">
 			<ul>
@@ -579,25 +579,25 @@
 			<div style="width: 550px;float:left;position:relative;">
 				<div class="content_in_title">누적 방문자</div>
 			</div>
-			<div style="width: 150px;float:left;position:relative;">
+			<div style="width: 150px;float:right;position:relative;">
 				<font size="2">
 				<input type="radio" name="radio" checked value="a">시간</input>
 				<input type="radio" name="radio" value="b">일</input>
 				<input type="radio" name="radio" value="c">월</input>
 				</font>
 			</div>
-			<div id="chart1" style="min-width: 600px; height: 300px; margin: 0 auto"></div>
+			<div id="chart1" style="min-width: 600px; height: 350px; margin: 0 auto"></div>
 		</div>
 		<div id="main-row1-spacing" style="height:40px;"></div>
 		<div id="main-row2">
-			<div style="width: 300px;float:left;position:relative;">
+			<div style="width: 350px;float:left;position:relative;">
 				<div class="content_in_title">이 주소의 공유자는?</div>
 			</div>
-			<div style="width: 300px;float:left;position:relative;">
+			<div style="width: 350px;float:left;position:relative;">
 				<div class="content_in_title">시간 별 방문자</div>
 			</div>
 			
-			<div style="width: 300px; height: 200px;float:left;position:relative;">
+			<div style="width: 350px; height: 200px;float:left;position:relative;">
 			<table style="text-align: right">
 				<tr><td colspan=2>이 주소의 <b>${shareRank }번째</b> 공유자 입니다!</td></tr>
 				<tr><th><img src="${sharer.socialImageUrl }"></th>
@@ -609,31 +609,31 @@
 				<tr><th>평균 방문자/친구 비율</th><td>${sharerFriendVisitorRatio }</td></tr>
 			</table>
 			</div>
-			<div id="chart3" style="width: 300px; height: 200px;float:left;position:relative;"></div>
+			<div id="chart3" style="width: 350px; height: 200px;float:left;position:relative;"></div>
 		</div>
 		<div id="main-row2-spacing" style="height:20px;"></div>
 		<div id="main-row3">
 			
-			<div style="width: 300px;float:left;position:relative;">
+			<div style="width: 350px;float:left;position:relative;">
 				<div class="content_in_title">공유자들의 성별</div>
 			</div>
-			<div style="width: 300px;float:left;position:relative;">
+			<div style="width: 350px;float:left;position:relative;">
 				<div class="content_in_title">공유 영향력</div>
 			</div>
 
-			<div id="chart4" style="width: 300px; height: 200px;float:left;position:relative;"></div>
-			<div id="chart5" style="width: 300px; height: 200px;float:left;position:relative;"></div>
+			<div id="chart4" style="width: 350px; height: 200px;float:left;position:relative;"></div>
+			<div id="chart5" style="width: 350px; height: 200px;float:left;position:relative;"></div>
 			
 		</div>
 		<div id="main-row4">
-			<div style="width: 300px;float:left;position:relative;">
+			<div style="width: 350px;float:left;position:relative;">
 				<div class="content_in_title">방문자들이 사용중인 OS</div>
 			</div>
-			<div style="width: 300px;float:left;position:relative;">
+			<div style="width: 350px;float:left;position:relative;">
 				<div class="content_in_title">방문자들이 사용중인 Browser</div>
 			</div>
-			<div id="chart6" style="width: 300px; height: 200px;float:left;position:relative;"></div>
-			<div id="chart7" style="width: 300px; height: 200px;float:left;position:relative;"></div>
+			<div id="chart6" style="width: 350px; height: 200px;float:left;position:relative;"></div>
+			<div id="chart7" style="width: 350px; height: 200px;float:left;position:relative;"></div>
 		</div>
 	</div>
 	</div>
@@ -641,7 +641,7 @@
 	</div>
 	</div>
 	<div id="footer">
-	<p>&copy; 2012 Yog.io | SW Maestro SLA Team.</p>
-	</div>	
+			<p>&copy; 2012 Yog.io | SW Maestro <a href="${pageContext.request.contextPath}/func/sla/intro">SLA Team.</a></p>
+		</div>	
 	</body>
 </html>
