@@ -17,6 +17,7 @@ h1, h2, h3 {
 	margin: 0px;
 	padding: 0px;
 	letter-spacing: -2px;
+	text-transform: uppercase;
 	font-weight: normal;
 	color: #0285CE;
 }
@@ -56,15 +57,16 @@ a:hover {
 
 #header {
 	clear: both;
-	width: 600px;
+	width: 700px;
 	margin: 0px auto;
 }
+
 
 /* Logo */
 
 #logo {
 	margin: 0px;
-	padding: 10px 0px;
+	padding: 30px 0px;
 	color: #000000;
 }
 
@@ -149,7 +151,7 @@ a:hover {
 }
 
 #menu {
-	width: 600px;
+	width: 700px;
 	height: 55px;
 	margin: 0px auto;
 	padding: 0px;
@@ -195,7 +197,7 @@ a:hover {
 
 #page {
 	overflow: hidden;
-	width: 600px;
+	width: 700px;
 	margin: 0px auto;
 	padding: 30px 0px;
 }
@@ -204,7 +206,7 @@ a:hover {
 
 #content {
 	float: left;
-	width: 600px;
+	width: 700px;
 }
 
 .post {
@@ -373,6 +375,6 @@ a:hover {
 }
 
 #banner {
-	width: 600px;
+	width: 700px;
 	margin: 0px auto;
 }

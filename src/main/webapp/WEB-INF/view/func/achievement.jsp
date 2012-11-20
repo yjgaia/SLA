@@ -80,6 +80,10 @@ $(function(){
 
 	<div id="menu-wrapper">
 		<div id="menu">
+			<div style="display:table-cell;float:left;padding:15px 10px 0px 10px;">
+				<img src = "${pageContext.request.contextPath}/img/logo.png">
+			</div>
+			<div id="menuin" style="display:table-cell">
 			<ul>
 				<li><a href="${pageContext.request.contextPath}">홈</a></li>
 				<li><a href="${pageContext.request.contextPath}/func/myanalyze">분석결과</a></li>
@@ -87,23 +91,19 @@ $(function(){
 				<li><a href="${pageContext.request.contextPath}/func/page/create">페이지</a></li>
 				<li><a href="${pageContext.request.contextPath}/func/intro">소개</a></li>
 			</ul>
-		</div>
-		<!-- end #menu -->
-	</div>
-	<div id="header-wrapper">
-	<div id="header">
-			<div id="logo">
-				<a href="#"><img src = "${pageContext.request.contextPath}/img/logo.png"></a>
 			</div>
 		</div>
+		<!-- end #menu -->
 	</div>
 		<div id="wrapper">
 			<div id="page">
 				<div id="page-bgtop">
 					<div id="page-bgbtm">
 						<div id="content">
-							<div id="topLoader">      
+							<center>
+							<div id="topLoader" style="align:center;">      
 				      		</div>
+				      		</center>
 							<script>
         $(function() {
           var $topLoader = $("#topLoader").percentageLoader({width: 256, height: 256, controllable : false, progress : 0.5, onProgressUpdate : function(val) {

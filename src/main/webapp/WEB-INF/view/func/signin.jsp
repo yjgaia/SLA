@@ -27,7 +27,7 @@
 		<div id="menu-wrapper">
 		<div id="menu">
 			<ul>
-				<li class="current_page_item"><a href="#">홈</a></li>
+				<li class="current_page_item"><a href="${pageContext.request.contextPath}">홈</a></li>
 				<li><a href="${pageContext.request.contextPath}/func/myanalyze">분석결과</a></li>
 				<li><a href="${pageContext.request.contextPath}/func/achievement">업적</a></li>
 				<li><a href="${pageContext.request.contextPath}/func/page/create">페이지</a></li>

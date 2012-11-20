@@ -364,6 +364,10 @@
 	<body>
 	<div id="menu-wrapper">
 		<div id="menu">
+			<div style="display:table-cell;float:left;padding:15px 10px 0px 10px;">
+				<img src = "${pageContext.request.contextPath}/img/logo.png">
+			</div>
+			<div id="menuin" style="display:table-cell">
 			<ul>
 				<li class="current_page_item"><a href="${pageContext.request.contextPath}">홈</a></li>
 				<li><a href="${pageContext.request.contextPath}/func/myanalyze">분석결과</a></li>
@@ -371,16 +375,11 @@
 				<li><a href="${pageContext.request.contextPath}/func/page/create">페이지</a></li>
 				<li><a href="${pageContext.request.contextPath}/func/intro">소개</a></li>
 			</ul>
+			</div>
 		</div>
 		<!-- end #menu -->
 	</div>
-	<div id="header-wrapper">
-	<div id="header">
-			<div id="logo">
-				<a href="#"><img src = "${pageContext.request.contextPath}/img/logo.png"></a>
-			</div>
-		</div>
-	</div>
+	
 		<div id="wrapper">
 			<div id="page">
 				<div id="page-bgtop">

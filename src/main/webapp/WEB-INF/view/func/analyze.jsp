@@ -35,6 +35,7 @@
 				width:582px;height:340px;background:white;
 				text-align:center;
 				z-index:20;
+				border:1px solid c3c3c3;
 			}
 			.userLink{
 				color:#3B5998;
@@ -62,6 +63,10 @@
 			var wrapHeight = $(document).height();
 			$layer.hide();
 			$(".closeBtn").click(function(){
+				$(".dim").remove();
+				$layer.hide();
+			});
+			$(".dim").click(function(){
 				$(".dim").remove();
 				$layer.hide();
 			});
@@ -319,6 +324,7 @@
 						  click: function(event) {
 							  $("body").append("<div class='dim'></div>");
 							  $(".dim").css("height", wrapHeight);
+							  
 							  $layer.show();
 							  
 							  //id 다음부분에 user.id 가 들어가도록 해줄 것
@@ -542,12 +548,16 @@
 				<tr><th>생일</th><td><div id="popup_prop4"></div></td></tr>
 				<tr><th>이메일</th><td><div id="popup_prop5"></div></td></tr>
 				<tr><td colspan="2"><div id="likes_count"></div></td></tr>
-				<tr><td colspan="2"><iframe id="reply" width="100%" height="150"></iframe></td></tr>
+				<tr><td colspan="2"><iframe style="border:0px;" id="reply" width="100%" height="150"></iframe></td></tr>
 			</table>
 		<button type="button" class="closeBtn">창 닫기</button>
 	</div>
-	<div id="menu-wrapper">
+		<div id="menu-wrapper">
 		<div id="menu">
+			<div style="display:table-cell;float:left;padding:15px 10px 0px 10px;">
+				<img src = "${pageContext.request.contextPath}/img/logo.png">
+			</div>
+			<div id="menuin" style="display:table-cell">
 			<ul>
 				<li><a href="${pageContext.request.contextPath}">홈</a></li>
 				<li class="current_page_item"><a href="${pageContext.request.contextPath}/func/myanalyze">분석결과</a></li>
@@ -555,15 +565,9 @@
 				<li><a href="${pageContext.request.contextPath}/func/page/create">페이지</a></li>
 				<li><a href="${pageContext.request.contextPath}/func/intro">소개</a></li>
 			</ul>
-		</div>
-		<!-- end #menu -->
-	</div>
-	<div id="header-wrapper">
-	<div id="header">
-			<div id="logo">
-				<a href="#"><img src = "${pageContext.request.contextPath}/img/logo.png"></a>
 			</div>
 		</div>
+		<!-- end #menu -->
 	</div>
 		<div id="wrapper">
 			<div id="page">
@@ -584,7 +588,7 @@
 			</div>
 			<div id="chart1" style="min-width: 600px; height: 300px; margin: 0 auto"></div>
 		</div>
-		<div id="main-row1-spacing" style="height:20px;"></div>
+		<div id="main-row1-spacing" style="height:40px;"></div>
 		<div id="main-row2">
 			<div style="width: 300px;float:left;position:relative;">
 				<div class="content_in_title">이 주소의 공유자는?</div>
