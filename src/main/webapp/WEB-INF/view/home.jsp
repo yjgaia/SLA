@@ -386,7 +386,7 @@
 					<div id="page-bgbtm">
 						<div id="content">
 			<div id="banner">
-				<img src="${pageContext.request.contextPath}/img/banner.png">
+				<iframe src="http://player.vimeo.com/video/53949351?badge=0" width="600" height="337" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 			</div>
 			<div id="share-form">
 				<!-- 
