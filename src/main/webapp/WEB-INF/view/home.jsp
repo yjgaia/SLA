@@ -394,7 +394,8 @@
 					내가 공유한 링크를 얼마나 많은 사람이 눌렀는지 알고싶다면?
 				</p>
 				 -->
-				<form action="${pageContext.request.contextPath}/func/share" onsubmit="OPEN_YOGIO_WIN();" target="YOGIO_WIN">
+				<!-- <form action="${pageContext.request.contextPath}/func/share" onsubmit="OPEN_YOGIO_WIN();" target="YOGIO_WIN"> -->
+				<form action="${pageContext.request.contextPath}/func/share">
 					<input class="url" name="url" placeholder="http:// 공유할 주소를 입력해주세요." value="http://yog.io">
 					<input class="submit" type="submit" rel="tooltip" data-original-title="한번 공유해보세요!" value="공유">
 				</form>

@@ -333,9 +333,9 @@ public class FuncController {
 	@Secured("ROLE_USER")
 	@ResponseBody
 	@RequestMapping(value = "share", method = RequestMethod.POST)
-	public boolean share(@Valid ShortUrl shortUrl, BindingResult bindingResult,Model model, HttpServletRequest request) {
+	public String share(@Valid ShortUrl shortUrl, BindingResult bindingResult,Model model, HttpServletRequest request) {
 		if (bindingResult.hasErrors()) {
-			return false;
+			return null;
 		} else {
 			String url=shortUrl.getUrl();
 			String lastCharacter=String.valueOf(url.charAt(url.length()-1));
@@ -373,7 +373,7 @@ public class FuncController {
 			long sharePost=ShortUrl.getUserSharePostCount(AuthUtil.getUserId());
 			AchievementService.shareCountAchievement(AuthUtil.getUserId(),sharePost); //공유 글 수 관련 업적
 			
-			return true;
+			return convertedShortUrl;
 		}
 	}
 

@@ -20,10 +20,16 @@
 				type : 'POST',
 				url : '${pageContext.request.contextPath}/func/share',
 				data : data,
-				success : function(ok) {
-					if (ok) {
-						$('#loading').hide();
-						window.close();
+				complete : function(data) {
+					$('#loading').hide();
+					if (data.responseText !== null && data.responseText !== '') {
+						if (window.name === 'YOGIO_WIN') {
+							window.close();
+						} else {
+							location.href = '${pageContext.request.contextPath}/func/analyze?shortUrl=' + data.responseText;
+						}
+					} else {
+						alert('오류가 발생하였습니다. 다시 시도하여 주시기 바랍니다.');
 					}
 				},
 				dataType : 'json'
@@ -257,7 +263,7 @@ td{
 				action="${pageContext.request.contextPath}/func/share" method="POST">
 				<table id="shareTable">
 					<tr>
-						<td colspan="2" align="left"><input class="submit" type="submit" value="게시하기" /></td>
+						<td colspan="2" align="left"><input class="submit" type="submit" value="공유하기" /></td>
 					</tr>
 					<tr>
 						<td colspan="2"><textarea name="content" placeholder="공유할 내용을 적어보세요!" cols="80" rows="10"></textarea></td>
