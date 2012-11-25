@@ -42,13 +42,14 @@ ul {
 	padding-right: 20px;
 }
 .a_content{
-	width:70%;
+	width:85%;
 	float:left;
 	text-align: center;
+	margin-top: 25px;
 }
 .a_score{
 	height:90%;
-	margin-top: 20px;
+	margin-top: 25px;
 	font-size:30px;
 }
 </style>
@@ -148,7 +149,7 @@ $(function(){
 						<c:otherwise>a_active</c:otherwise>
 					</c:choose>
 				">
-					<div class="a_icon"><img src="${pageContext.request.contextPath}/img/logo.png" width="90%" height="90%"/></div>
+					<!--<div class="a_icon"><img src="${pageContext.request.contextPath}/img/logo.png" width="90%" height="90%"/></div>-->
 					<div class="a_content">
 						<div class="a_title"><h3>${achievement.alias }</h3></div>
 						<div class="a_desc">${achievement.description }</div>
