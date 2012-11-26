@@ -8,6 +8,7 @@
 <meta charset="utf-8">
 <title>Share</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="${pageContext.request.contextPath}/style/style.css" rel="stylesheet" type="text/css" media="screen" />
 <script
 	src="${pageContext.request.contextPath}/script/jquery-1.7.2.min.js"></script>
 <script>
@@ -43,12 +44,6 @@
 	src="${pageContext.request.contextPath}/script/jquery-1.7.2.min.js"></script>
 <script src="${pageContext.request.contextPath}/script/js.js"></script>
 <style>
-#wrapper {
-	margin: auto;
-	width: 600px;
-	padding-top: 30px;
-	
-}
 td{
 	font-family:Arial;
 	word-wrap:break-word;
@@ -254,10 +249,28 @@ td{
 
 </head>
 <body>
-	<div id="wrapper">
-		<div id="header">
-			<a id="logo" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/img/logo.png"></a>
+<div id="menu-wrapper">
+		<div id="menu">
+			<div style="display:table-cell;float:left;padding:5px 10px 0px 10px;">
+				<a href="${pageContext.request.contextPath}/"><img src = "${pageContext.request.contextPath}/img/logo_small.png" border="0"></a>
+			</div>
+			<div id="menuin" style="display:table-cell">
+			<ul>
+				<li><a href="${pageContext.request.contextPath}/">홈</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/myanalyze">분석결과</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/achievement">업적</a></li>
+				<li class="current_page_item"><a href="${pageContext.request.contextPath}/func/page/create">페이지</a></li>
+				<li><a href="${pageContext.request.contextPath}/func/intro">소개</a></li>
+			</ul>
+			</div>
 		</div>
+		<!-- end #menu -->
+	</div>
+	<div id="wrapper">
+			<div id="page">
+				<div id="page-bgtop">
+					<div id="page-bgbtm">
+						<div id="content">
 		<div id="share-form">
 			<form id="sharePost"
 				action="${pageContext.request.contextPath}/func/share" method="POST">
@@ -293,8 +306,13 @@ td{
 				</tr>
 			</table>
 		</div>
-
-		<div id="footer"></div>
+		</div>
+		</div>
+		</div>
+		</div>
+		<div id="footer">
+			<p>&copy; 2012 Yog.io | SW Maestro <a href="${pageContext.request.contextPath}/func/sla/intro">SLA Team.</a></p>
+		</div>
 	</div>
 
 </body>
