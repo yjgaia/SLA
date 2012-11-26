@@ -76,4 +76,12 @@
 	SELECT @RNUM := @RNUM + 1 AS rownum,o.* FROM short_url o,( SELECT @RNUM := 0 ) R WHERE o.url=#fullUrl#) a
 	WHERE ROWNUM=1
 	</select>
+	<select id="getVisitRankByIdentifiedUser" parameterClass="Long" resultClass="KeyCount">
+	select id as key_name,visit_count as cnt from (select cookie_id as id,visit_count from visit_detail 
+	where short_url_id=#value# and saved_user_id=0
+	union
+	select social_name,visit_count from (select saved_user_id,sum(visit_count) as visit_count from visit_detail
+	 where short_url_id=#value# and saved_user_id!=0
+	group by saved_user_id) a, user_info b where a.saved_user_id=b.id) u order by visit_count desc
+	</select>
 </sqlMap>

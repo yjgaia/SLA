@@ -137,5 +137,10 @@ public class ApiController {
 		return ret(model,browserDist);
 	}
 	
+	@RequestMapping("identifiedUserRank")
+	public String getVisitRankByIdentifiedUser(Model model,@RequestParam String shortUrl) throws SQLException, JsonGenerationException, JsonMappingException, IOException{
+		List<KeyCount> rank=analyzeService.getVisitRankByIdentifiedUser(shortUrl);
+		return ret(model,rank);
+	}
 	
 }

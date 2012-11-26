@@ -259,6 +259,11 @@ public class AnalyzeService {
 		String shortUrl=(String) sqlMapclient.queryForObject("Analyze.getFirstShortUrlByFullUrl",param);
 		return shortUrl;
 	}
+	public List<KeyCount> getVisitRankByIdentifiedUser(String shortUrl) throws SQLException {
+		long id=ShortUrlUtil.complicatedRevert(shortUrl);
+		List<KeyCount> rank=sqlMapclient.queryForList("Analyze.getVisitRankByIdentifiedUser",id );
+		return rank;
+	}
 	
 	
 	
