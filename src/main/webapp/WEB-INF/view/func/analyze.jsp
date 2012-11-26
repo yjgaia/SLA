@@ -31,8 +31,8 @@
 			}
 			.layer {
 				position:absolute;top:50%;left:50%;
-				margin:-180px 0 0 -301px;padding:20px 10px 10px;
-				width:582px;height:340px;background:white;
+				margin:0px 0 0 -301px;padding:20px 10px 10px;
+				width:582px;background:white;
 				text-align:center;
 				z-index:20;
 				border:1px solid c3c3c3;
@@ -326,7 +326,19 @@
 							  $(".dim").css("height", wrapHeight);
 							  
 							  $layer.show();
-							  
+							  $("#identifiedUserRank").html("");
+							  $.getJSON('${pageContext.request.contextPath}/api/identifiedUserRank?shortUrl=${param.shortUrl}', function(datas) {
+								  
+								  console.log(datas);
+								  var dat=datas.data;
+								  if(dat.length>0){
+									  $("#identifiedUserRank").append("<table id='identifiedTable'><tr><th style='text-align:center'>방문자</th><th>방문횟수</th></tr></table>");
+									  for(var i=0;i<dat.length;i++){
+										  var keyCount=dat[i];
+										  $("#identifiedTable").append('<tr><td style="color:#3B5998"><b>'+keyCount.key_name+'</b></td><td>'+keyCount.cnt+'</td></tr>');
+									  }
+								  }
+							  });
 							  //id 다음부분에 user.id 가 들어가도록 해줄 것
 							  $.getJSON('${pageContext.request.contextPath}/api/userInfoAndShortUrl?id='+event.point.id+'&shortUrl=${param.shortUrl}', function(datas) {
 								  var dat = datas.data;
@@ -342,9 +354,6 @@
 								 $("div#popup_prop5").text(dat.userInfo.socialEmail);
 								 
 								 var obj = 	$.parseJSON(dat.shortUrl.comments);
-								 console.log(dat);
-								 console.log(obj);
-								 
 								 if(dat.shortUrl.likeCount > 0)
 								 {
 									 $("div#likes_count").text(dat.shortUrl.likeCount+"명이 좋아합니다.")
@@ -549,6 +558,7 @@
 				<tr><th>이메일</th><td><div id="popup_prop5"></div></td></tr>
 				<tr><td colspan="2"><div id="likes_count"></div></td></tr>
 				<tr><td colspan="2"><iframe style="border:0px;" id="reply" width="100%" height="150"></iframe></td></tr>
+				<tr><td colspan="2" id="identifiedUserRank"></td></tr>
 			</table>
 		<button type="button" class="closeBtn">창 닫기</button>
 	</div>
