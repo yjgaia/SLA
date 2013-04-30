@@ -81,9 +81,18 @@ src/main/webapp/script/js.js
 
 
 # 프로젝트를 재등록할때는 ROOT폴더를 삭제해주고 SLA.war만 옮겨주면 됩니다. (SLA-userfiles는 사용자가 업로드할 파일들을 가지고 있습니다.)
+
+
 apache-tomcat-7.0.32/bin/catalina.sh stop
 rm -rf apache-tomcat-7.0.32/webapps/run/ROOT
 mv /root/SLA.war apache-tomcat-7.0.32/webapps/run/ROOT.war
 y
+apache-tomcat-7.0.32/bin/catalina.sh start
+tail -30f apache-tomcat-7.0.32/logs/catalina.out
+
+
+export JAVA_HOME=/root/jdk1.7.0_04
+export PATH=$JAVA_HOME/bin:$PATH
+apache-tomcat-7.0.32/bin/catalina.sh stop
 apache-tomcat-7.0.32/bin/catalina.sh start
 tail -30f apache-tomcat-7.0.32/logs/catalina.out
